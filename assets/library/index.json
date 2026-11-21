@@ -173,5 +173,12 @@
   "aspect": 1.0,
   "score": 5.0,
   "added": "2026-11-21"
+ },
+ "clock": {
+  "file": "clock.svg",
+  "describe": "analog clock counting down 30 minutes",
+  "aspect": 1.0,
+  "score": 8.0,
+  "added": "2026-11-21"
  }
 }
