@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_rustic_bakery_in-wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="60%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    <linearGradient id="set_rustic_bakery_in-floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="100%" stop-color="#3A2418" />
+    </linearGradient>
+    <linearGradient id="set_rustic_bakery_in-ovenGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="50%" stop-color="#C8323A" />
+      <stop offset="100%" stop-color="#91301F" />
+    </linearGradient>
+    <linearGradient id="set_rustic_bakery_in-fireGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#C8323A" />
+      <stop offset="50%" stop-color="#F08A3C" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    <radialGradient id="set_rustic_bakery_in-ovenGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#F08A3C" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#C8323A" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="set_rustic_bakery_in-shelfGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#91521F" />
+    </linearGradient>
+    
+    
+    <clipPath id="set_rustic_bakery_in-windowClip">
+      <path d="M150,100 L350,100 L350,350 L150,350 Z" />
+    </clipPath>
+  </defs>
+
+  
+  <rect x="0" y="0" width="1600" height="650" fill="url(#set_rustic_bakery_in-wallGrad)" stroke="#3A2418" stroke-width="4" />
+  
+  
+  <g stroke="#3A2418" stroke-width="2" opacity="0.2">
+    <line x1="200" y1="0" x2="200" y2="650" />
+    <line x1="400" y1="0" x2="400" y2="650" />
+    <line x1="600" y1="0" x2="600" y2="650" />
+    <line x1="800" y1="0" x2="800" y2="650" />
+    <line x1="1000" y1="0" x2="1000" y2="650" />
+    <line x1="1200" y1="0" x2="1200" y2="650" />
+    <line x1="1400" y1="0" x2="1400" y2="650" />
+  </g>
+
+  
+  <rect x="180" y="80" width="220" height="280" rx="10" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+  <path d="M190,90 L390,90 L390,340 L190,340 Z" fill="#75D1CC" opacity="0.6" />
+  
+  <line x1="290" y1="80" x2="290" y2="360" stroke="#3A2418" stroke-width="4" />
+  <line x1="180" y1="220" x2="400" y2="220" stroke="#3A2418" stroke-width="4" />
+  
+  <polygon points="290,220 120,650 480,650" fill="#F1E3C2" opacity="0.25" />
+
+  
+  <path d="M0,650 L1600,650 L1600,900 L0,900 Z" fill="url(#set_rustic_bakery_in-floorGrad)" stroke="#3A2418" stroke-width="4" />
+  <g stroke="#3A2418" stroke-width="3">
+    <line x1="0" y1="700" x2="1600" y2="700" />
+    <line x1="0" y1="760" x2="1600" y2="760" />
+    <line x1="0" y1="830" x2="1600" y2="830" />
+    
+    <line x1="400" y1="650" x2="100" y2="900" />
+    <line x1="900" y1="650" x2="800" y2="900" />
+    <line x1="1300" y1="650" x2="1400" y2="900" />
+  </g>
+
+  
+  <g id="set_rustic_bakery_in-shelves-left">
+    
+    <rect x="70" y="250" width="250" height="20" rx="4" fill="url(#set_rustic_bakery_in-shelfGrad)" stroke="#3A2418" stroke-width="3" />
+    <path d="M90,250 L110,210 L130,250 Z" fill="#F08A3C" stroke="#3A2418" stroke-width="2" /> 
+    <path d="M140,250 L165,205 L190,250 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+    <path d="M200,250 L230,212 L260,250 Z" fill="#C2603A" stroke="#3A2418" stroke-width="2" />
+    
+    
+    <rect x="70" y="420" width="280" height="20" rx="4" fill="url(#set_rustic_bakery_in-shelfGrad)" stroke="#3A2418" stroke-width="3" />
+    <ellipse cx="120" cy="410" rx="25" ry="15" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+    <ellipse cx="180" cy="405" rx="30" ry="18" fill="#C2603A" stroke="#3A2418" stroke-width="2" />
+    <ellipse cx="250" cy="408" rx="22" ry="14" fill="#F08A3C" stroke="#3A2418" stroke-width="2" />
+    <rect x="290" y="370" rx="10" ry="10" width="40" height="50" fill="#1F6F6B" stroke="#3A2418" stroke-width="2" /> 
+  </g>
+
+  
+  <g id="set_rustic_bakery_in-brick-oven">
+    
+    <path d="M1050,280 C1050,150 1200,120 1350,180 C1480,230 1500,400 1500,650 L1000,650 C1000,500 1020,350 1050,280 Z" fill="url(#set_rustic_bakery_in-ovenGrad)" stroke="#3A2418" stroke-width="4" />
+    
+    
+    <g stroke="#3A2418" stroke-width="2" opacity="0.4" fill="none">
+      <path d="M1040,320 Q1200,280 1360,340" />
+      <path d="M1020,380 Q1200,340 1410,400" />
+      <path d="M1010,450 Q1200,410 1460,470" />
+      <path d="M1005,530 Q1200,480 1480,550" />
+      <line x1="1100" y1="280" x2="1110" y2="350" />
+      <line x1="1200" y1="250" x2="1210" y2="330" />
+      <line x1="1300" y1="230" x2="1290" y2="300" />
+      <line x1="1150" y1="360" x2="1140" y2="430" />
+      <line x1="1260" y1="330" x2="1270" y2="410" />
+      <line x1="1380" y1="370" x2="1370" y2="440" />
+    </g>
+
+    
+    <path d="M1150,650 L1150,480 C1150,400 1220,380 1290,380 C1360,380 1430,400 1430,480 L1430,650 Z" fill="#1B2340" stroke="#3A2418" stroke-width="4" />
+    
+    
+    <circle cx="1290" cy="550" r="100" fill="url(#set_rustic_bakery_in-ovenGlow)" />
+    <g data-part="flame">
+      <path d="M1260,600 Q1290,500 1310,530 Q1330,490 1340,600 Z" fill="url(#set_rustic_bakery_in-fireGrad)" />
+      <path d="M1240,620 Q1270,550 1285,580 Q1300,530 1320,620 Z" fill="#E2A93B" />
+      
+      <animateTransform attributeName="transform" type="scale" values="1 1; 1.05 0.95; 0.98 1.02; 1 1" dur="1.5s" repeatCount="indefinite" additive="sum" />
+    </g>
+    
+    
+    <path d="M1135,465 L1445,465 L1445,490 L1135,490 Z" fill="#1B2340" stroke="#3A2418" stroke-width="3" />
+  </g>
+
+  
+  <g id="set_rustic_bakery_in-flour-sacks">
+    
+    <path d="M40,750 C30,700 80,680 120,700 C150,720 160,780 130,830 C100,880 40,850 40,750 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+    <text x="70" y="780" font-family="sans-serif" font-weight="bold" font-size="20" fill="#C2603A">X</text>
+    
+    
+    <path d="M80,780 C70,720 140,700 190,730 C230,750 240,820 200,880 C150,920 70,860 80,780 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+    
+    <path d="M120,715 Q140,700 160,725" fill="none" stroke="#3A2418" stroke-width="3" />
+    <path d="M130,710 L150,713" fill="none" stroke="#C8323A" stroke-width="4" />
+    
+    <rect x="120" y="770" width="50" height="40" rx="5" fill="#1F6F6B" stroke="#3A2418" stroke-width="2" />
+    <circle cx="145" cy="790" r="12" fill="#F1E3C2" />
+  </g>
+
+  
+  <g id="set_rustic_bakery_in-prep-table">
+    
+    <path d="M400,680 L750,680 L780,710 L370,710 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+    
+    <rect x="410" y="710" width="20" height="150" fill="#91521F" stroke="#3A2418" stroke-width="3" />
+    <rect x="710" y="710" width="20" height="150" fill="#91521F" stroke="#3A2418" stroke-width="3" />
+    
+    <rect x="550" y="660" rx="10" ry="10" width="120" height="20" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+    <circle cx="535" cy="670" r="12" fill="#91521F" stroke="#3A2418" stroke-width="2" />
+    <circle cx="685" cy="670" r="12" fill="#91521F" stroke="#3A2418" stroke-width="2" />
+    
+    <path d="M440,685 C440,660 500,660 510,685 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+  </g>
+
+  
+  <g data-part="smoke" opacity="0.6">
+    <path d="M1120,440 Q1100,380 1140,340 Q1180,300 1130,240" fill="none" stroke="#F1E3C2" stroke-width="12" stroke-linecap="round">
+      <animate attributeName="d" values="M1120,440 Q1100,380 1140,340 Q1180,300 1130,240; M1120,440 Q1140,380 1100,340 Q1060,300 1110,240; M1120,440 Q1100,380 1140,340 Q1180,300 1130,240" dur="5s" repeatCount="indefinite" />
+    </path>
+    <path d="M1100,460 Q1080,410 1110,370 Q1140,330 1100,280" fill="none" stroke="#F1E3C2" stroke-width="8" stroke-linecap="round">
+      <animate attributeName="d" values="M1100,460 Q1080,410 1110,370 Q1140,330 1100,280; M1100,460 Q1120,410 1090,370 Q1060,330 1080,280; M1100,460 Q1080,410 1110,370 Q1140,330 1100,280" dur="4s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  
+  <path d="M0,0 L100,0 L0,100 Z" fill="#1B2340" opacity="0.3" />
+  <path d="M1600,0 L1500,0 L1600,100 Z" fill="#1B2340" opacity="0.3" />
+</svg>

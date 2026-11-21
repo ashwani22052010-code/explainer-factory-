@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  
+  <defs>
+    <radialGradient id="red_warning_cross-glow_grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C8323A" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#C8323A" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="red_warning_cross-metal_shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#F1E3C2" stop-opacity="0" />
+      <stop offset="100%" stop-color="#F1E3C2" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+
+  
+  <g data-part="light">
+    <circle cx="500" cy="500" r="450" fill="url(#red_warning_cross-glow_grad)">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="scale" values="0.9;1.1;0.9" center="500,500" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  
+  <g transform="translate(15, 20)">
+    <path d="M250,350 L350,250 L500,400 L650,250 L750,350 L600,500 L750,650 L650,750 L500,600 L350,750 L250,650 L400,500 Z" fill="#1B2340" />
+  </g>
+
+  
+  <g>
+    
+    <path d="M250,350 L350,250 L500,400 L650,250 L750,350 L600,500 L750,650 L650,750 L500,600 L350,750 L250,650 L400,500 Z" fill="#C8323A" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+    
+    
+    <path d="M260,650 L410,500 L260,350 L350,260 L500,410 L650,260 L740,350 L590,500 L740,650 L650,740 L500,590 L350,740 Z" fill="none" stroke="#3A2A66" stroke-width="4" stroke-opacity="0.3" />
+    
+    
+    <path d="M270,350 L350,270 L500,420" fill="none" stroke="#F08A3C" stroke-width="8" stroke-linecap="round" />
+    <path d="M650,270 L730,350 L580,500" fill="none" stroke="#F08A3C" stroke-width="8" stroke-linecap="round" />
+    <path d="M270,650 L420,500" fill="none" stroke="#F08A3C" stroke-width="8" stroke-linecap="round" />
+
+    
+    <g fill="#F1E3C2" stroke="#3A2418" stroke-width="4">
+      
+      <circle cx="310" cy="310" r="12" />
+      <line x1="305" y1="305" x2="315" y2="315" />
+      
+      <circle cx="690" cy="310" r="12" />
+      <line x1="685" y1="305" x2="695" y2="315" />
+      
+      <circle cx="310" cy="690" r="12" />
+      <line x1="305" y1="685" x2="315" y2="695" />
+      
+      <circle cx="690" cy="690" r="12" />
+      <line x1="685" y1="685" x2="695" y2="695" />
+    </g>
+
+    
+    <g stroke="#3A2418" stroke-width="3" stroke-linecap="round" opacity="0.4">
+      <line x1="480" y1="450" x2="520" y2="450" />
+      <line x1="490" y1="550" x2="530" y2="550" />
+      <line x1="350" y1="400" x2="380" y2="430" />
+      <line x1="620" y1="570" x2="650" y2="600" />
+    </g>
+
+    
+    <path d="M250,350 L350,250 L500,400 L650,250 L750,350 L600,500 L750,650 L650,750 L500,600 L350,750 L250,650 L400,500 Z" fill="url(#red_warning_cross-metal_shine)" pointer-events="none" />
+  </g>
+
+  
+  <g data-part="light">
+    <rect x="450" y="200" width="100" height="10" fill="#F1E3C2" rx="5">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" />
+    </rect>
+    <rect x="450" y="790" width="100" height="10" fill="#F1E3C2" rx="5">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="0.7s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  
+  <animateTransform attributeName="transform" type="translate" values="0,0; 2,0; -2,0; 0,0" dur="0.1s" repeatCount="indefinite" additive="sum" />
+</svg>

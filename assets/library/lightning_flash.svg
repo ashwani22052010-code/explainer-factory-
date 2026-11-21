@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="lightning_flash-cloudDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+    <linearGradient id="lightning_flash-cloudBase" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    <linearGradient id="lightning_flash-cloudHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F1E3C2" />
+    </linearGradient>
+
+    
+    <linearGradient id="lightning_flash-boltCore" x1="0%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    <linearGradient id="lightning_flash-boltGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F08A3C" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#C2603A" stop-opacity="0.2" />
+    </linearGradient>
+
+    
+    <radialGradient id="lightning_flash-ambientGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#E2A93B" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#1B2340" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  
+  <circle cx="500" cy="550" r="450" fill="url(#lightning_flash-ambientGlow)" />
+
+  
+  <g data-part="light" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    
+    <path fill="url(#lightning_flash-cloudDark)" d="       M 250,220       C 220,160 280,100 350,120       C 400,80 480,90 520,140       C 580,100 660,130 680,190       C 740,200 780,260 740,320       C 780,380 700,440 630,410       C 580,450 480,440 430,390       C 360,430 280,390 260,330       C 200,310 200,240 250,220 Z" />
+
+    
+    <path fill="#1B2340" d="       M 330,220 C 350,180 420,180 460,220 C 420,260 350,260 330,220 Z       M 530,200 C 560,170 630,180 650,230 C 620,270 550,260 530,200 Z       M 400,310 C 430,270 510,280 540,330 C 500,370 420,360 400,310 Z" />
+
+    
+    <path fill="url(#lightning_flash-cloudBase)" d="       M 280,260       C 240,210 300,150 370,170       C 420,120 510,130 550,180       C 610,140 690,170 700,230       C 760,250 780,320 720,380       C 760,430 670,490 600,450       C 540,490 440,470 400,410       C 320,440 250,380 270,310       C 230,290 240,260 280,260 Z" />
+
+    
+    <path fill="url(#lightning_flash-cloudHighlight)" d="       M 370,170       C 420,120 510,130 550,180       C 520,160 430,150 370,170 Z       M 610,140       C 650,140 680,160 700,230       C 680,180 640,160 610,140 Z       M 280,260       C 260,240 280,210 320,200       C 300,230 270,250 280,260 Z" />
+
+    
+    <path fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round" d="       M 340,320 Q 380,360 440,330       M 530,290 Q 580,340 630,300       M 450,210 Q 480,240 520,215" />
+  </g>
+
+  
+  <g data-part="light">
+    
+    <polygon fill="url(#lightning_flash-boltGlow)" points="       510,150 590,320 500,340 620,530 460,560 600,880 320,510 450,480 350,320 480,290" />
+
+    
+    <polygon fill="url(#lightning_flash-boltCore)" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" points="       480,140       550,300       470,320       580,500       440,530       550,860       340,490       460,460       370,310       460,280       480,140" />
+
+    
+    <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="       485,170       535,295       465,310       555,490       450,515       525,820       370,480       450,450       390,320       455,295       475,190" />
+
+    
+    <polyline fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" points="       400,370 330,420 290,400" />
+    <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="       395,375 335,420 300,405" />
+
+    
+    <polyline fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" points="       565,420 640,470 620,520" />
+    <polyline fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="       560,425 630,465 620,510" />
+  </g>
+
+  
+  <g data-part="light" stroke="#3A2418" stroke-width="6" stroke-linejoin="round">
+    <path fill="url(#lightning_flash-cloudBase)" d="       M 420,130       C 450,100 510,110 540,150       C 500,170 450,160 420,130 Z" />
+    <path fill="url(#lightning_flash-cloudHighlight)" d="       M 440,125 C 470,110 500,120 520,140 C 490,145 460,140 440,125 Z" />
+  </g>
+</svg>

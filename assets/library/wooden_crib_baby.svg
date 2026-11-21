@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="wooden_crib_baby-pineBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="50%" stop-color="#C88A2B" />
+      <stop offset="100%" stop-color="#A56A1A" />
+    </linearGradient>
+    <linearGradient id="wooden_crib_baby-pineDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#A56A1A" />
+      <stop offset="100%" stop-color="#7C4E10" />
+    </linearGradient>
+    <linearGradient id="wooden_crib_baby-pineLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F3C669" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+
+    
+    <linearGradient id="wooden_crib_baby-woolTerracotta" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E07A4F" />
+      <stop offset="50%" stop-color="#C2603A" />
+      <stop offset="100%" stop-color="#9A4522" />
+    </linearGradient>
+    <linearGradient id="wooden_crib_baby-woolTeal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#24827E" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+
+    
+    <linearGradient id="wooden_crib_baby-creamCloth" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5DC" />
+      <stop offset="50%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#D4C49F" />
+    </linearGradient>
+    <linearGradient id="wooden_crib_baby-babySkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD1B3" />
+      <stop offset="100%" stop-color="#EAA684" />
+    </linearGradient>
+  </defs>
+
+  
+  <ellipse cx="500" cy="880" rx="380" ry="45" fill="#1B2340" opacity="0.15" />
+
+  
+  <g id="wooden_crib_baby-back_structure">
+    
+    <path d="M 220 650 L 180 860 L 210 875 L 250 670 Z" fill="url(#wooden_crib_baby-pineDark)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <path d="M 780 650 L 820 860 L 790 875 L 750 670 Z" fill="url(#wooden_crib_baby-pineDark)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <rect x="200" y="320" width="600" height="350" rx="25" fill="url(#wooden_crib_baby-pineDark)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <rect x="250" y="350" width="35" height="280" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="5" />
+    <rect x="325" y="350" width="35" height="280" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="5" />
+    <rect x="400" y="350" width="35" height="280" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="5" />
+    <rect x="475" y="350" width="35" height="280" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="5" />
+    <rect x="550" y="350" width="35" height="280" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="5" />
+    <rect x="625" y="350" width="35" height="280" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="5" />
+    <rect x="700" y="350" width="35" height="280" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="5" />
+  </g>
+
+  
+  <g id="wooden_crib_baby-mattress">
+    <rect x="215" y="580" width="570" height="80" rx="20" fill="#3A2418" />
+    <rect x="220" y="575" width="560" height="70" rx="15" fill="url(#wooden_crib_baby-creamCloth)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <path d="M 260 595 Q 300 610 340 595" fill="none" stroke="#D4C49F" stroke-width="4" stroke-linecap="round" />
+    <path d="M 500 595 Q 550 615 600 595" fill="none" stroke="#D4C49F" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  
+  <g id="wooden_crib_baby-blanket_back">
+    <path d="M 280 630 Q 320 520 400 530 Q 500 540 600 520 Q 700 510 730 630 Z" fill="url(#wooden_crib_baby-woolTeal)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <path d="M 320 560 L 350 600 M 360 550 L 390 590 M 440 540 L 470 580 M 520 540 L 550 580 M 600 550 L 630 590 M 670 565 L 700 605" stroke="#1B2340" stroke-width="4" stroke-linecap="round" opacity="0.4" />
+  </g>
+
+  
+  <g id="wooden_crib_baby-infant" data-part="head">
+    
+    <circle cx="500" cy="460" r="75" fill="url(#wooden_crib_baby-babySkin)" stroke="#3A2418" stroke-width="6" />
+    
+    
+    <path d="M 450 420 Q 500 395 550 420" fill="none" stroke="#FFF" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+
+    
+    <path d="M 465 455 Q 475 465 485 455" fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    <path d="M 515 455 Q 525 465 535 455" fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    
+    
+    <ellipse cx="458" cy="470" r="10" ry="6" fill="#C2603A" opacity="0.4" />
+    <ellipse cx="542" cy="470" r="10" ry="6" fill="#C2603A" opacity="0.4" />
+
+    
+    <path d="M 493 478 Q 500 484 507 478" fill="none" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+
+    
+    <path d="M 490 390 Q 500 370 515 385 Q 525 375 520 392" fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  
+  <g id="wooden_crib_baby-blanket_front">
+    
+    <path d="M 380 640 Q 350 510 440 480 Q 480 470 510 490 Q 560 470 610 510 Q 660 560 630 640 Z" fill="url(#wooden_crib_baby-woolTerracotta)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    
+    <path d="M 400 530 Q 500 500 600 550" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+    <path d="M 420 580 Q 500 550 590 600" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+    <path d="M 450 620 Q 500 595 560 630" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+
+    
+    <path d="M 450 530 L 470 550 M 470 530 L 450 550" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" />
+    <path d="M 540 520 L 560 540 M 560 520 L 540 540" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" />
+    <path d="M 480 580 L 500 600 M 500 580 L 480 600" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" />
+    
+    
+    <path d="M 425 485 Q 500 515 575 485 Q 590 520 575 540 Q 500 565 425 540 Q 410 520 425 485 Z" fill="url(#wooden_crib_baby-creamCloth)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <line x1="460" y1="500" x2="460" y2="525" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+    <line x1="500" y1="505" x2="500" y2="532" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+    <line x1="540" y1="500" x2="540" y2="525" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  
+  <g id="wooden_crib_baby-front_structure">
+    
+    <path d="M 170 280 L 220 280 L 220 840 L 170 820 Z" fill="url(#wooden_crib_baby-pineLight)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <circle cx="195" cy="265" r="25" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="6" />
+
+    
+    <path d="M 830 280 L 780 280 L 780 840 L 830 820 Z" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <circle cx="805" cy="265" r="25" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="6" />
+
+    
+    <path d="M 195 720 L 805 720 L 805 775 L 195 775 Z" fill="url(#wooden_crib_baby-pineDark)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <path d="M 195 320 L 805 320 L 805 375 L 195 375 Z" fill="url(#wooden_crib_baby-pineLight)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+
+    
+    <g id="wooden_crib_baby-front_slats">
+      <rect x="250" y="350" width="35" height="395" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <rect x="325" y="350" width="35" height="395" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <rect x="400" y="350" width="35" height="395" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <rect x="475" y="350" width="35" height="395" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <rect x="550" y="350" width="35" height="395" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <rect x="625" y="350" width="35" height="395" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <rect x="700" y="350" width="35" height="395" rx="10" fill="url(#wooden_crib_baby-pineBase)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    </g>
+
+    
+    <path d="M 267 400 Q 275 410 267 420" fill="none" stroke="#A56A1A" stroke-width="3" stroke-linecap="round" />
+    <path d="M 590 650 Q 595 660 585 670" fill="none" stroke="#A56A1A" stroke-width="3" stroke-linecap="round" />
+    <path d="M 345 520 Q 355 530 345 540" fill="none" stroke="#A56A1A" stroke-width="3" stroke-linecap="round" />
+    <path d="M 718 450 Q 725 460 718 470" fill="none" stroke="#A56A1A" stroke-width="3" stroke-linecap="round" />
+
+    
+    <circle cx="210" cy="350" r="7" fill="#1B2340" stroke="#3A2418" stroke-width="3" />
+    <circle cx="790" cy="350" r="7" fill="#1B2340" stroke="#3A2418" stroke-width="3" />
+    <circle cx="210" cy="745" r="7" fill="#1B2340" stroke="#3A2418" stroke-width="3" />
+    <circle cx="790" cy="745" r="7" fill="#1B2340" stroke="#3A2418" stroke-width="3" />
+  </g>
+
+</svg>

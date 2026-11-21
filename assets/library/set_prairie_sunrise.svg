@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_prairie_sunrise-skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="35%" stop-color="#C2603A" />
+      <stop offset="70%" stop-color="#F08A3C" />
+      <stop offset="100%" stop-color="#F1E3C2" />
+    </linearGradient>
+    
+    <linearGradient id="set_prairie_sunrise-sunGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#F08A3C" stop-opacity="0" />
+    </linearGradient>
+
+    
+    <linearGradient id="set_prairie_sunrise-farHillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#3A2A66" />
+    </linearGradient>
+
+    <linearGradient id="set_prairie_sunrise-midHillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+
+    <linearGradient id="set_prairie_sunrise-nearGroundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="30%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+
+    <linearGradient id="set_prairie_sunrise-sunray" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#F08A3C" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#set_prairie_sunrise-skyGrad)" />
+
+  
+  <circle cx="800" cy="450" r="140" fill="#F1E3C2" opacity="0.9" />
+  <circle cx="800" cy="450" r="220" fill="url(#set_prairie_sunrise-sunGlow)" />
+
+  
+  <g data-part="light" opacity="0.3">
+    <polygon points="800,450 300,900 450,900" fill="url(#set_prairie_sunrise-sunray)" />
+    <polygon points="800,450 600,900 750,900" fill="url(#set_prairie_sunrise-sunray)" />
+    <polygon points="800,450 950,900 1100,900" fill="url(#set_prairie_sunrise-sunray)" />
+    <polygon points="800,450 1250,900 1400,900" fill="url(#set_prairie_sunrise-sunray)" />
+  </g>
+
+  
+  
+  <path d="M0 500 Q 250 380, 500 460 T 1000 440 T 1600 480 L 1600 900 L 0 900 Z" fill="url(#set_prairie_sunrise-farHillGrad)" opacity="0.8" />
+  
+  
+  <path d="M0 550 Q 350 450, 700 520 T 1600 500 L 1600 900 L 0 900 Z" fill="url(#set_prairie_sunrise-midHillGrad)" stroke="#3A2418" stroke-width="3" />
+
+  
+  <g stroke="#3A2418" stroke-width="3" fill="#1B2340">
+    <polygon points="350,520 370,440 390,440 410,520" />
+    <line x1="380" y1="440" x2="380" y2="350" />
+    
+    <g data-part="wheel">
+      <line x1="380" y1="350" x2="340" y2="310" />
+      <line x1="380" y1="350" x2="420" y2="390" />
+      <line x1="380" y1="350" x2="420" y2="310" />
+      <line x1="380" y1="350" x2="340" y2="390" />
+      <animateTransform attributeName="transform" type="rotate" from="0 380 350" to="360 380 350" dur="40s" repeatCount="indefinite" />
+    </g>
+  </g>
+
+  
+  <path d="M 1200,530 L 1260,510 L 1320,530 L 1320,570 L 1200,570 Z" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+  <polygon points="1190,531 1260,495 1330,531" fill="#3A2A66" stroke="#3A2418" stroke-width="3" />
+
+  
+  
+  <path d="M-50 620 Q 300 530, 800 600 T 1650 580 L 1650 950 L -50 950 Z" fill="url(#set_prairie_sunrise-nearGroundGrad)" stroke="#3A2418" stroke-width="4" />
+
+  
+  <g stroke="#3A2418" stroke-width="3">
+    
+    <path d="M 200,600 Q 190,540 160,500" fill="none" stroke-width="6" />
+    <path d="M 190,550 Q 220,530 250,560" fill="none" stroke-width="4" />
+    <path d="M 175,520 Q 140,490 160,460 Q 200,450 210,490 Q 230,520 175,520 Z" fill="#1F6F6B" />
+    <path d="M 160,500 Q 120,520 100,490 Q 130,460 160,500 Z" fill="#C2603A" />
+
+    
+    <path d="M 1350,590 Q 1380,520 1420,470" fill="none" stroke-width="7" />
+    <path d="M 1390,520 Q 1350,500 1320,530" fill="none" stroke-width="4" />
+    <path d="M 1410,490 Q 1470,440 1480,490 Q 1510,530 1440,540 Q 1380,540 1410,490 Z" fill="#3A2A66" />
+  </g>
+
+  
+  <g transform="translate(1100, 620) scale(0.8)" stroke="#3A2418" stroke-width="3">
+    
+    <rect x="0" y="0" width="120" height="60" rx="10" fill="#C2603A" transform="rotate(-5)" />
+    
+    <circle cx="20" cy="55" r="30" fill="none" stroke-width="5" />
+    <circle cx="20" cy="55" r="6" fill="#3A2418" />
+    <line x1="20" y1="25" x2="20" y2="85" />
+    <line x1="-10" y1="55" x2="50" y2="55" />
+    
+    <circle cx="100" cy="62" r="25" fill="none" stroke-width="4" />
+    <circle cx="100" cy="62" r="5" fill="#3A2418" />
+    <line x1="100" y1="37" x2="100" y2="87" />
+    <line x1="75" y1="62" x2="125" y2="62" />
+    
+    <path d="M 10,-10 Q 60,-30 110,-10" fill="none" stroke-width="3" stroke-dasharray="8,8" />
+  </g>
+
+  
+  <path d="M 500,680 L 530,620 L 580,640 L 610,690 Z" fill="#3A2A66" stroke="#3A2418" stroke-width="3" />
+  <path d="M 480,670 L 500,630 L 535,675 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+
+  
+  
+  <path d="M-50 950 L-50 750 Q 200 680, 500 780 T 1200 750 T 1650 820 L 1650 950 Z" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+
+  
+  <path d="M-50 950 L 1650 950 L 1650 850 Q 1200 830, 800 890 T 0 840 Z" fill="#1B2340" />
+
+  
+  <g stroke="#3A2418" stroke-width="3" fill="#E2A93B">
+    
+    <path d="M 0,950 Q 30,750 10,650 Q 50,780 80,950 Z" />
+    <path d="M 60,950 Q 100,720 130,630 Q 110,800 150,950 Z" fill="#C2603A" />
+    <path d="M 120,950 Q 160,780 200,700 Q 180,830 220,950 Z" fill="#F1E3C2" />
+    <path d="M 180,950 Q 220,800 270,720 Q 240,860 300,950 Z" />
+
+    
+    <path d="M 1600,950 Q 1550,730 1580,640 Q 1530,790 1500,950 Z" fill="#E2A93B" />
+    <path d="M 1530,950 Q 1480,750 1440,680 Q 1470,820 1410,950 Z" fill="#C2603A" />
+    <path d="M 1450,950 Q 1400,780 1360,710 Q 1390,850 1340,950 Z" fill="#F1E3C2" />
+    <path d="M 1380,950 Q 1340,810 1300,740 Q 1320,870 1270,950 Z" />
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="2" fill="#E2A93B">
+    
+    <path d="M 350,950 Q 370,860 410,820 Q 390,890 380,950 Z" />
+    <path d="M 400,950 Q 430,880 470,850 Q 440,910 430,950 Z" fill="#C2603A" />
+    <path d="M 460,950 Q 480,890 520,860 Q 490,920 480,950 Z" />
+
+    
+    <path d="M 1250,950 Q 1230,870 1190,840 Q 1210,910 1220,950 Z" />
+    <path d="M 1200,950 Q 1170,890 1130,860 Q 1160,920 1170,950 Z" fill="#C2603A" />
+    <path d="M 1140,950 Q 1120,880 1080,850 Q 1110,920 1120,950 Z" fill="#F1E3C2" />
+  </g>
+
+  
+  <g fill="#F1E3C2" opacity="0.8">
+    <circle cx="500" cy="500" r="4" />
+    <circle cx="520" cy="480" r="3" />
+    <circle cx="480" cy="530" r="5" />
+    <circle cx="700" cy="400" r="3" />
+    <circle cx="730" cy="380" r="4" />
+    <circle cx="1000" cy="450" r="4" />
+    <circle cx="1040" cy="430" r="5" />
+    <circle cx="1020" cy="480" r="3" />
+    <circle cx="1200" cy="550" r="4" />
+    <circle cx="650" cy="650" r="3" />
+    <circle cx="950" cy="600" r="4" />
+  </g>
+
+  
+  <g data-part="leaf" fill="#E2A93B" stroke="#3A2418" stroke-width="2">
+    <path d="M 850,550 Q 870,530 900,540 Q 870,560 850,550 Z">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -100,50; -200,120; -300,200" dur="12s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" values="0; 45; 90; 180" dur="12s" repeatCount="indefinite" additive="sum" />
+    </path>
+  </g>
+</svg>

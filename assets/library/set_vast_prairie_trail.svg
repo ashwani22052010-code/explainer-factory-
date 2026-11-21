@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_vast_prairie_tra-skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="35%" stop-color="#C2603A" />
+      <stop offset="70%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#F1E3C2" />
+    </linearGradient>
+
+    
+    <linearGradient id="set_vast_prairie_tra-farMtn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2A66" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#1F6F6B" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="set_vast_prairie_tra-midMtn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+
+    
+    <linearGradient id="set_vast_prairie_tra-plainFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+    <linearGradient id="set_vast_prairie_tra-plainMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+    <linearGradient id="set_vast_prairie_tra-plainNear" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="30%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+  </defs>
+
+  
+  <rect width="1600" height="900" fill="url(#set_vast_prairie_tra-skyGrad)" />
+
+  
+  <g fill="#F1E3C2" opacity="0.4">
+    <path d="M-50,200 C100,120 300,220 500,160 C700,100 900,180 1100,130 C1300,80 1500,150 1650,120 L1650,0 L-50,0 Z" />
+    <path d="M-50,120 C150,50 400,140 700,90 C1000,40 1300,110 1650,70 L1650,0 L-50,0 Z" opacity="0.6" fill="#FFF" />
+  </g>
+
+  
+  <circle cx="1150" cy="320" r="90" fill="#F08A3C" opacity="0.8" />
+  <circle cx="1150" cy="320" r="60" fill="#F1E3C2" opacity="0.9" />
+
+  
+  <path d="M-50,450 L120,380 L300,420 L480,350 L650,400 L850,320 L1020,390 L1200,340 L1380,410 L1550,360 L1650,430 L1650,600 L-50,600 Z" fill="url(#set_vast_prairie_tra-farMtn)" />
+
+  
+  <path d="M-50,520 C200,440 400,500 700,450 C1000,400 1300,480 1650,420 L1650,700 L-50,700 Z" fill="url(#set_vast_prairie_tra-midMtn)" stroke="#3A2418" stroke-width="3" />
+
+  
+  <path d="M-50,580 C300,500 600,620 950,530 C1300,440 1500,560 1650,510 L1650,900 L-50,900 Z" fill="url(#set_vast_prairie_tra-plainFar)" stroke="#3A2418" stroke-width="3" />
+
+  
+  <path d="M-50,650 C250,580 550,690 900,600 C1250,510 1450,630 1650,580 L1650,900 L-50,900 Z" fill="url(#set_vast_prairie_tra-plainMid)" stroke="#3A2418" stroke-width="3" />
+
+  
+  <path d="M-50,750 C300,680 700,820 1100,720 C1350,660 1500,740 1650,700 L1650,950 L-50,950 Z" fill="url(#set_vast_prairie_tra-plainNear)" stroke="#3A2418" stroke-width="4" />
+
+  
+  
+  <g stroke="#3A2418" stroke-width="3" fill="#1B2340">
+    <polygon points="780,490 800,430 810,430 830,490" />
+    <circle cx="805" cy="435" r="5" fill="#F08A3C" />
+    
+    <g data-part="wheel" stroke="#3A2418" stroke-width="2">
+      <line x1="805" y1="435" x2="805" y2="400" />
+      <line x1="805" y1="435" x2="835" y2="450" />
+      <line x1="805" y1="435" x2="775" y2="450" />
+      <animateTransform attributeName="transform" type="rotate" from="0 805 435" to="360 805 435" dur="12s" repeatCount="indefinite" />
+    </g>
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="3" fill="#C2603A">
+    <rect x="1400" y="680" width="12" height="70" rx="2" />
+    <rect x="1460" y="695" width="12" height="70" rx="2" />
+    <rect x="1520" y="710" width="12" height="70" rx="2" />
+    <line x1="1406" y1="695" x2="1526" y2="725" stroke-width="3" />
+    <line x1="1406" y1="725" x2="1526" y2="755" stroke-width="3" />
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="4" fill="#3A2A66">
+    <path d="M0,820 C50,780 120,790 180,850 C220,890 200,920 0,920 Z" />
+    <path d="M100,860 C130,830 180,840 210,880 C230,910 100,920 100,860 Z" fill="#C2603A" />
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M 1300,750 Q 1310,720 1305,700">
+      <animateTransform attributeName="transform" type="rotate" values="0 1300 750; 5 1300 750; 0 1300 750" dur="4s" repeatCount="indefinite" />
+    </path>
+    <path d="M 1315,755 Q 1330,725 1335,705">
+      <animateTransform attributeName="transform" type="rotate" values="0 1315 755; 7 1315 755; 0 1315 755" dur="3.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M 250,830 Q 240,790 230,770">
+      <animateTransform attributeName="transform" type="rotate" values="0 250 830; -5 250 830; 0 250 830" dur="5s" repeatCount="indefinite" />
+    </path>
+    <path d="M 265,835 Q 260,800 255,780">
+      <animateTransform attributeName="transform" type="rotate" values="0 265 835; -4 265 835; 0 265 835" dur="4.2s" repeatCount="indefinite" />
+    </path>
+
+    
+    <path d="M 400,770 Q 405,740 400,720" />
+    <path d="M 412,775 Q 422,745 425,725" />
+  </g>
+
+  
+  <g fill="#F1E3C2" opacity="0.6">
+    <circle cx="500" cy="500" r="3">
+      <animate attributeName="cy" values="500;480;500" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="500;520;500" dur="8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="750" cy="580" r="4">
+      <animate attributeName="cy" values="580;550;580" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="750;730;750" dur="9s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1000" cy="520" r="2.5">
+      <animate attributeName="cy" values="520;500;520" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1000;1020;1000" dur="6s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M 600,280 Q 608,270 616,280 Q 624,270 632,280" />
+    <path d="M 640,265 Q 646,257 652,265 Q 658,257 664,265" />
+    <path d="M 615,255 Q 620,250 625,255 Q 630,250 635,255" />
+  </g>
+</svg>

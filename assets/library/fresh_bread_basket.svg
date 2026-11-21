@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="fresh_bread_basket-breadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F08A3C" />
+      <stop offset="50%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+    <linearGradient id="fresh_bread_basket-breadShade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C2603A" stop-opacity="0" />
+      <stop offset="100%" stop-color="#3A2418" stop-opacity="0.4" />
+    </linearGradient>
+
+    
+    <linearGradient id="fresh_bread_basket-wickerBase" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="50%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+    <linearGradient id="fresh_bread_basket-wickerDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A2418" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#3A2418" stop-opacity="0.6" />
+    </linearGradient>
+
+    
+    <linearGradient id="fresh_bread_basket-steamGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#F1E3C2" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  
+  <g data-part="smoke">
+    <path d="M 400 350 Q 370 250 430 180 T 380 60" fill="none" stroke="url(#fresh_bread_basket-steamGrad)" stroke-width="12" stroke-linecap="round">
+      <animate attributeName="d" values="M 400 350 Q 370 250 430 180 T 380 60; M 400 350 Q 430 250 370 180 T 420 60; M 400 350 Q 370 250 430 180 T 380 60" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7; 0.2; 0.7" dur="6s" repeatCount="indefinite" />
+    </path>
+    <path d="M 500 320 Q 550 220 480 150 T 530 40" fill="none" stroke="url(#fresh_bread_basket-steamGrad)" stroke-width="16" stroke-linecap="round">
+      <animate attributeName="d" values="M 500 320 Q 550 220 480 150 T 530 40; M 500 320 Q 450 220 520 150 T 470 40; M 500 320 Q 550 220 480 150 T 530 40" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6; 0.1; 0.6" dur="5s" repeatCount="indefinite" />
+    </path>
+    <path d="M 600 350 Q 630 250 570 170 T 620 70" fill="none" stroke="url(#fresh_bread_basket-steamGrad)" stroke-width="10" stroke-linecap="round">
+      <animate attributeName="d" values="M 600 350 Q 630 250 570 170 T 620 70; M 600 350 Q 570 250 630 170 T 580 70; M 600 350 Q 630 250 570 170 T 620 70" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8; 0.3; 0.8" dur="7s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  
+  <ellipse cx="500" cy="420" rx="310" ry="90" fill="#3A2418" stroke="#3A2418" stroke-width="6" />
+
+  
+  <g id="fresh_bread_basket-bread_loaves">
+    
+    <path d="M 280 400 C 260 280 380 260 420 360 Z" fill="url(#fresh_bread_basket-breadGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <path d="M 330 310 Q 360 330 380 300" fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    <path d="M 280 400 C 260 280 380 260 420 360 Z" fill="url(#fresh_bread_basket-breadShade)" />
+
+    
+    <path d="M 720 400 C 740 280 620 260 580 360 Z" fill="url(#fresh_bread_basket-breadGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <path d="M 670 310 Q 640 330 620 300" fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    <path d="M 720 400 C 740 280 620 260 580 360 Z" fill="url(#fresh_bread_basket-breadShade)" />
+
+    
+    <path d="M 390 380 C 380 240 500 220 540 350 C 500 330 420 330 390 380 Z" fill="url(#fresh_bread_basket-breadGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <path d="M 450 280 Q 480 300 510 270" fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    <path d="M 390 380 C 380 240 500 220 540 350 Z" fill="url(#fresh_bread_basket-breadShade)" />
+
+    
+    <path d="M 250 480 C 230 340 380 320 430 430 C 380 450 300 480 250 480 Z" fill="url(#fresh_bread_basket-breadGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <path d="M 310 380 Q 350 400 390 370" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+    <path d="M 250 480 C 230 340 380 320 430 430 Z" fill="url(#fresh_bread_basket-breadShade)" />
+    
+    <path d="M 270 430 C 270 370 340 360 380 390" fill="none" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+
+    
+    <path d="M 750 480 C 770 340 620 320 570 430 C 620 450 700 480 750 480 Z" fill="url(#fresh_bread_basket-breadGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <path d="M 690 380 Q 650 400 610 370" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+    <path d="M 750 480 C 770 340 620 320 570 430 Z" fill="url(#fresh_bread_basket-breadShade)" />
+    <path d="M 730 430 C 730 370 660 360 620 390" fill="none" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+
+    
+    <path d="M 360 460 C 340 280 660 280 640 460 C 600 520 400 520 360 460 Z" fill="url(#fresh_bread_basket-breadGrad)" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+    
+    <path d="M 460 340 Q 500 360 540 330" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+    <path d="M 440 380 Q 480 400 520 370" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+    <path d="M 480 420 Q 520 440 560 410" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+    
+    <path d="M 360 460 C 340 280 660 280 640 460 Z" fill="url(#fresh_bread_basket-breadShade)" />
+    <path d="M 420 310 C 460 290 560 290 600 340" fill="none" stroke="#F1E3C2" stroke-width="6" stroke-linecap="round" opacity="0.5" />
+  </g>
+
+  
+  <g id="fresh_bread_basket-basket">
+    
+    <path d="M 180 420 C 180 360 820 360 820 420 C 820 480 180 480 180 420 Z" fill="url(#fresh_bread_basket-wickerBase)" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+    <path d="M 200 420 C 200 380 800 380 800 420 C 800 460 200 460 200 420 Z" fill="#1B2340" opacity="0.15" stroke="#3A2418" stroke-width="5" />
+
+    
+    <path d="M 210 440 C 190 700 280 780 500 780 C 720 780 810 700 790 440 Z" fill="url(#fresh_bread_basket-wickerBase)" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+
+    
+    <path d="M 210 440 C 190 700 280 780 500 780 C 720 780 810 700 790 440 Z" fill="url(#fresh_bread_basket-wickerDark)" />
+
+    
+    
+    <path d="M 230 450 Q 350 620 470 770" fill="none" stroke="#3A2418" stroke-width="6" opacity="0.4" />
+    <path d="M 330 430 Q 450 600 570 780" fill="none" stroke="#3A2418" stroke-width="6" opacity="0.4" />
+    <path d="M 430 420 Q 550 580 670 770" fill="none" stroke="#3A2418" stroke-width="6" opacity="0.4" />
+    <path d="M 530 420 Q 630 580 750 750" fill="none" stroke="#3A2418" stroke-width="6" opacity="0.4" />
+    <path d="M 190 500 Q 260 620 370 740" fill="none" stroke="#3A2418" stroke-width="6" opacity="0.4" />
+    <path d="M 630 420 Q 710 560 780 660" fill="none" stroke="#3A2418" stroke-width="6" opacity="0.4" />
+
+    
+    <path d="M 770 450 Q 650 620 530 770" fill="none" stroke="#3A2418" stroke-width="6" opacity="0.4" />
+    <path d="M 670 430 Q 550 600 430 780" fill="none" stroke="#3A2418" stroke-width="6" opacity="0.4" />
+    <path d="M 570 420 Q 450 580 330 770" fill="none" stroke="#3A2418" stroke-width="6" opacity="0.4" />
+    <path d="M 470 420 Q 370 580 250 750" fill="none" stroke="#3A2418" stroke-width="6" opacity="0.4" />
+    <path d="M 810 500 Q 740 620 630 740" fill="none" stroke="#3A2418" stroke-width="6" opacity="0.4" />
+    <path d="M 370 420 Q 290 560 220 660" fill="none" stroke="#3A2418" stroke-width="6" opacity="0.4" />
+
+    
+    <path d="M 205 470 Q 500 510 795 470" fill="none" stroke="#3A2418" stroke-width="8" stroke-linecap="round" />
+    <path d="M 220 550 Q 500 590 780 550" fill="none" stroke="#3A2418" stroke-width="7" stroke-linecap="round" />
+    <path d="M 240 630 Q 500 670 760 630" fill="none" stroke="#3A2418" stroke-width="7" stroke-linecap="round" />
+    <path d="M 280 710 Q 500 740 720 710" fill="none" stroke="#3A2418" stroke-width="7" stroke-linecap="round" />
+
+    
+    <path d="M 200 405 C 300 390 700 390 800 405" fill="none" stroke="#F1E3C2" stroke-width="5" stroke-linecap="round" opacity="0.7" />
+  </g>
+</svg>

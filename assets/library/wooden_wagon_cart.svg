@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="wooden_wagon_cart-gW" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+  </defs>
+
+  
+  <path d="M150,550 L850,550 L820,350 L180,350 Z" fill="#C2603A" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+  
+  <path d="M150,550 L850,550 L820,350 L180,350 Z" fill="none" stroke="#3A2418" stroke-width="4" opacity="0.3" />
+  
+  
+  <path d="M200,380 L800,380 M200,430 L800,430 M200,480 L800,480" stroke="#3A2418" stroke-width="3" stroke-linecap="round" opacity="0.4" />
+  <path d="M220,360 L220,540 M400,360 L400,540 M600,360 L600,540 M780,360 L780,540" stroke="#3A2418" stroke-width="4" stroke-linecap="round" opacity="0.5" />
+
+  
+  <circle cx="220" cy="380" r="6" fill="#1B2340" />
+  <circle cx="220" cy="530" r="6" fill="#1B2340" />
+  <circle cx="400" cy="380" r="6" fill="#1B2340" />
+  <circle cx="400" cy="530" r="6" fill="#1B2340" />
+  <circle cx="600" cy="380" r="6" fill="#1B2340" />
+  <circle cx="600" cy="530" r="6" fill="#1B2340" />
+  <circle cx="780" cy="380" r="6" fill="#1B2340" />
+  <circle cx="780" cy="530" r="6" fill="#1B2340" />
+
+  
+  <path d="M170,350 Q180,150 500,150 Q820,150 830,350 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+  
+  <path d="M180,340 Q190,160 500,160 Q810,160 820,340" fill="none" stroke="#E2A93B" stroke-width="4" opacity="0.4" />
+  <path d="M300,170 Q300,300 350,340" stroke="#3A2418" stroke-width="3" opacity="0.2" />
+  <path d="M500,170 Q500,300 500,350" stroke="#3A2418" stroke-width="3" opacity="0.2" />
+  <path d="M700,170 Q700,300 650,340" stroke="#3A2418" stroke-width="3" opacity="0.2" />
+
+  
+  <rect x="180" y="580" width="640" height="20" rx="10" fill="#3A2418" />
+
+  
+  <g data-part="wheel">
+    <circle cx="250" cy="620" r="110" fill="#E2A93B" stroke="#3A2418" stroke-width="6" />
+    <circle cx="250" cy="620" r="95" fill="none" stroke="#3A2418" stroke-width="4" stroke-dasharray="8 8" />
+    <circle cx="250" cy="620" r="20" fill="#1B2340" stroke="#3A2418" stroke-width="4" />
+    
+    <line x1="250" y1="520" x2="250" y2="720" stroke="#3A2418" stroke-width="5" />
+    <line x1="150" y1="620" x2="350" y2="620" stroke="#3A2418" stroke-width="5" />
+    <line x1="180" y1="550" x2="320" y2="690" stroke="#3A2418" stroke-width="5" />
+    <line x1="320" y1="550" x2="180" y2="690" stroke="#3A2418" stroke-width="5" />
+  </g>
+
+  <g data-part="wheel">
+    <circle cx="750" cy="620" r="110" fill="#E2A93B" stroke="#3A2418" stroke-width="6" />
+    <circle cx="750" cy="620" r="95" fill="none" stroke="#3A2418" stroke-width="4" stroke-dasharray="8 8" />
+    <circle cx="750" cy="620" r="20" fill="#1B2340" stroke="#3A2418" stroke-width="4" />
+    
+    <line x1="750" y1="520" x2="750" y2="720" stroke="#3A2418" stroke-width="5" />
+    <line x1="650" y1="620" x2="850" y2="620" stroke="#3A2418" stroke-width="5" />
+    <line x1="680" y1="550" x2="820" y2="690" stroke="#3A2418" stroke-width="5" />
+    <line x1="820" y1="550" x2="680" y2="690" stroke="#3A2418" stroke-width="5" />
+  </g>
+  
+  
+  <path d="M150,560 L0,580 L0,600 L150,590 Z" fill="#3A2418" />
+  
+  
+  <ellipse cx="250" cy="730" rx="80" ry="15" fill="#C2603A" opacity="0.3" />
+  <ellipse cx="750" cy="730" rx="80" ry="15" fill="#C2603A" opacity="0.3" />
+  <path d="M100,740 Q250,710 400,740 T700,740" stroke="#C2603A" stroke-width="2" opacity="0.4" fill="none" stroke-dasharray="5 5" />
+</svg>

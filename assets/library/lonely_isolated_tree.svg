@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="lonely_isolated_tree-skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="60%" stop-color="#3A2A66" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+
+    <linearGradient id="lonely_isolated_tree-cloudGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="50%" stop-color="#3A2A66" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+
+    <linearGradient id="lonely_isolated_tree-hillGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="40%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#3A2A66" />
+    </linearGradient>
+
+    <linearGradient id="lonely_isolated_tree-trunkGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3A2418" />
+      <stop offset="40%" stop-color="#C2603A" />
+      <stop offset="80%" stop-color="#3A2418" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+
+    <linearGradient id="lonely_isolated_tree-canopyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="50%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+
+    <linearGradient id="lonely_isolated_tree-redGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F08A3C" />
+      <stop offset="50%" stop-color="#C8323A" />
+      <stop offset="100%" stop-color="#3A2418" />
+    </linearGradient>
+  </defs>
+
+  
+  <g data-part="smoke">
+    <rect x="50" y="50" width="900" height="900" rx="450" fill="url(#lonely_isolated_tree-skyGrad)" stroke="#3A2418" stroke-width="6" />
+    
+    
+    <path d="M 120 300 Q 150 180 280 200 Q 380 120 520 180 Q 650 120 780 220 Q 900 200 880 350 Q 950 450 850 520 Q 900 600 780 650 Q 500 700 300 620 Q 100 600 120 450 Q 50 380 120 300 Z" fill="url(#lonely_isolated_tree-cloudGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    
+    <path d="M 200 280 Q 280 220 380 280 Q 480 200 600 260 Q 720 220 800 320" fill="none" stroke="#F1E3C2" stroke-width="4" opacity="0.3" stroke-linecap="round" />
+    <path d="M 180 380 Q 300 320 450 400 Q 600 350 750 420" fill="none" stroke="#3A2418" stroke-width="5" opacity="0.6" stroke-linecap="round" />
+  </g>
+
+  
+  <g data-part="light">
+    <polygon points="450,180 400,350 470,350 420,500 540,320 470,320 520,180" fill="#F1E3C2" stroke="#3A2418" stroke-width="5" stroke-linejoin="round">
+      <animate attributeName="opacity" values="1;0.2;1;0.8;0.1;1" dur="2s" repeatCount="indefinite" />
+    </polygon>
+    <polygon points="250,220 220,320 270,320 240,420 320,300 270,300 300,220" fill="#E2A93B" stroke="#3A2418" stroke-width="4" stroke-linejoin="round" opacity="0.8">
+      <animate attributeName="opacity" values="0.3;1;0.1;0.9;0.4" dur="1.5s" repeatCount="indefinite" />
+    </polygon>
+  </g>
+
+  
+  <path d="M 180 750 Q 500 600 820 750 Q 900 820 850 900 Q 500 950 150 900 Q 100 820 180 750 Z" fill="url(#lonely_isolated_tree-hillGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+  
+  <path d="M 300 810 Q 500 760 700 830" fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round" opacity="0.7" />
+  <path d="M 220 850 Q 500 800 780 870" fill="none" stroke="#3A2418" stroke-width="4" stroke-linecap="round" opacity="0.5" />
+  <path d="M 400 780 Q 500 750 600 790" fill="none" stroke="#F1E3C2" stroke-width="3" stroke-linecap="round" opacity="0.3" />
+
+  
+  <g data-part="trunk">
+    
+    <path d="M 420 780 Q 380 760 320 780" fill="none" stroke="#3A2418" stroke-width="12" stroke-linecap="round" />
+    <path d="M 580 780 Q 620 760 680 790" fill="none" stroke="#3A2418" stroke-width="12" stroke-linecap="round" />
+    <path d="M 480 790 Q 500 770 540 800" fill="none" stroke="#3A2418" stroke-width="10" stroke-linecap="round" />
+
+    
+    <path d="M 440 780 C 430 650 460 550 430 450 C 410 380 370 320 320 280 L 350 260 C 410 320 460 370 480 440 C 510 540 480 650 560 780 Z" fill="url(#lonely_isolated_tree-trunkGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+
+    
+    <path d="M 400 400 Q 300 350 220 280 L 240 250 Q 330 320 420 370 Z" fill="url(#lonely_isolated_tree-trunkGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <path d="M 450 350 Q 550 280 660 250 L 650 220 Q 530 250 430 320 Z" fill="url(#lonely_isolated_tree-trunkGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <path d="M 370 340 Q 330 250 280 200 L 300 180 Q 360 240 390 310 Z" fill="url(#lonely_isolated_tree-trunkGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+
+    
+    <path d="M 460 500 Q 450 600 480 700" fill="none" stroke="#3A2418" stroke-width="4" opacity="0.5" stroke-linecap="round" />
+    <path d="M 440 430 Q 420 500 450 600" fill="none" stroke="#F1E3C2" stroke-width="3" opacity="0.4" stroke-linecap="round" />
+    
+    
+    <g data-part="leaf">
+      <path d="M 220 280 Q 180 250 160 270 Q 200 300 220 280 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+      <path d="M 660 250 Q 720 230 740 260 Q 680 280 660 250 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+      <path d="M 280 200 Q 240 160 270 140 Q 300 180 280 200 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+    </g>
+  </g>
+
+  
+  <g data-part="wing_left">
+    
+    <path d="M 500 120 C 698 120 860 282 860 480 C 860 678 698 840 500 840 C 302 840 140 678 140 480 C 140 282 302 120 500 120 Z               M 500 220 C 356 220 240 336 240 480 C 240 624 356 740 500 740 C 644 740 760 624 760 480 C 760 336 644 220 500 220 Z" fill="url(#lonely_isolated_tree-redGlow)" stroke="#3A2418" stroke-width="8" fill-rule="evenodd" stroke-linejoin="round" />
+
+    
+    <polygon points="260,250 310,200 750,710 700,760" fill="#C8323A" stroke="#3A2418" stroke-width="8" stroke-linejoin="round" />
+    
+    
+    <polygon points="285,225 300,210 735,735 720,750" fill="#F08A3C" opacity="0.6" />
+  </g>
+
+  
+  <path d="M 480 140 C 670 140 835 300 835 480 C 835 485 835 490 834 495 C 825 322 670 180 500 180 C 350 180 220 295 190 445 C 178 375 210 270 280 210 C 345 155 420 140 480 140 Z" fill="#F1E3C2" opacity="0.25" />
+</svg>

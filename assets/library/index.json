@@ -26,5 +26,152 @@
   "aspect": 1.0,
   "score": 8.0,
   "added": "2026-11-21"
+ },
+ "set_stormy_wheat_field": {
+  "file": "set_stormy_wheat_field.svg",
+  "describe": "Open wheat field under heavy ominous pitch black storm clouds gathering",
+  "aspect": 1.7778,
+  "score": 5.0,
+  "added": "2026-11-21"
+ },
+ "lightning_flash": {
+  "file": "lightning_flash.svg",
+  "describe": "Zigzagging bright white electrical lightning bolt striking down from clouds",
+  "aspect": 1.0,
+  "score": 5.0,
+  "added": "2026-11-21"
+ },
+ "red_warning_cross": {
+  "file": "red_warning_cross.svg",
+  "describe": "Vibrant glowing red X symbol overlay indicating danger and error",
+  "aspect": 1.0,
+  "score": 8.0,
+  "added": "2026-11-21"
+ },
+ "metal_closed_car": {
+  "file": "metal_closed_car.svg",
+  "describe": "Sleek sedan car with closed metal roof parked safely in thunderstorm",
+  "aspect": 0.8,
+  "score": 6.0,
+  "added": "2026-11-21"
+ },
+ "lonely_isolated_tree": {
+  "file": "lonely_isolated_tree.svg",
+  "describe": "A tall isolated lone tree on a hilltop under dark lightning clouds with bright prohibition red cross over it",
+  "aspect": 1.0,
+  "score": 6.0,
+  "added": "2026-11-21"
+ },
+ "water_pond_hazard": {
+  "file": "water_pond_hazard.svg",
+  "describe": "Open water pool reflecting storm clouds with warning skull icon above",
+  "aspect": 1.0,
+  "score": 5.0,
+  "added": "2026-11-21"
+ },
+ "safe_house_shelter": {
+  "file": "safe_house_shelter.svg",
+  "describe": "Cozy glowing house exterior protecting from stormy weather outdoors",
+  "aspect": 1.0,
+  "score": 6.0,
+  "added": "2026-11-21"
+ },
+ "share_phone_icon": {
+  "file": "share_phone_icon.svg",
+  "describe": "Floating smartphone icon displaying share arrow and safety video icon",
+  "aspect": 1.0,
+  "score": 8.0,
+  "added": "2026-11-21"
+ },
+ "set_kansas_town_view": {
+  "file": "set_kansas_town_view.svg",
+  "describe": "Panoramic 1870s Kansas frontier settlement with dusty main road, wooden clapboard saloons, distant windmill, and vast prairie under a golden sunset",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-21"
+ },
+ "wooden_wagon_cart": {
+  "file": "wooden_wagon_cart.svg",
+  "describe": "Old wooden frontier supply wagon with large spoked wooden wheels resting on dusty ground",
+  "aspect": 0.8,
+  "score": 5.0,
+  "added": "2026-11-21"
+ },
+ "wooden_crib_baby": {
+  "file": "wooden_crib_baby.svg",
+  "describe": "Handcrafted rustic pine wooden crib with rough woven wool blanket swaddling an infant",
+  "aspect": 1.0,
+  "score": 8.0,
+  "added": "2026-11-21"
+ },
+ "heavy_iron_anvil": {
+  "file": "heavy_iron_anvil.svg",
+  "describe": "Black heavy cast iron anvil with glowing orange horseshoe resting on top ready for hammer strike",
+  "aspect": 1.0,
+  "score": 6.0,
+  "added": "2026-11-21"
+ },
+ "set_rustic_bakery_interior": {
+  "file": "set_rustic_bakery_interior.svg",
+  "describe": "Cozy frontier timber bakery with brick wood-fired oven, flour sacks stacked in corners, and wooden shelves holding fresh sourdough bread loaves",
+  "aspect": 0.5625,
+  "score": 5.0,
+  "added": "2026-11-21"
+ },
+ "fresh_bread_basket": {
+  "file": "fresh_bread_basket.svg",
+  "describe": "Woven wicker basket overflowing with round golden-brown artisan crusty bread loaves emitting steam trails",
+  "aspect": 1.0,
+  "score": 6.0,
+  "added": "2026-11-21"
+ },
+ "set_somber_cabin_bedroom": {
+  "file": "set_somber_cabin_bedroom.svg",
+  "describe": "Dimly lit cabin room with curtain drawn, wooden bedside table holding amber medicine bottle, and heavy rustic wooden bed",
+  "aspect": 0.5625,
+  "score": 8.0,
+  "added": "2026-11-21"
+ },
+ "set_cabin_porch_sunset": {
+  "file": "set_cabin_porch_sunset.svg",
+  "describe": "Weathered wooden cabin porch looking out into the vast open Kansas scrubland with orange dusk horizon",
+  "aspect": 0.5625,
+  "score": 8.0,
+  "added": "2026-11-21"
+ },
+ "set_vast_prairie_trail": {
+  "file": "set_vast_prairie_trail.svg",
+  "describe": "Endless rolling green-gold Great Plains grassland extending to a distant mountain horizon with vast cloudscape above",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-21"
+ },
+ "set_prairie_sunrise": {
+  "file": "set_prairie_sunrise.svg",
+  "describe": "A calm prairie at dawn with soft orange light hitting the tall grass.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-21"
+ },
+ "set_telegraph_office_interior": {
+  "file": "set_telegraph_office_interior.svg",
+  "describe": "A wooden office interior with a telegraph machine on a desk and a teller window for sending money.",
+  "aspect": 0.5625,
+  "score": 8.0,
+  "added": "2026-11-21"
+ },
+ "barbed_wire_fence": {
+  "file": "barbed_wire_fence.svg",
+  "describe": "A sharp barbed wire fence stretching into the distance",
+  "aspect": 0.6,
+  "score": 5.0,
+  "added": "2026-11-21"
+ },
+ "official_document": {
+  "file": "official_document.svg",
+  "describe": "A thick government proclamation with a wax seal",
+  "aspect": 1.0,
+  "score": 5.0,
+  "added": "2026-11-21"
  }
 }

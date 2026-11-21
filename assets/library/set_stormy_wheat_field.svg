@@ -1,0 +1,258 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1600" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_stormy_wheat_fie-skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="40%" stop-color="#3A2A66" />
+      <stop offset="75%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    
+    <radialGradient id="set_stormy_wheat_fie-stormCore" cx="50%" cy="25%" r="65%">
+      <stop offset="0%" stop-color="#0D1120" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#1B2340" stop-opacity="0.9" />
+      <stop offset="85%" stop-color="#3A2A66" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#3A2A66" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="set_stormy_wheat_fie-lightningGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#E2A93B" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#3A2A66" stop-opacity="0" />
+    </linearGradient>
+
+    
+    <linearGradient id="set_stormy_wheat_fie-farHillsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#3A2A66" />
+    </linearGradient>
+
+    <linearGradient id="set_stormy_wheat_fie-midFieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="30%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+
+    <linearGradient id="set_stormy_wheat_fie-foreFieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F08A3C" />
+      <stop offset="40%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#3A2418" />
+    </linearGradient>
+
+    
+    <linearGradient id="set_stormy_wheat_fie-windGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0" />
+      <stop offset="50%" stop-color="#F1E3C2" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#F1E3C2" stop-opacity="0" />
+    </linearGradient>
+
+    
+    <radialGradient id="set_stormy_wheat_fie-charZoneShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3A2418" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#3A2418" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <g id="set_stormy_wheat_fie-wheatSingle">
+      <path d="M 0,0 Q -5,-40 -12,-80" stroke="#3A2418" stroke-width="3" fill="none" />
+      <path d="M 0,0 Q -5,-40 -12,-80" stroke="#E2A93B" stroke-width="1.5" fill="none" />
+      
+      <path d="M -12,-80 C -18,-75 -15,-65 -10,-65 C -5,-65 -8,-75 -12,-80 Z" fill="#F08A3C" stroke="#3A2418" stroke-width="1" />
+      <path d="M -10,-65 C -16,-60 -13,-50 -8,-50 C -3,-50 -6,-60 -10,-65 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="1" />
+      <path d="M -8,-50 C -14,-45 -11,-35 -6,-35 C -1,-35 -4,-45 -8,-50 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="1" />
+    </g>
+
+    <g id="set_stormy_wheat_fie-wheatCluster">
+      <use href="#set_stormy_wheat_fie-wheatSingle" transform="scale(0.9) rotate(-10)" />
+      <use href="#set_stormy_wheat_fie-wheatSingle" transform="scale(1.1) translate(10, 5) rotate(5)" />
+      <use href="#set_stormy_wheat_fie-wheatSingle" transform="scale(0.8) translate(-8, 10) rotate(-22)" />
+      <use href="#set_stormy_wheat_fie-wheatSingle" transform="scale(1.05) translate(18, 2) rotate(15)" />
+    </g>
+
+    <clipPath id="set_stormy_wheat_fie-canvasClip">
+      <rect x="0" y="0" width="900" height="1600" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#set_stormy_wheat_fie-canvasClip)">
+    
+    
+    <rect x="0" y="0" width="900" height="1600" fill="url(#set_stormy_wheat_fie-skyGrad)" />
+
+    
+    <polygon points="450,150 420,300 460,320 390,500 480,340 430,320 480,150" fill="url(#set_stormy_wheat_fie-lightningGlow)">
+      <animate attributeName="opacity" values="0;0;0.8;0.2;1;0;0;0" dur="7s" repeatCount="indefinite" />
+    </polygon>
+
+    
+    <path d="M -50,-50 L 950,-50 L 950,500 Q 750,450 600,520 Q 450,590 300,500 Q 150,410 -50,480 Z" fill="url(#set_stormy_wheat_fie-stormCore)" />
+    
+    
+    
+    <path d="M -20,200 Q 150,120 350,220 T 750,180 T 920,250 L 920,-50 L -20,-50 Z" fill="#1B2340" opacity="0.95" />
+    <circle cx="200" cy="180" r="160" fill="#0D1120" opacity="0.8" />
+    <circle cx="380" cy="220" r="180" fill="#0D1120" opacity="0.85" />
+    <circle cx="620" cy="190" r="200" fill="#0D1120" opacity="0.9" />
+    <circle cx="850" cy="230" r="170" fill="#0D1120" opacity="0.85" />
+
+    
+    <path d="M -50,320 Q 100,200 280,300 Q 460,400 650,280 Q 800,180 950,290 L 950,-50 L -50,-50 Z" fill="#0D1120" />
+    
+    
+    <path d="M 50,330 Q 180,260 300,320" stroke="#1F6F6B" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.7" />
+    <path d="M 340,340 Q 480,410 600,320" stroke="#1F6F6B" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.6" />
+    <path d="M 630,300 Q 750,220 880,300" stroke="#3A2A66" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.8" />
+
+    
+    <g data-part="smoke">
+      <path d="M 100,380 Q 250,300 420,380 Q 600,460 780,360 Q 880,300 950,380 L 950,100 L -50,100 Z" fill="#1B2340" opacity="0.5">
+        <animateTransform attributeName="transform" type="translate" values="0,0; -30,10; 0,0" dur="12s" repeatCount="indefinite" additive="sum" />
+      </path>
+    </g>
+
+    
+    <path d="M 150,420 L 80,750 L 140,750 L 210,420 Z" fill="#1F6F6B" opacity="0.15" />
+    <path d="M 600,380 L 520,800 L 610,800 L 690,380 Z" fill="#1B2340" opacity="0.25" />
+    <path d="M 750,350 L 680,720 L 730,720 L 800,350 Z" fill="#3A2A66" opacity="0.2" />
+
+    
+    
+    <path d="M -50,760 Q 180,700 400,740 Q 650,780 950,690 L 950,850 L -50,850 Z" fill="url(#set_stormy_wheat_fie-farHillsGrad)" />
+
+    
+    
+    <g transform="translate(120, 660)" stroke="#3A2418" stroke-width="2.5">
+      
+      <rect x="0" y="20" width="35" height="65" fill="#1F6F6B" rx="2" />
+      <path d="M 0,20 C 0,-5 35,-5 35,20 Z" fill="#C2603A" />
+      
+      <polygon points="70,85 78,10 88,10 96,85" fill="#1B2340" />
+      
+      <g data-part="wheel" transform="translate(83, 15)">
+        <circle cx="0" cy="0" r="4" fill="#E2A93B" />
+        <line x1="-30" y1="0" x2="30" y2="0" stroke="#3A2418" stroke-width="2" />
+        <line x1="0" y1="-30" x2="0" y2="30" stroke="#3A2418" stroke-width="2" />
+        <line x1="-20" y1="-20" x2="20" y2="20" stroke="#3A2418" stroke-width="1.5" />
+        <line x1="-20" y1="20" x2="20" y2="-20" stroke="#3A2418" stroke-width="1.5" />
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite" additive="sum" />
+      </g>
+    </g>
+
+    
+    <path d="M -50,810 Q 200,750 480,810 Q 720,870 950,780 L 950,960 L -50,960 Z" fill="url(#set_stormy_wheat_fie-midFieldGrad)" />
+
+    
+    <path d="M 320,770 Q 330,740 340,770 Q 350,730 360,770 Q 380,720 400,770 L 400,800 L 320,800 Z" fill="#1B2340" stroke="#3A2418" stroke-width="2" />
+    <path d="M 780,800 Q 795,760 810,800 Q 825,750 840,800 L 850,820 L 770,820 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="2" />
+
+    
+    
+    <path d="M -50,920 Q 220,870 450,910 Q 680,950 950,880 L 950,1650 L -50,1650 Z" fill="url(#set_stormy_wheat_fie-foreFieldGrad)" />
+
+    
+    <path d="M -50,1050 Q 200,980 450,1020 T 950,990 L 950,1120 Q 680,1150 450,1090 T -50,1180 Z" fill="#E2A93B" opacity="0.7" />
+    <path d="M -50,1220 Q 250,1140 450,1190 T 950,1160 L 950,1350 Q 650,1400 450,1320 T -50,1420 Z" fill="#C2603A" opacity="0.5" />
+
+    
+    <path d="M 150,1600 L 320,1150 Q 400,1000 450,980 Q 500,1000 580,1150 L 780,1600 Z" fill="#3A2418" opacity="0.35" />
+    <path d="M 220,1600 L 350,1200 Q 420,1070 450,1040 Q 480,1070 550,1200 L 700,1600 Z" fill="#C2603A" opacity="0.4" />
+
+    
+    
+    <ellipse cx="450" cy="1280" rx="280" ry="90" fill="url(#set_stormy_wheat_fie-charZoneShadow)" />
+
+    
+    
+    <g transform="translate(60, 1020)" stroke="#3A2418" stroke-width="2">
+      <path d="M0,0 L-10,-50 M15,0 L10,-60 M30,0 L35,-45 M45,0 L55,-55" stroke="#E2A93B" stroke-width="4" />
+      <path d="M-20,0 Q -40,-30 -60,-20 M70,0 Q 90,-40 110,-25" stroke="#C2603A" stroke-width="3" />
+    </g>
+    
+    <g transform="translate(720, 1040)" stroke="#3A2418" stroke-width="2">
+      <path d="M0,0 L-15,-55 M20,0 L10,-65 M35,0 L45,-50 M60,0 L70,-60" stroke="#E2A93B" stroke-width="4" />
+      <path d="M-10,0 Q -30,-35 -50,-15 M80,0 Q 100,-30 115,-10" stroke="#C8323A" stroke-width="3" />
+    </g>
+
+    
+    <g data-part="light">
+      <path d="M -100,1000 Q 150,920 400,1020 T 900,980" stroke="url(#set_stormy_wheat_fie-windGrad)" stroke-width="25" fill="none" opacity="0.6">
+        <animateTransform attributeName="transform" type="translate" values="-100,-20; 100,20; -100,-20" dur="5s" repeatCount="indefinite" />
+      </path>
+      <path d="M -50,1180 Q 200,1100 500,1200 T 1000,1140" stroke="url(#set_stormy_wheat_fie-windGrad)" stroke-width="40" fill="none" opacity="0.4">
+        <animateTransform attributeName="transform" type="translate" values="-150,10; 120,-10; -150,10" dur="7s" repeatCount="indefinite" />
+      </path>
+    </g>
+
+    
+    <g stroke="#3A2418" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      
+      <path d="M 620,1180 Q 720,1210 820,1190" fill="none" stroke="#1B2340" stroke-width="2" />
+      <path d="M 620,1210 Q 720,1240 820,1220" fill="none" stroke="#1B2340" stroke-width="2" />
+      
+      <polygon points="630,1250 642,1150 655,1152 645,1252" fill="#C2603A" />
+      
+      <polygon points="800,1260 812,1140 827,1143 815,1263" fill="#C2603A" />
+    </g>
+
+    
+    <g transform="translate(180, 1220) rotate(-15)" stroke="#3A2418" stroke-width="3" stroke-linejoin="round">
+      <ellipse cx="0" cy="0" rx="45" ry="20" fill="none" stroke="#C2603A" stroke-width="6" />
+      <ellipse cx="0" cy="0" rx="10" ry="4" fill="#3A2418" />
+      <line x1="-45" y1="0" x2="45" y2="0" />
+      <line x1="-30" y1="-12" x2="30" y2="12" />
+      <line x1="-30" y1="12" x2="30" y2="-12" />
+      
+      <path d="M -55,5 Q 0,25 55,10 L 50,30 L -50,30 Z" fill="#E2A93B" stroke="none" />
+    </g>
+
+    
+    
+    <g data-part="leaf">
+      <g transform="translate(40, 1650)">
+        <use href="#set_stormy_wheat_fie-wheatCluster" transform="scale(2.2) rotate(-15)" />
+        <animateTransform attributeName="transform" type="rotate" values="0; -6; 0" dur="2.5s" repeatCount="indefinite" additive="sum" />
+      </g>
+      <g transform="translate(150, 1680)">
+        <use href="#set_stormy_wheat_fie-wheatCluster" transform="scale(1.8) rotate(-25)" />
+        <animateTransform attributeName="transform" type="rotate" values="0; -8; 0" dur="3s" repeatCount="indefinite" additive="sum" />
+      </g>
+      
+      <path d="M -20,1600 Q 40,1400 120,1350 C 80,1420 20,1520 -10,1600 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+      <path d="M 30,1600 Q 110,1380 200,1320 C 150,1420 70,1510 40,1600 Z" fill="#F08A3C" stroke="#3A2418" stroke-width="3" />
+    </g>
+
+    
+    <g data-part="leaf">
+      <g transform="translate(820, 1630)">
+        <use href="#set_stormy_wheat_fie-wheatCluster" transform="scale(2.4) scale(-1, 1) rotate(-10)" />
+        <animateTransform attributeName="transform" type="rotate" values="0; 7; 0" dur="2.8s" repeatCount="indefinite" additive="sum" />
+      </g>
+      <g transform="translate(700, 1670)">
+        <use href="#set_stormy_wheat_fie-wheatCluster" transform="scale(1.9) scale(-1, 1) rotate(-20)" />
+        <animateTransform attributeName="transform" type="rotate" values="0; 9; 0" dur="3.3s" repeatCount="indefinite" additive="sum" />
+      </g>
+      
+      <path d="M 920,1600 Q 860,1380 760,1340 C 810,1410 880,1510 910,1600 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+      <path d="M 850,1600 Q 770,1400 660,1360 C 730,1430 800,1520 830,1600 Z" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+    </g>
+
+    
+    <g data-part="leaf">
+      <path d="M 300,1350 C 290,1340 270,1345 275,1355 C 285,1360 305,1355 300,1350 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="1.5">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 400,-150; 800,-300" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;0.9;0.8;0" dur="4s" repeatCount="indefinite" />
+      </path>
+      <path d="M 100,1200 C 90,1190 70,1195 75,1205 C 85,1210 105,1205 100,1200 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="1.5">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 500,-200; 900,-350" dur="3.2s" begin="1s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;1;0.5;0" dur="3.2s" begin="1s" repeatCount="indefinite" />
+      </path>
+      <path d="M 200,1500 C 190,1490 170,1495 175,1505 C 185,1510 205,1505 200,1500 Z" fill="#F08A3C" stroke="#3A2418" stroke-width="1.5">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 450,-180; 750,-300" dur="5s" begin="0.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0;0.8;0.3;0" dur="5s" begin="0.5s" repeatCount="indefinite" />
+      </path>
+    </g>
+
+    
+    <rect x="0" y="0" width="900" height="1600" fill="#1B2340" opacity="0.08" style="mix-blend-mode:multiply" />
+  </g>
+</svg>

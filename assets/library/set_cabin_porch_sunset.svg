@@ -1,0 +1,248 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_cabin_porch_suns-skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="35%" stop-color="#3A2A66" />
+      <stop offset="65%" stop-color="#C2603A" />
+      <stop offset="85%" stop-color="#F08A3C" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+
+    
+    <linearGradient id="set_cabin_porch_suns-groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="20%" stop-color="#E2A93B" />
+      <stop offset="60%" stop-color="#1F6F6B" />
+      <stop offset="100% " stop-color="#1B2340" />
+    </linearGradient>
+
+    
+    <linearGradient id="set_cabin_porch_suns-woodFloor" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#733B1E" />
+      <stop offset="50%" stop-color="#9C5228" />
+      <stop offset="100%" stop-color="#5E2E16" />
+    </linearGradient>
+
+    <linearGradient id="set_cabin_porch_suns-woodWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8C4A26" />
+      <stop offset="100%" stop-color="#5E2E16" />
+    </linearGradient>
+
+    
+    <radialGradient id="set_cabin_porch_suns-sunGlow" cx="0.5" cy="0.6" r="0.5">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.8" />
+      <stop offset="40%" stop-color="#F08A3C" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#C2603A" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  
+  <rect width="1600" height="900" fill="url(#set_cabin_porch_suns-skyGrad)" />
+
+  
+  <circle cx="1000" cy="520" r="120" fill="url(#set_cabin_porch_suns-sunGlow)" />
+  <circle cx="1000" cy="520" r="60" fill="#F1E3C2" />
+
+  
+  <path d="M0 450 Q200 420 450 480 T1000 460 T1600 490 L1600 600 L0 600 Z" fill="#3A2A66" opacity="0.4" />
+  <path d="M0 500 Q300 470 700 520 T1600 510 L1600 650 L0 650 Z" fill="#C2603A" opacity="0.3" />
+
+  
+  <path d="M0 550 Q400 530 800 555 T1600 540 L1600 700 L0 700 Z" fill="#E2A93B" />
+  
+  
+  <g fill="#1B2340" opacity="0.7">
+    
+    <polygon points="1250,480 1255,480 1262,560 1243,560" />
+    <circle cx="1252" cy="478" r="15" />
+    <line x1="1235" y1="465" x2="1270" y2="490" stroke="#1B2340" stroke-width="2" />
+    <line x1="1235" y1="490" x2="1270" y2="465" stroke="#1B2340" stroke-width="2" />
+    
+    <path d="M0 555 Q150 545 300 560 T700 550 T1200 565 T1600 555 L1600 600 L0 600 Z" fill="#1F6F6B" />
+  </g>
+
+  
+  <path d="M0 580 Q350 560 850 590 T1600 580 L1600 900 L0 900 Z" fill="url(#set_cabin_porch_suns-groundGrad)" />
+
+  
+  <g fill="#1F6F6B" stroke="#3A2418" stroke-width="2">
+    <path d="M150 590 Q160 575 175 585 Q190 570 210 590 Z" />
+    <path d="M400 605 Q415 590 430 600 Q450 585 465 605 Z" />
+    <path d="M1100 595 Q1120 580 1135 590 Q1155 575 1170 595 Z" />
+    <path d="M1350 585 Q1365 570 1380 585 Q1395 565 1415 585 Z" />
+  </g>
+
+
+  
+
+  
+  <rect x="0" y="150" width="550" height="500" fill="url(#set_cabin_porch_suns-woodWall)" stroke="#3A2418" stroke-width="4" />
+  
+  
+  <g stroke="#3A2418" stroke-width="2" opacity="0.6">
+    <line x1="0" y1="200" x2="550" y2="200" />
+    <line x1="0" y1="250" x2="550" y2="250" />
+    <line x1="0" y1="300" x2="550" y2="300" />
+    <line x1="0" y1="350" x2="550" y2="350" />
+    <line x1="0" y1="400" x2="550" y2="400" />
+    <line x1="0" y1="450" x2="550" y2="450" />
+    <line x1="0" y1="500" x2="550" y2="500" />
+    <line x1="0" y1="550" x2="550" y2="550" />
+    <line x1="0" y1="600" x2="550" y2="600" />
+  </g>
+
+  
+  <rect x="350" y="300" width="120" height="180" rx="10" fill="#1B2340" stroke="#3A2418" stroke-width="4" />
+  <rect x="362" y="312" width="96" height="156" rx="6" fill="#F08A3C" opacity="0.8" />
+  
+  <line x1="410" y1="312" x2="410" y2="468" stroke="#3A2418" stroke-width="4" />
+  <line x1="362" y1="390" x2="458" y2="390" stroke="#3A2418" stroke-width="4" />
+  
+  <rect x="340" y="468" height="14" width="140" fill="#733B1E" stroke="#3A2418" stroke-width="3" />
+
+  
+  <path d="M 80 250 L 220 250 L 220 600 L 80 600 Z" fill="#1B2340" stroke="#3A2418" stroke-width="4" />
+  <path d="M 95 265 L 205 265 L 205 590 L 95 590 Z" fill="#2A1B14" />
+  
+  <path d="M 75 240 L 225 240 L 225 600 L 75 600" fill="none" stroke="#3A2418" stroke-width="6" />
+
+
+  
+
+  
+  <polygon points="-50,150 1650,150 1650,200 -50,200" fill="#5E2E16" stroke="#3A2418" stroke-width="4" />
+  <line x1="200" y1="200" x2="200" y2="650" stroke="#3A2418" stroke-width="5" fill="#733B1E" />
+  <rect x="185" y="180" width="30" height="20" fill="#3A2418" />
+
+  <line x1="550" y1="200" x2="550" y2="650" stroke="#3A2418" stroke-width="5" fill="#733B1E" />
+  <rect x="535" y="180" width="30" height="20" fill="#3A2418" />
+
+  
+  <polygon points="0,620 1600,620 1600,950 -200,950" fill="url(#set_cabin_porch_suns-woodFloor)" stroke="#3A2418" stroke-width="4" />
+  
+  
+  <g stroke="#3A2418" stroke-width="3" opacity="0.8">
+    <line x1="0" y1="670" x2="1600" y2="700" />
+    <line x1="0" y1="730" x2="1600" y2="780" />
+    <line x1="0" y1="800" x2="1600" y2="870" />
+    <line x1="0" y1="880" x2="1600" y2="950" />
+    
+    <line x1="200" y1="620" x2="-50" y2="950" />
+    <line x1="550" y1="620" x2="350" y2="950" />
+    <line x1="900" y1="620" x2="800" y2="950" />
+    <line x1="1250" y1="620" x2="1250" y2="950" />
+  </g>
+
+  
+  
+  <rect x="550" y="520" width="1050" height="18" fill="#733B1E" stroke="#3A2418" stroke-width="4" />
+  <rect x="550" y="600" width="1050" height="14" fill="#733B1E" stroke="#3A2418" stroke-width="4" />
+  
+  <g fill="#8C4A26" stroke="#3A2418" stroke-width="3">
+    <rect x="600" y="538" width="16" height="64" />
+    <rect x="670" y="538" width="16" height="64" />
+    <rect x="740" y="538" width="16" height="64" />
+    <rect x="810" y="538" width="16" height="64" />
+    <rect x="880" y="538" width="16" height="64" />
+    <rect x="950" y="538" width="16" height="64" />
+    <rect x="1020" y="538" width="16" height="64" />
+    <rect x="1090" y="538" width="16" height="64" />
+    <rect x="1160" y="538" width="16" height="64" />
+    <rect x="1230" y="538" width="16" height="64" />
+    <rect x="1300" y="538" width="16" height="64" />
+    <rect x="1370" y="538" width="16" height="64" />
+    <rect x="1440" y="538" width="16" height="64" />
+    <rect x="1510" y="538" width="16" height="64" />
+  </g>
+
+
+  
+
+  
+  <g id="set_cabin_porch_suns-rocking-chair" stroke="#3A2418" stroke-width="3">
+    
+    <path d="M 230 640 Q 280 655 330 635" fill="none" stroke-width="4" />
+    
+    <line x1="250" y1="642" x2="260" y2="570" />
+    <line x1="310" y1="638" x2="300" y2="570" />
+    
+    <rect x="240" y="560" width="80" height="15" rx="4" fill="#C2603A" />
+    
+    <rect x="245" y="470" width="12" height="90" rx="4" fill="#C2603A" />
+    <rect x="303" y="470" width="12" height="90" rx="4" fill="#C2603A" />
+    <line x1="257" y1="490" x2="303" y2="490" stroke-width="4" />
+    <line x1="257" y1="520" x2="303" y2="520" stroke-width="4" />
+    <line x1="257" y1="550" x2="303" y2="550" stroke-width="4" />
+    
+    <path d="M 245 470 Q 278 455 315 470" fill="none" stroke-width="4" />
+  </g>
+
+  
+  <g id="set_cabin_porch_suns-barrel" fill="#733B1E" stroke="#3A2418" stroke-width="3">
+    <ellipse cx="490" cy="550" rx="35" ry="12" fill="#5E2E16" />
+    <path d="M 455 550 C 450 580 455 610 460 630 L 520 630 C 525 610 530 580 525 550 Z" />
+    
+    <path d="M 456 565 Q 490 572 524 565" fill="none" stroke="#1B2340" stroke-width="6" />
+    <path d="M 458 610 Q 490 617 522 610" fill="none" stroke="#1B2340" stroke-width="6" />
+    <ellipse cx="490" cy="550" rx="30" ry="8" fill="#3A2418" />
+  </g>
+
+  
+  <g id="set_cabin_porch_suns-lantern" stroke="#3A2418" stroke-width="3">
+    <line x1="300" y1="200" x2="300" y2="240" stroke-width="3" />
+    
+    <path d="M 285 240 L 315 240 L 300 225 Z" fill="#1B2340" />
+    
+    <rect x="288" y="240" width="24" height="35" rx="4" fill="#F08A3C" opacity="0.9" />
+    
+    <rect x="286" y="275" width="28" height="6" rx="2" fill="#1B2340" />
+    
+    <circle cx="300" cy="257" r="8" fill="#F1E3C2">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  
+  <g id="set_cabin_porch_suns-cactus-pot" stroke="#3A2418" stroke-width="3">
+    
+    <path d="M 505 590 L 545 590 L 535 630 L 515 630 Z" fill="#C2603A" />
+    <ellipse cx="525" cy="590" rx="20" ry="6" fill="#E2A93B" />
+    
+    <path d="M 525 590 L 525 540 Q 525 530 515 530" fill="none" stroke="#1F6F6B" stroke-width="12" stroke-linecap="round" />
+    <path d="M 525 565 Q 545 565 545 550" fill="none" stroke="#1F6F6B" stroke-width="10" stroke-linecap="round" />
+  </g>
+
+  
+  <g id="set_cabin_porch_suns-boot" fill="#5E2E16" stroke="#3A2418" stroke-width="2.5">
+    <path d="M 380 635 L 395 635 L 390 610 L 405 610 L 405 600 L 375 600 Z" />
+    <path d="M 370 635 L 400 635 C 410 635 415 642 405 645 L 370 645 Z" />
+  </g>
+
+
+  
+
+  
+  <path d="M0 0 L1600 0 L1600 900 L0 900 Z" fill="none" stroke="#1B2340" stroke-width="40" opacity="0.3" />
+
+  
+  <g fill="#F1E3C2" opacity="0.6">
+    <circle cx="650" cy="400" r="4">
+      <animate attributeName="cy" values="400;380;400" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="850" cy="350" r="3">
+      <animate attributeName="cy" values="350;330;350" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="720" cy="480" r="5">
+      <animate attributeName="cy" values="480;460;480" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="500" cy="320" r="3">
+      <animate attributeName="cy" values="320;300;320" dur="4.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+</svg>

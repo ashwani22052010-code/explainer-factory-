@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="metal_closed_car-bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2C3759" />
+      <stop offset="50%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#101526" />
+    </linearGradient>
+    <linearGradient id="metal_closed_car-bodyHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3A2A66" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#1B2340" stop-opacity="0" />
+      <stop offset="100%" stop-color="#1F6F6B" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="metal_closed_car-roofGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+    <linearGradient id="metal_closed_car-glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="40%" stop-color="#3A2A66" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+    <linearGradient id="metal_closed_car-chromeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="50%" stop-color="#C2603A" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    <linearGradient id="metal_closed_car-tireGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="50%" stop-color="#3A2418" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+    <radialGradient id="metal_closed_car-rimGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="60%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#3A2418" />
+    </radialGradient>
+    <linearGradient id="metal_closed_car-lightningGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="50%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C8323A" />
+    </linearGradient>
+    <linearGradient id="metal_closed_car-waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1F6F6B" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#F1E3C2" stop-opacity="0.9" />
+    </linearGradient>
+  </defs>
+
+  
+  <circle cx="500" cy="350" r="380" fill="#3A2A66" opacity="0.4" />
+  <path d="M 200 150 L 350 80 L 500 120 L 650 90 L 800 160" fill="none" stroke="#E2A93B" stroke-width="3" opacity="0.3" stroke-dasharray="8 8">
+    <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" repeatCount="indefinite" />
+  </path>
+
+  
+  <g data-part="light">
+    <polygon points="520,40 460,220 530,220 480,420 620,180 550,180" fill="url(#metal_closed_car-lightningGrad)" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+    <polygon points="525,55 475,215 535,215 490,400 605,185 545,185" fill="#F1E3C2" />
+    
+    <path d="M 520,40 L 460,220 L 530,220 L 480,420 L 620,180 L 550,180 Z" fill="#FFF" opacity="0.6">
+      <animate attributeName="opacity" values="0.8;0;0.4;0;0.9;0" dur="2.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  
+  <path d="M 150 120 C 180 80, 250 80, 290 120 C 330 70, 420 70, 470 120 C 530 70, 630 80, 680 130 C 740 90, 830 110, 850 170 C 890 190, 900 260, 850 300 C 800 320, 200 320, 150 280 C 100 240, 110 150, 150 120 Z" fill="#1B2340" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+  <path d="M 180 150 C 200 120, 240 120, 270 150 C 300 110, 370 110, 410 150 C 460 110, 530 120, 570 160 C 620 120, 690 130, 720 170 C 770 140, 820 160, 830 200" fill="none" stroke="#3A2A66" stroke-width="4" stroke-linecap="round" opacity="0.7" />
+
+  
+  <g id="metal_closed_car-sedan_car">
+    
+    <ellipse cx="500" cy="655" rx="360" ry="25" fill="#101526" opacity="0.6" />
+
+    
+    <g data-part="wheel" transform="translate(280, 590)">
+      <circle cx="0" cy="0" r="75" fill="#3A2418" stroke="#3A2418" stroke-width="6" />
+      <circle cx="0" cy="0" r="68" fill="url(#metal_closed_car-tireGrad)" />
+      <circle cx="0" cy="0" r="45" fill="url(#metal_closed_car-rimGrad)" stroke="#3A2418" stroke-width="5" />
+      <circle cx="0" cy="0" r="15" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+      
+      <line x1="-50" y1="-50" x2="50" y2="50" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+      <line x1="-50" y1="50" x2="50" y2="-50" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+    </g>
+
+    
+    <g data-part="wheel" transform="translate(720, 590)">
+      <circle cx="0" cy="0" r="75" fill="#3A2418" stroke="#3A2418" stroke-width="6" />
+      <circle cx="0" cy="0" r="68" fill="url(#metal_closed_car-tireGrad)" />
+      <circle cx="0" cy="0" r="45" fill="url(#metal_closed_car-rimGrad)" stroke="#3A2418" stroke-width="5" />
+      <circle cx="0" cy="0" r="15" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+      <line x1="-50" y1="-50" x2="50" y2="50" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+      <line x1="-50" y1="50" x2="50" y2="-50" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+    </g>
+
+    
+    <path d="M 160 520 C 160 480, 200 470, 240 470 L 760 470 C 820 470, 860 490, 870 540 C 880 580, 860 610, 820 610 L 180 610 C 130 610, 140 560, 160 520 Z" fill="url(#metal_closed_car-bodyGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    
+    <path d="M 175 520 C 190 495, 220 490, 250 490 L 750 490 C 800 490, 840 505, 850 540" fill="none" stroke="url(#metal_closed_car-bodyHighlight)" stroke-width="8" stroke-linecap="round" />
+    <path d="M 180 560 L 840 560" fill="none" stroke="#3A2418" stroke-width="4" opacity="0.4" />
+    <path d="M 500 490 L 500 600" fill="none" stroke="#3A2418" stroke-width="4" opacity="0.4" /> 
+    <path d="M 230 540 C 240 535, 260 535, 270 540 C 270 550, 230 550, 230 540 Z" fill="url(#metal_closed_car-chromeGrad)" stroke="#3A2418" stroke-width="3" /> 
+    <path d="M 530 540 C 540 535, 560 535, 570 540 C 570 550, 530 550, 530 540 Z" fill="url(#metal_closed_car-chromeGrad)" stroke="#3A2418" stroke-width="3" /> 
+
+    
+    <path d="M 190 610 C 190 530, 260 510, 360 520" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+    <path d="M 640 520 C 740 510, 810 530, 810 610" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+
+    
+    <path d="M 310 470 L 370 340 C 390 310, 430 300, 480 300 L 590 300 C 640 300, 680 315, 710 350 L 770 470 Z" fill="url(#metal_closed_car-roofGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    
+    <path d="M 440 304 L 620 304" fill="none" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+
+    
+    <g>
+      
+      <path d="M 390 345 L 330 460 L 475 460 L 470 345 Z" fill="url(#metal_closed_car-glassGrad)" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+      <path d="M 375 365 L 345 440" fill="none" stroke="#F1E3C2" stroke-width="3" stroke-linecap="round" opacity="0.6" /> 
+
+      
+      <path d="M 495 345 L 495 460 L 660 460 L 715 360 C 690 348, 650 345, 610 345 Z" fill="url(#metal_closed_car-glassGrad)" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+      <path d="M 630 365 L 670 430" fill="none" stroke="#F1E3C2" stroke-width="3" stroke-linecap="round" opacity="0.6" /> 
+    </g>
+
+    
+    <path d="M 320 465 L 375 340 C 395 315, 430 305, 480 305 L 600 305 C 650 305, 690 320, 725 360 L 780 465" fill="none" stroke="url(#metal_closed_car-chromeGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+
+    
+    <path d="M 835 520 C 875 525, 895 540, 900 560 C 895 580, 860 595, 820 595 L 815 560 Z" fill="url(#metal_closed_car-chromeGrad)" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+    
+    <path d="M 865 525 C 885 528, 892 538, 890 548 C 880 550, 860 550, 855 540 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+    <path d="M 870 530 L 885 538" fill="none" stroke="#E2A93B" stroke-width="3" stroke-linecap="round" />
+
+    
+    <path d="M 165 530 C 135 535, 115 550, 110 570 C 120 590, 150 600, 185 600 L 190 550 Z" fill="url(#metal_closed_car-chromeGrad)" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+    
+    <path d="M 135 540 C 125 545, 120 555, 125 565 C 145 565, 160 560, 165 550 Z" fill="#C8323A" stroke="#3A2418" stroke-width="4" />
+    <path d="M 132 548 L 155 552" fill="none" stroke="#F1E3C2" stroke-width="2" stroke-linecap="round" />
+
+    
+    <path d="M 375 390 C 370 380, 355 380, 350 395 C 355 405, 370 405, 375 390 Z" fill="url(#metal_closed_car-bodyGrad)" stroke="#3A2418" stroke-width="4" />
+
+    
+    <path d="M 470 450 L 360 455" fill="none" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+
+    
+    <path d="M 680 305 L 750 200" fill="none" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+    <circle cx="750" cy="200" r="4" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+  </g>
+
+  
+  <g data-part="water" opacity="0.8">
+    <line x1="220" y1="200" x2="200" y2="260" stroke="url(#metal_closed_car-waterGrad)" stroke-width="4" stroke-linecap="round" />
+    <line x1="380" y1="180" x2="360" y2="240" stroke="url(#metal_closed_car-waterGrad)" stroke-width="5" stroke-linecap="round" />
+    <line x1="600" y1="190" x2="580" y2="250" stroke="url(#metal_closed_car-waterGrad)" stroke-width="4" stroke-linecap="round" />
+    <line x1="750" y1="220" x2="730" y2="280" stroke="url(#metal_closed_car-waterGrad)" stroke-width="5" stroke-linecap="round" />
+    
+    
+    <line x1="140" y1="400" x2="110" y2="480" stroke="url(#metal_closed_car-waterGrad)" stroke-width="4" stroke-linecap="round" />
+    <line x1="880" y1="380" x2="850" y2="460" stroke="url(#metal_closed_car-waterGrad)" stroke-width="4" stroke-linecap="round" />
+    <line x1="500" y1="230" x2="470" y2="310" stroke="url(#metal_closed_car-waterGrad)" stroke-width="6" stroke-linecap="round" />
+
+    
+    <path d="M 230 615 C 235 610, 245 610, 250 615" fill="none" stroke="#F1E3C2" stroke-width="3" stroke-linecap="round" />
+    <path d="M 450 620 C 458 612, 468 612, 476 620" fill="none" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" />
+    <path d="M 780 615 C 785 610, 795 610, 800 615" fill="none" stroke="#F1E3C2" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  
+  <ellipse cx="320" cy="625" rx="140" ry="8" fill="#1F6F6B" opacity="0.4" />
+  <ellipse cx="680" cy="625" rx="160" ry="9" fill="#1F6F6B" opacity="0.4" />
+
+</svg>

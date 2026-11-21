@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="water_pond_hazard-poolGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="50%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#3A2A66" />
+    </linearGradient>
+    <linearGradient id="water_pond_hazard-stormReflect" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A2A66" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#1B2340" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#C2603A" stop-opacity="0.4" />
+    </linearGradient>
+    <linearGradient id="water_pond_hazard-tileGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+    <linearGradient id="water_pond_hazard-skullGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    <linearGradient id="water_pond_hazard-redGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F08A3C" />
+      <stop offset="100%" stop-color="#C8323A" />
+    </linearGradient>
+    
+    
+    </defs>
+
+  
+  
+  <g stroke="#3A2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    
+    <path d="M 120,550 C 120,720 300,820 500,820 C 700,820 880,720 880,550 C 880,750 700,880 500,880 C 300,880 120,750 120,550 Z" fill="#C2603A" />
+    
+    
+    <path d="M 120,500 C 120,680 300,780 500,780 C 700,780 880,680 880,500 C 880,670 700,740 500,740 C 300,740 120,670 120,500 Z" fill="url(#water_pond_hazard-tileGrad)" />
+    
+    <path d="M 145,515 C 190,630 330,710 500,710 C 670,710 810,630 855,515" fill="none" stroke="#F1E3C2" stroke-width="4" opacity="0.6" />
+
+    
+    <ellipse cx="500" cy="500" rx="360" ry="180" fill="#1B2340" />
+    
+    
+    <g data-part="water">
+      <ellipse cx="500" cy="510" rx="340" ry="165" fill="url(#water_pond_hazard-poolGrad)" />
+      
+      
+      <path d="M 300,480 Q 400,450 500,490 T 700,470 Q 750,530 650,560 Q 550,590 450,540 Q 350,530 300,480 Z" fill="url(#water_pond_hazard-stormReflect)" />
+      <path d="M 380,520 Q 450,500 520,530 T 620,510" fill="none" stroke="#3A2A66" stroke-width="8" opacity="0.7" />
+      
+      
+      <polygon points="520,440 480,500 530,500 490,580 570,490 520,490 550,440" fill="#F08A3C" opacity="0.8" />
+      <polygon points="520,440 480,500 530,500 490,580 570,490 520,490 550,440" fill="#F1E3C2" opacity="0.4" transform="scale(0.9) translate(50, 30)" />
+
+      
+      <ellipse cx="500" cy="520" rx="280" ry="130" fill="none" stroke="#1F6F6B" stroke-width="5" opacity="0.5" />
+      <ellipse cx="500" cy="530" rx="200" ry="90" fill="none" stroke="#1F6F6B" stroke-width="4" opacity="0.4" />
+      <ellipse cx="500" cy="540" rx="110" ry="50" fill="none" stroke="#3A2A66" stroke-width="3" opacity="0.6" />
+
+      
+      <path d="M 170,510 C 250,580 400,600 530,580" fill="none" stroke="#F1E3C2" stroke-width="5" stroke-linecap="round" opacity="0.4" />
+      <path d="M 600,450 C 680,470 750,510 810,500" fill="none" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" opacity="0.3" />
+    </g>
+
+    
+    <path d="M 160,530 C 160,630 300,690 500,690 C 700,690 840,630 840,530" fill="none" stroke="#1B2340" stroke-width="12" />
+    <path d="M 160,530 C 160,630 300,690 500,690 C 700,690 840,630 840,530" fill="none" stroke="#3A2A66" stroke-width="6" />
+
+    
+    <line x1="120" y1="500" x2="120" y2="550" stroke="#3A2418" stroke-width="4" />
+    <line x1="220" y1="565" x2="200" y2="620" stroke="#3A2418" stroke-width="4" />
+    <line x1="370" y1="600" x2="370" y2="660" stroke="#3A2418" stroke-width="4" />
+    <line x1="500" y1="605" x2="500" y2="670" stroke="#3A2418" stroke-width="4" />
+    <line x1="630" y1="600" x2="630" y2="660" stroke="#3A2418" stroke-width="4" />
+    <line x1="780" y1="565" x2="800" y2="620" stroke="#3A2418" stroke-width="4" />
+    <line x1="880" y1="500" x2="880" y2="550" stroke="#3A2418" stroke-width="4" />
+  </g>
+
+  
+  <g filter="url(#shadow)">
+    
+    <g stroke="#3A2418" stroke-width="6" stroke-linejoin="round">
+      <polygon points="500,100 660,180 660,360 500,440 340,360 340,180" fill="url(#water_pond_hazard-redGlow)" />
+      
+      <polygon points="500,120 635,190 635,340 500,410 365,340 365,190" fill="none" stroke="#F1E3C2" stroke-width="4" opacity="0.6" />
+    </g>
+
+    
+    <g stroke="#3A2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+      
+      <path d="M 420,270 C 420,190 580,190 580,270 C 580,310 540,330 500,330 C 460,330 420,310 420,270 Z" fill="url(#water_pond_hazard-skullGrad)" />
+      
+      
+      <path d="M 445,310 L 555,310 L 540,370 C 540,380 520,390 500,390 C 480,390 460,380 460,370 Z" fill="url(#water_pond_hazard-skullGrad)" />
+      
+      
+      <line x1="500" y1="310" x2="500" y2="370" stroke="#3A2418" stroke-width="4" />
+      <line x1="475" y1="340" x2="525" y2="340" stroke="#3A2418" stroke-width="4" />
+
+      
+      <path d="M 450,240 C 450,225 485,225 485,240 C 485,265 450,265 450,240 Z" fill="#1B2340" />
+      <path d="M 515,240 C 515,225 550,225 550,240 C 550,265 515,265 515,240 Z" fill="#1B2340" />
+      
+      
+      <circle cx="467" cy="245" r="4" fill="#F08A3C" />
+      <circle cx="533" cy="245" r="4" fill="#F08A3C" />
+
+      
+      <path d="M 500,270 L 485,305 L 515,305 Z" fill="#1B2340" />
+
+      
+      <path d="M 500,195 L 490,215 L 505,225" fill="none" stroke="#3A2418" stroke-width="3" />
+      <path d="M 565,260 L 580,250" fill="none" stroke="#3A2418" stroke-width="3" />
+
+      
+      <path d="M 440,240 C 440,205 500,200 530,205" fill="none" stroke="#F1E3C2" stroke-width="4" opacity="0.7" />
+    </g>
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="4" stroke-linecap="round" fill="#1F6F6B">
+    <circle cx="280" cy="580" r="8" />
+    <path d="M 280,572 C 280,560 285,550 290,545" fill="none" />
+    
+    <circle cx="720" cy="570" r="12" fill="#C2603A" />
+    <path d="M 720,558 C 720,545 715,535 710,525" fill="none" />
+
+    <circle cx="650" cy="610" r="6" />
+  </g>
+
+  
+  <animateTransform attributeName="transform" type="translate" values="0,0; 0,-8; 0,0" dur="4s" repeatCount="indefinite" additive="sum" href="#water" />
+    
+  <animateTransform attributeName="transform" type="translate" values="0,0; 0,6; 0,0" dur="3s" repeatCount="indefinite" additive="sum" />
+</svg>

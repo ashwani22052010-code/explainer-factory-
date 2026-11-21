@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="barbed_wire_fence-metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C2C2C2" />
+      <stop offset="50%" stop-color="#8C8C8C" />
+      <stop offset="100%" stop-color="#555555" />
+    </linearGradient>
+  </defs>
+
+  
+  <g id="barbed_wire_fence-posts">
+    <path d="M50 550 L50 100 L70 100 L70 550 Z" fill="#3A2418" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <rect x="50" y="100" width="20" height="450" fill="#6B4F35" />
+    <rect x="50" y="100" width="10" height="450" fill="#8C6B4A" />
+    
+    <path d="M450 450 L450 150 L465 150 L465 450 Z" fill="#3A2418" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <rect x="450" y="150" width="15" height="300" fill="#6B4F35" />
+    <rect x="450" y="150" width="8" height="300" fill="#8C6B4A" />
+
+    <path d="M950 400 L950 200 L960 200 L960 400 Z" fill="#3A2418" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <rect x="950" y="200" width="10" height="200" fill="#6B4F35" />
+  </g>
+
+  
+  <g id="barbed_wire_fence-wires" stroke="#555555" stroke-width="4" stroke-linecap="round" fill="none">
+    
+    <path d="M50 150 C 300 120, 700 180, 950 220" stroke="#8C8C8C" stroke-width="5" />
+    <path d="M50 150 C 300 130, 700 190, 950 230" stroke="#A0A0A0" stroke-width="2" />
+    
+    
+    <path d="M50 300 C 300 280, 700 320, 950 300" stroke="#8C8C8C" stroke-width="5" />
+    <path d="M50 300 C 300 290, 700 330, 950 310" stroke="#A0A0A0" stroke-width="2" />
+  </g>
+
+  
+  <g id="barbed_wire_fence-barbs" stroke="#3A2418" stroke-width="4" fill="#C8323A">
+    
+    <g transform="translate(150, 140) rotate(15)">
+      <path d="M-10 -10 L10 10 M-10 10 L10 -10" stroke-width="3" />
+      <circle cx="0" cy="0" r="4" fill="#C8323A" />
+    </g>
+    <g transform="translate(300, 135) rotate(-10)">
+      <path d="M-10 -10 L10 10 M-10 10 L10 -10" stroke-width="3" />
+      <circle cx="0" cy="0" r="4" fill="#C8323A" />
+    </g>
+    <g transform="translate(450, 150) rotate(5)">
+      <path d="M-10 -10 L10 10 M-10 10 L10 -10" stroke-width="3" />
+      <circle cx="0" cy="0" r="4" fill="#C8323A" />
+    </g>
+    <g transform="translate(650, 180) rotate(-20)">
+      <path d="M-8 -8 L8 8 M-8 8 L8 -8" stroke-width="3" />
+      <circle cx="0" cy="0" r="3" fill="#C8323A" />
+    </g>
+    <g transform="translate(850, 210) rotate(10)">
+      <path d="M-8 -8 L8 8 M-8 8 L8 -8" stroke-width="3" />
+      <circle cx="0" cy="0" r="3" fill="#C8323A" />
+    </g>
+
+    
+    <g transform="translate(200, 290) rotate(-5)">
+      <path d="M-10 -10 L10 10 M-10 10 L10 -10" stroke-width="3" />
+      <circle cx="0" cy="0" r="4" fill="#C8323A" />
+    </g>
+    <g transform="translate(400, 305) rotate(15)">
+      <path d="M-10 -10 L10 10 M-10 10 L10 -10" stroke-width="3" />
+      <circle cx="0" cy="0" r="4" fill="#C8323A" />
+    </g>
+    <g transform="translate(600, 315) rotate(-10)">
+      <path d="M-8 -8 L8 8 M-8 8 L8 -8" stroke-width="3" />
+      <circle cx="0" cy="0" r="3" fill="#C8323A" />
+    </g>
+    <g transform="translate(800, 305) rotate(5)">
+      <path d="M-8 -8 L8 8 M-8 8 L8 -8" stroke-width="3" />
+      <circle cx="0" cy="0" r="3" fill="#C8323A" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="safe_house_shelter-wallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+    <linearGradient id="safe_house_shelter-wallShade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A2A66" stop-opacity="0" />
+      <stop offset="100%" stop-color="#3A2A66" stop-opacity="0.4" />
+    </linearGradient>
+    <linearGradient id="safe_house_shelter-roofGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8323A" />
+      <stop offset="100%" stop-color="#3A2A66" />
+    </linearGradient>
+    <linearGradient id="safe_house_shelter-windowGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="50%" stop-color="#F08A3C" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    <radialGradient id="safe_house_shelter-lightHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F08A3C" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#E2A93B" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#1B2340" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="safe_house_shelter-stormGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#3A2A66" />
+    </linearGradient>
+  </defs>
+
+  
+  <g data-part="smoke">
+    <path d="M 120 300 Q 180 280 240 320 Q 300 360 360 330" fill="none" stroke="#1B2340" stroke-width="6" stroke-linecap="round" opacity="0.4" />
+    <path d="M 700 200 Q 760 180 820 220" fill="none" stroke="#1B2340" stroke-width="5" stroke-linecap="round" opacity="0.4" />
+    
+    <path d="M 150 100 L 100 250" fill="none" stroke="#1F6F6B" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+    <path d="M 300 80 L 250 230" fill="none" stroke="#1F6F6B" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+    <path d="M 850 120 L 800 270" fill="none" stroke="#1F6F6B" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+    <path d="M 700 90 L 650 240" fill="none" stroke="#1F6F6B" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+    
+    <path d="M 80 450 Q 200 430 320 460" fill="none" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" stroke-dasharray="15 10" opacity="0.5" />
+    <path d="M 680 480 Q 780 460 900 490" fill="none" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" stroke-dasharray="20 15" opacity="0.5" />
+  </g>
+
+  
+  <g data-part="light">
+    <circle cx="500" cy="580" r="320" fill="url(#safe_house_shelter-lightHalo)" />
+    <animateTransform attributeName="transform" type="scale" values="1; 1.03; 0.98; 1" dur="4s" repeatCount="indefinite" additive="sum" transform="translate(500 580) translate(-500 -580)" />
+  </g>
+
+  
+  <g id="safe_house_shelter-house">
+    
+    <path d="M 320 350 L 320 260 L 370 260 L 370 370 Z" fill="#C2603A" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <path d="M 310 260 L 380 260 L 380 245 L 310 245 Z" fill="#3A2A66" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <g data-part="smoke">
+      <path d="M 345 240 C 345 210 320 190 330 160 C 340 130 370 140 375 110" fill="none" stroke="#F1E3C2" stroke-width="8" stroke-linecap="round" opacity="0.7">
+        <animate attributeName="d" values="M 345 240 C 345 210 320 190 330 160 C 340 130 370 140 375 110; M 345 240 C 360 200 335 180 340 150 C 350 120 380 130 390 100; M 345 240 C 345 210 320 190 330 160 C 340 130 370 140 375 110" dur="5s" repeatCount="indefinite" />
+      </path>
+    </g>
+
+    
+    <path d="M 160 380 L 500 180 L 840 380 Z" fill="url(#safe_house_shelter-roofGrad)" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+    
+    <path d="M 500 180 L 840 380 L 810 395 L 500 210 Z" fill="#3A2A66" opacity="0.3" />
+    
+    <path d="M 480 230 L 540 215" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+    <path d="M 430 260 L 490 245" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+    <path d="M 540 255 L 600 240" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+    <path d="M 380 290 L 440 275" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+    <path d="M 600 280 L 660 265" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+
+    
+    <rect x="220" y="370" width="560" height="420" rx="15" fill="url(#safe_house_shelter-wallGrad)" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+    <rect x="220" y="370" width="560" height="420" rx="15" fill="url(#safe_house_shelter-wallShade)" />
+
+    
+    <line x1="220" y1="440" x2="780" y2="440" stroke="#3A2418" stroke-width="3" opacity="0.3" />
+    <line x1="220" y1="510" x2="780" y2="510" stroke="#3A2418" stroke-width="3" opacity="0.3" />
+    <line x1="220" y1="580" x2="780" y2="580" stroke="#3A2418" stroke-width="3" opacity="0.3" />
+    <line x1="220" y1="650" x2="780" y2="650" stroke="#3A2418" stroke-width="3" opacity="0.3" />
+    <line x1="220" y1="720" x2="780" y2="720" stroke="#3A2418" stroke-width="3" opacity="0.3" />
+
+    
+    <path d="M 220 790 L 220 830 Q 220 840 230 840 L 770 840 Q 780 840 780 830 L 780 790 Z" fill="#1B2340" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+    
+    <path d="M 270 790 L 270 840" stroke="#3A2418" stroke-width="4" />
+    <path d="M 330 790 L 330 840" stroke="#3A2418" stroke-width="4" />
+    <path d="M 400 790 L 400 840" stroke="#3A2418" stroke-width="4" />
+    <path d="M 460 790 L 460 840" stroke="#3A2418" stroke-width="4" />
+    <path d="M 530 790 L 530 840" stroke="#3A2418" stroke-width="4" />
+    <path d="M 600 790 L 600 840" stroke="#3A2418" stroke-width="4" />
+    <path d="M 670 790 L 670 840" stroke="#3A2418" stroke-width="4" />
+    <path d="M 720 790 L 720 840" stroke="#3A2418" stroke-width="4" />
+
+    
+    <circle cx="500" cy="290" r="45" fill="url(#safe_house_shelter-windowGlow)" stroke="#3A2418" stroke-width="6" />
+    <line x1="500" y1="245" x2="500" y2="335" stroke="#3A2418" stroke-width="5" />
+    <line x1="455" y1="290" x2="545" y2="290" stroke="#3A2418" stroke-width="5" />
+    
+    <path d="M 470 260 A 35 35 0 0 1 530 260" fill="none" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" opacity="0.8" />
+
+    
+    <g>
+      <rect x="290" y="440" width="110" height="140" rx="10" fill="url(#safe_house_shelter-windowGlow)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      <line x1="345" y1="440" x2="345" y2="580" stroke="#3A2418" stroke-width="5" />
+      <line x1="290" y1="510" x2="400" y2="510" stroke="#3A2418" stroke-width="5" />
+      
+      <path d="M 275 435 L 415 435 L 400 420 L 290 420 Z" fill="#C8323A" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <rect x="280" y="580" width="130" height="16" rx="6" fill="#1B2340" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      <path d="M 295 445 Q 310 500 300 530" fill="none" stroke="#C8323A" stroke-width="6" stroke-linecap="round" />
+      <path d="M 395 445 Q 380 500 390 530" fill="none" stroke="#C8323A" stroke-width="6" stroke-linecap="round" />
+    </g>
+
+    
+    <g>
+      <rect x="600" y="440" width="110" height="140" rx="10" fill="url(#safe_house_shelter-windowGlow)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      <line x1="655" y1="440" x2="655" y2="580" stroke="#3A2418" stroke-width="5" />
+      <line x1="600" y1="510" x2="710" y2="510" stroke="#3A2418" stroke-width="5" />
+      
+      <path d="M 585 435 L 725 435 L 710 420 L 600 420 Z" fill="#C8323A" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <rect x="590" y="580" width="130" height="16" rx="6" fill="#1B2340" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      <path d="M 605 445 Q 620 500 610 530" fill="none" stroke="#C8323A" stroke-width="6" stroke-linecap="round" />
+      <path d="M 705 445 Q 690 500 700 530" fill="none" stroke="#C8323A" stroke-width="6" stroke-linecap="round" />
+    </g>
+
+    
+    <g>
+      
+      <path d="M 435 600 L 435 810 L 565 810 L 565 600 Z" fill="#1B2340" />
+      
+      <path d="M 440 810 L 440 630 C 440 595 560 595 560 630 L 560 810 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+      
+      <line x1="500" y1="610" x2="500" y2="810" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+      <line x1="445" y1="710" x2="555" y2="710" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+      
+      <circle cx="500" cy="670" r="22" fill="url(#safe_house_shelter-windowGlow)" stroke="#3A2418" stroke-width="5" />
+      <line x1="500" y1="648" x2="500" y2="692" stroke="#3A2418" stroke-width="4" />
+      <line x1="478" y1="670" x2="522" y2="670" stroke="#3A2418" stroke-width="4" />
+      
+      <circle cx="535" cy="740" r="8" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+      
+      <rect x="440" y="660" width="15" height="8" rx="3" fill="#3A2418" />
+      <rect x="440" y="760" width="15" height="8" rx="3" fill="#3A2418" />
+      
+      <path d="M 410 825 L 590 825 C 600 825 605 835 595 845 L 405 845 C 395 835 400 825 410 825 Z" fill="#C2603A" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <path d="M 430 835 L 570 835" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 6" />
+    </g>
+
+    
+    <path d="M 235 385 L 260 385 L 235 410 Z" fill="#3A2418" />
+    <path d="M 765 385 L 740 385 L 765 410 Z" fill="#3A2418" />
+
+    
+    <g>
+      <rect x="275" y="580" width="130" height="35" rx="6" fill="#C2603A" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      <path d="M 300 580 Q 295 550 280 540" fill="none" stroke="#1F6F6B" stroke-width="5" stroke-linecap="round" />
+      <path d="M 330 580 Q 335 540 325 530" fill="none" stroke="#1F6F6B" stroke-width="5" stroke-linecap="round" />
+      <path d="M 370 580 Q 380 540 395 535" fill="none" stroke="#1F6F6B" stroke-width="5" stroke-linecap="round" />
+      
+      <circle cx="280" cy="535" r="10" fill="#C8323A" stroke="#3A2418" stroke-width="4" />
+      <circle cx="325" cy="525" r="12" fill="#F08A3C" stroke="#3A2418" stroke-width="4" />
+      <circle cx="395" cy="530" r="10" fill="#C8323A" stroke="#3A2418" stroke-width="4" />
+      <circle cx="280" cy="535" r="3" fill="#F1E3C2" />
+      <circle cx="325" cy="525" r="3" fill="#F1E3C2" />
+      <circle cx="395" cy="530" r="3" fill="#F1E3C2" />
+    </g>
+
+    
+    <g>
+      <rect x="595" y="580" width="130" height="35" rx="6" fill="#C2603A" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      <path d="M 620 580 Q 615 550 600 540" fill="none" stroke="#1F6F6B" stroke-width="5" stroke-linecap="round" />
+      <path d="M 650 580 Q 655 540 645 530" fill="none" stroke="#1F6F6B" stroke-width="5" stroke-linecap="round" />
+      <path d="M 690 580 Q 700 540 715 535" fill="none" stroke="#1F6F6B" stroke-width="5" stroke-linecap="round" />
+      
+      <circle cx="600" cy="535" r="10" fill="#C8323A" stroke="#3A2418" stroke-width="4" />
+      <circle cx="645" cy="525" r="12" fill="#F08A3C" stroke="#3A2418" stroke-width="4" />
+      <circle cx="715" cy="530" r="10" fill="#C8323A" stroke="#3A2418" stroke-width="4" />
+      <circle cx="600" cy="535" r="3" fill="#F1E3C2" />
+      <circle cx="645" cy="525" r="3" fill="#F1E3C2" />
+      <circle cx="715" cy="530" r="3" fill="#F1E3C2" />
+    </g>
+
+    
+    <g data-part="light">
+      <path d="M 575 660 L 610 660" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+      <path d="M 610 655 L 610 670" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+      <path d="M 595 670 L 625 670 L 635 720 L 585 720 Z" fill="#1B2340" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <path d="M 590 690 L 620 690 L 625 715 L 585 715 Z" fill="url(#safe_house_shelter-windowGlow)" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+      
+      <path d="M 610 670 L 600 655 L 620 655 Z" fill="#3A2418" />
+      
+      <animate attributeName="opacity" values="1; 0.85; 1; 0.9; 1" dur="2s" repeatCount="indefinite" />
+    </g>
+
+  </g>
+</svg>

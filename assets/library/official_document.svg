@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="official_document-g1" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#D9C9A5" />
+    </linearGradient>
+    <linearGradient id="official_document-g2" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#C8323A" />
+      <stop offset="100%" stop-color="#9A272D" />
+    </linearGradient>
+  </defs>
+
+  
+  <path fill="#D9C9A5" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" d="M250 150h500v700l-20 20H270l-20-20z" />
+  <path fill="#F1E3C2" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" d="M280 180h440v640H280z" />
+  
+  
+  <path fill="#3A2418" d="M320 220h360v15H320z" />
+  <path fill="#3A2418" d="M320 260h360v15H320z" />
+  <path fill="#3A2418" d="M320 300h360v15H320z" />
+  <path fill="#3A2418" d="M320 340h360v15H320z" />
+  <path fill="#3A2418" d="M320 380h360v15H320z" />
+  <path fill="#3A2418" d="M320 420h360v15H320z" />
+  <path fill="#3A2418" d="M320 460h200v15H320z" />
+
+  
+  <path fill="#E2A93B" stroke="#3A2418" stroke-width="6" d="M250 850l20 20h460l20-20H250z" />
+  <path fill="#C2603A" stroke="#3A2418" stroke-width="6" d="M250 870l20 30h460l20-30H250z" />
+
+  
+  <g data-part="ribbon">
+    <path fill="#1F6F6B" stroke="#3A2418" stroke-width="6" d="M450 650h100v150H450z" />
+    <path fill="#1B2340" stroke="#3A2418" stroke-width="6" d="M450 800l-30 40 30 10 30-10-30-40z" />
+    <path fill="#1B2340" stroke="#3A2418" stroke-width="6" d="M550 800l30 40-30 10-30-10 30-40z" />
+  </g>
+
+  
+  <g data-part="seal">
+    <circle cx="500" cy="730" r="60" fill="url(#official_document-g2)" stroke="#3A2418" stroke-width="6" />
+    <circle cx="500" cy="730" r="45" fill="none" stroke="#F1E3C2" stroke-width="4" stroke-dasharray="8 8" />
+    <path fill="#F1E3C2" d="M485 715l15 30 15-30-15 10z" />
+    
+    <path fill="#FFFFFF" opacity="0.2" d="M450 730c0-27 12-50 35-55-10 5-18 20-18 40s10 35 25 40c-25-5-42-20-42-25z" />
+  </g>
+
+  
+  <path fill="none" stroke="#3A2418" stroke-width="2" opacity="0.3" d="M280 200h440M280 250h440M280 300h440M280 350h440" />
+  
+  
+  <path fill="#3A2418" opacity="0.1" d="M720 180h-440v640h440z" />
+  
+  
+  <path fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.2" d="M285 185h430v630H285z" />
+
+  
+  <animateTransform attributeName="transform" type="rotate" values="-1 500 500; 1 500 500; -1 500 500" dur="4s" repeatCount="indefinite" />
+</svg>
