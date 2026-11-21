@@ -1,0 +1,6 @@
+out/
+.picked.txt
+__pycache__/
+*.pyc
+renderer/fonts/*.ttf
+renderer/data.js

@@ -1,0 +1,86 @@
+name: 🎬 Make Video
+
+on:
+  push:
+    paths: ['scripts/**.txt']
+  workflow_dispatch:
+    inputs:
+      script:
+        description: 'scripts/ folder ki file ka naam (khali chhodo = sabse nayi script)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: make-video
+  cancel-in-progress: false
+
+jobs:
+  video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-core > /dev/null
+          pip install -q -r requirements.txt
+          if ls voice/*.{mp3,wav,m4a,aac,ogg,opus,flac} >/dev/null 2>&1; then pip install -q faster-whisper; fi
+          python -m playwright install --with-deps chromium > /dev/null
+          bash renderer/fonts/get-fonts.sh
+
+      - name: Pick script
+        run: python -m pipeline.pick "${{ github.event_name }}" "${{ github.event.before }}" "${{ github.sha }}" "${{ inputs.script }}"
+
+      - name: Make video
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -m pipeline.main --list .picked.txt
+
+      - name: Save new drawings to library
+        if: always()
+        run: |
+          git config user.name "explainer-factory-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/library
+          if ! git diff --cached --quiet; then
+            git commit -m "🎨 library: new drawings [skip ci]"
+            for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
+          fi
+
+      - name: Publish video (Releases)
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for mp4 in out/*/*.mp4; do
+            [ -f "$mp4" ] || continue
+            case "$mp4" in *video_silent*) continue;; esac
+            dir=$(dirname "$mp4"); stem=$(basename "$dir")
+            tag="video-${stem}-${{ github.run_number }}"
+            gh release create "$tag" "$mp4" "$dir/metadata.txt" --title "🎬 ${stem}" --notes-file "$dir/metadata.txt"
+            echo "### ✅ ${stem} ready → Releases → ${tag}" >> "$GITHUB_STEP_SUMMARY"
+          done
+
+      - name: Upload (backup copy)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos-${{ github.run_number }}
+          path: |
+            out/*/*.mp4
+            out/*/metadata.txt
+            out/*/plan.json
+          if-no-files-found: ignore
+          retention-days: 7

@@ -1,0 +1,61 @@
+# ============================================================
+#  EXPLAINER FACTORY — settings
+#  Sirf yahi file badalni hai. Baaki sab automatic hai.
+# ============================================================
+
+# Voiceover ki language: hindi | english | portuguese
+language: hindi
+
+# Screen pe captions kis language mein: english | hindi | portuguese
+caption_language: english
+
+voice:
+  # edge  = free AI voice (Microsoft neural voices)
+  # own   = teri apni recording (voice/ folder mein script ke naam se daal: voice/angithi.mp3)
+  #         Agar recording mili to wo automatically use hogi, chahe yahan edge likha ho.
+  engine: edge
+  # auto = language ke hisaab se. Ya koi bhi naam: hi-IN-MadhurNeural, hi-IN-SwaraNeural,
+  # en-US-AndrewNeural, en-US-GuyNeural, pt-BR-AntonioNeural, pt-BR-FranciscaNeural
+  edge_voice: auto
+  rate: "+6%"          # bolne ki speed
+  gap_seconds: 0.18    # scenes ke beech ka chhota pause
+
+video:
+  width: 1080
+  height: 1920
+  fps: 30
+  workers: 3           # parallel rendering (GitHub runner pe 3-4 sahi hai)
+
+audio:
+  music: auto          # auto = code se bani background music | off | music/ folder ki file ka naam
+  music_volume: 0.10
+  sfx_volume: 0.55
+  voice_volume: 1.0
+
+gemini:
+  # Pehla model fail/limit ho to agla try hoga.
+  text_models: [gemini-2.5-flash, gemini-flash-latest, gemini-2.0-flash, gemini-2.5-flash-lite]
+  vision_models: [gemini-2.5-flash-lite, gemini-flash-lite-latest, gemini-2.5-flash, gemini-2.0-flash]
+  min_seconds_between_calls: 4.5   # free tier ki per-minute limit ke liye
+  self_check: true                 # drawing ko khud dekh ke check kare
+  max_draw_attempts: 3
+  min_score: 6                     # 10 mein se kitne pe drawing pass ho
+  max_new_drawings_per_video: 45   # free limit bachane ke liye
+
+# Channel ka look. Palette badlo to poore channel ka rang badal jayega.
+style:
+  palette:
+    mustard:    "#E2A93B"
+    teal:       "#1F6F6B"
+    terracotta: "#C2603A"
+    purple:     "#3A2A66"
+    navy:       "#1B2340"
+    cream:      "#F1E3C2"
+    red:        "#C8323A"
+    orange:     "#F08A3C"
+    outline:    "#3A2418"
+  caption_colors:
+    orange: "#FF9A4D"
+    red:    "#FF4D57"
+    teal:   "#6FF0E0"
+    yellow: "#FFC845"

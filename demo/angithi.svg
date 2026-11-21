@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 820">
+<defs>
+<linearGradient id="pot" x1="0" x2="1"><stop offset="0" stop-color="#9c4526"/><stop offset=".45" stop-color="#d8774a"/><stop offset="1" stop-color="#8a3a1e"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd27a"/><stop offset=".5" stop-color="#ff7a2e"/><stop offset="1" stop-color="#b8321e"/></radialGradient>
+<linearGradient id="rim" x1="0" x2="1"><stop offset="0" stop-color="#a84c2a"/><stop offset=".5" stop-color="#e48b5a"/><stop offset="1" stop-color="#93401f"/></linearGradient>
+</defs>
+<path d="M120 300 Q140 690 300 760 L700 760 Q860 690 880 300 Z" fill="url(#pot)" stroke="#3A2418" stroke-width="10" stroke-linejoin="round"/>
+<path d="M190 380 Q210 640 330 700" fill="none" stroke="#f0a070" stroke-width="14" stroke-linecap="round" opacity=".5"/>
+<path d="M410 600 Q500 520 590 600 L590 700 L410 700 Z" fill="#2b1308" stroke="#3A2418" stroke-width="8"/>
+<path d="M430 690 Q500 640 570 690 Z" fill="#ff7a2e"><animate attributeName="opacity" values="1;.55;.9;1" dur="0.9s" repeatCount="indefinite"/></path>
+<ellipse cx="500" cy="300" rx="390" ry="95" fill="url(#rim)" stroke="#3A2418" stroke-width="10"/>
+<ellipse cx="500" cy="300" rx="330" ry="70" fill="#3a1a0c"/>
+<ellipse cx="500" cy="296" rx="300" ry="58" fill="url(#glow)"><animate attributeName="opacity" values=".85;1;.7;.95;.85" dur="1.4s" repeatCount="indefinite"/></ellipse>
+<g stroke="#2a1a12" stroke-width="6" stroke-linejoin="round">
+<path d="M300 280 l50 -40 l60 20 l-10 45 l-70 10 z" fill="#4a4040"/>
+<path d="M420 250 l60 -30 l55 35 l-25 45 l-75 -5 z" fill="#5a4e4a"/>
+<path d="M545 262 l70 -25 l45 40 l-40 40 l-65 -15 z" fill="#4c4242"/>
+<path d="M660 280 l45 -20 l30 35 l-35 25 l-45 -10 z" fill="#3e3636"/>
+<path d="M360 320 l55 -20 l40 30 l-30 30 l-60 -10 z" fill="#3a3232"/>
+<path d="M480 310 l60 -10 l35 30 l-40 25 l-50 -10 z" fill="#463c3c"/>
+<path d="M590 318 l55 -8 l30 25 l-45 20 l-40 -10 z" fill="#3a3030"/>
+</g>
+<g fill="#ff8a3a"><circle cx="455" cy="290" r="10"><animate attributeName="opacity" values="1;.3;1" dur="1.1s" repeatCount="indefinite"/></circle><circle cx="560" cy="300" r="8"><animate attributeName="opacity" values=".4;1;.4" dur="1.3s" repeatCount="indefinite"/></circle><circle cx="390" cy="305" r="7"/></g>
+<path d="M480 200 q-30 -60 10 -110 q40 -50 0 -90" fill="none" stroke="#cfc6bd" stroke-width="16" stroke-linecap="round" opacity=".55"><animateTransform attributeName="transform" type="translate" values="0 0;12 -10;0 0" dur="3s" repeatCount="indefinite"/></path>
+<path d="M560 210 q30 -50 -5 -100" fill="none" stroke="#cfc6bd" stroke-width="12" stroke-linecap="round" opacity=".4"/>
+</svg>

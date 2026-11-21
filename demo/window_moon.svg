@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#141a44"/><stop offset="1" stop-color="#3b2e74"/></linearGradient>
+<radialGradient id="mg"><stop offset="0" stop-color="#fff8dc"/><stop offset=".7" stop-color="#f3e2a8"/><stop offset="1" stop-color="#f3e2a8" stop-opacity="0"/></radialGradient></defs>
+<rect x="30" y="30" width="740" height="840" rx="20" fill="#6b4226" stroke="#3A2418" stroke-width="12"/>
+<rect x="90" y="90" width="620" height="720" fill="url(#sky)" stroke="#3A2418" stroke-width="8"/>
+<circle cx="520" cy="270" r="150" fill="url(#mg)" opacity=".6"><animate attributeName="opacity" values=".45;.7;.45" dur="4s" repeatCount="indefinite"/></circle>
+<circle cx="520" cy="270" r="80" fill="#fbf0c8" stroke="#3A2418" stroke-width="6"/>
+<circle cx="495" cy="250" r="14" fill="#e6d49c"/><circle cx="545" cy="300" r="10" fill="#e6d49c"/>
+<g fill="#fff"><circle cx="200" cy="200" r="5"/><circle cx="300" cy="360" r="4"/><circle cx="640" cy="520" r="5"/><circle cx="180" cy="600" r="3"/></g>
+<rect x="388" y="90" width="24" height="720" fill="#7a4a2a" stroke="#3A2418" stroke-width="6"/>
+<rect x="90" y="438" width="620" height="24" fill="#7a4a2a" stroke="#3A2418" stroke-width="6"/>
+<rect x="10" y="830" width="780" height="50" rx="10" fill="#8a5632" stroke="#3A2418" stroke-width="10"/>
+</svg>
