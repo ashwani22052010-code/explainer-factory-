@@ -92,6 +92,13 @@ def make_voice(scenes, cfg, work, stem, demo=False):
 
     lang = cfg.get("language", "hindi")
     vc = cfg.get("voice", {})
+    if vc.get("engine", "edge") == "gemini" and not demo:
+        try:
+            src = gemini_tts(" ".join(s["narration"] for s in scenes), cfg, vdir / "gemini_voice.wav")
+            log("   ✓ Gemini natural voice ready, ab timing set ho rahi hai…")
+            return own_voice(scenes, src, work)
+        except Exception as e:
+            log(f"   Gemini voice nahi mili ({str(e)[:120]}) → free edge voice")
     voice = vc.get("edge_voice", "auto")
     if voice == "auto":
         voice = DEFAULT_VOICES.get(lang, "en-US-AndrewNeural")
@@ -187,3 +194,60 @@ def own_voice(scenes, src, work):
 
 def norm_word(w):
     return re.sub(r"[^\w]", "", w.lower())
+
+
+# ---------------- Gemini TTS (natural, human-like narrator) ----------------
+TTS_STYLE = ("You are a top YouTube documentary narrator. Read the script below in natural, spoken {lang}, "
+             "like a real person telling a gripping true story to a friend: warm, confident, slightly dramatic, "
+             "with short natural pauses after shocking lines and questions, varied pace and emphasis. "
+             "Never sound robotic or like an announcer. Read EXACTLY these words, nothing else:\n\n{text}")
+
+
+def gemini_tts(text, cfg, out_wav):
+    import base64
+    import os
+    import requests
+    key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not key:
+        raise RuntimeError("no key")
+    base = "https://generativelanguage.googleapis.com/v1beta/models"
+    r = requests.get(base, params={"key": key, "pageSize": 1000}, timeout=30)
+    names = [m["name"].split("/", 1)[-1] for m in r.json().get("models", [])] if r.ok else []
+    tts = [n for n in names if "tts" in n]
+    tts.sort(key=lambda n: (-float((re.search(r"gemini-(\d+(?:\.\d+)?)", n) or [0, 0])[1]), "pro" in n))
+    if not tts:
+        raise RuntimeError("koi TTS model available nahi")
+    vc = cfg.get("voice", {})
+    lang = cfg.get("language", "hindi")
+    body = {"contents": [{"parts": [{"text": TTS_STYLE.format(lang=lang, text=text)}]}],
+            "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {"voiceConfig": {
+                "prebuiltVoiceConfig": {"voiceName": vc.get("gemini_voice", "Charon")}}}}}
+    last = ""
+    for model in tts[:4]:
+        log(f"   🎙️ Gemini voice: {model}")
+        try:
+            rr = requests.post(f"{base}/{model}:generateContent", params={"key": key}, json=body, timeout=(20, 300))
+        except requests.RequestException as e:
+            last = str(e)
+            continue
+        if rr.status_code != 200:
+            last = f"{rr.status_code} {rr.text[:150]}"
+            log(f"      {model}: {last[:120]}")
+            continue
+        try:
+            part = rr.json()["candidates"][0]["content"]["parts"][0]["inlineData"]
+        except (KeyError, IndexError):
+            last = "no audio in response"
+            continue
+        pcm = base64.b64decode(part["data"])
+        rate = 24000
+        m = re.search(r"rate=(\d+)", part.get("mimeType", ""))
+        if m:
+            rate = int(m.group(1))
+        raw = Path(out_wav).with_suffix(".pcm")
+        raw.write_bytes(pcm)
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "s16le", "-ar", str(rate), "-ac", "1", "-i", str(raw),
+                        "-af", "silenceremove=start_periods=1:start_threshold=-45dB", "-ar", str(SR), str(out_wav)],
+                       check=True)
+        return out_wav
+    raise RuntimeError("Gemini voice fail: " + last)

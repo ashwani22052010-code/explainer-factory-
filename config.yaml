@@ -10,10 +10,12 @@ language: hindi
 caption_language: english
 
 voice:
+  # gemini = sabse real, insaan jaisi awaaz (Gemini TTS). Free limit na ho to khud edge pe chala jayega.
   # edge  = free AI voice (Microsoft neural voices)
   # own   = teri apni recording (voice/ folder mein script ke naam se daal: voice/angithi.mp3)
   #         Agar recording mili to wo automatically use hogi, chahe yahan edge likha ho.
-  engine: edge
+  engine: gemini
+  gemini_voice: Charon   # Charon (calm narrator), Orus (firm), Fenrir (excited), Kore (female), Aoede (female, warm)
   # auto = language ke hisaab se. Ya koi bhi naam: hi-IN-MadhurNeural, hi-IN-SwaraNeural,
   # en-US-AndrewNeural, en-US-GuyNeural, pt-BR-AntonioNeural, pt-BR-FranciscaNeural
   edge_voice: auto
@@ -41,7 +43,7 @@ gemini:
   parallel_drawings: 4             # ek saath kitni drawings bane
   self_check: true                 # drawing ko khud dekh ke check kare
   max_draw_attempts: 3
-  min_score: 6                     # 10 mein se kitne pe drawing pass ho
+  min_score: 5                     # 10 mein se kitne pe drawing pass ho
   max_new_drawings_per_video: 45   # free limit bachane ke liye
 
 # Channel ka look. Palette badlo to poore channel ka rang badal jayega.
