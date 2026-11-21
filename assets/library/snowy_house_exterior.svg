@@ -1,0 +1,308 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="snowy_house_exterior-nightBrick" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="60%" stop-color="#933C24" />
+      <stop offset="100%" stop-color="#3A2A66" />
+    </linearGradient>
+
+    
+    <radialGradient id="snowy_house_exterior-winGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF8E7" />
+      <stop offset="45%" stop-color="#F1E3C2" />
+      <stop offset="75%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#F08A3C" />
+    </radialGradient>
+
+    
+    <radialGradient id="snowy_house_exterior-spillLight" cx="30%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#E2A93B" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#C2603A" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#3A2A66" stop-opacity="0" />
+    </radialGradient>
+
+    
+    <linearGradient id="snowy_house_exterior-frostFog1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9BD3ED" stop-opacity="0" />
+      <stop offset="30%" stop-color="#AEE2F7" stop-opacity="0.65" />
+      <stop offset="70%" stop-color="#6DA8C7" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#4B799E" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="snowy_house_exterior-frostFog2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#699BB8" stop-opacity="0" />
+      <stop offset="40%" stop-color="#C0ECFD" stop-opacity="0.75" />
+      <stop offset="80%" stop-color="#7EAEC9" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#3A2A66" stop-opacity="0" />
+    </linearGradient>
+
+    
+    <linearGradient id="snowy_house_exterior-roofTile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D97243" />
+      <stop offset="50%" stop-color="#C2603A" />
+      <stop offset="100%" stop-color="#5A272C" />
+    </linearGradient>
+  </defs>
+
+  
+  <g opacity="0.7">
+    <path d="M 120 480 C 180 430 310 440 400 470 C 500 500 680 450 780 420 C 860 395 910 440 960 480 C 910 520 800 480 720 490 C 600 510 480 540 380 520 C 260 495 180 530 120 480 Z" fill="url(#snowy_house_exterior-frostFog1)">
+      <animateTransform attributeName="transform" type="translate" values="-30,0; 30,-8; -30,0" dur="8s" repeatCount="indefinite" />
+    </path>
+    <path d="M 60 320 C 160 280 290 310 420 330 C 560 350 700 290 820 270 C 890 260 930 290 950 320 C 880 340 760 330 670 350 C 520 380 390 380 280 360 C 170 340 100 360 60 320 Z" fill="url(#snowy_house_exterior-frostFog2)">
+      <animateTransform attributeName="transform" type="translate" values="40,0; -25,6; 40,0" dur="11s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  
+  <g>
+    
+    <polygon points="170,680 830,680 850,730 150,730" fill="#24192E" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+    
+    <polygon points="170,680 830,680 835,692 165,692" fill="#3A2A66" />
+    
+    <polygon points="430,680 570,680 580,710 420,710" fill="#753526" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <polygon points="410,710 590,710 605,745 395,745" fill="#52241D" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <line x1="432" y1="684" x2="568" y2="684" stroke="#C2603A" stroke-width="4" stroke-linecap="round" />
+    <line x1="412" y1="714" x2="588" y2="714" stroke="#C2603A" stroke-width="4" stroke-linecap="round" />
+
+    
+    <rect x="200" y="380" width="600" height="300" fill="url(#snowy_house_exterior-nightBrick)" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+
+    
+    <g fill="#A64B2A" stroke="#3A2418" stroke-width="3.5" stroke-linejoin="round">
+      
+      <rect x="220" y="410" width="55" height="22" rx="3" />
+      <rect x="285" y="410" width="60" height="22" rx="3" />
+      <rect x="245" y="442" width="65" height="22" rx="3" />
+      <rect x="215" y="474" width="50" height="22" rx="3" />
+      <rect x="275" y="474" width="60" height="22" rx="3" />
+      <rect x="230" y="535" width="55" height="22" rx="3" />
+      <rect x="295" y="535" width="45" height="22" rx="3" />
+      <rect x="250" y="567" width="60" height="22" rx="3" />
+      <rect x="215" y="630" width="50" height="22" rx="3" />
+      <rect x="275" y="630" width="65" height="22" rx="3" />
+
+      
+      <rect x="670" y="405" width="60" height="22" rx="3" />
+      <rect x="740" y="405" width="45" height="22" rx="3" />
+      <rect x="695" y="437" width="65" height="22" rx="3" />
+      <rect x="735" y="469" width="50" height="22" rx="3" />
+      <rect x="670" y="535" width="55" height="22" rx="3" />
+      <rect x="735" y="535" width="50" height="22" rx="3" />
+      <rect x="700" y="567" width="60" height="22" rx="3" />
+      <rect x="675" y="630" width="65" height="22" rx="3" />
+
+      
+      <rect x="220" y="600" width="55" height="20" rx="3" fill="#3A2A66" opacity="0.6" />
+      <rect x="720" y="600" width="60" height="20" rx="3" fill="#3A2A66" opacity="0.6" />
+    </g>
+
+    
+    <polygon points="260,545 130,730 450,730 380,545" fill="url(#snowy_house_exterior-spillLight)" />
+
+    
+    <g id="snowy_house_exterior-glowing-window">
+      
+      <path d="M 235 410 Q 310 395 385 410 L 395 425 L 225 425 Z" fill="#C2603A" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+      <path d="M 230 425 L 390 425 L 385 433 L 235 433 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" stroke-linejoin="round" />
+
+      
+      <rect x="245" y="433" width="130" height="145" rx="6" fill="#1B2340" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+      <rect x="255" y="443" width="110" height="125" rx="4" fill="#3A2418" />
+
+      
+      <rect x="260" y="448" width="100" height="115" rx="3" fill="url(#snowy_house_exterior-winGlow)">
+        <animate attributeName="opacity" values="0.94;1;0.91;0.98;0.94" dur="3.5s" repeatCount="indefinite" />
+      </rect>
+
+      
+      
+      <path d="M 260 448 Q 285 480 265 525 L 260 525 Z" fill="#C8323A" opacity="0.85" />
+      <path d="M 360 448 Q 335 480 355 525 L 360 525 Z" fill="#C8323A" opacity="0.85" />
+      
+      <path d="M 300 550 C 295 538 290 534 285 536 C 283 543 293 549 298 554 Z" fill="#1F6F6B" />
+      <path d="M 302 550 C 305 535 315 532 318 537 C 316 544 308 548 304 554 Z" fill="#1F6F6B" />
+      <path d="M 293 553 L 310 553 L 307 563 L 296 563 Z" fill="#C2603A" stroke="#3A2418" stroke-width="2.5" />
+
+      
+      <line x1="310" y1="448" x2="310" y2="563" stroke="#3A2418" stroke-width="6" />
+      <line x1="260" y1="505" x2="360" y2="505" stroke="#3A2418" stroke-width="5" />
+      <line x1="285" y1="448" x2="285" y2="563" stroke="#3A2418" stroke-width="3" opacity="0.8" />
+      <line x1="335" y1="448" x2="335" y2="563" stroke="#3A2418" stroke-width="3" opacity="0.8" />
+
+      
+      <rect x="238" y="563" width="144" height="14" rx="3" fill="#E2A93B" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+      
+      <line x1="245" y1="567" x2="375" y2="567" stroke="#FFF8E7" stroke-width="3" stroke-linecap="round" />
+    </g>
+
+    
+    <g id="snowy_house_exterior-front-door">
+      
+      <rect x="440" y="450" width="120" height="230" rx="6" fill="#1B2340" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+      <rect x="452" y="462" width="96" height="218" fill="#1F6F6B" stroke="#3A2418" stroke-width="5" />
+
+      
+      <rect x="462" y="475" width="34" height="45" rx="3" fill="#16524F" stroke="#3A2418" stroke-width="3" />
+      <rect x="504" y="475" width="34" height="45" rx="3" fill="#16524F" stroke="#3A2418" stroke-width="3" />
+      <rect x="462" y="535" width="34" height="55" rx="3" fill="#16524F" stroke="#3A2418" stroke-width="3" />
+      <rect x="504" y="535" width="34" height="55" rx="3" fill="#16524F" stroke="#3A2418" stroke-width="3" />
+      <rect x="462" y="605" width="34" height="60" rx="3" fill="#16524F" stroke="#3A2418" stroke-width="3" />
+      <rect x="504" y="605" width="34" height="60" rx="3" fill="#16524F" stroke="#3A2418" stroke-width="3" />
+
+      
+      <line x1="500" y1="462" x2="500" y2="680" stroke="#3A2418" stroke-width="4" />
+      <circle cx="493" cy="565" r="5" fill="#E2A93B" stroke="#3A2418" stroke-width="2.5" />
+      <circle cx="507" cy="565" r="5" fill="#E2A93B" stroke="#3A2418" stroke-width="2.5" />
+      <rect x="495" y="562" width="10" height="15" rx="2" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+
+      
+      <path d="M 445 458 Q 470 472 500 458 Q 530 472 555 458" fill="none" stroke="#F08A3C" stroke-width="6" stroke-linecap="round" />
+      <polygon points="460,466 465,476 455,476" fill="#C8323A" />
+      <polygon points="480,468 485,478 475,478" fill="#E2A93B" />
+      <polygon points="520,468 525,478 515,478" fill="#E2A93B" />
+      <polygon points="540,466 545,476 535,476" fill="#C8323A" />
+
+      
+      <path d="M 580 500 Q 595 488 610 500 L 610 530 L 580 530 Z" fill="#24192E" stroke="#3A2418" stroke-width="4" />
+      
+      <ellipse cx="595" cy="522" rx="6" ry="3" fill="#C2603A" stroke="#3A2418" stroke-width="2" />
+      <ellipse cx="595" cy="520" rx="9" ry="8" fill="#F08A3C" opacity="0.4">
+        <animate attributeName="rx" values="8;11;8" dur="2s" repeatCount="indefinite" />
+      </ellipse>
+      <circle cx="595" cy="517" r="2.5" fill="#FFF8E7">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="1.2s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    
+    
+    <g id="snowy_house_exterior-matka-pot">
+      
+      <ellipse cx="635" cy="677" rx="14" ry="5" fill="#1B2340" stroke="#3A2418" stroke-width="3" />
+      
+      <circle cx="635" cy="650" r="20" fill="#A34427" stroke="#3A2418" stroke-width="5" />
+      <path d="M 622 638 Q 635 635 648 638" stroke="#D97243" stroke-width="3" fill="none" stroke-linecap="round" />
+      
+      <ellipse cx="635" cy="633" rx="11" ry="4" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+      <ellipse cx="635" cy="630" rx="8" ry="3" fill="#F1E3C2" stroke="#3A2418" stroke-width="2.5" />
+    </g>
+
+    
+    <g id="snowy_house_exterior-tulsi-plant">
+      
+      <polygon points="730,680 770,680 775,640 725,640" fill="#8E3821" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+      
+      <path d="M 743 665 Q 750 655 757 665 L 757 675 L 743 675 Z" fill="#24192E" stroke="#3A2418" stroke-width="2.5" />
+      
+      <rect x="720" y="632" width="60" height="9" rx="2" fill="#C2603A" stroke="#3A2418" stroke-width="4" stroke-linejoin="round" />
+      
+      <circle cx="750" cy="620" r="14" fill="#16524F" stroke="#3A2418" stroke-width="3.5" />
+      <circle cx="738" cy="610" r="11" fill="#1F6F6B" stroke="#3A2418" stroke-width="3.5" />
+      <circle cx="762" cy="612" r="12" fill="#1F6F6B" stroke="#3A2418" stroke-width="3.5" />
+      <circle cx="750" cy="598" r="10" fill="#2E8B82" stroke="#3A2418" stroke-width="3" />
+      <circle cx="745" cy="615" r="3" fill="#E2A93B" />
+      <circle cx="755" cy="607" r="2.5" fill="#E2A93B" />
+    </g>
+
+    
+    <polygon points="180,380 820,380 800,405 200,405" fill="#1B2340" opacity="0.75" />
+
+    
+    <rect x="175" y="365" width="650" height="22" rx="3" fill="#2E1C14" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    <line x1="180" y1="372" x2="820" y2="372" stroke="#A64B2A" stroke-width="3" stroke-linecap="round" />
+
+    
+    <rect x="200" y="305" width="600" height="65" fill="#933C24" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <g fill="#1B2340" stroke="#3A2418" stroke-width="3">
+      <rect x="230" y="322" width="20" height="30" rx="3" />
+      <rect x="265" y="322" width="20" height="30" rx="3" />
+      <rect x="300" y="322" width="20" height="30" rx="3" />
+      <rect x="335" y="322" width="20" height="30" rx="3" />
+
+      <circle cx="500" cy="337" r="14" />
+
+      <rect x="645" y="322" width="20" height="30" rx="3" />
+      <rect x="680" y="322" width="20" height="30" rx="3" />
+      <rect x="715" y="322" width="20" height="30" rx="3" />
+      <rect x="750" y="322" width="20" height="30" rx="3" />
+    </g>
+
+    
+    
+    <polygon points="120,315 500,165 880,315 850,335 500,200 150,335" fill="url(#snowy_house_exterior-roofTile)" stroke="#3A2418" stroke-width="8" stroke-linejoin="round" />
+    
+    
+    <g stroke="#3A2418" stroke-width="5" stroke-linecap="round">
+      <line x1="170" y1="318" x2="225" y2="280" />
+      <line x1="230" y1="295" x2="285" y2="255" />
+      <line x1="290" y1="272" x2="345" y2="235" />
+      <line x1="350" y1="250" x2="405" y2="215" />
+      <line x1="410" y1="228" x2="465" y2="195" />
+
+      <line x1="830" y1="318" x2="775" y2="280" />
+      <line x1="770" y1="295" x2="715" y2="255" />
+      <line x1="710" y1="272" x2="655" y2="235" />
+      <line x1="650" y1="250" x2="595" y2="215" />
+      <line x1="590" y1="228" x2="535" y2="195" />
+    </g>
+
+    
+    <g stroke="#F08A3C" stroke-width="3.5" stroke-linecap="round" opacity="0.8">
+      <line x1="175" y1="313" x2="225" y2="277" />
+      <line x1="235" y1="290" x2="285" y2="252" />
+      <line x1="295" y1="267" x2="345" y2="232" />
+      <line x1="355" y1="245" x2="405" y2="212" />
+      <line x1="415" y1="223" x2="465" y2="192" />
+    </g>
+
+    
+    <polygon points="120,315 500,165 880,315 870,305 500,155 130,305" fill="#E2A93B" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+    <path d="M 490 158 Q 500 135 510 158 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+    <circle cx="500" cy="133" r="6" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+
+    
+    <g id="snowy_house_exterior-chimney">
+      <rect x="680" y="150" width="38" height="75" rx="3" fill="#8E3821" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <rect x="673" y="140" width="52" height="15" rx="3" fill="#C2603A" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+      <line x1="685" y1="165" x2="713" y2="165" stroke="#3A2418" stroke-width="3" />
+      <line x1="685" y1="185" x2="713" y2="185" stroke="#3A2418" stroke-width="3" />
+    </g>
+  </g>
+
+  
+  <g>
+    
+    <path d="M 640 160 C 660 125 720 120 745 138 C 770 155 810 140 825 125 C 800 110 740 105 700 120 C 655 138 625 145 640 160 Z" fill="url(#snowy_house_exterior-frostFog1)" opacity="0.85">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 18,-6; 0,0" dur="4.5s" repeatCount="indefinite" />
+    </path>
+
+    
+    <path d="M 80 325 C 130 295 190 320 250 305 C 320 288 380 250 440 260 C 490 268 530 250 560 235 C 500 240 450 258 410 250 C 330 235 270 280 200 295 C 140 308 100 295 80 325 Z" fill="url(#snowy_house_exterior-frostFog2)" opacity="0.8">
+      <animateTransform attributeName="transform" type="translate" values="-15,0; 20,-10; -15,0" dur="6.5s" repeatCount="indefinite" />
+    </path>
+
+    
+    
+    <path d="M 90 710 C 180 670 280 735 400 700 C 510 668 600 720 710 690 C 820 660 880 715 940 685 C 960 725 890 755 800 745 C 690 732 580 760 480 745 C 370 728 270 765 170 750 C 110 740 80 730 90 710 Z" fill="url(#snowy_house_exterior-frostFog1)" opacity="0.85">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -35,5; 0,0" dur="7s" repeatCount="indefinite" />
+    </path>
+
+    
+    <path d="M 130 630 C 210 610 270 655 350 635 C 440 612 500 640 580 620 C 650 602 730 635 810 615 C 740 645 660 625 590 645 C 510 668 430 632 340 658 C 260 680 180 640 130 630 Z" fill="url(#snowy_house_exterior-frostFog2)" opacity="0.75">
+      <animateTransform attributeName="transform" type="translate" values="30,-5; -20,3; 30,-5" dur="9s" repeatCount="indefinite" />
+    </path>
+
+    
+    <circle cx="210" cy="340" r="3.5" fill="#D8EEF8" opacity="0.7" />
+    <circle cx="280" cy="280" r="2.5" fill="#AEE2F7" opacity="0.6" />
+    <circle cx="670" cy="210" r="3" fill="#D8EEF8" opacity="0.8" />
+    <circle cx="780" cy="260" r="2.5" fill="#AEE2F7" opacity="0.7" />
+    <circle cx="160" cy="580" r="3" fill="#AEE2F7" opacity="0.5" />
+    <circle cx="850" cy="590" r="4" fill="#D8EEF8" opacity="0.6" />
+  </g>
+</svg>

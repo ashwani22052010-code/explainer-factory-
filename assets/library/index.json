@@ -1,1 +1,9 @@
-{}
+{
+ "snowy_house_exterior": {
+  "file": "snowy_house_exterior.svg",
+  "describe": "Cozy single-story Indian brick house exterior at deep night with frosty blue fog, small glowing warm window, cold mist swirling around roof",
+  "aspect": 0.85,
+  "score": 8.0,
+  "added": "2026-11-21"
+ }
+}
