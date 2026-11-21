@@ -75,10 +75,10 @@ class Artist:
     def snapshot(self, svg):
         if self.page is None:
             self.page = self.browser.new_page(viewport={"width": 640, "height": 640})
+        sized = svg.replace("<svg", '<svg width="600" height="600"', 1)
         doc = ("<html><body style='margin:0;background:#d9d2c4;display:flex;align-items:center;"
                "justify-content:center;width:640px;height:640px'>"
-               f"<div style='width:600px;height:600px'>{svg.replace('<svg', '<svg width=\"600\" height=\"600\"', 1)}</div>"
-               "</body></html>")
+               "<div style='width:600px;height:600px'>" + sized + "</div></body></html>")
         self.page.set_content(doc)
         self.page.wait_for_timeout(120)
         return self.page.screenshot(type="png")
