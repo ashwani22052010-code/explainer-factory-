@@ -5,5 +5,26 @@
   "aspect": 0.85,
   "score": 8.0,
   "added": "2026-11-21"
+ },
+ "arms_pressing_down": {
+  "file": "arms_pressing_down.svg",
+  "describe": "Vector diagram showing human arms extending laterally and pushing downwards against water",
+  "aspect": 0.6,
+  "score": 6.0,
+  "added": "2026-11-21"
+ },
+ "upright_drowning_posture": {
+  "file": "upright_drowning_posture.svg",
+  "describe": "Vector side view cross-section of water showing a body positioned completely vertical, head tilted back",
+  "aspect": 1.25,
+  "score": 6.0,
+  "added": "2026-11-21"
+ },
+ "speech_bubble_question": {
+  "file": "speech_bubble_question.svg",
+  "describe": "A large bold warning sign style speech bubble with text 'ARE YOU OK?' pointing towards water",
+  "aspect": 1.0,
+  "score": 8.0,
+  "added": "2026-11-21"
  }
 }

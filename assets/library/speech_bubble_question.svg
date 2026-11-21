@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="speech_bubble_questi-bubbleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F08A3C" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+    <linearGradient id="speech_bubble_questi-bubbleShade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#3A2418" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="speech_bubble_questi-waterGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+    <linearGradient id="speech_bubble_questi-waveGrad1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#1F6F6B" stop-opacity="0.2" />
+    </linearGradient>
+    <radialGradient id="speech_bubble_questi-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E2A93B" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#C2603A" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <g stroke="#3A2418" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    
+    
+    <circle cx="750" cy="780" r="120" fill="url(#speech_bubble_questi-glow)" stroke="none">
+      <animate attributeName="r" values="110;130;110" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0.9;0.6" dur="3s" repeatCount="indefinite" />
+    </circle>
+
+    
+    <g transform="translate(550, 700)">
+      
+      <path d="M 20 80 Q 100 20 200 60 T 380 70 L 350 200 L 0 200 Z" fill="url(#speech_bubble_questi-waterGrad)" />
+      
+      <path d="M 10 90 Q 90 40 180 80 T 360 85" fill="none" stroke="#F1E3C2" stroke-width="8" />
+      <path d="M 40 130 Q 120 90 220 120 T 340 125" fill="none" stroke="#1F6F6B" stroke-width="6" opacity="0.8" />
+      
+      <path d="M 120 140 Q 140 120 160 145 Q 140 160 120 140 Z" fill="#E2A93B" />
+      <path d="M 120 140 Q 140 140 160 145" fill="none" stroke="#3A2418" stroke-width="4" />
+      
+      <ellipse cx="260" cy="150" rx="30" ry="10" fill="none" stroke="#F1E3C2" stroke-width="4" opacity="0.7">
+        <animate attributeName="rx" values="10;40;10" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="ry" values="3;12;3" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.9;0;0.9" dur="2s" repeatCount="indefinite" />
+      </ellipse>
+    </g>
+
+    
+    
+    <g>
+      
+      <path d="M 290 85 L 590 85 L 740 235 L 740 535 L 590 685 L 480 685 L 580 840 L 450 720 L 290 725 L 140 575 L 140 235 Z" fill="#3A2418" transform="translate(10, 15)" />
+
+      
+      <path d="M 280 70 L 580 70 L 730 220 L 730 520 L 580 670 L 470 670 L 575 830 L 435 710 L 280 710 L 130 560 L 130 220 Z" fill="url(#speech_bubble_questi-bubbleGrad)" />
+      
+      
+      <path d="M 300 95 L 560 95 L 705 240 L 705 500 L 560 645 L 445 645 L 530 775 L 415 675 L 280 675 L 155 550 L 155 240 Z" fill="none" stroke="#F1E3C2" stroke-width="8" stroke-dasharray="16 8" />
+
+      
+      <path d="M 155 240 L 280 95 L 560 95 L 450 240 Z" fill="#FFF" opacity="0.25" />
+
+      
+      <g fill="#F1E3C2" stroke="#3A2418" stroke-width="8" stroke-linejoin="round" font-family="Arial, sans-serif" font-weight="900" font-size="72" text-anchor="middle">
+        
+        <text x="435" y="270" fill="#3A2418" stroke="none">ARE YOU</text>
+        <text x="430" y="265">ARE YOU</text>
+        
+        <text x="435" y="380" fill="#3A2418" stroke="none">O K ?</text>
+        <text x="430" y="375">O K ?</text>
+      </g>
+
+      
+      <g transform="translate(430, 470)">
+        <circle cx="0" cy="90" r="14" fill="#F1E3C2" />
+        <path d="M -12 10 L -4 60 L 4 60 L 12 10 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="6" />
+      </g>
+    </g>
+
+    
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 -10; 0 0" dur="4s" repeatCount="indefinite" />
+
+  </g>
+</svg>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="upright_drowning_pos-grad_water" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+    <linearGradient id="upright_drowning_pos-grad_skin" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+    <clipPath id="upright_drowning_pos-clip_water">
+      <path d="M200,150 Q400,100 600,150 L600,900 Q400,950 200,900 Z" />
+    </clipPath>
+  </defs>
+
+  
+  <g>
+    
+    <path d="M200,150 Q400,100 600,150 L600,900 Q400,950 200,900 Z" fill="url(#upright_drowning_pos-grad_water)" stroke="#3A2418" stroke-width="8" stroke-linejoin="round" />
+    
+    
+    <path d="M210,165 Q400,125 590,165" fill="none" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" opacity="0.4" />
+  </g>
+
+  
+  <g transform="translate(400, 500)">
+    
+    <animateTransform attributeName="transform" type="translate" values="400,500; 400,515; 400,500" dur="4s" repeatCount="indefinite" />
+    
+    
+    <path d="M-15,-310 C-40,-310 -50,-260 -40,-240 C-30,-230 -10,-230 0,-240 L10,-280 Z" fill="#3A2A66" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    
+    <path d="M-5,100 C-15,150 -15,250 -10,350 C-10,370 -20,380 -30,380 L-5,395 L15,395 C15,380 5,370 5,350 C10,250 15,150 15,100 Z" fill="#C2603A" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+
+    
+    <g>
+      
+      <path d="M-10,-240 C-15,-270 10,-310 40,-310 C70,-310 85,-280 80,-260 C75,-240 50,-235 30,-235 C15,-235 5,-230 0,-215 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      <path d="M60,-285 L65,-285" fill="none" stroke="#3A2418" stroke-width="4" stroke-linecap="round" /> 
+      <path d="M78,-265 Q70,-260 65,-268" fill="none" stroke="#3A2418" stroke-width="3" stroke-linecap="round" /> 
+      
+      
+      <path d="M-15,-215 C-25,-150 -25,-50 -20,110 L25,110 C20,-50 20,-150 15,-220 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      
+      <path d="M5,-215 C0,-150 0,-50 5,110 L25,110 C20,-50 20,-150 15,-220 Z" fill="#C2603A" opacity="0.2" />
+
+      
+      <path d="M-22,-20 L27,-20 L25,115 L-21,115 Z" fill="#C8323A" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <rect x="5" y="-20" width="15" height="135" fill="#F08A3C" opacity="0.3" />
+      
+      
+      <path d="M-5,-130 C-15,-80 -25,20 -15,80 C-12,95 5,95 8,80 C15,20 15,-80 5,-130 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      <path d="M3,-130 C8,-80 8,20 3,80 C5,90 7,90 8,80 C15,20 15,-80 5,-130 Z" fill="#C2603A" opacity="0.3" />
+    </g>
+
+    
+    <path d="M-15,100 C-25,150 -30,250 -25,360 C-25,385 -35,395 -45,395 L-20,410 L5,410 C5,395 -5,385 -5,360 C0,250 5,150 5,100 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    <path d="M-5,100 C0,150 5,250 0,360 C0,385 -5,395 -10,395 L-5,405 L5,410 C5,395 -5,385 -5,360 C0,250 5,150 5,100 Z" fill="#C2603A" opacity="0.3" />
+  </g>
+
+  
+  <g fill="#F1E3C2" opacity="0.6">
+    <circle cx="480" cy="220" r="8">
+      <animate attributeName="cy" from="220" to="120" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="465" cy="245" r="5">
+      <animate attributeName="cy" from="245" to="130" dur="2.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="495" cy="260" r="4">
+      <animate attributeName="cy" from="260" to="140" dur="1.8s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;0" dur="1.8s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  
+  <path d="M200,150 Q400,100 600,150 L600,170 Q400,120 200,170 Z" fill="#F1E3C2" opacity="0.2" />
+  
+  
+  <circle cx="280" cy="400" r="3" fill="#E2A93B" opacity="0.4" />
+  <circle cx="550" cy="650" r="4" fill="#E2A93B" opacity="0.3" />
+  <circle cx="320" cy="800" r="3" fill="#E2A93B" opacity="0.4" />
+</svg>
