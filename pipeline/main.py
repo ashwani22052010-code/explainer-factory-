@@ -21,6 +21,35 @@ def any_key():
                ('GROQ_API_KEY', 'CEREBRAS_API_KEY', 'OPENROUTER_API_KEY', 'GEMINI_API_KEY'))
 
 
+def apply_mode(cfg, mode):
+    import copy
+    cfg = copy.deepcopy(cfg)
+    if mode == "story":
+        cfg["video"]["width"], cfg["video"]["height"] = 1920, 1080
+    return cfg
+
+
+def parse_header(script, cfg):
+    """Optional first line like:  #story english   or   #short hindi Fenrir"""
+    import copy
+    mode = cfg.get("mode", "short")
+    lines = script.splitlines()
+    if lines and lines[0].strip().startswith("#"):
+        cfg = copy.deepcopy(cfg)
+        for tok in lines[0].strip("# \t").lower().split():
+            if tok in ("story", "long", "horizontal"):
+                mode = "story"
+            elif tok in ("short", "shorts", "vertical"):
+                mode = "short"
+            elif tok in ("hindi", "english", "portuguese"):
+                cfg["language"] = tok
+                cfg["caption_language"] = "english" if tok == "hindi" else tok
+            elif tok.capitalize() in ("Charon", "Orus", "Fenrir", "Kore", "Aoede", "Puck", "Zephyr", "Leda"):
+                cfg.setdefault("voice", {})["gemini_voice"] = tok.capitalize()
+        script = "\n".join(lines[1:]).strip()
+    return script, mode, apply_mode(cfg, mode)
+
+
 def make(script_path, cfg, demo=False):
     from playwright.sync_api import sync_playwright
     from . import mixer, planner, render, timeline, voice
@@ -28,26 +57,30 @@ def make(script_path, cfg, demo=False):
 
     t_start = time.time()
     script_path = Path(script_path)
-    stem = script_path.stem if not demo else "demo"
+    stem = script_path.stem if not demo else f"demo_{demo}"
     work = ROOT / "out" / stem
     work.mkdir(parents=True, exist_ok=True)
     log(f"=== {stem} ===")
 
     gem = None
+    mode = "short"
     if demo:
-        plan = read_json(ROOT / "demo" / "plan.json")
+        plan = read_json(ROOT / "demo" / ("plan_story.json" if demo == "story" else "plan.json"))
+        mode = plan.get("mode", "short")
+        cfg = apply_mode(cfg, mode)
     else:
         from .llm import Router
         gem = Router(cfg)
         script = script_path.read_text(encoding="utf-8").strip()
+        script, mode, cfg = parse_header(script, cfg)
         if len(script.split()) < 5:
             raise SystemExit(f"{script_path} mein script bahut chhoti hai.")
 
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        artist = Artist(gem, cfg, browser)
+        artist = Artist(gem, cfg, browser, mode)
         if not demo:
-            plan = planner.build_plan(gem, script, cfg, artist.names())
+            plan = planner.build_plan(gem, script, cfg, artist.names(), mode)
         write_json(work / "plan.json", plan)
         log(f"Plan: {len(plan['scenes'])} scenes")
 
@@ -55,8 +88,11 @@ def make(script_path, cfg, demo=False):
         assets = {}
         need = {}
         for sc in plan["scenes"]:
+            if sc.get("set"):
+                need.setdefault(sc["set"]["asset"], sc["set"]["describe"])
             for e in sc["elements"]:
-                need.setdefault(e["asset"], e["describe"])
+                if e.get("asset"):
+                    need.setdefault(e["asset"], e["describe"])
         reuse = [n for n in need if artist.has(n)]
         log(f"Drawings: {len(need)} chahiye ({len(reuse)} library se, {len(need) - len(reuse)} nayi)")
         if demo:
@@ -70,7 +106,8 @@ def make(script_path, cfg, demo=False):
         browser.close()
 
     narration, timings = voice.make_voice(plan["scenes"], cfg, work, stem, demo=demo)
-    data, events = timeline.build(plan, timings, assets, cfg)
+    env = mixer.envelope(narration, cfg["video"]["fps"])
+    data, events = timeline.build(plan, timings, assets, cfg, env=env, mode=mode)
     write_json(work / "timeline_events.json", events)
 
     mix_wav = mixer.mix(narration, events, data["duration"], cfg, work / "mix.wav")
@@ -96,11 +133,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("scripts", nargs="*")
     ap.add_argument("--list")
-    ap.add_argument("--demo", action="store_true")
+    ap.add_argument("--demo", nargs="?", const="short")
     a = ap.parse_args()
     cfg = load_config()
     if a.demo:
-        make("demo", cfg, demo=True)
+        make("demo", cfg, demo=a.demo)
         return
     files = list(a.scripts)
     if a.list and Path(a.list).exists():

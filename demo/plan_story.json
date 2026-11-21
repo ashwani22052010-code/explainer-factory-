@@ -1,0 +1,394 @@
+{
+ "title": "What if you were born in the Wild West",
+ "description": "",
+ "tags": [],
+ "mode": "story",
+ "characters": {
+  "you": {
+   "gender": "m",
+   "age": "teen",
+   "skin": "light",
+   "hair": "short",
+   "hair_color": "brown",
+   "beard": "none",
+   "top": "shirt",
+   "bottom": "pants",
+   "hat": "none",
+   "top_color": "cream",
+   "bottom_color": "brown",
+   "glasses": false,
+   "bindi": false
+  },
+  "stranger": {
+   "gender": "m",
+   "age": "adult",
+   "skin": "light",
+   "hair": "short",
+   "hair_color": "black",
+   "beard": "stubble",
+   "top": "vest",
+   "bottom": "pants",
+   "hat": "cowboy",
+   "top_color": "maroon",
+   "bottom_color": "khaki",
+   "hat_color": "black",
+   "glasses": false,
+   "bindi": false
+  },
+  "father": {
+   "gender": "m",
+   "age": "adult",
+   "skin": "light",
+   "hair": "short",
+   "hair_color": "brown",
+   "beard": "full",
+   "top": "shirt",
+   "bottom": "pants",
+   "hat": "none",
+   "top_color": "white",
+   "bottom_color": "navy",
+   "glasses": false,
+   "bindi": false
+  },
+  "mother": {
+   "gender": "f",
+   "age": "adult",
+   "skin": "light",
+   "hair": "bun",
+   "hair_color": "brown",
+   "beard": "none",
+   "top": "shirt",
+   "bottom": "dress",
+   "hat": "none",
+   "top_color": "white",
+   "bottom_color": "navy",
+   "glasses": false,
+   "bindi": false
+  }
+ },
+ "scenes": [
+  {
+   "index": 0,
+   "narration": "Chicago, eighteen eighty. You are born in a dusty town with nothing but a name.",
+   "caption_top": "",
+   "caption_main": "",
+   "main_word": "",
+   "accent": "orange",
+   "background": {
+    "type": "wall",
+    "color": "mustard",
+    "floor": false
+   },
+   "set": {
+    "asset": "set_town",
+    "describe": "town",
+    "blur": false
+   },
+   "mood": "warm",
+   "rays": true,
+   "camera": "pan_right",
+   "transition": "slide_left",
+   "chapter": "Dust and Dreams",
+   "chapter_num": "CHAPTER I",
+   "elements": [
+    {
+     "x": 22.0,
+     "y": 66.0,
+     "w": 16.0,
+     "enter": "pop",
+     "motion": "none",
+     "at_word": "",
+     "flip": false,
+     "layer": "mid",
+     "action": "walk",
+     "talks": false,
+     "to_x": 46.0,
+     "person_id": "you",
+     "pose": "walk",
+     "expression": "neutral",
+     "framing": "full"
+    }
+   ],
+   "widgets": [
+    {
+     "type": "sign",
+     "text": "SOUTH OF CHICAGO",
+     "sub": "1880",
+     "x": 19,
+     "y": 14
+    },
+    {
+     "type": "tag",
+     "text": "YOU",
+     "x": 40,
+     "y": 30,
+     "dir": "down"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "index": 1,
+   "narration": "Your father works at the saloon. Your mother sings to you every night.",
+   "caption_top": "",
+   "caption_main": "",
+   "main_word": "",
+   "accent": "orange",
+   "background": {
+    "type": "wall",
+    "color": "mustard",
+    "floor": false
+   },
+   "set": {
+    "asset": "set_town",
+    "describe": "town",
+    "blur": false
+   },
+   "mood": "none",
+   "rays": false,
+   "camera": "zoom_in",
+   "transition": "slide_left",
+   "chapter": null,
+   "chapter_num": null,
+   "elements": [
+    {
+     "x": 66.0,
+     "y": 66.0,
+     "w": 16.0,
+     "enter": "pop",
+     "motion": "none",
+     "at_word": "father",
+     "flip": false,
+     "layer": "mid",
+     "action": "idle",
+     "talks": false,
+     "person_id": "father",
+     "pose": "stand",
+     "expression": "neutral",
+     "framing": "full"
+    },
+    {
+     "x": 44.0,
+     "y": 68.0,
+     "w": 14.0,
+     "enter": "pop",
+     "motion": "none",
+     "at_word": "",
+     "flip": false,
+     "layer": "mid",
+     "action": "idle",
+     "talks": false,
+     "person_id": "you",
+     "pose": "stand",
+     "expression": "happy",
+     "framing": "full"
+    },
+    {
+     "x": 24.0,
+     "y": 66.0,
+     "w": 16.0,
+     "enter": "pop",
+     "motion": "none",
+     "at_word": "mother",
+     "flip": false,
+     "layer": "mid",
+     "action": "wave",
+     "talks": true,
+     "person_id": "mother",
+     "pose": "wave",
+     "expression": "happy",
+     "framing": "full"
+    }
+   ],
+   "widgets": [
+    {
+     "type": "tag",
+     "text": "FATHER",
+     "x": 72,
+     "y": 30,
+     "dir": "down"
+    },
+    {
+     "type": "tag",
+     "text": "MOTHER",
+     "x": 26,
+     "y": 30,
+     "dir": "down"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "index": 2,
+   "narration": "One morning, a stranger rides into town. The whole street goes silent.",
+   "caption_top": "",
+   "caption_main": "",
+   "main_word": "",
+   "accent": "orange",
+   "background": {
+    "type": "wall",
+    "color": "mustard",
+    "floor": false
+   },
+   "set": {
+    "asset": "set_town",
+    "describe": "town",
+    "blur": false
+   },
+   "mood": "danger",
+   "rays": false,
+   "camera": "push",
+   "transition": "fade",
+   "chapter": null,
+   "chapter_num": null,
+   "elements": [
+    {
+     "x": 105.0,
+     "y": 66.0,
+     "w": 17.0,
+     "enter": "pop",
+     "motion": "none",
+     "at_word": "",
+     "flip": true,
+     "layer": "mid",
+     "action": "walk",
+     "talks": false,
+     "to_x": 66.0,
+     "person_id": "stranger",
+     "pose": "walk",
+     "expression": "neutral",
+     "framing": "full"
+    },
+    {
+     "x": 30.0,
+     "y": 68.0,
+     "w": 14.0,
+     "enter": "pop",
+     "motion": "none",
+     "at_word": "",
+     "flip": false,
+     "layer": "mid",
+     "action": "idle",
+     "talks": false,
+     "person_id": "you",
+     "pose": "stand",
+     "expression": "scared",
+     "framing": "full"
+    }
+   ],
+   "widgets": [
+    {
+     "type": "particles",
+     "kind": "dust"
+    }
+   ],
+   "sfx": [
+    {
+     "type": "heartbeat",
+     "at_word": "silent"
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "narration": "He looks at you and smiles. Leave her, he says.",
+   "caption_top": "",
+   "caption_main": "",
+   "main_word": "",
+   "accent": "orange",
+   "background": {
+    "type": "wall",
+    "color": "mustard",
+    "floor": false
+   },
+   "set": {
+    "asset": "set_town",
+    "describe": "town",
+    "blur": true
+   },
+   "mood": "none",
+   "rays": false,
+   "camera": "zoom_in",
+   "transition": "zoom",
+   "chapter": null,
+   "chapter_num": null,
+   "elements": [
+    {
+     "x": 55.0,
+     "y": 64.0,
+     "w": 30.0,
+     "enter": "pop",
+     "motion": "none",
+     "at_word": "",
+     "flip": false,
+     "layer": "mid",
+     "action": "idle",
+     "talks": true,
+     "person_id": "stranger",
+     "pose": "stand",
+     "expression": "happy",
+     "framing": "bust"
+    }
+   ],
+   "widgets": [
+    {
+     "type": "bubble",
+     "text": "Leave her.",
+     "x": 33,
+     "y": 24,
+     "tail": "right"
+    }
+   ],
+   "sfx": [
+    {
+     "type": "thud",
+     "at_word": "Leave"
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "narration": "And your life is never the same again.",
+   "caption_top": "",
+   "caption_main": "",
+   "main_word": "",
+   "accent": "orange",
+   "background": {
+    "type": "wall",
+    "color": "mustard",
+    "floor": false
+   },
+   "set": {
+    "asset": "set_town",
+    "describe": "town",
+    "blur": true
+   },
+   "mood": "sad",
+   "rays": false,
+   "camera": "push",
+   "transition": "slide_left",
+   "chapter": null,
+   "chapter_num": null,
+   "elements": [
+    {
+     "x": 50.0,
+     "y": 64.0,
+     "w": 30.0,
+     "enter": "pop",
+     "motion": "none",
+     "at_word": "",
+     "flip": false,
+     "layer": "mid",
+     "action": "idle",
+     "talks": false,
+     "person_id": "you",
+     "pose": "stand",
+     "expression": "sad",
+     "framing": "bust"
+    }
+   ],
+   "widgets": [],
+   "sfx": []
+  }
+ ]
+}

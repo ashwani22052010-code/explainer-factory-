@@ -7,6 +7,11 @@
   stage.style.width = W + 'px';
   stage.style.height = H + 'px';
   const PAL = D.palette, CAPC = D.captionColors;
+  const STORY = D.mode === 'story';
+  stage.classList.add(STORY ? 'mode-story' : 'mode-short');
+  const ENV = D.env || [];
+  const envAt = t => { const i = Math.floor(t * D.fps); return ENV[Math.max(0, Math.min(ENV.length - 1, i))] || 0; };
+  const IMPACTS = D.impacts || [];
   const TR = 0.38; // transition length
 
   // ---------- helpers ----------
@@ -137,6 +142,17 @@
       const hm = s => { const [h, m] = String(s || '0:0').split(':').map(Number); return (h || 0) * 60 + (m || 0); };
       obj.from = hm(w.from || '20:00'); obj.to = hm(w.to || '02:00');
       if (obj.to <= obj.from) obj.to += 720 * (obj.to + 720 <= obj.from ? 2 : 1);
+    } else if (w.type === 'sign') {
+      node.classList.add('w-sign');
+      el('div', 'board', node).textContent = w.text || '';
+      if (w.sub) el('div', 'sub', node).textContent = w.sub;
+    } else if (w.type === 'tag') {
+      node.classList.add('w-tag', 'dir-' + (w.dir || 'down'));
+      el('div', 'label', node).textContent = w.text || '';
+      el('div', 'arrow', node);
+    } else if (w.type === 'bubble') {
+      node.classList.add('w-bubble', 'tail-' + (w.tail || 'left'));
+      el('div', 'txt', node).textContent = w.text || '';
     } else if (w.type === 'particles') {
       node.className = 'particles';
       obj.x = 0; obj.y = 0;
@@ -178,9 +194,24 @@
       return;
     }
     if (lt < 0) { o.node.style.opacity = 0; return; }
-    let tf = `translate(${o.x}px,${o.y}px) translate(-50%,-50%)`;
+    if (o.nw == null) { o.nw = o.node.offsetWidth; o.nh = o.node.offsetHeight; }
+    const px = clamp(o.x, o.nw / 2 + 24, W - o.nw / 2 - 24), py = clamp(o.y, o.nh / 2 + 24, H - o.nh / 2 - 24);
+    let tf = `translate(${px}px,${py}px) translate(-50%,-50%)`;
     const pe = lt / .5;
-    if (o.kind === 'paper') {
+    if (o.kind === 'sign') {
+      tf += ` translateY(${(1 - easeBack(lt / .5)) * -260}px) rotate(${Math.sin(lt * 2.2) * 1.2 * Math.exp(-lt)}deg)`;
+      o.node.style.opacity = clamp(lt * 4, 0, 1);
+      o.node.style.transform = tf; return;
+    } else if (o.kind === 'tag') {
+      tf += ` scale(${lerp(.4, 1, easeBack(lt / .35))})`;
+      o.node.style.opacity = clamp(lt * 5, 0, 1);
+      tf += ` translateY(${Math.sin(lt * 3) * 5}px)`;
+      o.node.style.transform = tf; return;
+    } else if (o.kind === 'bubble') {
+      tf += ` scale(${lerp(.2, 1, easeBack(lt / .32))})`;
+      o.node.style.opacity = clamp(lt * 6, 0, 1);
+      o.node.style.transform = tf; return;
+    } else if (o.kind === 'paper') {
       const p = easeOut(lt / .55), b = bounce(lt / .7);
       tf += ` translateY(${(1 - b) * -900}px) rotate(${lerp(-14, o.rot, p)}deg)`;
       o.mark.style.width = (easeInOut((lt - .7) / .6) * 100) + '%';
@@ -212,19 +243,80 @@
   }
 
   // ---------- elements ----------
+  const ORIGIN = { eye: '50% 50%', mouth: '50% 40%', head: '50% 95%', arm_left: '85% 6%', arm_right: '15% 6%',
+    leg_left: '50% 0%', leg_right: '50% 0%', body: '50% 100%', tail: '0% 50%', wheel: '50% 50%', flame: '50% 100%',
+    wing_left: '100% 60%', wing_right: '0% 60%', water: '50% 50%', light: '50% 50%', smoke: '50% 100%', leaf: '50% 100%' };
   function buildElement(parent, e) {
     const node = el('div', 'el', parent);
     const width = e.w / 100 * W;
     node.style.width = width + 'px';
     const inner = el('div', 'inner', node);
-    inner.innerHTML = uniqueSvg(e.svg);
+    const svgText = e.person ? window.buildPerson(e.person, e.pose, e.expression, e.framing) : e.svg;
+    inner.innerHTML = uniqueSvg(svgText);
     if (e.flip) inner.style.transform = 'scaleX(-1)';
+    if (e.submerge) {
+      inner.style.clipPath = `inset(0 -20% ${e.submerge}% -20%)`;
+      const rp = el('div', 'ripple', node); rp.style.bottom = `calc(${e.submerge}% - 14px)`;
+    }
     const svg = inner.querySelector('svg');
     if (svg && svg.pauseAnimations) { try { svg.pauseAnimations(); } catch (_) { } }
-    return { e, node, inner, svg, x: e.x / 100 * W, y: e.y / 100 * H, h: width * (e.aspect || 1) };
+    const r = rng(Math.floor(e.x * 31 + e.y * 17 + e.w));
+    const parts = [...inner.querySelectorAll('[data-part]')].map(g => {
+      const t = (g.getAttribute('data-part') || '').toLowerCase().replace(/[^a-z_]/g, '');
+      const o = g.getAttribute('data-origin');
+      if (o) { const [ox, oy] = o.split(/\s+/).map(Number); g.style.transformBox = 'view-box'; g.style.transformOrigin = `${ox}px ${oy}px`; }
+      else { g.style.transformBox = 'fill-box'; g.style.transformOrigin = ORIGIN[t] || '50% 50%'; }
+      return { g, t, ph: r() * 6.28, blink: 2.2 + r() * 2.5 };
+    });
+    let shapes = null;
+    if (e.enter === 'sketch' && svg) {
+      shapes = [...svg.querySelectorAll('path,rect,circle,ellipse,polygon,polyline,line')].map(sh => {
+        sh.setAttribute('pathLength', '1');
+        if (!sh.getAttribute('stroke') || sh.getAttribute('stroke') === 'none') { sh.style.stroke = PAL.outline || '#3A2418'; sh.style.strokeWidth = '3'; sh.dataset.tmpStroke = '1'; }
+        sh.style.strokeDasharray = '1'; return sh;
+      });
+    }
+    const layer = e.layer || 'mid';
+    return { e, node, inner, svg, parts, shapes, layer, x: e.x / 100 * W, y: e.y / 100 * H,
+      depth: layer === 'back' ? .55 : layer === 'front' ? 1.35 : 1 };
   }
 
-  function updateElement(o, t, accent) {
+  function animateParts(o, lt, talking) {
+    const act = o.e.action || 'idle';
+    const amp = talking ? envAt(o.e.t + lt) : 0;
+    for (const p of o.parts) {
+      let tf = '';
+      switch (p.t) {
+        case 'eye': case 'eyes': { const c = (lt + p.ph) % p.blink; tf = c < .13 ? `scaleY(${.12 + Math.abs(c - .065) * 12})` : ''; break; }
+        case 'mouth': tf = talking ? `scaleY(${1 + amp * 2.2}) scaleX(${1 - amp * .15})` : ''; break;
+        case 'head': tf = `rotate(${Math.sin(lt * 1.3 + p.ph) * 2.2 + (talking ? Math.sin(lt * 7) * amp * 5 : 0)}deg)`; break;
+        case 'body': tf = `scaleY(${1 + .012 * Math.sin(lt * 1.9 + p.ph)})`; break;
+        case 'arm_left': case 'arm_right': case 'arm': {
+          const sgn = p.t === 'arm_left' ? 1 : -1;
+          if (act === 'wave' && p.t !== 'arm_left') tf = `rotate(${Math.sin(lt * 9) * 16}deg)`;
+          else if (act === 'walk' || act === 'run') tf = `rotate(${Math.sin(lt * (act === 'run' ? 11 : 6.5) + (p.t === 'arm_left' ? 0 : 3.14)) * (act === 'run' ? 30 : 16)}deg)`;
+          else if (act === 'panic') tf = `rotate(${Math.sin(lt * 14 + p.ph) * 22}deg)`;
+          else if (talking) tf = `rotate(${sgn * (Math.sin(lt * 3.2 + p.ph) * 6 + amp * 10)}deg)`;
+          else tf = `rotate(${sgn * Math.sin(lt * 1.4 + p.ph) * 2.5}deg)`;
+          break; }
+        case 'leg_left': case 'leg_right': case 'leg':
+          if (act === 'walk' || act === 'run') tf = `rotate(${Math.sin(lt * (act === 'run' ? 11 : 6.5) + (p.t === 'leg_left' ? 3.14 : 0)) * (act === 'run' ? 28 : 18)}deg)`;
+          else if (act === 'panic') tf = `rotate(${Math.sin(lt * 12 + p.ph) * 14}deg)`;
+          break;
+        case 'wheel': tf = `rotate(${lt * 220}deg)`; break;
+        case 'flame': tf = `scaleY(${1 + .13 * Math.sin(lt * 13 + p.ph) + .06 * Math.sin(lt * 23)}) skewX(${Math.sin(lt * 7 + p.ph) * 5}deg)`; break;
+        case 'smoke': tf = `translateY(${-((lt * 20) % 30)}px) scale(${1 + ((lt * .6) % 1) * .2})`; break;
+        case 'tail': tf = `rotate(${Math.sin(lt * 4 + p.ph) * 14}deg)`; break;
+        case 'wing_left': case 'wing_right': tf = `rotate(${Math.sin(lt * 16 + p.ph) * 24 * (p.t === 'wing_left' ? 1 : -1)}deg)`; break;
+        case 'water': tf = `translateX(${Math.sin(lt * 2 + p.ph) * 12}px)`; break;
+        case 'leaf': tf = `rotate(${Math.sin(lt * 2.2 + p.ph) * 5}deg)`; break;
+        case 'light': p.g.style.opacity = .7 + .3 * Math.sin(lt * 5 + p.ph); break;
+      }
+      p.g.style.transform = tf;
+    }
+  }
+
+  function updateElement(o, t, accent, cam) {
     const e = o.e, lt = t - e.t;
     if (lt < 0) { o.node.style.opacity = 0; return; }
     let tx = 0, ty = 0, s = 1, rot = 0, op = 1, clip = '';
@@ -238,7 +330,16 @@
       case 'rise': ty = (1 - easeOut(p)) * 520; op = clamp(p * 2, 0, 1); break;
       case 'fade': op = clamp(lt / .7, 0, 1); break;
       case 'draw': clip = `inset(0 ${(1 - easeInOut(lt / .8)) * 100}% 0 0)`; break;
+      case 'sketch': op = 1; break;
     }
+    if (o.shapes) {
+      const p2 = clamp(lt / 1.3, 0, 1);
+      const off = 1 - clamp(p2 * 1.5, 0, 1), fo = clamp((p2 - .45) / .45, 0, 1);
+      for (const sh of o.shapes) { sh.style.strokeDashoffset = off; sh.style.fillOpacity = fo; if (sh.dataset.tmpStroke) sh.style.strokeOpacity = 1 - fo; }
+      if (p2 >= 1) { for (const sh of o.shapes) { sh.style.strokeDasharray = ''; sh.style.strokeDashoffset = ''; } o.shapes = null; }
+    }
+    if (e.to_x != null && o.sceneDur) { const pp = easeInOut(clamp(lt / Math.max(.5, o.sceneDur - (e.t - o.sceneStart)), 0, 1)); tx += (e.to_x - e.x) / 100 * W * pp; }
+    if (cam) { tx += cam.x * (o.depth - 1) * 2.2; ty += cam.y * (o.depth - 1) * 2.2; s *= 1 + (cam.s - 1) * (o.depth - 1) * .8; }
     let sx = 1, sy = 1;
     switch (e.motion) {
       case 'float': ty += Math.sin(lt * 1.6) * 12; break;
@@ -249,10 +350,12 @@
       case 'sway': rot += Math.sin(lt * 1.4) * 3; break;
       case 'spin': rot += lt * 45; break;
     }
-    o.node.style.transform = `translate(${o.x + tx}px,${o.y + ty}px) translate(-50%,-50%) rotate(${rot}deg) scale(${s * sx},${s * sy})`;
     o.node.style.opacity = op;
     o.node.style.clipPath = clip;
-    let filt = 'drop-shadow(0 22px 20px rgba(0,0,0,.38))';
+    animateParts(o, Math.max(0, lt), !!e.talks);
+    let filt = o.layer === 'back' ? 'blur(2.2px) brightness(.92)' : 'drop-shadow(0 22px 20px rgba(0,0,0,.38))';
+    if (e.rotate) rot += e.rotate;
+    o.node.style.transform = `translate(${o.x + tx}px,${o.y + ty}px) translate(-50%,-50%) rotate(${rot}deg) scale(${s * sx},${s * sy})`;
     if (e.motion === 'glow') filt += ` drop-shadow(0 0 ${26 + 14 * Math.sin(lt * 3.2)}px ${rgba(CAPC[accent] || '#ff9a4d', .75)})`;
     o.node.style.filter = filt;
     if (o.svg && o.svg.setCurrentTime) { try { o.svg.setCurrentTime(Math.max(0, lt)); } catch (_) { } }
@@ -266,21 +369,79 @@
     if (over()) { node.style.whiteSpace = 'normal'; }
   }
 
+  // ---------- subtitles (word-by-word) ----------
+  function buildSubs(root, sc) {
+    if (!D.subtitles || !sc.words || !sc.words.length) return null;
+    const box = el('div', 'subs', root);
+    const per = STORY ? 7 : 3;
+    const groups = [];
+    for (let i = 0; i < sc.words.length; i += per) groups.push(sc.words.slice(i, i + per));
+    return { box, groups, cur: -1, spans: [] };
+  }
+  function updateSubs(sb, t, col) {
+    if (!sb) return;
+    let gi = -1;
+    for (let i = 0; i < sb.groups.length; i++) if (t >= sb.groups[i][0].start - .05) gi = i;
+    if (gi !== sb.cur) {
+      sb.cur = gi; sb.box.innerHTML = '';
+      sb.spans = gi < 0 ? [] : sb.groups[gi].map(w => { const sp = el('span', '', sb.box); sp.textContent = w.w; return sp; });
+      sb.t0 = gi < 0 ? 0 : sb.groups[gi][0].start;
+    }
+    if (gi < 0) { sb.box.style.opacity = 0; return; }
+    const g = sb.groups[gi];
+    sb.box.style.opacity = 1;
+    sb.box.style.transform = `translateX(-50%) scale(${lerp(.85, 1, easeBack((t - sb.t0) / .22))})`;
+    g.forEach((w, k) => {
+      const on = t >= w.start - .03;
+      const active = on && (k === g.length - 1 || t < g[k + 1].start - .03);
+      const sp = sb.spans[k];
+      sp.style.color = active ? col : '#FFF8EC';
+      sp.style.opacity = on ? 1 : .55;
+      sp.style.transform = active ? 'scale(1.12)' : 'scale(1)';
+    });
+  }
+
   // ---------- build all scenes ----------
+  const MOODS = {
+    warm: 'linear-gradient(180deg, rgba(255,170,80,.20), rgba(255,120,40,.10))',
+    cold: 'linear-gradient(180deg, rgba(70,130,255,.22), rgba(20,40,120,.18))',
+    danger: 'radial-gradient(ellipse at 50% 50%, transparent 45%, rgba(200,20,30,.45) 100%)',
+    night: 'linear-gradient(180deg, rgba(20,30,90,.35), rgba(10,10,40,.25))',
+    dream: 'linear-gradient(180deg, rgba(170,120,255,.22), rgba(255,170,220,.14))',
+    sad: 'linear-gradient(180deg, rgba(90,110,140,.30), rgba(60,70,90,.20))'
+  };
   const scenes = D.scenes.map((sc, i) => {
     const root = el('div', 'scene', stage);
     const cam = el('div', 'cam', root);
     buildBg(cam, sc.background, 11 + i * 7);
-    const items = [];
-    const els = sc.elements.map(e => buildElement(cam, e));
+    if (sc.set && sc.set.svg) {
+      const sb = el('div', 'setbg', cam);
+      sb.innerHTML = uniqueSvg(sc.set.svg.replace('<svg', '<svg width="100%" height="100%"').replace(/preserveAspectRatio="[^"]*"/, 'preserveAspectRatio="xMidYMid slice"'));
+      if (sc.set.blur) sb.style.filter = 'blur(5px) brightness(.85)';
+      const ssvg = sb.querySelector('svg'); if (ssvg && ssvg.pauseAnimations) { try { ssvg.pauseAnimations(); } catch (_) { } }
+      sb._svg = ssvg;
+      cam._set = sb;
+    }
+    const els = sc.elements.map(e => { const o = buildElement(cam, e); o.sceneStart = sc.start; o.sceneDur = sc.end - sc.start; return o; });
+    els.sort((a, b) => (a.depth - b.depth)).forEach(o => cam.appendChild(o.node));
     const wids = sc.widgets.map(w => buildWidget(w.type === 'particles' ? root : cam, w, i, sc.accent));
+    if (sc.mood && MOODS[sc.mood]) { const m = el('div', 'mood', root); m.style.background = MOODS[sc.mood]; m._danger = sc.mood === 'danger'; root._mood = m; }
+    if (sc.rays) el('div', 'rays', root);
     const caps = el('div', 'caps', root);
     const top = el('div', 'cap cap-top', caps); top.textContent = sc.caption_top || '';
     const main = el('div', 'cap cap-main', caps); main.textContent = sc.caption_main || '';
     const col = CAPC[sc.accent] || '#FF9A4D';
     main.style.color = col;
     main.style.textShadow = `0 6px 0 rgba(40,20,8,.55), 0 0 4px rgba(40,20,8,.6), 0 0 38px ${rgba(col, .6)}`;
-    return { sc, root, cam, els, wids, top, main, col, items };
+    const subs = buildSubs(root, sc);
+    let chapter = null;
+    if (sc.chapter) {
+      chapter = el('div', 'chapter', root);
+      el('div', 'ch-num', chapter).textContent = sc.chapter_num || 'CHAPTER';
+      el('div', 'ch-title', chapter).textContent = sc.chapter;
+      el('div', 'ch-line', chapter);
+    }
+    return { sc, root, cam, els, wids, top, main, col, subs, chapter };
   });
 
   const grain = el('div', 'overlay grain', stage);
@@ -289,9 +450,19 @@
   el('div', 'overlay vignette', stage);
   const flash = el('div', 'overlay flash', stage);
 
+  function impactAt(t) {
+    let punch = 0, shake = 0;
+    for (const it of IMPACTS) {
+      const d = t - it.t;
+      if (d < 0 || d > 1.2) continue;
+      punch += it.k * Math.exp(-d * 7);
+      shake += it.k * Math.exp(-d * 9) * Math.sin(d * 75);
+    }
+    return { punch, shake };
+  }
+
   function updateScene(S, t) {
     const sc = S.sc, dur = Math.max(.5, sc.end - sc.start), p = clamp((t - sc.start) / dur, 0, 1.2);
-    // camera
     let cs = 1, cx = 0, cy = 0;
     const e = easeInOut(p);
     switch (sc.camera) {
@@ -303,9 +474,15 @@
       default: cs = 1.02;
     }
     cx += Math.sin(t * .7) * 4; cy += Math.cos(t * .53) * 3;
+    const im = impactAt(t);
+    cs *= 1 + im.punch * .045;
+    cx += im.shake * 14; cy += im.shake * 9;
     S.cam.style.transform = `translate(${cx}px,${cy}px) scale(${cs})`;
-    for (const o of S.els) updateElement(o, t, sc.accent);
+    if (S.cam._set && S.cam._set._svg && S.cam._set._svg.setCurrentTime) { try { S.cam._set._svg.setCurrentTime(Math.max(0, t - sc.start)); } catch (_) { } }
+    const camInfo = { x: cx, y: cy, s: cs };
+    for (const o of S.els) updateElement(o, t, sc.accent, camInfo);
     for (const o of S.wids) updateWidget(o, t, sc.start);
+    if (S.root._mood && S.root._mood._danger) S.root._mood.style.opacity = .75 + .25 * Math.sin(t * 5);
     // captions
     const tp = (t - sc.start - .06) / .32;
     S.top.style.opacity = clamp(tp, 0, 1);
@@ -313,6 +490,14 @@
     const mp = (t - sc.main_t) / .28;
     S.main.style.opacity = clamp(mp * 2, 0, 1);
     S.main.style.transform = `scale(${mp <= 0 ? 1.35 : lerp(1.35, 1, easeBack(mp))})`;
+    updateSubs(S.subs, t, S.col);
+    if (S.chapter) {
+      const lt = t - sc.start, cd = clamp((sc.end - sc.start) * .5, 1.0, 2.2);
+      S.chapter.style.opacity = lt < cd ? 1 : clamp(1 - (lt - cd) / .45, 0, 1);
+      S.chapter.style.display = lt > cd + .5 ? 'none' : 'flex';
+      S.chapter.querySelector('.ch-title').style.transform = `scale(${lerp(1.08, 1, easeOut(lt / cd))})`;
+      S.chapter.querySelector('.ch-line').style.width = (easeInOut((lt - .3) / 1) * 260) + 'px';
+    }
   }
 
   // ---------- fit captions once fonts are ready ----------

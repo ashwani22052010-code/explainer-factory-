@@ -20,8 +20,9 @@ def word_time(words, target, default, after=0.0):
     return default
 
 
-def build(plan, timings, assets, cfg):
-    scenes_out, events = [], []
+def build(plan, timings, assets, cfg, env=None, mode="short"):
+    scenes_out, events, impacts = [], [], []
+    chars = plan.get("characters") or {}
     for i, (sc, tm) in enumerate(zip(plan["scenes"], timings)):
         start, end = tm["start"], tm["end"]
         words = tm["words"]
@@ -35,9 +36,12 @@ def build(plan, timings, assets, cfg):
             default = start + 0.15 + 0.22 * j
             at = word_time(words, e.get("at_word"), default)
             at = min(max(start + 0.05, at), end - 0.4)
-            svg, aspect = assets[e["asset"]]
-            els.append({**e, "t": round(at, 3), "svg": svg, "aspect": aspect})
-            s = ENTER_SFX.get(e["enter"])
+            if e.get("person_id"):
+                els.append({**e, "t": round(at, 3), "person": chars.get(e["person_id"], {})})
+            else:
+                svg, aspect = assets[e["asset"]]
+                els.append({**e, "t": round(at, 3), "svg": svg, "aspect": aspect})
+            s = ENTER_SFX.get(e["enter"]) if e["enter"] != "sketch" else "riser"
             if s:
                 events.append({"t": at, "type": s, "gain": 0.55 if s != "thud" else 0.5})
         wid = []
@@ -51,24 +55,41 @@ def build(plan, timings, assets, cfg):
                 events.append({"t": at, "type": "swoosh_down", "gain": 0.5})
             elif w["type"] in ("bars", "clock"):
                 events.append({"t": at, "type": "riser", "gain": 0.25})
+            elif w["type"] in ("sign", "bubble"):
+                events.append({"t": at, "type": "pop" if w["type"] == "bubble" else "thud", "gain": 0.4})
+            elif w["type"] == "tag":
+                events.append({"t": at, "type": "click", "gain": 0.5})
             wid.append({**w, "t": round(at, 3)})
         main_t = word_time(words, sc.get("main_word"), start + min(0.9, dur * 0.35))
         main_t = min(max(start + 0.2, main_t), end - 0.3)
         if sc["caption_main"]:
             events.append({"t": main_t, "type": "thud", "gain": 0.35})
+            impacts.append({"t": round(main_t, 3), "k": 1.0})
+        if i > 0:
+            impacts.append({"t": round(start + 0.05, 3), "k": 0.35})
         for x in sc["sfx"]:
-            events.append({"t": word_time(words, x.get("at_word"), start + 0.3), "type": x["type"], "gain": 0.6})
+            xt = word_time(words, x.get("at_word"), start + 0.3)
+            events.append({"t": xt, "type": x["type"], "gain": 0.6})
+            if x["type"] in ("thud", "heartbeat", "glitch", "alarm"):
+                impacts.append({"t": round(xt, 3), "k": 0.8})
+        if sc.get("chapter"):
+            events.append({"t": start + 0.1, "type": "riser", "gain": 0.4})
+            events.append({"t": start + max(1.0, min(2.2, dur * 0.5)), "type": "whoosh", "gain": 0.6})
         scenes_out.append({
             "start": round(start, 3), "end": round(end, 3),
             "caption_top": sc["caption_top"], "caption_main": sc["caption_main"],
             "main_t": round(main_t, 3), "accent": sc["accent"], "background": sc["background"],
             "camera": sc["camera"], "transition": sc["transition"], "elements": els, "widgets": wid,
-            "words": words,
+            "words": words, "mood": sc.get("mood"), "rays": sc.get("rays"),
+            "chapter": sc.get("chapter"), "chapter_num": sc.get("chapter_num"),
+            "set": ({"svg": assets[sc["set"]["asset"]][0], "blur": sc["set"].get("blur")}
+                    if sc.get("set") and sc["set"]["asset"] in assets else None),
         })
     duration = timings[-1]["end"] + 0.6 if timings else 1
     pal = cfg["style"]
     return {
         "w": cfg["video"]["width"], "h": cfg["video"]["height"], "fps": cfg["video"]["fps"],
         "duration": round(duration, 3), "palette": pal["palette"], "captionColors": pal["caption_colors"],
-        "scenes": scenes_out,
+        "scenes": scenes_out, "mode": mode, "env": env or [], "impacts": impacts,
+        "subtitles": bool(cfg.get("captions", {}).get("subtitles", True)),
     }, sorted(events, key=lambda e: e["t"])

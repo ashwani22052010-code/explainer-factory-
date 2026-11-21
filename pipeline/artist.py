@@ -9,31 +9,47 @@ from .util import ROOT, log, read_json, write_json, slugify
 LIB = ROOT / "assets" / "library"
 INDEX = LIB / "index.json"
 
-DRAW_PROMPT = """You are a senior vector illustrator for a hit YouTube explainer channel.
+DRAW_PROMPT = """You are a senior vector illustrator for a hit animated YouTube channel.
 Draw: "{describe}"
 
-HOUSE STYLE (must follow, so every drawing in the channel matches):
-- Rich, warm, slightly 3D "storybook diorama" illustration. Flat shapes + 2-3 tone shading per surface
-  (base colour, darker shade on one side, a soft highlight), simple linear/radial gradients allowed.
-- Palette (use these, plus natural skin/wood/metal tones): {palette}
-- Dark warm outline {outline}, stroke-width 4-8 (scale with size), round joins/caps.
-- Clean, bold, readable on a phone screen. Recognisable silhouette. Pleasant proportions.
-- People: simple stylised but well-proportioned, friendly faces (eyes, brows, nose, mouth), clothes with folds.
-- NO background, NO ground plane, NO frame — just the subject on transparent, centred, filling ~90% of the viewBox.
-- No text/letters unless the subject itself needs a short label.
-- Optional: 1-2 subtle looping SMIL animations for life (<animate>/<animateTransform>, repeatCount="indefinite",
-  dur 0.8s-4s), e.g. flame flicker, smoke drift, blinking light, gentle breathing. Keep them subtle.
+HOUSE STYLE (every drawing in the channel must match):
+- Polished flat-2D cartoon illustration with depth: every surface has a base colour, a darker shade side,
+  a soft highlight, and small details (texture strokes, seams, bolts, wood grain, folds, reflections, rim light).
+- Palette (plus natural skin/wood/metal tones): {palette}
+- Dark warm outline {outline}, stroke-width 4-7, round joins/caps. Bold readable silhouette, pleasing proportions.
+- NO background, NO ground, NO frame: only the subject, transparent, centred, filling ~90% of the viewBox.
+- Avoid drawing people unless the subject is a body part / diagram (people are drawn by another system).
+- No text unless the subject itself needs a short label.
+
+RIGGING (important — the animation engine moves these): wrap moving parts in groups with a data-part attribute:
+  <g data-part="wheel">, "flame", "smoke", "tail", "wing_left", "wing_right", "water", "leaf", "light",
+  "eye", "mouth", "head", "arm_left", "arm_right", "leg_left", "leg_right" (for animals/creatures).
+  Only rig parts that really exist. Optional subtle SMIL loops (<animate>, repeatCount="indefinite").
 
 TECHNICAL:
-- Single <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 W H"> (choose W,H to fit the subject, ~1000 on the long side).
+- Single <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 W H"> (~1000 on the long side).
 - Allowed: g, path, rect, circle, ellipse, line, polyline, polygon, defs, linearGradient, radialGradient, stop,
   clipPath, mask, use, animate, animateTransform. NO <style>, <script>, <image>, <filter>, <foreignObject>, CSS classes.
-- Use attributes (fill="#...", stroke=...), not CSS. Give gradient ids short names.
-- Use enough detail: typically 25-120 shapes.
+- Attributes for colour (fill="#...", stroke=...). Short gradient ids. 40-160 shapes of real detail.
 {feedback}
 Return ONLY the SVG code."""
 
-CHECK_PROMPT = """This image should show: "{describe}".
+SET_PROMPT = """You are a background painter for a hit animated YouTube channel (flat-2D cartoon with depth).
+Paint a FULL BACKGROUND SET: "{describe}"
+
+- Edge-to-edge scene filling the whole canvas, {orientation} composition, viewBox="0 0 {w} {h}".
+- NO people or characters (they are added on top later). Leave open floor/ground space in the lower-middle
+  area where characters will stand.
+- Depth: far layer (sky/walls, softer & lighter), mid layer (buildings/furniture), near layer details at the edges.
+  Atmospheric perspective, soft light direction, warm/cool contrast, small storytelling props.
+- Palette: {palette}; dark warm outline {outline} (thinner, 2-4) on mid/near objects.
+- Rig a few living things with <g data-part="water|smoke|flame|leaf|light|wheel"> where they exist; optional subtle SMIL loops.
+- Allowed: g, path, rect, circle, ellipse, line, polyline, polygon, defs, linearGradient, radialGradient, stop, clipPath,
+  use, animate, animateTransform. NO <style>, <script>, <image>, <filter>, <text>. 60-200 shapes.
+{feedback}
+Return ONLY the SVG code."""
+
+CHECK_PROMPT = """This image should show: "{describe}"{kind}.
 It is for a polished illustrated YouTube explainer (warm storybook diorama style).
 Judge it strictly. Return JSON:
 {{"score": 1-10 (7+ = clearly recognisable and nice looking; 4 or less = wrong/ugly/broken),
@@ -41,7 +57,8 @@ Judge it strictly. Return JSON:
 
 
 class Artist:
-    def __init__(self, gem, cfg, browser):
+    def __init__(self, gem, cfg, browser, mode="short"):
+        self.mode = mode
         self.gem = gem
         self.cfg = cfg
         self.browser = browser
@@ -117,7 +134,7 @@ class Artist:
             if g.get("self_check", True):
                 try:
                     png = self.snapshot(svg)
-                    res = self.gem.generate_json(CHECK_PROMPT.format(describe=describe),
+                    res = self.gem.generate_json(CHECK_PROMPT.format(describe=describe, kind=""),
                                                  images=[png], vision=True, temperature=0.2,
                                                  max_tokens=2048)
                     score = float(res.get("score", 5))
@@ -141,22 +158,28 @@ class Artist:
 
 
     # ---------- parallel drawing (fast path used by main) ----------
+    def _prompt(self, name, desc, feedback):
+        if name.startswith("set_"):
+            w, h = (1600, 900) if self.mode == "story" else (900, 1600)
+            return SET_PROMPT.format(describe=desc, palette=self.palette, outline=self.outline, feedback=feedback,
+                                     w=w, h=h, orientation="wide landscape 16:9" if self.mode == "story" else "tall portrait 9:16")
+        return DRAW_PROMPT.format(describe=desc, palette=self.palette, outline=self.outline, feedback=feedback)
+
     def _gen(self, name, st, attempt):
         try:
-            text = self.gem.generate(
-                DRAW_PROMPT.format(describe=st["desc"], palette=self.palette, outline=self.outline,
-                                   feedback=st["feedback"]),
-                temperature=0.9 if attempt > 1 else 0.7, max_tokens=24000)
+            text = self.gem.generate(self._prompt(name, st["desc"], st["feedback"]),
+                                     temperature=0.9 if attempt > 1 else 0.7, max_tokens=24000)
             return sanitize(text, slugify(name, 20))
         except Exception as e:
             log(f"      '{name}': invalid drawing ({str(e)[:100]})")
             return None
 
-    def _check(self, desc, png):
+    def _check(self, desc, png, name=""):
         if png is None:
             return 7.0, ""
         try:
-            res = self.gem.generate_json(CHECK_PROMPT.format(describe=desc), images=[png], vision=True,
+            kind = " (a full background scene, no people)" if name.startswith("set_") else ""
+            res = self.gem.generate_json(CHECK_PROMPT.format(describe=desc, kind=kind), images=[png], vision=True,
                                          temperature=0.2, max_tokens=2048)
             return float(res.get("score", 5)), str(res.get("problems", ""))[:400]
         except Exception as e:
@@ -196,7 +219,7 @@ class Artist:
             pngs = {n: (self.snapshot(r[0]) if check else None) for n, r in gen.items() if r}
             names = list(pngs)
             with ThreadPoolExecutor(par) as ex:
-                checks = dict(zip(names, ex.map(lambda n: self._check(state[n]["desc"], pngs[n]), names)))
+                checks = dict(zip(names, ex.map(lambda n: self._check(state[n]["desc"], pngs[n], n), names)))
             nxt = []
             for n in pending:
                 st, r = state[n], gen.get(n)

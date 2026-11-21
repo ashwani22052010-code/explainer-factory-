@@ -60,3 +60,20 @@ def mix(narration_wav, events, duration, cfg, out_path):
         w.writeframes(stereo.tobytes())
     log(f"Audio mix ready ({duration:.1f}s, {len(events)} sound effects)")
     return out_path
+
+
+def envelope(wav, fps):
+    """Voice loudness per video frame (0..1) — drives mouth/talk animation."""
+    x = read_audio(wav)
+    hop = int(SR / fps)
+    n = len(x) // hop
+    if n == 0:
+        return []
+    rms = np.sqrt(np.mean(x[: n * hop].reshape(n, hop) ** 2, axis=1))
+    ref = np.percentile(rms, 95) or 1
+    env = np.clip(rms / ref, 0, 1)
+    out, acc = [], 0.0
+    for v in env:  # fast attack, slower release
+        acc = v if v > acc else acc * 0.6 + v * 0.4
+        out.append(round(float(acc), 2))
+    return out

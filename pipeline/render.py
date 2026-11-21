@@ -93,6 +93,7 @@ def snapshot(work, data, times, out_dir):
     with sync_playwright() as p:
         b = p.chromium.launch()
         page = b.new_page(viewport={"width": data["w"], "height": data["h"]})
+        page.on("pageerror", lambda e: print("PAGE ERROR:", e))
         page.goto((rdir / "index.html").resolve().as_uri())
         page.wait_for_function("window.__ready === true", timeout=60000)
         for t in times:

@@ -51,6 +51,14 @@ Repo → **Settings** → **Actions** → **General** → *Workflow permissions*
 
 Example scripts `examples/` folder mein hain. Unhe copy karke `scripts/` mein daal do, pehla test ho jayega.
 
+### Shorts ya lambi Story video?
+Script ki **pehli line** se mode chuno:
+- `#short hindi`: 9:16 vertical explainer (default)
+- `#story english`: 16:9 horizontal kahani, "What if you were born as…" style, chapters, characters, name tags, speech bubbles
+- Voice bhi likh sakte ho: `#story english Fenrir`
+
+Characters (insaan) code se bante hain: hamesha same dikhte hain, aankh jhapakte hain, bolte waqt munh hilta hai, chalte aur haath hilate hain. Background sets aur cheezein AI draw karta hai.
+
 ### Apni awaaz use karni hai?
 Pehle `voice/` folder mein recording upload karo, script ke **same naam** se (`voice/angithi.mp3`), **phir** script daalo. System recording ko sun ke scenes ki timing khud set kar dega.
 

@@ -1,91 +1,142 @@
-"""Script -> scene plan (JSON). Narration stays EXACTLY the user's words."""
+"""Script -> scene plan (JSON). Narration stays EXACTLY the user's words.
+Two modes: short (9:16 explainer) and story (16:9 "What if you were born as…" style)."""
 from .util import log, slugify, split_into_chunks
 
-ENTER = ["pop", "slide_left", "slide_right", "drop", "rise", "fade", "zoom", "draw"]
+ENTER = ["pop", "slide_left", "slide_right", "drop", "rise", "fade", "zoom", "draw", "sketch"]
 MOTION = ["none", "float", "pulse", "shake", "sway", "spin", "glow", "breathe", "bob"]
 CAMERA = ["zoom_in", "zoom_out", "pan_left", "pan_right", "push", "still"]
 BG_TYPES = ["wall", "night", "sunset", "dark", "sky"]
 BG_COLORS = ["mustard", "teal", "purple", "terracotta", "navy", "cream", "red"]
 SFX = ["whoosh", "pop", "tick", "thud", "riser", "ding", "heartbeat", "glitch", "click", "swoosh_down", "alarm"]
-WIDGETS = ["counter", "paper", "particles", "bars", "clock"]
+WIDGETS = ["counter", "paper", "particles", "bars", "clock", "sign", "tag", "bubble"]
 TRANSITIONS = ["slide_left", "slide_up", "fade", "zoom", "flash"]
+MOODS = ["none", "warm", "cold", "danger", "night", "dream", "sad"]
+POSES = ["stand", "wave", "point", "hands_up", "walk", "run", "sit", "shrug", "hold", "lie", "drown", "think"]
+EXPR = ["neutral", "happy", "sad", "scared", "angry", "shocked", "sleeping", "thinking", "dead"]
+ACTIONS = ["idle", "walk", "run", "wave", "panic"]
+PERSON_KEYS = {
+    "gender": ["m", "f"], "age": ["child", "teen", "adult", "old"], "skin": ["light", "medium", "brown", "dark"],
+    "hair": ["short", "long", "bun", "ponytail", "curly", "spiky", "bald"],
+    "hair_color": ["black", "brown", "blonde", "red", "grey", "white"],
+    "beard": ["none", "stubble", "full", "mustache"],
+    "top": ["shirt", "tshirt", "kurta", "suit", "uniform", "saree", "coat", "vest"],
+    "bottom": ["pants", "shorts", "skirt", "dhoti", "dress"],
+    "hat": ["none", "cowboy", "cap", "turban", "police", "helmet", "crown"],
+}
 
-PROMPT = """You are the director of a viral vertical (9:16) explainer video channel.
-Style: real-incident / science explainers like "a family of four, next morning none woke up…".
-Every scene = ONE strong visual idea on a textured illustrated set, short punchy captions, constant motion.
+COMMON_RULES = """
+VISUAL TOOLKIT (use it richly, every scene should feel designed and alive):
+1. "set": a full illustrated BACKGROUND drawn edge-to-edge by an AI artist (a room, street, pool, river bank, saloon,
+   hospital, village at night...). Give it a reusable snake_case asset name + vivid description WITHOUT people.
+   Reuse the same set across scenes in the same location. If no set, a plain stylised backdrop is used.
+2. "elements": things drawn on top.
+   - PEOPLE are NOT drawn by the artist: use {{"person": "<character id>", "pose": .., "expression": .., "framing": "full|bust|head"}}.
+     Define every character once in "characters" with fixed look. Use "talks": true when that character is the one
+     speaking/being described, "action" for limb animation (walk/run/wave/panic/idle). "bust" = close-up.
+   - Objects/animals/diagrams: {{"asset": "snake_case_name", "describe": "precise visual description"}}.
+     The artist rigs moving parts (wheels, flames, tails, water...) automatically.
+   - "layer": back | mid | front  (depth parallax; back gets blurred).  "to_x": target x to move/walk across the scene.
+   - "rotate": degrees (e.g. 90 for a person lying down). "submerge": 0-85 = % of the element hidden below a water line
+     (swimming/drowning people, boats, half-sunk objects).
+3. "widgets": counter (big flip number), paper (pinned study/news card with highlighted line), particles
+   (smoke/dust/sparks/rain/snow/bubbles/embers), bars (comparison chart), clock (time passing),
+   sign (wooden location board: {{"type":"sign","text":"THE GANG'S CAMP","sub":"1894","x":22,"y":14}}),
+   tag (name label with arrow: {{"type":"tag","text":"ARTHUR","x":..,"y":..,"dir":"down|left|right"}}),
+   bubble (speech bubble: {{"type":"bubble","text":"Leave her.","x":..,"y":..,"tail":"left|right"}}).
+4. "mood": tint for emotion (warm/cold/danger/night/dream/sad/none). "rays": true for god-rays light.
+5. Enter animations: pop, slide_left, slide_right, drop, rise, fade, zoom, draw, sketch (line-drawing reveal).
+   Motions: float, pulse, shake, sway, spin, glow, breathe, bob, none.
+"""
 
-The narration script is already split into numbered CHUNKS. Group consecutive chunks into scenes
-(usually 1 chunk per scene, max 2; a scene should last ~2-6 seconds). Every chunk must be used exactly once, in order.
+SHORT_PROMPT = """You are the director of a viral vertical (9:16) explainer channel.
+Style: real-incident / science explainers ("a family of four, next morning none woke up…").
+Each scene = ONE strong visual idea, punchy captions, constant motion.
 
-CHUNKS:
+CHUNKS (narration, already split; group consecutive chunks into scenes, usually 1 per scene, max 2;
+every chunk exactly once, in order):
 {chunks}
 
 Narration language: {language}. Captions language: {caption_language}.
+{context}
+EXISTING LIBRARY (already drawn, reuse by exact name if it fits): {library}
 
-For each scene decide what to SHOW. Visual objects ("elements") will be DRAWN AS VECTOR ILLUSTRATIONS by an AI
-artist from your "describe" text, so describe concrete, drawable things (objects, people, places, body parts,
-animals, diagrams). One element = one object or a small tight group (e.g. "four people sleeping side by side
-under colourful quilts on a wooden bed"). Prefer 1-3 elements per scene. REUSE the same asset name across
-scenes when the same thing appears again (consistency + saves cost).
-
-EXISTING LIBRARY (already drawn, reuse by exact name when it fits):
-{library}
-
-FRAME LAYOUT: 1080x1920. Captions sit in the top area (y 5%-22%). Put visuals between y 30% and 92%.
-x,y = element CENTER in % of frame. w = element width in % of frame width (15-95).
-Bigger hero element usually w 60-90 at y 55-65.
-
+FRAME 1080x1920. Captions occupy the top (y 5-22%). Word subtitles appear near y 85%. Put visuals between y 28% and 80%.
+x,y = element CENTER in % of frame; w = width in % of frame width (15-95).
+""" + COMMON_RULES + """
 Return JSON:
-{{
- "title": "catchy YouTube title in {caption_language}",
- "description": "2-3 line YouTube description in {caption_language}",
- "tags": ["5-10 tags"],
- "scenes": [
-  {{
-   "chunks": [1],
-   "caption_top": "2-4 WORDS, small white line",
-   "caption_main": "1-4 WORDS, big coloured punch line (or empty string)",
-   "main_word": "the narration word when the main caption should pop (copy a word from the chunk), or empty",
-   "accent": one of {accents},
-   "background": {{"type": one of {bg_types}, "color": one of {bg_colors}, "floor": true/false}},
-   "camera": one of {camera},
-   "transition": one of {transitions}  (how this scene enters),
-   "elements": [
-     {{"asset": "short_snake_case_name", "describe": "precise visual description for the artist (only needed if new)",
-       "x": 50, "y": 60, "w": 70, "enter": one of {enter}, "motion": one of {motion},
-       "at_word": "narration word when it appears (or empty = scene start)", "flip": false}}
-   ],
-   "widgets": [ optional, any of:
-     {{"type":"counter","value":"58,000","label":"EVERY YEAR","x":50,"y":45}},
-     {{"type":"paper","title":"headline or study title","source":"AIIMS Delhi","highlight":"95% deaths in winter","x":50,"y":62}},
-     {{"type":"particles","kind": one of ["smoke","dust","sparks","rain","snow","bubbles","embers"]}},
-     {{"type":"bars","items":[{{"label":"India","value":58}},{{"label":"Rest","value":42}}],"x":50,"y":62}},
-     {{"type":"clock","from":"20:00","to":"02:00","x":50,"y":58}}
-   ],
-   "sfx": [ optional extra sound effects: {{"type": one of {sfx}, "at_word": "word"}} ]
-  }}
- ]
-}}
-
-Rules:
-- Use numbers/facts ONLY if they are in the script. Use "paper"/"counter" widgets when the script cites data or sources.
-- Captions: ALL CAPS, very short, never full sentences, they highlight the key idea of the chunk.
-- Vary backgrounds/cameras/enters so it never feels static. Dramatic moments: night/dark backgrounds, heartbeat/riser sfx.
-- Keep describe texts specific (colours, materials, Indian setting if the story is in India, etc).
+{{"title": "...", "description": "...", "tags": [...],
+ "characters": {{"id": {{"gender":..,"age":..,"skin":..,"hair":..,"hair_color":..,"beard":..,"top":..,"top_color":"colour name",
+                 "bottom":..,"bottom_color":"colour name","hat":..,"glasses":false}}}},
+ "scenes": [{{"chunks":[1], "caption_top":"2-4 WORDS", "caption_main":"1-4 WORDS or empty", "main_word":"word in chunk",
+   "accent":"orange|red|teal|yellow", "background":{{"type":..,"color":..,"floor":true}},
+   "set": {{"asset":"..","describe":".."}} or null, "mood":.., "rays":false, "camera":.., "transition":..,
+   "elements":[...], "widgets":[...], "sfx":[{{"type":..,"at_word":".."}}]}}]}}
+Rules: facts/numbers ONLY from the script. Captions ALL CAPS, short. Vary sets/cameras/enters. Use sets often.
 """
 
+STORY_PROMPT = """You are the director of a hit 16:9 animated storytelling channel ("What if you were born as…",
+life stories, history). Flat 2D cartoon look: fully illustrated locations, recurring characters with consistent looks,
+name tags with arrows, location/year signs, speech bubbles, insert documents, chapter title cards.
 
-def build_plan(gem, script, cfg, library_names):
-    chunks = split_into_chunks(script)
-    numbered = "\n".join(f"{i + 1}. {c}" for i, c in enumerate(chunks))
-    lib = ", ".join(sorted(library_names)[:400]) or "(empty)"
-    prompt = PROMPT.format(
-        chunks=numbered, language=cfg["language"], caption_language=cfg["caption_language"],
-        library=lib, accents=list(cfg["style"]["caption_colors"].keys()), bg_types=BG_TYPES,
-        bg_colors=BG_COLORS, camera=CAMERA, transitions=TRANSITIONS, enter=ENTER, motion=MOTION, sfx=SFX)
-    log(f"Planner: {len(chunks)} chunks → scenes")
-    plan = gem.generate_json(prompt, temperature=0.8)
-    return normalize_plan(plan, chunks, library_names)
+CHUNKS (narration; group consecutive chunks into scenes, 1-2 per scene; every chunk exactly once, in order):
+{chunks}
+
+Narration language: {language}. On-screen text language: {caption_language}.
+{context}
+EXISTING LIBRARY (reuse by exact name if it fits): {library}
+
+FRAME 1920x1080 (landscape). Top-left has small headline captions (optional, use sparingly in story mode -
+often leave caption_top/caption_main empty and use signs/tags/bubbles instead). Subtitles at bottom.
+x,y = element CENTER in % of frame; w = width in % of frame width (8-60). People standing on ground: y 60-72, w 12-20.
+Close-up talking person: framing "bust", w 22-30, y 62.
+""" + COMMON_RULES + """
+Story extras: when a new chapter of life starts, set "chapter": "Short Chapter Title" and "chapter_num": "CHAPTER II"
+on that scene (max ~1 per 6-10 scenes; first scene can be a chapter). Use "sign" when a location/time first appears,
+"tag" when a character first appears, "bubble" for short spoken lines.
+
+Return JSON:
+{{"title":"...","description":"...","tags":[...],
+ "characters": {{"id": {{...look fields...}}}},
+ "scenes":[{{"chunks":[1],"caption_top":"","caption_main":"","main_word":"","accent":"orange",
+   "background":{{"type":..,"color":..,"floor":true}},"set":{{"asset":"..","describe":".."}},"mood":..,"rays":false,
+   "camera":..,"transition":..,"chapter":null,"chapter_num":null,"elements":[...],"widgets":[...],"sfx":[]}}]}}
+Rules: facts ONLY from the script. Keep characters consistent (same id = same look). Every scene should have a set.
+"""
+
+CHAR_FIELDS = "Character look fields: " + "; ".join(f"{k}: {'|'.join(v)}" for k, v in PERSON_KEYS.items()) + \
+              "; top_color/bottom_color/hat_color: colour names (red, maroon, orange, yellow, green, teal, blue, navy, purple, pink, white, cream, grey, black, brown, khaki, beige); glasses: true/false."
+
+
+def build_plan(gem, script, cfg, library_names, mode="short"):
+    chunks = split_into_chunks(script, max_words=16 if mode == "short" else 22)
+    lib = ", ".join(sorted(library_names)[:300]) or "(empty)"
+    tmpl = STORY_PROMPT if mode == "story" else SHORT_PROMPT
+    batch = 16 if mode == "short" else 14
+    merged = {"title": "", "description": "", "tags": [], "characters": {}, "scenes": []}
+    for b0 in range(0, len(chunks), batch):
+        part = chunks[b0:b0 + batch]
+        numbered = "\n".join(f"{b0 + i + 1}. {c}" for i, c in enumerate(part))
+        ctx = CHAR_FIELDS
+        if merged["characters"]:
+            ctx += "\nCHARACTERS ALREADY DEFINED (reuse these ids, do not redefine): " + \
+                   "; ".join(f"{k}={v}" for k, v in merged["characters"].items())
+        if merged["scenes"]:
+            last = merged["scenes"][-1]
+            used_sets = sorted({(s.get("set") or {}).get("asset", "") for s in merged["scenes"] if s.get("set")} - {""})
+            ctx += f"\nThis continues an existing video (chunks before {b0 + 1} are done). Sets already used: {', '.join(used_sets)}." \
+                   f" Previous scene caption: {last.get('caption_top', '')} {last.get('caption_main', '')}."
+        prompt = tmpl.format(chunks=numbered, language=cfg["language"], caption_language=cfg["caption_language"],
+                             library=lib, context=ctx)
+        log(f"Planner ({mode}): chunks {b0 + 1}-{b0 + len(part)} / {len(chunks)}")
+        out = gem.generate_json(prompt, temperature=0.8)
+        if not merged["title"]:
+            for k in ("title", "description", "tags"):
+                merged[k] = out.get(k, merged[k])
+        for k, v in (out.get("characters") or {}).items():
+            if isinstance(v, dict):
+                merged["characters"].setdefault(slugify(k), v)
+        merged["scenes"] += [s for s in (out.get("scenes") or []) if isinstance(s, dict)]
+    return normalize_plan(merged, chunks, library_names, mode)
 
 
 def _num(v, default, lo, hi):
@@ -99,11 +150,27 @@ def _pick(v, options, default):
     return v if v in options else default
 
 
-def normalize_plan(plan, chunks, library_names=()):
-    """Make the model output safe: every chunk once, in order; clamp all values."""
+PERSON_DEFAULTS = {"gender": "m", "age": "adult", "skin": "medium", "hair": "short", "hair_color": "black",
+                   "beard": "none", "top": "shirt", "bottom": "pants", "hat": "none"}
+
+
+def norm_person(spec):
+    spec = spec if isinstance(spec, dict) else {}
+    out = {k: _pick(str(spec.get(k, "")).lower(), opts, PERSON_DEFAULTS[k]) for k, opts in PERSON_KEYS.items()}
+    g = str(spec.get("gender", "")).lower()
+    if g not in ("m", "f"):
+        out["gender"] = "f" if g.startswith(("f", "w", "g")) else "m"
+    for k in ("top_color", "bottom_color", "hat_color"):
+        if spec.get(k):
+            out[k] = str(spec[k]).lower().strip()
+    out["glasses"] = bool(spec.get("glasses"))
+    out["bindi"] = bool(spec.get("bindi"))
+    return out
+
+
+def normalize_plan(plan, chunks, library_names=(), mode="short"):
     raw = plan.get("scenes") or []
-    used = set()
-    scenes = []
+    used, scenes = set(), []
     for s in raw:
         ids = []
         for c in s.get("chunks") or []:
@@ -119,54 +186,85 @@ def normalize_plan(plan, chunks, library_names=()):
         s["_ids"] = sorted(ids)
         scenes.append(s)
     scenes.sort(key=lambda s: s["_ids"][0])
-    # chunks the model forgot -> attach to the closest previous scene (or a new plain scene)
     for c in range(len(chunks)):
         if c in used:
             continue
         prev = [s for s in scenes if s["_ids"][0] < c]
-        if prev:
+        if prev and len(prev[-1]["_ids"]) < 3:
             prev[-1]["_ids"].append(c)
-        else:
-            scenes.insert(0, {"_ids": [c], "caption_top": "", "caption_main": "", "elements": []})
+        else:  # make a scene that reuses the previous visuals
+            base = dict(prev[-1]) if prev else {"elements": []}
+            base = {**base, "_ids": [c], "caption_top": "", "caption_main": "", "chapter": None, "widgets": []}
+            scenes.append(base)
+        scenes.sort(key=lambda s: s["_ids"][0])
     for s in scenes:
         s["_ids"].sort()
 
+    chars = {slugify(k): norm_person(v) for k, v in (plan.get("characters") or {}).items()}
     out = []
     for i, s in enumerate(scenes):
         narration = " ".join(chunks[c] for c in s["_ids"])
         bg = s.get("background") or {}
         els = []
-        for e in (s.get("elements") or [])[:4]:
-            name = slugify(e.get("asset") or e.get("describe") or "thing")
-            if not name:
+        for e in (s.get("elements") or [])[:6]:
+            if not isinstance(e, dict):
                 continue
-            els.append({
-                "asset": name,
-                "describe": (e.get("describe") or name.replace("_", " ")).strip(),
-                "x": _num(e.get("x"), 50, 0, 100), "y": _num(e.get("y"), 62, 20, 100),
-                "w": _num(e.get("w"), 60, 8, 100),
-                "enter": _pick(e.get("enter"), ENTER, "pop"),
-                "motion": _pick(e.get("motion"), MOTION, "float"),
+            base = {
+                "x": _num(e.get("x"), 50, -10, 110), "y": _num(e.get("y"), 62, 10, 105),
+                "w": _num(e.get("w"), 60 if mode == "short" else 20, 5, 100),
+                "enter": _pick(e.get("enter"), ENTER, "pop"), "motion": _pick(e.get("motion"), MOTION, "none"),
                 "at_word": str(e.get("at_word") or ""), "flip": bool(e.get("flip")),
-            })
-        widgets = []
-        for w in (s.get("widgets") or [])[:3]:
-            if isinstance(w, dict) and w.get("type") in WIDGETS:
-                widgets.append(w)
+                "layer": _pick(e.get("layer"), ["back", "mid", "front"], "mid"),
+                "action": _pick(e.get("action"), ACTIONS, "idle"), "talks": bool(e.get("talks")),
+            }
+            if e.get("to_x") is not None:
+                base["to_x"] = _num(e.get("to_x"), base["x"], -20, 120)
+            if e.get("rotate"):
+                base["rotate"] = _num(e.get("rotate"), 0, -180, 180)
+            if e.get("submerge"):
+                base["submerge"] = _num(e.get("submerge"), 0, 0, 85)
+            pid = e.get("person") or e.get("character")
+            if pid:
+                pid = slugify(pid)
+                if pid not in chars:
+                    chars[pid] = norm_person(e.get("look") or {})
+                pose = _pick(e.get("pose"), POSES, "stand")
+                if pose == "lie" and "rotate" not in base:
+                    base["rotate"] = -90
+                if base["action"] in ("walk", "run") and pose == "stand":
+                    pose = base["action"]
+                base.update({"person_id": pid, "pose": pose,
+                             "expression": _pick(e.get("expression"), EXPR, "neutral"),
+                             "framing": _pick(e.get("framing"), ["full", "bust", "head"], "full")})
+                if base["motion"] in ("spin",):
+                    base["motion"] = "none"
+                els.append(base)
+                continue
+            name = slugify(e.get("asset") or e.get("describe") or "thing")
+            base.update({"asset": name, "describe": (e.get("describe") or name.replace("_", " ")).strip()})
+            els.append(base)
+        widgets = [w for w in (s.get("widgets") or [])[:5] if isinstance(w, dict) and w.get("type") in WIDGETS]
         sfx = [x for x in (s.get("sfx") or []) if isinstance(x, dict) and x.get("type") in SFX][:4]
+        st = s.get("set") if isinstance(s.get("set"), dict) else None
+        if st and (st.get("asset") or st.get("describe")):
+            st = {"asset": "set_" + slugify(st.get("asset") or st.get("describe")).removeprefix("set_"),
+                  "describe": (st.get("describe") or st.get("asset")).strip(), "blur": bool(st.get("blur"))}
+        else:
+            st = None
         out.append({
-            "index": i,
-            "narration": narration,
+            "index": i, "narration": narration,
             "caption_top": str(s.get("caption_top") or "").upper()[:40],
             "caption_main": str(s.get("caption_main") or "").upper()[:40],
             "main_word": str(s.get("main_word") or ""),
             "accent": s.get("accent") if s.get("accent") in ("orange", "red", "teal", "yellow") else "orange",
             "background": {"type": _pick(bg.get("type"), BG_TYPES, "wall"),
-                           "color": _pick(bg.get("color"), BG_COLORS, "mustard"),
-                           "floor": bool(bg.get("floor"))},
+                           "color": _pick(bg.get("color"), BG_COLORS, "mustard"), "floor": bool(bg.get("floor"))},
+            "set": st, "mood": _pick(s.get("mood"), MOODS, "none"), "rays": bool(s.get("rays")),
             "camera": _pick(s.get("camera"), CAMERA, "zoom_in"),
             "transition": _pick(s.get("transition"), TRANSITIONS, "slide_left"),
+            "chapter": (str(s.get("chapter"))[:40] if s.get("chapter") else None),
+            "chapter_num": (str(s.get("chapter_num"))[:20] if s.get("chapter_num") else None),
             "elements": els, "widgets": widgets, "sfx": sfx,
         })
     return {"title": plan.get("title", ""), "description": plan.get("description", ""),
-            "tags": plan.get("tags", []), "scenes": out}
+            "tags": plan.get("tags", []), "mode": mode, "characters": chars, "scenes": out}

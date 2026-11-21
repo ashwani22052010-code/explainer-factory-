@@ -3,6 +3,9 @@
 #  Sirf yahi file badalni hai. Baaki sab automatic hai.
 # ============================================================
 
+# Default mode: short (9:16) | story (16:9 lambi kahani). Script ki pehli line #story ya #short likh ke bhi badal sakte ho.
+mode: short
+
 # Voiceover ki language: hindi | english | portuguese
 language: hindi
 
@@ -27,6 +30,9 @@ video:
   height: 1920
   fps: 30
   workers: 3           # parallel rendering (GitHub runner pe 3-4 sahi hai)
+
+captions:
+  subtitles: true     # word-by-word bolte hue captions (karaoke style)
 
 audio:
   music: auto          # auto = code se bani background music | off | music/ folder ki file ka naam

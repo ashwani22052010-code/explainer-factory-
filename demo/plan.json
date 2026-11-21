@@ -1,70 +1,334 @@
 {
- "title": "The silent killer in your room",
- "description": "demo",
- "tags": [
-  "demo"
- ],
+ "title": "Drowning is silent",
+ "description": "",
+ "tags": [],
+ "mode": "short",
+ "characters": {
+  "mom": {
+   "gender": "f",
+   "age": "adult",
+   "skin": "brown",
+   "hair": "bun",
+   "hair_color": "black",
+   "beard": "none",
+   "top": "saree",
+   "bottom": "pants",
+   "hat": "none",
+   "top_color": "teal",
+   "glasses": false,
+   "bindi": true
+  },
+  "dad": {
+   "gender": "m",
+   "age": "adult",
+   "skin": "brown",
+   "hair": "short",
+   "hair_color": "black",
+   "beard": "mustache",
+   "top": "tshirt",
+   "bottom": "shorts",
+   "hat": "none",
+   "top_color": "orange",
+   "bottom_color": "navy",
+   "glasses": false,
+   "bindi": false
+  },
+  "kid": {
+   "gender": "m",
+   "age": "child",
+   "skin": "brown",
+   "hair": "spiky",
+   "hair_color": "black",
+   "beard": "none",
+   "top": "tshirt",
+   "bottom": "shorts",
+   "hat": "none",
+   "top_color": "yellow",
+   "bottom_color": "blue",
+   "glasses": false,
+   "bindi": false
+  }
+ },
  "scenes": [
   {
    "index": 0,
-   "narration": "A family of four went to sleep on a cold winter night.",
-   "caption_top": "A FAMILY OF FOUR",
-   "caption_main": "",
-   "main_word": "",
+   "narration": "Twenty people in a swimming pool. Parents busy on their phones.",
+   "caption_top": "20 PEOPLE",
+   "caption_main": "ONE POOL",
+   "main_word": "pool",
    "accent": "orange",
    "background": {
-    "type": "night",
-    "color": "purple",
-    "floor": true
+    "type": "wall",
+    "color": "mustard",
+    "floor": false
    },
+   "set": {
+    "asset": "set_pool",
+    "describe": "pool",
+    "blur": false
+   },
+   "mood": "warm",
+   "rays": true,
    "camera": "zoom_in",
    "transition": "slide_left",
+   "chapter": null,
+   "chapter_num": null,
    "elements": [
     {
-     "asset": "window_moon",
-     "describe": "window moon",
-     "x": 50.0,
-     "y": 52.0,
-     "w": 62.0,
-     "enter": "fade",
+     "x": 22.0,
+     "y": 46.0,
+     "w": 30.0,
+     "enter": "pop",
      "motion": "none",
      "at_word": "",
-     "flip": false
+     "flip": false,
+     "layer": "back",
+     "action": "idle",
+     "talks": false,
+     "person_id": "mom",
+     "pose": "hold",
+     "expression": "happy",
+     "framing": "full"
+    },
+    {
+     "x": 78.0,
+     "y": 46.0,
+     "w": 30.0,
+     "enter": "pop",
+     "motion": "none",
+     "at_word": "",
+     "flip": false,
+     "layer": "back",
+     "action": "idle",
+     "talks": false,
+     "person_id": "dad",
+     "pose": "stand",
+     "expression": "neutral",
+     "framing": "full"
     }
    ],
    "widgets": [
     {
-     "type": "particles",
-     "kind": "snow"
+     "type": "tag",
+     "text": "BUSY ON PHONES",
+     "x": 50,
+     "y": 32,
+     "dir": "down"
     }
    ],
    "sfx": []
   },
   {
    "index": 1,
-   "narration": "Next morning, none of them woke up.",
-   "caption_top": "NEXT MORNING",
-   "caption_main": "NONE WOKE UP",
-   "main_word": "none",
+   "narration": "And in the middle, a child is drowning. Nobody notices.",
+   "caption_top": "IN THE MIDDLE",
+   "caption_main": "A CHILD",
+   "main_word": "child",
+   "accent": "orange",
+   "background": {
+    "type": "wall",
+    "color": "mustard",
+    "floor": false
+   },
+   "set": {
+    "asset": "set_pool",
+    "describe": "pool",
+    "blur": false
+   },
+   "mood": "danger",
+   "rays": false,
+   "camera": "push",
+   "transition": "flash",
+   "chapter": null,
+   "chapter_num": null,
+   "elements": [
+    {
+     "x": 50.0,
+     "y": 70,
+     "w": 42.0,
+     "enter": "rise",
+     "motion": "none",
+     "at_word": "",
+     "flip": false,
+     "layer": "mid",
+     "action": "panic",
+     "talks": false,
+     "person_id": "kid",
+     "pose": "drown",
+     "expression": "scared",
+     "framing": "full",
+     "submerge": 48
+    }
+   ],
+   "widgets": [
+    {
+     "type": "particles",
+     "kind": "bubbles"
+    }
+   ],
+   "sfx": [
+    {
+     "type": "heartbeat",
+     "at_word": "notices"
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "narration": "No scream, no waving, no splash. A drowning person cannot call for help.",
+   "caption_top": "NO SCREAM",
+   "caption_main": "NO SPLASH",
+   "main_word": "splash",
+   "accent": "orange",
+   "background": {
+    "type": "dark",
+    "color": "teal",
+    "floor": false
+   },
+   "set": null,
+   "mood": "cold",
+   "rays": false,
+   "camera": "zoom_in",
+   "transition": "slide_left",
+   "chapter": null,
+   "chapter_num": null,
+   "elements": [
+    {
+     "x": 50.0,
+     "y": 58.0,
+     "w": 80.0,
+     "enter": "zoom",
+     "motion": "none",
+     "at_word": "",
+     "flip": false,
+     "layer": "mid",
+     "action": "idle",
+     "talks": false,
+     "person_id": "kid",
+     "pose": "drown",
+     "expression": "shocked",
+     "framing": "bust"
+    }
+   ],
+   "widgets": [],
+   "sfx": []
+  },
+  {
+   "index": 3,
+   "narration": "The fight lasts only twenty to sixty seconds.",
+   "caption_top": "ONLY",
+   "caption_main": "60 SECONDS",
+   "main_word": "sixty",
+   "accent": "orange",
+   "background": {
+    "type": "wall",
+    "color": "navy",
+    "floor": false
+   },
+   "set": null,
+   "mood": "none",
+   "rays": false,
+   "camera": "zoom_in",
+   "transition": "zoom",
+   "chapter": null,
+   "chapter_num": null,
+   "elements": [],
+   "widgets": [
+    {
+     "type": "counter",
+     "value": "60",
+     "label": "SECONDS",
+     "x": 50,
+     "y": 50
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "index": 4,
+   "narration": "So if someone is silent in the water, ask them: are you okay?",
+   "caption_top": "IF SILENT",
+   "caption_main": "ASK!",
+   "main_word": "ask",
+   "accent": "orange",
+   "background": {
+    "type": "wall",
+    "color": "mustard",
+    "floor": false
+   },
+   "set": {
+    "asset": "set_pool",
+    "describe": "pool",
+    "blur": true
+   },
+   "mood": "none",
+   "rays": false,
+   "camera": "push",
+   "transition": "slide_up",
+   "chapter": null,
+   "chapter_num": null,
+   "elements": [
+    {
+     "x": 42.0,
+     "y": 60.0,
+     "w": 78.0,
+     "enter": "slide_right",
+     "motion": "none",
+     "at_word": "",
+     "flip": false,
+     "layer": "mid",
+     "action": "idle",
+     "talks": true,
+     "person_id": "mom",
+     "pose": "point",
+     "expression": "scared",
+     "framing": "bust"
+    }
+   ],
+   "widgets": [
+    {
+     "type": "bubble",
+     "text": "ARE YOU OKAY?",
+     "x": 62,
+     "y": 34,
+     "tail": "left"
+    }
+   ],
+   "sfx": []
+  },
+  {
+   "index": 5,
+   "narration": "Danger hides in quiet places, like a coal stove in a closed room.",
+   "caption_top": "DANGER IS",
+   "caption_main": "QUIET",
+   "main_word": "quiet",
    "accent": "orange",
    "background": {
     "type": "wall",
     "color": "mustard",
     "floor": true
    },
-   "camera": "push",
-   "transition": "flash",
+   "set": null,
+   "mood": "warm",
+   "rays": false,
+   "camera": "zoom_in",
+   "transition": "slide_left",
+   "chapter": null,
+   "chapter_num": null,
    "elements": [
     {
-     "asset": "angithi",
-     "describe": "angithi",
      "x": 50.0,
-     "y": 66.0,
-     "w": 70.0,
-     "enter": "drop",
+     "y": 62.0,
+     "w": 66.0,
+     "enter": "sketch",
      "motion": "glow",
      "at_word": "",
-     "flip": false
+     "flip": false,
+     "layer": "mid",
+     "action": "idle",
+     "talks": false,
+     "asset": "angithi",
+     "describe": "angithi"
     }
    ],
    "widgets": [
@@ -74,189 +338,6 @@
     }
    ],
    "sfx": []
-  },
-  {
-   "index": 2,
-   "narration": "Police broke in. The door was locked from the inside.",
-   "caption_top": "LOCKED",
-   "caption_main": "FROM THE INSIDE",
-   "main_word": "locked",
-   "accent": "red",
-   "background": {
-    "type": "dark",
-    "color": "teal",
-    "floor": false
-   },
-   "camera": "zoom_out",
-   "transition": "slide_left",
-   "elements": [
-    {
-     "asset": "wooden_door",
-     "describe": "wooden door",
-     "x": 50.0,
-     "y": 62.0,
-     "w": 62.0,
-     "enter": "rise",
-     "motion": "shake",
-     "at_word": "door",
-     "flip": false
-    }
-   ],
-   "widgets": [],
-   "sfx": []
-  },
-  {
-   "index": 3,
-   "narration": "Only one thing was in their room: an angithi.",
-   "caption_top": "ONLY ONE THING",
-   "caption_main": "IN THEIR ROOM",
-   "main_word": "angithi",
-   "accent": "orange",
-   "background": {
-    "type": "wall",
-    "color": "terracotta",
-    "floor": true
-   },
-   "camera": "pan_left",
-   "transition": "slide_up",
-   "elements": [
-    {
-     "asset": "angithi",
-     "describe": "angithi",
-     "x": 50.0,
-     "y": 64.0,
-     "w": 75.0,
-     "enter": "pop",
-     "motion": "pulse",
-     "at_word": "angithi",
-     "flip": false
-    }
-   ],
-   "widgets": [
-    {
-     "type": "particles",
-     "kind": "smoke"
-    }
-   ],
-   "sfx": []
-  },
-  {
-   "index": 4,
-   "narration": "Every winter, thousands die like this.",
-   "caption_top": "EVERY WINTER",
-   "caption_main": "THOUSANDS",
-   "main_word": "thousands",
-   "accent": "red",
-   "background": {
-    "type": "wall",
-    "color": "teal",
-    "floor": false
-   },
-   "camera": "zoom_in",
-   "transition": "zoom",
-   "elements": [],
-   "widgets": [
-    {
-     "type": "counter",
-     "value": "58,000",
-     "label": "DEATHS",
-     "x": 50,
-     "y": 55
-    }
-   ],
-   "sfx": []
-  },
-  {
-   "index": 5,
-   "narration": "Doctors at AIIMS studied fifteen years of cases.",
-   "caption_top": "AIIMS DELHI",
-   "caption_main": "15 YEARS",
-   "main_word": "fifteen",
-   "accent": "yellow",
-   "background": {
-    "type": "wall",
-    "color": "mustard",
-    "floor": false
-   },
-   "camera": "zoom_in",
-   "transition": "slide_left",
-   "elements": [],
-   "widgets": [
-    {
-     "type": "paper",
-     "title": "Carbon monoxide-related fatalities: a fifteen-year experience",
-     "source": "Europe PMC",
-     "highlight": "95% deaths in winter",
-     "x": 50,
-     "y": 60
-    }
-   ],
-   "sfx": []
-  },
-  {
-   "index": 6,
-   "narration": "They slept for hours, and never knew.",
-   "caption_top": "HOURS PASSED",
-   "caption_main": "NEVER KNEW",
-   "main_word": "never",
-   "accent": "red",
-   "background": {
-    "type": "wall",
-    "color": "purple",
-    "floor": false
-   },
-   "camera": "still",
-   "transition": "fade",
-   "elements": [],
-   "widgets": [
-    {
-     "type": "clock",
-     "from": "22:00",
-     "to": "05:00",
-     "x": 50,
-     "y": 58
-    }
-   ],
-   "sfx": []
-  },
-  {
-   "index": 7,
-   "narration": "Carbon monoxide has no smell.",
-   "caption_top": "CARBON MONOXIDE",
-   "caption_main": "NO SMELL",
-   "main_word": "smell",
-   "accent": "teal",
-   "background": {
-    "type": "sunset",
-    "color": "purple",
-    "floor": false
-   },
-   "camera": "zoom_in",
-   "transition": "slide_left",
-   "elements": [],
-   "widgets": [
-    {
-     "type": "bars",
-     "items": [
-      {
-       "label": "Winter",
-       "value": 95
-      },
-      {
-       "label": "Rest",
-       "value": 5
-      }
-     ],
-     "x": 50,
-     "y": 60
-    }
-   ],
-   "sfx": [
-    {
-     "type": "heartbeat",
-     "at_word": "smell"
-    }
-   ]
   }
  ]
 }
