@@ -8,6 +8,7 @@ import requests
 from .util import log, parse_json_loose
 
 API = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+LIST_API = "https://generativelanguage.googleapis.com/v1beta/models"
 
 
 class GeminiError(RuntimeError):
@@ -27,6 +28,8 @@ class Gemini:
         self.min_gap = min_gap
         self._last = 0.0
         self.calls = 0
+        self._discovered = None
+        self.no_thinking = set()
 
     def _pace(self):
         wait = self.min_gap - (time.time() - self._last)
@@ -34,57 +37,121 @@ class Gemini:
             time.sleep(wait)
         self._last = time.time()
 
+    # ---------- model discovery (Google naye models laata/hatata rehta hai) ----------
+    def _discover(self):
+        if self._discovered is not None:
+            return self._discovered
+        names = []
+        try:
+            r = requests.get(LIST_API, params={"key": self.key, "pageSize": 1000}, timeout=30)
+            if r.status_code == 200:
+                for m in r.json().get("models", []):
+                    if "generateContent" in m.get("supportedGenerationMethods", []):
+                        names.append(m["name"].split("/", 1)[-1])
+            elif r.status_code in (400, 403):
+                raise GeminiError("Gemini API key galat hai ya kaam nahi kar rahi: " + r.text[:200])
+        except requests.RequestException as e:
+            log(f"   model list nahi mili ({e})")
+        bad = ("image", "tts", "audio", "live", "embedding", "vision", "learnlm", "gemma", "robotics",
+               "computer-use", "native", "exp", "thinking", "aqa")
+        good = [n for n in names if n.startswith("gemini") and "flash" in n and not any(b in n for b in bad)]
+
+        def ver(n):
+            m = re.search(r"gemini-(\d+(?:\.\d+)?)", n)
+            return float(m.group(1)) if m else 0
+
+        good.sort(key=lambda n: (-ver(n), "preview" in n, len(n)))
+        self._discovered = good
+        log(f"   Available Gemini models: {', '.join(good[:8]) or '(list nahi mili)'}")
+        return good
+
+    def _models(self, vision):
+        found = self._discover()
+        pref = self.vision_models if vision else self.text_models
+        if found:
+            ordered = [m for m in pref if m in found]
+            lite = [m for m in found if "lite" in m]
+            full = [m for m in found if "lite" not in m]
+            ordered += (lite + full) if vision else (full + lite)
+        else:
+            ordered = list(pref)
+        seen, out = set(), []
+        for m in ordered:
+            if m not in seen and m not in self.dead:
+                seen.add(m)
+                out.append(m)
+        return out
+
+    @staticmethod
+    def _thinking(model):
+        if "gemini-3" in model:
+            return {"thinkingLevel": "low"}
+        if "gemini-2.5" in model:
+            return {"thinkingBudget": 0 if "lite" in model else 1024}
+        return None
+
     def generate(self, prompt, images=None, json_mode=False, temperature=0.7,
                  max_tokens=16384, vision=False):
         parts = [{"text": prompt}]
         for png in images or []:
             parts.append({"inline_data": {"mime_type": "image/png",
                                           "data": base64.b64encode(png).decode()}})
-        cfg = {"temperature": temperature, "maxOutputTokens": max_tokens}
-        if json_mode:
-            cfg["responseMimeType"] = "application/json"
-        body = {"contents": [{"role": "user", "parts": parts}], "generationConfig": cfg}
-
-        models = [m for m in (self.vision_models if vision else self.text_models)
-                  if m not in self.dead]
+        models = self._models(vision)
         if not models:
             raise GeminiError("Saare Gemini models fail ho gaye (aaj ki free limit khatam ho sakti hai).")
         last_err = ""
         for model in models:
-            for attempt in range(5):
+            use_thinking = model not in self.no_thinking
+            for attempt in range(3):
+                cfg = {"temperature": temperature, "maxOutputTokens": max_tokens}
+                if json_mode:
+                    cfg["responseMimeType"] = "application/json"
+                th = self._thinking(model) if use_thinking else None
+                if th:
+                    cfg["thinkingConfig"] = th
+                body = {"contents": [{"role": "user", "parts": parts}], "generationConfig": cfg}
                 self._pace()
+                t0 = time.time()
+                log(f"   → {model} (try {attempt + 1})")
                 try:
                     r = requests.post(API.format(model=model), params={"key": self.key},
-                                      json=body, timeout=240)
+                                      json=body, timeout=(20, 180))
                 except requests.RequestException as e:
-                    last_err = str(e)
-                    time.sleep(5 * (attempt + 1))
+                    last_err = f"{e.__class__.__name__} after {time.time() - t0:.0f}s"
+                    log(f"   {model}: jawab nahi aaya ({last_err}), dobara…")
                     continue
                 if r.status_code == 200:
                     text = self._text(r.json())
                     if text:
                         self.calls += 1
+                        log(f"   ✓ {model} ({time.time() - t0:.0f}s)")
                         return text
                     last_err = "empty response"
+                    log(f"   {model}: khali jawab, dobara…")
                     continue
                 last_err = f"{r.status_code}: {r.text[:300]}"
                 low = r.text.lower()
+                if r.status_code == 400 and "thinking" in low and use_thinking:
+                    self.no_thinking.add(model)
+                    use_thinking = False
+                    continue
                 if r.status_code == 429 and ("limit: 0" in low or "perday" in low or "per day" in low):
                     log(f"   {model}: free limit nahi / khatam → agla model")
                     self.dead.add(model)
                     break
                 if r.status_code in (429, 500, 502, 503, 504):
                     m = re.search(r'"retryDelay":\s*"(\d+)', r.text)
-                    delay = int(m.group(1)) + 1 if m else min(60, 6 * 2 ** attempt)
+                    delay = int(m.group(1)) + 1 if m else 8 * (attempt + 1)
                     log(f"   {model}: busy ({r.status_code}), {delay}s ruk ke dobara…")
-                    time.sleep(delay)
+                    time.sleep(min(delay, 65))
                     continue
                 if r.status_code in (400, 403, 404):
-                    if "api key" in low or "api_key" in low or "permission" in low:
+                    if "api key" in low or "api_key" in low:
                         raise GeminiError("Gemini API key galat hai: " + r.text[:200])
                     log(f"   {model}: use nahi ho saka ({r.status_code}) → agla model")
                     self.dead.add(model)
                     break
+                log(f"   {model}: error {last_err[:120]}")
                 break
         raise GeminiError("Gemini call fail: " + last_err)
 
