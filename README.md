@@ -18,14 +18,23 @@ script (.txt)
 
 ## ⚙️ Ek baar ka setup (10 minute, mobile se ho jayega)
 
-### Step 1 — Gemini API key (free)
-1. **aistudio.google.com** kholo → Google account se login karo
-2. **Get API key** → **Create API key** → key copy kar lo
+System kisi bhi free AI service se chal jata hai. Jitni zyada keys daaloge, utna hi kam atkega.
 
-### Step 2 — Key ko repo mein daalo
+### Step 1: Groq key (free, sabse tez, recommended)
+1. **console.groq.com** kholo → Google se login karo
+2. **API Keys** → **Create API Key** → key copy kar lo
+
+### Step 2: Key ko repo mein daalo
 Repo → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**
-- Name: `GEMINI_API_KEY`
-- Secret: copy ki hui key → **Add secret**
+
+| Name | Kahan se milegi | Zaroori? |
+|---|---|---|
+| `GROQ_API_KEY` | console.groq.com | ✅ recommended |
+| `GEMINI_API_KEY` | aistudio.google.com | optional: natural voice + drawing check + backup |
+| `CEREBRAS_API_KEY` | cloud.cerebras.ai | optional: extra backup, bahut tez |
+| `OPENROUTER_API_KEY` | openrouter.ai | optional: extra backup |
+
+Ek service atke ya uski limit khatam ho jaye to system khud agli service pe chala jata hai.
 
 ### Step 3 — Actions ko permission do (sirf agar video Releases mein na aaye)
 Repo → **Settings** → **Actions** → **General** → *Workflow permissions* → **Read and write permissions** → Save

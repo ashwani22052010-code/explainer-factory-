@@ -34,6 +34,10 @@ audio:
   sfx_volume: 0.55
   voice_volume: 1.0
 
+ai:
+  # Kaunsi AI service pehle try ho. Sirf wahi chalengi jinki key repo Secrets mein hai.
+  order: [groq, cerebras, openrouter, gemini]
+
 gemini:
   # Models khud detect hote hain (sabse naya pehle). Jo model ek baar chal gaya, wahi aage use hota hai.
   # Ye list sirf tab kaam aati hai jab Google se model list na mile.

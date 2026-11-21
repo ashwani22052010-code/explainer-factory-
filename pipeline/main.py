@@ -5,13 +5,20 @@
   python -m pipeline.main --demo          (offline test, no API key needed)
 """
 import argparse
+import os
 import shutil
 import subprocess
 import sys
 import time
 from pathlib import Path
 
-from .util import ROOT, env_key, load_config, log, read_json, write_json
+from .util import ROOT, load_config, log, read_json, write_json
+
+
+
+def any_key():
+    return any(os.environ.get(k, '').strip() for k in
+               ('GROQ_API_KEY', 'CEREBRAS_API_KEY', 'OPENROUTER_API_KEY', 'GEMINI_API_KEY'))
 
 
 def make(script_path, cfg, demo=False):
@@ -30,9 +37,8 @@ def make(script_path, cfg, demo=False):
     if demo:
         plan = read_json(ROOT / "demo" / "plan.json")
     else:
-        from .gemini import Gemini
-        g = cfg["gemini"]
-        gem = Gemini(env_key(), g["text_models"], g["vision_models"], g.get("min_seconds_between_calls", 4.5))
+        from .llm import Router
+        gem = Router(cfg)
         script = script_path.read_text(encoding="utf-8").strip()
         if len(script.split()) < 5:
             raise SystemExit(f"{script_path} mein script bahut chhoti hai.")
@@ -102,8 +108,8 @@ def main():
     if not files:
         log("Koi script nahi mili. scripts/ folder mein .txt file daalo.")
         return
-    if not env_key():
-        log("❌ GEMINI_API_KEY secret set nahi hai. README ka Step 2 dekho.")
+    if not any_key():
+        log("❌ Koi AI key nahi mili (GROQ_API_KEY / GEMINI_API_KEY ...). README ka Step 1-2 dekho.")
         sys.exit(1)
     failed = []
     for f in files:

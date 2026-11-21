@@ -171,6 +171,12 @@ class Artist:
         min_score = float(g.get("min_score", 6))
         par = max(1, int(g.get("parallel_drawings", 4)))
         check = g.get("self_check", True)
+        try:
+            check = check and self.gem.has_vision()
+        except Exception:
+            check = False
+        if not check:
+            log("   (drawing self-check off: koi vision model nahi)")
         results, state = {}, {}
         for name, desc in items.items():
             if self.has(name):
