@@ -1,7 +1,7 @@
 """AI artist: writes SVG drawings, looks at them, fixes them, and grows the library."""
 import html
-import json
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 from .svgsafe import sanitize
 from .util import ROOT, log, read_json, write_json, slugify
@@ -138,6 +138,84 @@ class Artist:
         if score >= min_score:
             self._save(name, describe, svg, aspect, score)  # good ones join the library forever
         return svg, aspect
+
+
+    # ---------- parallel drawing (fast path used by main) ----------
+    def _gen(self, name, st, attempt):
+        try:
+            text = self.gem.generate(
+                DRAW_PROMPT.format(describe=st["desc"], palette=self.palette, outline=self.outline,
+                                   feedback=st["feedback"]),
+                temperature=0.9 if attempt > 1 else 0.7, max_tokens=24000)
+            return sanitize(text, slugify(name, 20))
+        except Exception as e:
+            log(f"      '{name}': invalid drawing ({str(e)[:100]})")
+            return None
+
+    def _check(self, desc, png):
+        if png is None:
+            return 7.0, ""
+        try:
+            res = self.gem.generate_json(CHECK_PROMPT.format(describe=desc), images=[png], vision=True,
+                                         temperature=0.2, max_tokens=2048)
+            return float(res.get("score", 5)), str(res.get("problems", ""))[:400]
+        except Exception as e:
+            log(f"      check skipped: {str(e)[:100]}")
+            return 6.0, ""
+
+    def draw_many(self, items):
+        """items: {name: describe}. Draws all missing ones in parallel rounds. Returns {name: (svg, aspect)}."""
+        g = self.cfg["gemini"]
+        limit = g.get("max_new_drawings_per_video", 45)
+        attempts = int(g.get("max_draw_attempts", 3))
+        min_score = float(g.get("min_score", 6))
+        par = max(1, int(g.get("parallel_drawings", 4)))
+        check = g.get("self_check", True)
+        results, state = {}, {}
+        for name, desc in items.items():
+            if self.has(name):
+                results[name] = self.load(name)
+            elif self.new_count >= limit:
+                results[name] = (placeholder(name, desc), 1.0)
+            else:
+                self.new_count += 1
+                state[name] = {"desc": desc, "best": None, "feedback": ""}
+        pending = list(state)
+        for attempt in range(1, attempts + 1):
+            if not pending:
+                break
+            log(f"   🎨 round {attempt}: {len(pending)} drawings ek saath ban rahi hain…")
+            with ThreadPoolExecutor(par) as ex:
+                gen = dict(zip(pending, ex.map(lambda n: self._gen(n, state[n], attempt), pending)))
+            pngs = {n: (self.snapshot(r[0]) if check else None) for n, r in gen.items() if r}
+            names = list(pngs)
+            with ThreadPoolExecutor(par) as ex:
+                checks = dict(zip(names, ex.map(lambda n: self._check(state[n]["desc"], pngs[n]), names)))
+            nxt = []
+            for n in pending:
+                st, r = state[n], gen.get(n)
+                if not r:
+                    st["feedback"] = "\nPrevious attempt was invalid/empty SVG. Make a complete, valid drawing.\n"
+                    nxt.append(n)
+                    continue
+                score, problems = checks.get(n, (7.0, ""))
+                log(f"      {n}: {score:g}/10 {('— ' + problems) if problems and score < min_score else ''}")
+                if st["best"] is None or score > st["best"][0]:
+                    st["best"] = (score, r[0], r[1])
+                if score < min_score:
+                    st["feedback"] = ("\nA reviewer rejected the previous version. Problems: " + problems +
+                                      "\nRedraw from scratch fixing these. Make the subject unmistakable.\n")
+                    nxt.append(n)
+            pending = nxt
+        for n, st in state.items():
+            if st["best"] is None:
+                results[n] = (placeholder(n, st["desc"]), 1.0)
+                continue
+            score, svg, aspect = st["best"]
+            if score >= min_score:
+                self._save(n, st["desc"], svg, aspect, score)
+            results[n] = (svg, aspect)
+        return results
 
 
 def placeholder(name, describe):

@@ -53,14 +53,14 @@ def make(script_path, cfg, demo=False):
                 need.setdefault(e["asset"], e["describe"])
         reuse = [n for n in need if artist.has(n)]
         log(f"Drawings: {len(need)} chahiye ({len(reuse)} library se, {len(need) - len(reuse)} nayi)")
-        for name, desc in need.items():
-            if demo and not artist.has(name):
-                svg_file = ROOT / "demo" / f"{name}.svg"
-                from .svgsafe import sanitize
-                assets[name] = sanitize(svg_file.read_text(), name[:20]) if svg_file.exists() else \
-                    (__import__("pipeline.artist", fromlist=["placeholder"]).placeholder(name, desc), 1.0)
-                continue
-            assets[name] = artist.get(name, desc)
+        if demo:
+            from .svgsafe import sanitize
+            from .artist import placeholder
+            for name, desc in need.items():
+                f = ROOT / "demo" / f"{name}.svg"
+                assets[name] = sanitize(f.read_text(), name[:20]) if f.exists() else (placeholder(name, desc), 1.0)
+        else:
+            assets = artist.draw_many(need)
         browser.close()
 
     narration, timings = voice.make_voice(plan["scenes"], cfg, work, stem, demo=demo)

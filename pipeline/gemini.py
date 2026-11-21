@@ -1,6 +1,7 @@
 """Tiny Gemini REST client with model fallback + free-tier friendly pacing."""
 import base64
 import re
+import threading
 import time
 
 import requests
@@ -30,12 +31,16 @@ class Gemini:
         self.calls = 0
         self._discovered = None
         self.no_thinking = set()
+        self.slow = set()
+        self.best = {}
+        self._lock = threading.Lock()
 
     def _pace(self):
-        wait = self.min_gap - (time.time() - self._last)
-        if wait > 0:
-            time.sleep(wait)
-        self._last = time.time()
+        with self._lock:
+            wait = self.min_gap - (time.time() - self._last)
+            if wait > 0:
+                time.sleep(wait)
+            self._last = time.time()
 
     # ---------- model discovery (Google naye models laata/hatata rehta hai) ----------
     def _discover(self):
@@ -66,21 +71,24 @@ class Gemini:
         return good
 
     def _models(self, vision):
+        """Order: model that already WORKED this run → newest available → config list → slow ones last."""
         found = self._discover()
-        pref = self.vision_models if vision else self.text_models
+        kind = "vision" if vision else "text"
         if found:
-            ordered = [m for m in pref if m in found]
             lite = [m for m in found if "lite" in m]
             full = [m for m in found if "lite" not in m]
-            ordered += (lite + full) if vision else (full + lite)
+            ordered = (lite + full) if vision else (full + lite)
         else:
-            ordered = list(pref)
-        seen, out = set(), []
+            ordered = list(self.vision_models if vision else self.text_models)
+        if self.best.get(kind):
+            ordered.insert(0, self.best[kind])
+        seen, fast, slow = set(), [], []
         for m in ordered:
-            if m not in seen and m not in self.dead:
-                seen.add(m)
-                out.append(m)
-        return out
+            if m in seen or m in self.dead:
+                continue
+            seen.add(m)
+            (slow if m in self.slow else fast).append(m)
+        return fast + slow
 
     @staticmethod
     def _thinking(model):
@@ -96,6 +104,7 @@ class Gemini:
         for png in images or []:
             parts.append({"inline_data": {"mime_type": "image/png",
                                           "data": base64.b64encode(png).decode()}})
+        kind = "vision" if vision else "text"
         models = self._models(vision)
         if not models:
             raise GeminiError("Saare Gemini models fail ho gaye (aaj ki free limit khatam ho sakti hai).")
@@ -118,12 +127,17 @@ class Gemini:
                                       json=body, timeout=(20, 180))
                 except requests.RequestException as e:
                     last_err = f"{e.__class__.__name__} after {time.time() - t0:.0f}s"
-                    log(f"   {model}: jawab nahi aaya ({last_err}), dobara…")
-                    continue
+                    log(f"   {model}: jawab nahi aaya ({last_err}) → agla model")
+                    self.slow.add(model)
+                    if self.best.get(kind) == model:
+                        self.best.pop(kind, None)
+                    break
                 if r.status_code == 200:
                     text = self._text(r.json())
                     if text:
                         self.calls += 1
+                        self.best[kind] = model
+                        self.slow.discard(model)
                         log(f"   ✓ {model} ({time.time() - t0:.0f}s)")
                         return text
                     last_err = "empty response"
