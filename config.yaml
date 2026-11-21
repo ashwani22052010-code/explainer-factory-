@@ -42,7 +42,8 @@ audio:
 
 ai:
   # Kaunsi AI service pehle try ho. Sirf wahi chalengi jinki key repo Secrets mein hai.
-  order: [groq, cerebras, openrouter, gemini]
+  # llm7 aur pollinations ko koi key/signup nahi chahiye — hamesha backup ke roop mein chalte hain.
+  order: [groq, cerebras, openrouter, gemini, llm7, pollinations]
 
 gemini:
   # Models khud detect hote hain (sabse naya pehle). Jo model ek baar chal gaya, wahi aage use hota hai.

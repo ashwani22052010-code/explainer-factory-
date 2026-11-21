@@ -35,6 +35,12 @@ PROVIDERS = {
                  "prefer": ["gpt-oss-120b", "qwen-3-235b", "qwen-3", "zai-glm", "llama-3.3-70b", "llama"]},
     "openrouter": {"base": "https://openrouter.ai/api/v1", "env": "OPENROUTER_API_KEY", "max_out": 12000,
                    "gap": 3.5, "prefer": [":free"]},
+    # ---- bina key, bina signup (koi account nahi chahiye) ----
+    "llm7": {"base": "https://api.llm7.io/v1", "env": None, "keyless": "unused", "max_out": 8000, "gap": 2.5,
+             "prefer": ["gpt-oss", "deepseek", "qwen", "gpt", "llama", "mistral", "gemini"]},
+    "pollinations": {"base": "https://text.pollinations.ai", "env": None, "keyless": "", "max_out": 8000, "gap": 16,
+                     "chat_path": "/openai", "static_models": ["openai", "openai-large", "mistral"],
+                     "prefer": ["openai", "mistral"]},
 }
 SKIP = ("whisper", "tts", "guard", "embed", "orpheus", "playai", "distil", "prompt", "compound", "safeguard")
 VISION_HINT = ("llama-4", "vision", "-vl", "vl-", "gemma-3", "pixtral")
@@ -52,9 +58,14 @@ class OpenAICompat:
         self.calls = 0
 
     def _h(self):
-        return {"Authorization": f"Bearer {self.key}", "Content-Type": "application/json"}
+        h = {"Content-Type": "application/json"}
+        if self.key:
+            h["Authorization"] = f"Bearer {self.key}"
+        return h
 
     def _discover(self):
+        if self._ids is None and self.spec.get("static_models"):
+            self._ids = list(self.spec["static_models"])
         if self._ids is None:
             try:
                 r = requests.get(f"{self.base}/models", headers=self._h(), timeout=30)
@@ -135,14 +146,26 @@ class OpenAICompat:
                 self._pace()
                 t0 = time.time()
                 try:
-                    r = requests.post(f"{self.base}/chat/completions", headers=self._h(), json=body,
-                                      timeout=(15, 150))
+                    r = requests.post(self.base + self.spec.get("chat_path", "/chat/completions"),
+                                      headers=self._h(), json=body, timeout=(15, 150))
                 except requests.RequestException as e:
                     last = f"{model}: {e.__class__.__name__}"
                     log(f"   {self.name}/{model}: jawab nahi aaya → agla model")
                     self.cool[model] = time.time() + 120
                     break
                 low = r.text.lower()
+                if r.status_code in (401, 402, 403) and self.name == "pollinations" and not images:
+                    try:
+                        from urllib.parse import quote
+                        g = requests.get(f"{self.base}/{quote(prompt[:6000])}",
+                                         params={"model": "openai", "json": "true" if json_mode else "false"},
+                                         timeout=(15, 150))
+                        if g.ok and g.text.strip():
+                            self.calls += 1
+                            log(f"   ✓ pollinations (GET, {time.time() - t0:.0f}s)")
+                            return g.text.strip()
+                    except requests.RequestException:
+                        pass
                 if r.status_code == 200:
                     try:
                         text = r.json()["choices"][0]["message"].get("content") or ""
@@ -189,7 +212,7 @@ class Router:
     """Same interface as Gemini: generate(), generate_json(), calls, has_vision()."""
 
     def __init__(self, cfg):
-        order = (cfg.get("ai") or {}).get("order") or ["groq", "cerebras", "openrouter", "gemini"]
+        order = (cfg.get("ai") or {}).get("order") or ["groq", "cerebras", "openrouter", "gemini", "llm7", "pollinations"]
         g = cfg.get("gemini", {})
         self.providers = []
         for name in order:
@@ -202,8 +225,9 @@ class Router:
                     p.has_vision = lambda: True
                     self.providers.append(p)
             elif name in PROVIDERS:
-                key = os.environ.get(PROVIDERS[name]["env"], "").strip()
-                if key:
+                spec = PROVIDERS[name]
+                key = os.environ.get(spec["env"], "").strip() if spec.get("env") else spec.get("keyless", "")
+                if key or spec.get("env") is None:
                     self.providers.append(OpenAICompat(name, key))
         if not self.providers:
             raise AIError("Koi AI key nahi mili. README dekho: GROQ_API_KEY (ya GEMINI_API_KEY) secret add karo.")

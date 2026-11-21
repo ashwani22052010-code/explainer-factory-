@@ -146,8 +146,7 @@ def main():
         log("Koi script nahi mili. scripts/ folder mein .txt file daalo.")
         return
     if not any_key():
-        log("❌ Koi AI key nahi mili (GROQ_API_KEY / GEMINI_API_KEY ...). README ka Step 1-2 dekho.")
-        sys.exit(1)
+        log("ℹ️ Koi AI key nahi mili — free bina-key services (llm7, pollinations) se chalega (thoda dheere).")
     failed = []
     for f in files:
         try:
