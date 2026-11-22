@@ -94,12 +94,17 @@
     const side = deg(sh.side ?? 18) + (sh.orbit ? deg(sh.orbit) * ease(q) : 0);
     const push = sh.move === 'pull' ? lerp(.9, 1.12, ease(q)) : sh.move === 'still' ? 1 : lerp(1.1, .94, ease(q));
     const d = P.d * push * (sh.dist || 1);
-    const look = [tx, P.look * k, tz];
+    let look = [tx, P.look * k, tz];
+    let headY = 1.6 * k;
+    if (tgt) { const hp = tgt.ch.J.head.worldPos([0, .2, 0]); headY = hp[1]; const standY = 1.6 * k;
+      const dy = headY - standY; look = [tx, P.look * k + dy * (P.look / 1.6), tz];
+      if (!sh.target2 && (sh.shot === 'close' || sh.shot === 'extreme')) { look = [hp[0], hp[1] - .02, hp[2]]; tx = hp[0]; tz = hp[2]; } }
+    const camY = h => P.h > 2 ? h : h + (look[1] - P.look * k);
     const others = Object.keys(S.cast).filter(id => id !== sh.target && id !== sh.target2).map(id => S.cast[id].ch.root.p);
     const B = S.set.cam;
     let clampMove = 0;
     const place = a => {
-      const raw = [tx + Math.sin(a) * d, P.h * (P.h > 2 ? 1 : k), tz + Math.cos(a) * d];
+      const raw = [tx + Math.sin(a) * d, camY(P.h * (P.h > 2 ? 1 : k)), tz + Math.cos(a) * d];
       let e = raw;
       if (B) e = [clamp(raw[0], B.x[0], B.x[1]), clamp(raw[1], B.y[0], B.y[1]), clamp(raw[2], B.z[0], B.z[1])];
       clampMove = Math.hypot(e[0] - raw[0], e[2] - raw[2]) / d;

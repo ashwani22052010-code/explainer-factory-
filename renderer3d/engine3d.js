@@ -175,7 +175,9 @@
       this.col = hex(opt.col || '#cccccc'); this.emis = hex(opt.emis || '#000000'); this.unlit = !!opt.unlit; this.gloss = opt.gloss ?? .15;
       this.cast = opt.cast !== false; this.visible = true; this.alpha = opt.alpha ?? 1; this.name = opt.name || '';
     }
-    add(...c) { this.children.push(...c); return this; }
+    add(...c) { for (const n of c) n.parent = this; this.children.push(...c); return this; }
+    world() { let m = M.trs(this.p, this.r, this.s), n = this.parent; while (n) { m = M.mul(M.trs(n.p, n.r, n.s), m); n = n.parent; } return m; }
+    worldPos(off = [0, 0, 0]) { const m = this.world(); return [m[0] * off[0] + m[4] * off[1] + m[8] * off[2] + m[12], m[1] * off[0] + m[5] * off[1] + m[9] * off[2] + m[13], m[2] * off[0] + m[6] * off[1] + m[10] * off[2] + m[14]]; }
   }
 
   class Renderer {
