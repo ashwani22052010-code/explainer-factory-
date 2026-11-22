@@ -133,16 +133,29 @@ class Gemini:
                         self.best.pop(kind, None)
                     break
                 if r.status_code == 200:
-                    text = self._text(r.json())
+                    data = r.json()
+                    text = self._text(data)
                     if text:
                         self.calls += 1
                         self.best[kind] = model
                         self.slow.discard(model)
                         log(f"   ✓ {model} ({time.time() - t0:.0f}s)")
                         return text
-                    last_err = "empty response"
-                    log(f"   {model}: khali jawab, dobara…")
-                    continue
+                    try:
+                        cand = (data.get("candidates") or [{}])[0]
+                        why = cand.get("finishReason") or (data.get("promptFeedback") or {}).get("blockReason") or "?"
+                    except Exception:
+                        why = "?"
+                    last_err = f"empty response ({why})"
+                    if use_thinking and th:
+                        log(f"   {model}: khali jawab ({why}) → bina thinking dobara")
+                        self.no_thinking.add(model)
+                        use_thinking = False
+                        max_tokens = max(max_tokens, 32768)
+                        continue
+                    log(f"   {model}: khali jawab ({why}) → agla model")
+                    self.slow.add(model)
+                    break
                 last_err = f"{r.status_code}: {r.text[:300]}"
                 low = r.text.lower()
                 if r.status_code == 400 and "thinking" in low and use_thinking:

@@ -128,15 +128,56 @@ def build_plan(gem, script, cfg, library_names, mode="short"):
         prompt = tmpl.format(chunks=numbered, language=cfg["language"], caption_language=cfg["caption_language"],
                              library=lib, context=ctx)
         log(f"Planner ({mode}): chunks {b0 + 1}-{b0 + len(part)} / {len(chunks)}")
-        out = gem.generate_json(prompt, temperature=0.8, task="plan")
+        out = coerce_plan(gem.generate_json(prompt, temperature=0.8, task="plan"))
         if not merged["title"]:
             for k in ("title", "description", "tags"):
                 merged[k] = out.get(k, merged[k])
-        for k, v in (out.get("characters") or {}).items():
+        for k, v in out["characters"].items():
             if isinstance(v, dict):
                 merged["characters"].setdefault(slugify(k), v)
         merged["scenes"] += [s for s in (out.get("scenes") or []) if isinstance(s, dict)]
     return normalize_plan(merged, chunks, library_names, mode)
+
+
+def coerce_plan(out):
+    """AI kabhi JSON ki shape badal deta hai (list, nested). Use hamesha ek hi shape mein lao."""
+    if isinstance(out, list):
+        if out and all(isinstance(x, dict) and "chunks" in x for x in out):
+            out = {"scenes": out}
+        else:
+            merged = {}
+            for x in out:
+                if isinstance(x, dict):
+                    merged.update(x)
+            out = merged
+    if not isinstance(out, dict):
+        out = {}
+    for key in ("plan", "video", "result", "data"):
+        if isinstance(out.get(key), dict) and "scenes" in out[key]:
+            out = out[key]
+    chars = out.get("characters")
+    if isinstance(chars, list):
+        d = {}
+        for c in chars:
+            if isinstance(c, dict):
+                cid = c.get("id") or c.get("name") or f"c{len(d)}"
+                d[str(cid)] = {k: v for k, v in c.items() if k not in ("id", "name")}
+        chars = d
+    out["characters"] = chars if isinstance(chars, dict) else {}
+    sc = out.get("scenes")
+    out["scenes"] = [x for x in sc if isinstance(x, dict)] if isinstance(sc, list) else []
+    for k, default in (("title", ""), ("description", ""), ("tags", [])):
+        if not isinstance(out.get(k), type(default)):
+            out[k] = default
+    return out
+
+
+def _d(v):
+    return v if isinstance(v, dict) else {}
+
+
+def _l(v):
+    return v if isinstance(v, list) else []
 
 
 def _num(v, default, lo, hi):
@@ -173,7 +214,7 @@ def normalize_plan(plan, chunks, library_names=(), mode="short"):
     used, scenes = set(), []
     for s in raw:
         ids = []
-        for c in s.get("chunks") or []:
+        for c in _l(s.get("chunks")) or ([s.get("chunks")] if s.get("chunks") is not None else []):
             try:
                 c = int(c) - 1
             except (TypeError, ValueError):
@@ -200,13 +241,13 @@ def normalize_plan(plan, chunks, library_names=(), mode="short"):
     for s in scenes:
         s["_ids"].sort()
 
-    chars = {slugify(k): norm_person(v) for k, v in (plan.get("characters") or {}).items()}
+    chars = {slugify(k): norm_person(v) for k, v in _d(plan.get("characters")).items()}
     out = []
     for i, s in enumerate(scenes):
         narration = " ".join(chunks[c] for c in s["_ids"])
-        bg = s.get("background") or {}
+        bg = _d(s.get("background"))
         els = []
-        for e in (s.get("elements") or [])[:6]:
+        for e in _l(s.get("elements"))[:6]:
             if not isinstance(e, dict):
                 continue
             base = {
@@ -243,8 +284,8 @@ def normalize_plan(plan, chunks, library_names=(), mode="short"):
             name = slugify(e.get("asset") or e.get("describe") or "thing")
             base.update({"asset": name, "describe": (e.get("describe") or name.replace("_", " ")).strip()})
             els.append(base)
-        widgets = [w for w in (s.get("widgets") or [])[:5] if isinstance(w, dict) and w.get("type") in WIDGETS]
-        sfx = [x for x in (s.get("sfx") or []) if isinstance(x, dict) and x.get("type") in SFX][:4]
+        widgets = [w for w in _l(s.get("widgets"))[:5] if isinstance(w, dict) and w.get("type") in WIDGETS]
+        sfx = [x for x in _l(s.get("sfx")) if isinstance(x, dict) and x.get("type") in SFX][:4]
         st = s.get("set") if isinstance(s.get("set"), dict) else None
         if st and (st.get("asset") or st.get("describe")):
             st = {"asset": "set_" + slugify(st.get("asset") or st.get("describe")).removeprefix("set_"),
