@@ -99,7 +99,7 @@ class Gemini:
         return None
 
     def generate(self, prompt, images=None, json_mode=False, temperature=0.7,
-                 max_tokens=16384, vision=False):
+                 max_tokens=16384, vision=False, task=None):
         parts = [{"text": prompt}]
         for png in images or []:
             parts.append({"inline_data": {"mime_type": "image/png",
@@ -177,7 +177,7 @@ class Gemini:
             return ""
         return "".join(p.get("text", "") for p in parts if not p.get("thought"))
 
-    def generate_json(self, prompt, **kw):
+    def generate_json(self, prompt, task=None, **kw):
         last = None
         for _ in range(3):
             text = self.generate(prompt, json_mode=True, **kw)

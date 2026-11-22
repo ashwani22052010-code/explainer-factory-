@@ -128,7 +128,7 @@ def build_plan(gem, script, cfg, library_names, mode="short"):
         prompt = tmpl.format(chunks=numbered, language=cfg["language"], caption_language=cfg["caption_language"],
                              library=lib, context=ctx)
         log(f"Planner ({mode}): chunks {b0 + 1}-{b0 + len(part)} / {len(chunks)}")
-        out = gem.generate_json(prompt, temperature=0.8)
+        out = gem.generate_json(prompt, temperature=0.8, task="plan")
         if not merged["title"]:
             for k in ("title", "description", "tags"):
                 merged[k] = out.get(k, merged[k])
@@ -266,5 +266,54 @@ def normalize_plan(plan, chunks, library_names=(), mode="short"):
             "chapter_num": (str(s.get("chapter_num"))[:20] if s.get("chapter_num") else None),
             "elements": els, "widgets": widgets, "sfx": sfx,
         })
+    if mode == "story":
+        fix_story_layout(out)
     return {"title": plan.get("title", ""), "description": plan.get("description", ""),
             "tags": plan.get("tags", []), "mode": mode, "characters": chars, "scenes": out}
+
+
+def fix_story_layout(scenes):
+    """Guard rails so a weaker AI plan still looks composed: sizes, ground line, no overlaps, set continuity."""
+    last_set = None
+    for sc in scenes:
+        if sc.get("set"):
+            last_set = sc["set"]
+        elif last_set:
+            sc["set"] = dict(last_set)
+        people = [e for e in sc["elements"] if e.get("person_id")]
+        objs = [e for e in sc["elements"] if not e.get("person_id")]
+        for e in people:
+            if e.get("rotate"):
+                continue
+            if e["framing"] == "full":
+                e["w"] = max(12, min(20, e["w"]))
+                e["y"] = max(60, min(72, e["y"]))
+            elif e["framing"] == "bust":
+                e["w"] = max(24, min(34, e["w"]))
+                e["y"] = max(58, min(66, e["y"]))
+            else:
+                e["w"] = max(14, min(22, e["w"]))
+        for e in objs:
+            e["w"] = max(6, min(42, e["w"]))
+        grounded = [e for e in people if e["framing"] == "full" and not e.get("rotate")]
+        if grounded:
+            gy = sum(e["y"] for e in grounded) / len(grounded)
+            for e in grounded:
+                e["y"] = round(gy, 1)
+        full = sorted([e for e in people if e["framing"] == "full" and not e.get("to_x")], key=lambda e: e["x"])
+        if len(full) > 1:
+            gap = min(18, 70 / len(full))
+            for a, b in zip(full, full[1:]):
+                if b["x"] - a["x"] < gap:
+                    b["x"] = min(92, a["x"] + gap)
+            if full[-1]["x"] > 92:
+                start = 50 - gap * (len(full) - 1) / 2
+                for k, e in enumerate(full):
+                    e["x"] = start + gap * k
+        busts = [e for e in people if e["framing"] == "bust"]
+        if len(busts) > 2:
+            for e in busts[2:]:
+                sc["elements"].remove(e)
+        if len(busts) == 2 and abs(busts[0]["x"] - busts[1]["x"]) < 30:
+            busts[0]["x"], busts[1]["x"] = 30, 70
+            busts[1]["flip"] = True

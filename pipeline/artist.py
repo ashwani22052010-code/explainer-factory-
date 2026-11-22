@@ -168,7 +168,7 @@ class Artist:
     def _gen(self, name, st, attempt):
         try:
             text = self.gem.generate(self._prompt(name, st["desc"], st["feedback"]),
-                                     temperature=0.9 if attempt > 1 else 0.7, max_tokens=24000)
+                                     temperature=0.9 if attempt > 1 else 0.7, max_tokens=24000, task="art")
             return sanitize(text, slugify(name, 20))
         except Exception as e:
             log(f"      '{name}': invalid drawing ({str(e)[:100]})")

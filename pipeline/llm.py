@@ -117,7 +117,7 @@ class OpenAICompat:
                 time.sleep(w)
             self._last = time.time()
 
-    def generate(self, prompt, images=None, json_mode=False, temperature=0.7, max_tokens=16384, vision=False):
+    def generate(self, prompt, images=None, json_mode=False, temperature=0.7, max_tokens=16384, vision=False, task=None):
         content = prompt
         if images:
             content = [{"type": "text", "text": prompt}] + [
@@ -232,6 +232,9 @@ class Router:
         if not self.providers:
             raise AIError("Koi AI key nahi mili. README dekho: GROQ_API_KEY (ya GEMINI_API_KEY) secret add karo.")
         log("AI services: " + ", ".join(p.name for p in self.providers))
+        ai = cfg.get("ai") or {}
+        self.task_order = {"plan": ai.get("plan_order") or [], "art": ai.get("art_order") or []}
+        self.strikes = {}
         self.best = {}
         self._vision = None
 
@@ -251,12 +254,17 @@ class Router:
                     continue
         return self._vision
 
-    def generate(self, prompt, vision=False, **kw):
-        kind = "vision" if vision else "text"
+    def generate(self, prompt, vision=False, task=None, **kw):
+        kind = "vision" if vision else (task or "text")
         order = list(self.providers)
-        if self.best.get(kind) in order:
+        pref = self.task_order.get(task) or []
+        if pref:  # quality-first order for this task (fallbacks keep the rest)
+            rank = {n: i for i, n in enumerate(pref)}
+            order.sort(key=lambda p: rank.get(p.name, len(pref)))
+        if self.best.get(kind) in order and not pref:
             order.remove(self.best[kind])
             order.insert(0, self.best[kind])
+        order.sort(key=lambda p: self.strikes.get(p.name, 0) >= 2)  # bar-bar fail hone wali service peeche
         errs = []
         for p in order:
             if vision:
@@ -268,12 +276,14 @@ class Router:
             try:
                 out = p.generate(prompt, vision=vision, **kw)
                 self.best[kind] = p
+                self.strikes[p.name] = 0
                 return out
             except AuthError as e:
                 log(f"   {e} → ye service hata di")
                 self.providers.remove(p)
                 errs.append(str(e))
             except (AIError, GeminiError) as e:
+                self.strikes[p.name] = self.strikes.get(p.name, 0) + 1
                 log(f"   {p.name} abhi nahi chali → agli service")
                 errs.append(str(e)[:150])
         raise AIError("Saari AI services fail: " + " | ".join(errs))

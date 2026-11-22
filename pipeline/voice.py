@@ -3,6 +3,7 @@ Output: one narration WAV + absolute timings per scene and per word."""
 import asyncio
 import re
 import subprocess
+import time
 from pathlib import Path
 
 from .util import ROOT, ffprobe_duration, log
@@ -88,15 +89,15 @@ def make_voice(scenes, cfg, work, stem, demo=False):
     own = find_own_voice(stem)
     if own and not demo:
         log(f"Teri apni recording mili: {own.name}")
-        return own_voice(scenes, own, work)
+        return own_voice(scenes, own, work, cfg.get("language"))
 
     lang = cfg.get("language", "hindi")
     vc = cfg.get("voice", {})
     if vc.get("engine", "edge") == "gemini" and not demo:
         try:
-            src = gemini_tts(" ".join(s["narration"] for s in scenes), cfg, vdir / "gemini_voice.wav")
-            log("   ✓ Gemini natural voice ready, ab timing set ho rahi hai…")
-            return own_voice(scenes, src, work)
+            res = gemini_voice(scenes, cfg, work)
+            log("   ✓ Gemini natural voice ready (sun ke check ki hui)")
+            return res
         except Exception as e:
             log(f"   Gemini voice nahi mili ({str(e)[:120]}) → free edge voice")
     voice = vc.get("edge_voice", "auto")
@@ -149,46 +150,94 @@ def make_voice(scenes, cfg, work, stem, demo=False):
     return out, timings
 
 
-def own_voice(scenes, src, work):
-    """Align the user's recording to scenes using faster-whisper word timestamps."""
-    out = Path(work) / "narration.wav"
-    to_wav(src, out)
-    total = ffprobe_duration(out)
-    script_counts = [len(s["narration"].split()) for s in scenes]
+# ---------------- listening (Whisper) + alignment ----------------
+_WHISPER = None
+WLANG = {"hindi": "hi", "english": "en", "portuguese": "pt"}
+
+
+def whisper_words(wav, lang=None, offset=0.0):
+    """Transcribe with word timestamps. Returns [{"w","start","end"}] (absolute with offset) or None."""
+    global _WHISPER
     try:
         from faster_whisper import WhisperModel
-        model = WhisperModel("base", device="cpu", compute_type="int8")
-        segs, _ = model.transcribe(str(out), word_timestamps=True, vad_filter=True)
-        heard = [{"w": w.word.strip(), "start": w.start, "end": w.end} for s in segs for w in s.words]
-    except Exception as e:
-        log(f"   whisper nahi chala ({e}); timing andaaze se")
-        heard = []
+    except Exception:
+        return None
+    if _WHISPER is None:
+        _WHISPER = WhisperModel("base", device="cpu", compute_type="int8")
+    segs, _ = _WHISPER.transcribe(str(wav), word_timestamps=True, vad_filter=False,
+                                  language=WLANG.get(lang) if lang else None, beam_size=1)
+    return [{"w": w.word.strip(), "start": w.start + offset, "end": w.end + offset} for sg in segs for w in sg.words]
+
+
+def _norm_text(t):
+    return re.sub(r"[^\w]+", "", t.lower())
+
+
+def similarity(a, b):
+    import difflib
+    return difflib.SequenceMatcher(None, _norm_text(a), _norm_text(b)).ratio()
+
+
+def align_scenes(scenes, heard, total):
+    """Map every script word to a time using the heard (Whisper) words; scene times follow."""
+    import difflib
+    sw, owner = [], []
+    for i, sc in enumerate(scenes):
+        for w in sc["narration"].split():
+            sw.append(w)
+            owner.append(i)
+    hw = [norm_word(h["w"]) for h in heard]
+    times = [None] * len(sw)
+    sm = difflib.SequenceMatcher(None, [norm_word(w) for w in sw], hw, autojunk=False)
+    for a, b, n in sm.get_matching_blocks():
+        for k in range(n):
+            times[a + k] = (heard[b + k]["start"], heard[b + k]["end"])
+    anchors = [(i, t[0]) for i, t in enumerate(times) if t]
+    if not anchors:
+        anchors = [(0, 0.0)]
+    anchors = [(-1, 0.0)] + anchors + [(len(sw), total)]
+    starts = []
+    for i in range(len(sw)):
+        if times[i]:
+            starts.append(times[i][0])
+            continue
+        lo = max(a for a in anchors if a[0] < i)
+        hi = min((a for a in anchors if a[0] > i), key=lambda a: a[0])
+        f = (i - lo[0]) / max(1, hi[0] - lo[0])
+        starts.append(lo[1] + (hi[1] - lo[1]) * f)
+    for i in range(1, len(starts)):  # monotonic
+        starts[i] = max(starts[i], starts[i - 1] + 0.02)
     timings = []
+    for si in range(len(scenes)):
+        idx = [k for k, o in enumerate(owner) if o == si]
+        st = 0.0 if si == 0 else (starts[idx[0]] - 0.08 if idx else timings[-1]["start"])
+        words = [{"w": sw[k], "start": round(starts[k], 3),
+                  "end": round(starts[k + 1] if k + 1 < len(starts) else total, 3)} for k in idx]
+        timings.append({"start": round(max(0, st), 3), "end": None, "words": words})
+    for i in range(len(timings)):
+        timings[i]["end"] = round(timings[i + 1]["start"] if i + 1 < len(timings) else total, 3)
+    return timings
+
+
+def own_voice(scenes, src, work, lang=None, heard=None):
+    out = Path(work) / "narration.wav"
+    if Path(src).resolve() != out.resolve():
+        to_wav(src, out)
+    total = ffprobe_duration(out)
+    if heard is None:
+        try:
+            heard = whisper_words(out, lang)
+        except Exception as e:
+            log(f"   whisper nahi chala ({e})")
+            heard = None
     if heard:
-        ratio = len(heard) / max(1, sum(script_counts))
-        idx = 0
-        for i, (sc, n) in enumerate(zip(scenes, script_counts)):
-            k = max(1, round(n * ratio))
-            chunk = heard[idx: idx + k] if i < len(scenes) - 1 else heard[idx:]
-            idx += k
-            if not chunk:
-                chunk = heard[-1:]
-            timings.append({"start": chunk[0]["start"], "end": chunk[-1]["end"],
-                            "words": estimate_words(sc["narration"], chunk[0]["start"], chunk[-1]["end"])})
-        # make scenes contiguous
-        for i in range(len(timings)):
-            timings[i]["start"] = 0.0 if i == 0 else timings[i - 1]["end"]
-            if i + 1 < len(timings):
-                timings[i]["end"] = (timings[i]["end"] + timings[i + 1]["start"]) / 2
-            else:
-                timings[i]["end"] = total
-    else:
-        t = 0.0
-        tot = sum(script_counts)
-        for sc, n in zip(scenes, script_counts):
-            d = total * n / tot
-            timings.append({"start": t, "end": t + d, "words": estimate_words(sc["narration"], t, t + d)})
-            t += d
+        return out, align_scenes(scenes, heard, total)
+    counts = [len(s["narration"].split()) for s in scenes]
+    t, tot, timings = 0.0, sum(counts), []
+    for sc, n in zip(scenes, counts):
+        d = total * n / tot
+        timings.append({"start": t, "end": t + d, "words": estimate_words(sc["narration"], t, t + d)})
+        t += d
     return out, timings
 
 
@@ -196,58 +245,128 @@ def norm_word(w):
     return re.sub(r"[^\w]", "", w.lower())
 
 
-# ---------------- Gemini TTS (natural, human-like narrator) ----------------
-TTS_STYLE = ("You are a top YouTube documentary narrator. Read the script below in natural, spoken {lang}, "
-             "like a real person telling a gripping true story to a friend: warm, confident, slightly dramatic, "
-             "with short natural pauses after shocking lines and questions, varied pace and emphasis. "
-             "Never sound robotic or like an announcer. Read EXACTLY these words, nothing else:\n\n{text}")
+# ---------------- Gemini TTS (natural narrator), verified by listening ----------------
+TTS_DIRECTIVE = {"hindi": "Read aloud in Hindi, like a warm, gripping storyteller", "english": "Read aloud like a warm, gripping storyteller",
+                 "portuguese": "Read aloud in Brazilian Portuguese, like a warm, gripping storyteller"}
 
 
-def gemini_tts(text, cfg, out_wav):
-    import base64
-    import os
+def _tts_models(key):
     import requests
-    key = os.environ.get("GEMINI_API_KEY", "").strip()
-    if not key:
-        raise RuntimeError("no key")
     base = "https://generativelanguage.googleapis.com/v1beta/models"
     r = requests.get(base, params={"key": key, "pageSize": 1000}, timeout=30)
     names = [m["name"].split("/", 1)[-1] for m in r.json().get("models", [])] if r.ok else []
     tts = [n for n in names if "tts" in n]
     tts.sort(key=lambda n: (-float((re.search(r"gemini-(\d+(?:\.\d+)?)", n) or [0, 0])[1]), "pro" in n))
-    if not tts:
-        raise RuntimeError("koi TTS model available nahi")
-    vc = cfg.get("voice", {})
+    return tts
+
+
+def _tts_call(model, key, text, cfg, out_wav):
+    import base64
+    import requests
     lang = cfg.get("language", "hindi")
-    body = {"contents": [{"parts": [{"text": TTS_STYLE.format(lang=lang, text=text)}]}],
-            "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {"voiceConfig": {
-                "prebuiltVoiceConfig": {"voiceName": vc.get("gemini_voice", "Charon")}}}}}
-    last = ""
-    for model in tts[:4]:
-        log(f"   🎙️ Gemini voice: {model}")
-        try:
-            rr = requests.post(f"{base}/{model}:generateContent", params={"key": key}, json=body, timeout=(20, 300))
-        except requests.RequestException as e:
-            last = str(e)
-            continue
-        if rr.status_code != 200:
-            last = f"{rr.status_code} {rr.text[:150]}"
-            log(f"      {model}: {last[:120]}")
-            continue
-        try:
-            part = rr.json()["candidates"][0]["content"]["parts"][0]["inlineData"]
-        except (KeyError, IndexError):
-            last = "no audio in response"
-            continue
-        pcm = base64.b64decode(part["data"])
-        rate = 24000
-        m = re.search(r"rate=(\d+)", part.get("mimeType", ""))
-        if m:
-            rate = int(m.group(1))
-        raw = Path(out_wav).with_suffix(".pcm")
-        raw.write_bytes(pcm)
-        subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "s16le", "-ar", str(rate), "-ac", "1", "-i", str(raw),
-                        "-af", "silenceremove=start_periods=1:start_threshold=-45dB", "-ar", str(SR), str(out_wav)],
-                       check=True)
-        return out_wav
-    raise RuntimeError("Gemini voice fail: " + last)
+    body = {"contents": [{"parts": [{"text": f"{TTS_DIRECTIVE.get(lang, TTS_DIRECTIVE['english'])}:\n\n{text}"}]}],
+            "generationConfig": {"responseModalities": ["AUDIO"], "temperature": 0.6, "speechConfig": {"voiceConfig": {
+                "prebuiltVoiceConfig": {"voiceName": cfg.get("voice", {}).get("gemini_voice", "Charon")}}}}}
+    rr = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                       params={"key": key}, json=body, timeout=(20, 300))
+    if rr.status_code != 200:
+        raise RuntimeError(f"{rr.status_code} {rr.text[:150]}")
+    part = rr.json()["candidates"][0]["content"]["parts"][0]["inlineData"]
+    rate = int((re.search(r"rate=(\d+)", part.get("mimeType", "")) or [0, 24000])[1])
+    raw = Path(out_wav).with_suffix(".pcm")
+    raw.write_bytes(base64.b64decode(part["data"]))
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "s16le", "-ar", str(rate), "-ac", "1", "-i", str(raw),
+                    "-ar", str(SR), str(out_wav)], check=True)
+
+
+def _trim_to_script(wav, text, lang):
+    """Listen to the clip; cut any extra talk before/after the script. Returns (ok, words)."""
+    heard = whisper_words(wav, lang)
+    if heard is None:
+        return True, None  # cannot verify -> accept
+    if not heard:
+        return False, None
+    import difflib
+    sw = [norm_word(w) for w in text.split()]
+    hw = [norm_word(h["w"]) for h in heard]
+    blocks = [b for b in difflib.SequenceMatcher(None, sw, hw, autojunk=False).get_matching_blocks() if b.size]
+    if not blocks:
+        return False, None
+    first = blocks[0].b
+    lastb = blocks[-1]
+    last = lastb.b + lastb.size - 1
+    t0 = max(0.0, heard[first]["start"] - 0.12) if first > 0 else 0.0
+    t1 = heard[last]["end"] + 0.35
+    total = ffprobe_duration(wav)
+    if first > 0 or t1 < total - 0.6:
+        tmp = Path(wav).with_name(Path(wav).stem + "_t.wav")
+        subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(wav), "-ss", f"{t0:.3f}", "-to", f"{min(t1, total):.3f}",
+                        str(tmp)], check=True)
+        tmp.replace(wav)
+        if first > 0:
+            log(f"      shuru ki extra baat kaati ({t0:.1f}s)")
+    kept = " ".join(h["w"] for h in heard[first:last + 1])
+    score = similarity(text, kept)
+    return score >= (0.55 if lang == "hindi" else 0.7), score
+
+
+def tts_segments(scenes, max_words=110):
+    segs, cur, n = [], [], 0
+    for sc in scenes:
+        w = len(sc["narration"].split())
+        if cur and n + w > max_words:
+            segs.append(cur)
+            cur, n = [], 0
+        cur.append(sc)
+        n += w
+    if cur:
+        segs.append(cur)
+    return segs
+
+
+def gemini_voice(scenes, cfg, work):
+    import os
+    key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not key:
+        raise RuntimeError("no GEMINI_API_KEY")
+    models = _tts_models(key)
+    if not models:
+        raise RuntimeError("koi TTS model available nahi")
+    lang = cfg.get("language", "hindi")
+    vdir = Path(work) / "voice"
+    vdir.mkdir(parents=True, exist_ok=True)
+    groups = tts_segments(scenes)
+    parts, model_i = [], 0
+    for gi, grp in enumerate(groups):
+        text = " ".join(s["narration"] for s in grp)
+        wav = vdir / f"g{gi:03d}.wav"
+        ok = False
+        for attempt in range(3):
+            if model_i >= len(models):
+                raise RuntimeError("Gemini TTS limit khatam")
+            try:
+                _tts_call(models[model_i], key, text, cfg, wav)
+            except Exception as e:
+                log(f"      {models[model_i]}: {str(e)[:100]}")
+                if "429" in str(e) or "404" in str(e) or "400" in str(e):
+                    model_i += 1
+                time.sleep(3)
+                continue
+            ok, score = _trim_to_script(wav, text, lang)
+            if ok:
+                break
+            log(f"      part {gi + 1}: voice script se match nahi hua ({score}), dobara…")
+        if not ok:
+            raise RuntimeError(f"part {gi + 1} sahi nahi bola gaya")
+        parts.append(wav)
+        log(f"   🎙️ voice part {gi + 1}/{len(groups)} ✓")
+        if gi + 1 < len(groups):
+            g = vdir / f"gap{gi:03d}.wav"
+            silence(g, 0.25)
+            parts.append(g)
+    lst = vdir / "list.txt"
+    lst.write_text("".join(f"file '{p.resolve()}'\n" for p in parts))
+    out = Path(work) / "narration.wav"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-ac", "1",
+                    "-ar", str(SR), str(out)], check=True)
+    return own_voice(scenes, out, work, lang)
