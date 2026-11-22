@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_grand_mansion_ex-skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="50%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#F08A3C" />
+    </linearGradient>
+    <linearGradient id="set_grand_mansion_ex-poolGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+    <linearGradient id="set_grand_mansion_ex-glassGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1F6F6B" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#F1E3C2" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="set_grand_mansion_ex-wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    <linearGradient id="set_grand_mansion_ex-waterGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#1F6F6B" stop-opacity="0.8" />
+    </linearGradient>
+
+    
+    <g id="set_grand_mansion_ex-fountainSpray">
+      <path d="M780,480 Q800,380 820,480" fill="none" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" />
+      <path d="M760,490 Q800,350 840,490" fill="none" stroke="#1F6F6B" stroke-width="3" stroke-linecap="round" />
+    </g>
+  </defs>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#set_grand_mansion_ex-skyGrad)" />
+  
+  
+  <path d="M0,500 Q300,420 600,480 T1200,450 T1600,490 L1600,900 L0,900 Z" fill="#1B2340" opacity="0.4" />
+  <path d="M0,530 Q400,460 800,510 T1600,480 L1600,900 L0,900 Z" fill="#3A2A66" opacity="0.6" />
+
+  
+  
+  <rect x="250" y="250" width="1100" height="400" fill="url(#set_grand_mansion_ex-wallGrad)" stroke="#3A2418" stroke-width="4" />
+  
+  
+  <polygon points="230,250 800,160 1370,250" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+  <rect x="300" y="210" width="1000" height="40" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+
+  
+  <rect x="400" y="380" width="800" height="150" fill="#1B2340" stroke="#3A2418" stroke-width="4" />
+  <line x1="400" y1="380" x2="1200" y2="380" stroke="#F1E3C2" stroke-width="6" />
+  
+  <path d="M420,380 L420,350 M500,380 L500,350 M580,380 L580,350 M660,380 L660,350 M740,380 L740,350 M820,380 L820,350 M900,380 L900,350 M980,380 L980,350 M1060,380 L1060,350 M1140,380 L1140,350 M1180,380 L1180,350" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+  <line x1="410" y1="350" x2="1190" y2="350" stroke="#3A2418" stroke-width="4" />
+
+  
+  <rect x="300" y="290" width="120" height="200" fill="url(#set_grand_mansion_ex-glassGrad)" stroke="#3A2418" stroke-width="4" />
+  <line x1="360" y1="290" x2="360" y2="490" stroke="#3A2418" stroke-width="3" />
+  <line x1="300" y1="390" x2="420" y2="390" stroke="#3A2418" stroke-width="3" />
+
+  <rect x="450" y="290" width="120" height="200" fill="url(#set_grand_mansion_ex-glassGrad)" stroke="#3A2418" stroke-width="4" />
+  <line x1="510" y1="290" x2="510" y2="490" stroke="#3A2418" stroke-width="3" />
+  <line x1="450" y1="390" x2="570" y2="390" stroke="#3A2418" stroke-width="3" />
+
+  <rect x="1030" y="290" width="120" height="200" fill="url(#set_grand_mansion_ex-glassGrad)" stroke="#3A2418" stroke-width="4" />
+  <line x1="1090" y1="290" x2="1090" y2="490" stroke="#3A2418" stroke-width="3" />
+  <line x1="1030" y1="390" x2="1150" y2="390" stroke="#3A2418" stroke-width="3" />
+
+  <rect x="1180" y="290" width="120" height="200" fill="url(#set_grand_mansion_ex-glassGrad)" stroke="#3A2418" stroke-width="4" />
+  <line x1="1240" y1="290" x2="1240" y2="490" stroke="#3A2418" stroke-width="3" />
+  <line x1="1180" y1="390" x2="1300" y2="390" stroke="#3A2418" stroke-width="3" />
+
+  
+  <rect x="720" y="470" width="160" height="180" fill="#3A2418" stroke="#3A2418" stroke-width="4" />
+  <rect x="735" y="485" width="60" height="150" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+  <rect x="805" y="485" width="60" height="150" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+  <circle cx="785" cy="565" r="5" fill="#3A2418" />
+  <circle cx="815" cy="565" r="5" fill="#3A2418" />
+
+  
+  <rect x="660" y="400" width="40" height="250" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+  <rect x="900" y="400" width="40" height="250" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+  <rect x="650" y="380" width="60" height="20" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+  <rect x="890" y="380" width="60" height="20" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+  <rect x="650" y="630" width="60" height="20" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+  <rect x="890" y="630" width="60" height="20" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+
+  
+  
+  <path d="M120,700 Q140,450 80,300" fill="none" stroke="#3A2418" stroke-width="18" stroke-linecap="round" />
+  <path d="M100,680 Q115,460 70,320" fill="none" stroke="#E2A93B" stroke-width="8" stroke-linecap="round" />
+  
+  <path d="M80,300 Q20,250 -20,280 Q20,290 80,300" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <path d="M80,300 Q60,200 10,180 Q50,230 80,300" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <path d="M80,300 Q150,220 200,250 Q130,270 80,300" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <path d="M80,300 Q180,300 240,340 Q160,330 80,300" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+
+  
+  <path d="M1480,720 Q1460,480 1520,320" fill="none" stroke="#3A2418" stroke-width="18" stroke-linecap="round" />
+  <path d="M1495,700 Q1485,490 1530,340" fill="none" stroke="#E2A93B" stroke-width="8" stroke-linecap="round" />
+  
+  <path d="M1520,320 Q1580,270 1620,300 Q1580,310 1520,320" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <path d="M1520,320 Q1540,220 1490,200 Q1450,250 1520,320" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <path d="M1520,320 Q1450,240 1390,270 Q1460,290 1520,320" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <path d="M1520,320 Q1420,320 1360,360 Q1440,350 1520,320" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+
+  
+  
+  <path d="M0,650 Q800,600 1600,650 L1600,900 L0,900 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+  
+  
+  <polygon points="650,900 700,650 900,650 950,900" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+  <line x1="675" y1="775" x2="925" y2="775" stroke="#3A2418" stroke-width="2" stroke-dasharray="20,10" />
+  <line x1="660" y1="830" x2="940" y2="830" stroke="#3A2418" stroke-width="2" stroke-dasharray="25,10" />
+
+  
+  
+  <ellipse cx="800" cy="720" rx="220" ry="80" fill="#F1E3C2" stroke="#3A2418" stroke-width="5" />
+  <ellipse cx="800" cy="720" rx="190" ry="65" fill="url(#set_grand_mansion_ex-poolGrad)" stroke="#3A2418" stroke-width="4" />
+  
+  
+  <rect x="785" y="600" width="30" height="90" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+  <ellipse cx="800" cy="600" rx="80" ry="30" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+  <ellipse cx="800" cy="600" rx="65" ry="22" fill="url(#set_grand_mansion_ex-poolGrad)" stroke="#3A2418" stroke-width="3" />
+
+  
+  <rect x="792" y="520" width="16" height="80" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+  <ellipse cx="800" cy="520" rx="35" ry="15" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+  <circle cx="800" cy="510" r="10" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+
+  
+  <g data-part="water">
+    <use href="#set_grand_mansion_ex-fountainSpray" />
+    <path d="M750,720 Q800,740 850,720" fill="none" stroke="#F1E3C2" stroke-width="2" opacity="0.6">
+      <animate attributeName="d" values="M750,720 Q800,740 850,720; M750,720 Q800,700 850,720; M750,720 Q800,740 850,720" dur="3s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  
+  <circle cx="450" cy="700" r="45" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+  <circle cx="390" cy="720" r="55" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+  <circle cx="330" cy="740" r="40" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+
+  <circle cx="1150" cy="700" r="45" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+  <circle cx="1210" cy="720" r="55" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+  <circle cx="1270" cy="740" r="40" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+
+  
+  <polygon points="560,740 590,620 620,740" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+  <rect x="585" y="730" width="10" height="25" fill="#3A2418" />
+
+  <polygon points="980,740 1010,620 1040,740" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+  <rect x="1005" y="730" width="10" height="25" fill="#3A2418" />
+
+  
+  <circle cx="800" cy="200" r="300" fill="#F08A3C" opacity="0.15" />
+</svg>

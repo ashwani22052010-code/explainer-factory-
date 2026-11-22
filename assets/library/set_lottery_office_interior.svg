@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  
+  <rect width="1600" height="900" fill="#1B2340" />
+  <polygon points="0,650 1600,650 1600,900 0,900" fill="#F1E3C2" />
+  <polygon points="0,650 1600,650 1600,680 0,680" fill="#3A2418" opacity="0.2" />
+  
+  
+  <rect x="500" y="50" width="600" height="400" fill="#1F6F6B" stroke="#3A2418" stroke-width="8" />
+  <rect x="520" y="70" width="560" height="360" fill="#F08A3C" />
+  <rect x="520" y="200" width="560" height="230" fill="#E2A93B" />
+  
+  <rect x="550" y="300" width="60" height="130" fill="#3A2A66" />
+  <rect x="630" y="250" width="80" height="180" fill="#1B2340" />
+  <rect x="750" y="320" width="50" height="110" fill="#3A2A66" />
+  <rect x="850" y="280" width="100" height="150" fill="#1B2340" />
+  
+  <rect x="790" y="70" width="20" height="360" fill="#1F6F6B" />
+  <rect x="520" y="240" width="560" height="15" fill="#1F6F6B" />
+
+  
+  <g transform="translate(150, 150)">
+    <rect width="120" height="160" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+    <rect x="15" y="15" width="90" height="130" fill="none" stroke="#E2A93B" stroke-width="2" />
+    <circle cx="60" cy="120" r="10" fill="#E2A93B" />
+    <rect x="30" y="40" width="60" height="4" fill="#3A2418" opacity="0.3" />
+    <rect x="30" y="55" width="60" height="4" fill="#3A2418" opacity="0.3" />
+  </g>
+  <g transform="translate(300, 120)">
+    <rect width="140" height="110" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+    <rect x="10" y="10" width="120" height="90" fill="none" stroke="#C2603A" stroke-width="2" />
+    <circle cx="110" cy="80" r="12" fill="#C8323A" />
+    <rect x="25" y="30" width="90" height="4" fill="#3A2418" opacity="0.3" />
+  </g>
+  <g transform="translate(1200, 180)">
+    <rect width="180" height="130" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+    <rect x="10" y="10" width="160" height="110" fill="none" stroke="#1F6F6B" stroke-width="2" />
+    <rect x="40" y="40" width="100" height="4" fill="#3A2418" opacity="0.3" />
+    <rect x="40" y="55" width="100" height="4" fill="#3A2418" opacity="0.3" />
+    <circle cx="140" cy="90" r="15" fill="#E2A93B" />
+  </g>
+
+  
+  <g data-part="light" opacity="0.2">
+    <polygon points="520,70 300,900 600,900 790,70" fill="white">
+      <animate attributeName="opacity" values="0.1;0.2;0.1" dur="5s" repeatCount="indefinite" />
+    </polygon>
+    <polygon points="810,70 1000,900 1300,900 1080,70" fill="white">
+      <animate attributeName="opacity" values="0.1;0.2;0.1" dur="5s" repeatCount="indefinite" begin="1s" />
+    </polygon>
+  </g>
+
+  
+  
+  <ellipse cx="800" cy="780" rx="450" ry="60" fill="#3A2418" opacity="0.2" />
+  
+  
+  <path d="M350,550 L1250,550 L1350,800 L250,800 Z" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+  <path d="M350,550 L1250,550 L1240,570 L360,570 Z" fill="#E2A93B" opacity="0.4" />
+  <rect x="350" y="550" width="900" height="30" fill="#3A2418" opacity="0.1" />
+  
+  
+  <rect x="400" y="600" width="200" height="140" fill="#3A2418" opacity="0.1" />
+  <rect x="1000" y="600" width="200" height="140" fill="#3A2418" opacity="0.1" />
+  <circle cx="500" cy="630" r="5" fill="#3A2418" />
+  <circle cx="1100" cy="630" r="5" fill="#3A2418" />
+
+  
+  
+  <g transform="translate(420, 480)">
+    <rect x="0" y="40" width="120" height="30" fill="#3A2418" opacity="0.1" />
+    <rect x="0" y="30" width="120" height="40" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+    <rect x="5" y="25" width="120" height="40" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+    <rect x="10" y="20" width="120" height="40" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+  </g>
+  
+  <g transform="translate(1050, 500)">
+    <rect width="100" height="50" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" transform="rotate(-5)" />
+    <rect x="10" y="-10" width="100" height="50" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" transform="rotate(2)" />
+  </g>
+
+  
+  <g transform="translate(950, 510)">
+    <rect x="0" y="0" width="40" height="50" rx="5" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+    <path d="M40,10 Q55,10 55,25 Q55,40 40,40" fill="none" stroke="#3A2418" stroke-width="3" />
+    <g data-part="smoke">
+      <path d="M10,-10 Q15,-20 10,-30" fill="none" stroke="white" stroke-width="2" opacity="0.5">
+        <animate attributeName="d" values="M10,-10 Q15,-20 10,-30; M10,-10 Q5,-20 10,-30; M10,-10 Q15,-20 10,-30" dur="3s" repeatCount="indefinite" />
+      </path>
+    </g>
+  </g>
+
+  
+  
+  <g transform="translate(700, 420)">
+    <rect x="20" y="150" width="160" height="20" rx="10" fill="#1B2340" stroke="#3A2418" stroke-width="4" />
+    <rect x="0" y="0" width="200" height="180" rx="20" fill="#3A2A66" stroke="#3A2418" stroke-width="4" />
+    <rect x="40" y="30" width="120" height="120" rx="10" fill="#1B2340" opacity="0.3" />
+  </g>
+  
+  
+  <g transform="translate(100, 650)">
+    <path d="M20,100 L180,100 L200,180 L0,180 Z" fill="#3A2A66" stroke="#3A2418" stroke-width="4" />
+    <path d="M20,0 L180,0 L180,100 L20,100 Z" fill="#3A2A66" stroke="#3A2418" stroke-width="4" />
+    <rect x="40" y="180" width="10" height="60" fill="#3A2418" />
+    <rect x="150" y="180" width="10" height="60" fill="#3A2418" />
+  </g>
+
+  
+  
+  <g transform="translate(-50, 600)">
+    <path d="M50,150 L200,150 L170,300 L80,300 Z" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+    <g data-part="leaf">
+      <ellipse cx="80" cy="100" rx="40" ry="80" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" transform="rotate(-30, 80, 100)" />
+      <ellipse cx="170" cy="80" rx="45" ry="90" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" transform="rotate(20, 170, 80)" />
+      <ellipse cx="125" cy="50" rx="35" ry="100" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+      <animateTransform attributeName="transform" type="rotate" values="-1 125 300; 1 125 300; -1 125 300" dur="6s" repeatCount="indefinite" />
+    </g>
+  </g>
+
+  
+  <g transform="translate(1450, 100)">
+    <rect width="150" height="800" fill="#3A2418" />
+    <rect x="10" y="50" width="140" height="20" fill="#C2603A" />
+    <rect x="10" y="300" width="140" height="20" fill="#C2603A" />
+    <rect x="10" y="550" width="140" height="20" fill="#C2603A" />
+    
+    <rect x="20" y="70" width="30" height="230" fill="#C8323A" stroke="#3A2418" stroke-width="2" />
+    <rect x="55" y="90" width="25" height="210" fill="#1F6F6B" stroke="#3A2418" stroke-width="2" />
+    <rect x="85" y="60" width="35" height="240" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+  </g>
+
+  
+  
+  
+</svg>

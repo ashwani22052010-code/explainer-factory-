@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_luxurious_bank_i-bgWallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="60%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#12182b" />
+    </linearGradient>
+    <linearGradient id="set_luxurious_bank_i-floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    <linearGradient id="set_luxurious_bank_i-pillarGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="50%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#9E4322" />
+    </linearGradient>
+    <linearGradient id="set_luxurious_bank_i-glassGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1F6F6B" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#F1E3C2" stop-opacity="0.1" />
+    </linearGradient>
+    <linearGradient id="set_luxurious_bank_i-lightBeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#F1E3C2" stop-opacity="0.0" />
+    </linearGradient>
+    <linearGradient id="set_luxurious_bank_i-goldTrim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="50%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    <radialGradient id="set_luxurious_bank_i-lampGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#F08A3C" stop-opacity="1" />
+      <stop offset="100%" stop-color="#F08A3C" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#set_luxurious_bank_i-bgWallGrad)" />
+
+  
+  <path d="M650,550 L650,220 C650,110 950,110 950,220 L950,550 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+  
+  <path d="M670,550 L670,230 C670,130 930,130 930,230 L930,550 Z" fill="#F1E3C2" opacity="0.15" />
+  <polygon points="600,550 800,150 1000,550" fill="url(#set_luxurious_bank_i-lightBeam)" />
+  <polygon points="800,150 720,900 880,900" fill="url(#set_luxurious_bank_i-lightBeam)" opacity="0.6" />
+
+  
+  <g fill="#251b3b" stroke="#3A2418" stroke-width="3">
+    <rect x="100" y="300" width="180" height="250" rx="10" />
+    <rect x="1320" y="300" width="180" height="250" rx="10" />
+    <rect x="320" y="250" width="180" height="300" rx="10" />
+    <rect x="1100" y="250" width="180" height="300" rx="10" />
+  </g>
+
+  
+  <circle cx="1190" cy="400" r="70" fill="#1B2340" stroke="#E2A93B" stroke-width="6" />
+  <circle cx="1190" cy="400" r="50" fill="none" stroke="#C2603A" stroke-width="4" />
+
+  
+  <polygon points="0,900 1600,900 1350,550 250,550" fill="url(#set_luxurious_bank_i-floorGrad)" stroke="#3A2418" stroke-width="5" />
+  
+  
+  <g stroke="#C2603A" stroke-width="2" opacity="0.4">
+    <line x1="800" y1="550" x2="800" y2="900" />
+    <line x1="800" y1="550" x2="400" y2="900" />
+    <line x1="800" y1="550" x2="1200" y2="900" />
+    <line x1="800" y1="550" x2="100" y2="900" />
+    <line x1="800" y1="550" x2="1500" y2="900" />
+    
+    <path d="M 180,780 L 1420,780 M 350,680 L 1250,680 M 500,600 L 1100,600 M 0,860 L 1600,860" fill="none" />
+  </g>
+
+  
+  
+  
+  <rect x="0" y="0" width="160" height="900" fill="url(#set_luxurious_bank_i-pillarGrad)" stroke="#3A2418" stroke-width="5" />
+  <rect x="1440" y="0" width="160" height="900" fill="url(#set_luxurious_bank_i-pillarGrad)" stroke="#3A2418" stroke-width="5" />
+  
+  <rect x="130" y="0" width="30" height="900" fill="#1B2340" opacity="0.3" />
+  <rect x="1440" y="0" width="30" height="900" fill="#F1E3C2" opacity="0.2" />
+
+  
+  
+  <g stroke="#3A2418" stroke-width="3">
+    
+    <rect x="150" y="550" width="350" height="120" fill="#C2603A" />
+    <rect x="170" y="570" width="310" height="80" fill="#9E4322" rx="5" />
+    
+    <rect x="180" y="380" width="290" height="170" rx="10" fill="url(#set_luxurious_bank_i-glassGrad)" />
+    
+    <circle cx="325" cy="510" r="15" fill="#E2A93B" />
+    <circle cx="325" cy="510" r="8" fill="#1B2340" />
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="3">
+    
+    <rect x="1100" y="550" width="350" height="120" fill="#C2603A" />
+    <rect x="1120" y="570" width="310" height="80" fill="#9E4322" rx="5" />
+    
+    <rect x="1130" y="380" width="290" height="170" rx="10" fill="url(#set_luxurious_bank_i-glassGrad)" />
+    
+    <circle cx="1275" cy="510" r="15" fill="#E2A93B" />
+    <circle cx="1275" cy="510" r="8" fill="#1B2340" />
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="3">
+    <path d="M 620,620 L 980,620 L 1020,720 L 580,720 Z" fill="#9E4322" />
+    <path d="M 600,600 L 1000,600 L 1020,620 L 580,620 Z" fill="url(#set_luxurious_bank_i-goldTrim)" />
+    
+    <rect x="750" y="590" width="60" height="20" fill="#F1E3C2" rx="2" />
+    <rect x="830" y="585" width="40" height="25" fill="#C8323A" rx="2" />
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="3">
+    
+    <line x1="400" y1="0" x2="400" y2="150" stroke="#E2A93B" stroke-width="4" />
+    <path d="M 330,150 Q 400,200 470,150 Z" fill="#E2A93B" />
+    <ellipse cx="400" cy="150" rx="70" ry="20" fill="url(#set_luxurious_bank_i-goldTrim)" />
+    <circle cx="360" cy="180" r="12" fill="#F08A3C" />
+    <circle cx="440" cy="180" r="12" fill="#F08A3C" />
+    <circle cx="400" cy="190" r="15" fill="#F08A3C" />
+
+    
+    <line x1="1200" y1="0" x2="1200" y2="150" stroke="#E2A93B" stroke-width="4" />
+    <path d="M 1130,150 Q 1200,200 1270,150 Z" fill="#E2A93B" />
+    <ellipse cx="1200" cy="150" rx="70" ry="20" fill="url(#set_luxurious_bank_i-goldTrim)" />
+    <circle cx="1160" cy="180" r="12" fill="#F08A3C" />
+    <circle cx="1240" cy="180" r="12" fill="#F08A3C" />
+    <circle cx="1200" cy="190" r="15" fill="#F08A3C" />
+  </g>
+
+  
+  <g data-part="light" fill="#F1E3C2" opacity="0.7">
+    <circle cx="780" cy="300" r="4">
+      <animate attributeName="cy" values="300;250;300" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="820" cy="400" r="6">
+      <animate attributeName="cy" values="400;350;400" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.1;0.7;0.1" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="750" cy="480" r="3">
+      <animate attributeName="cy" values="480;430;480" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="850" cy="250" r="5">
+      <animate attributeName="cy" values="250;200;250" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="6s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  
+  
+  
+  <g stroke="#3A2418" stroke-width="3">
+    
+    <ellipse cx="150" cy="850" rx="40" ry="20" fill="#E2A93B" />
+    
+    <rect x="140" y="700" width="20" height="150" fill="#E2A93B" rx="5" />
+    <circle cx="150" cy="700" r="15" fill="#C2603A" />
+    
+    <path d="M 150,710 Q 300,780 450,850" fill="none" stroke="#C8323A" stroke-width="12" stroke-linecap="round" />
+    <path d="M 150,710 Q 300,780 450,850" fill="none" stroke="#3A2418" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="3">
+    
+    <path d="M 1380,750 L 1460,750 L 1480,900 L 1360,900 Z" fill="#C2603A" />
+    <ellipse cx="1420" cy="750" rx="40" ry="12" fill="#E2A93B" />
+    
+    <path d="M 1420,740 Q 1350,650 1300,680 Q 1380,720 1420,740 Z" fill="#1F6F6B" />
+    <path d="M 1420,740 Q 1420,620 1400,580 Q 1430,680 1420,740 Z" fill="#1F6F6B" />
+    <path d="M 1420,740 Q 1500,640 1530,690 Q 1450,730 1420,740 Z" fill="#1F6F6B" />
+    <path d="M 1420,740 Q 1480,700 1520,740 Q 1450,750 1420,740 Z" fill="#3A2A66" />
+  </g>
+
+  
+  <path d="M 0,900 L 1600,900 L 1600,880 L 0,880 Z" fill="#1B2340" opacity="0.4" />
+</svg>

@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_overseas_univers-skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="40%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+
+    
+    <linearGradient id="set_overseas_univers-stoneGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#D4C3A3" />
+    </linearGradient>
+    <linearGradient id="set_overseas_univers-roofGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="100%" stop-color="#9A4526" />
+    </linearGradient>
+
+    
+    <linearGradient id="set_overseas_univers-towerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E2CDB0" />
+      <stop offset="100%" stop-color="#B8A484" />
+    </linearGradient>
+
+    
+    <linearGradient id="set_overseas_univers-groundGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+
+    
+    </defs>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#set_overseas_univers-skyGrad)" />
+
+  
+  <path d="M0 550 Q 400 500, 800 530 T 1600 520 L 1600 900 L 0 900 Z" fill="#1F6F6B" opacity="0.4" />
+  <path d="M0 580 Q 500 540, 1000 570 T 1600 560 L 1600 900 L 0 900 Z" fill="#1B2340" opacity="0.5" />
+
+  
+  
+  <rect x="100" y="380" width="400" height="270" fill="url(#set_overseas_univers-stoneGrad)" class="outline" />
+  
+  <polygon points="80,380 300,260 520,380" fill="url(#set_overseas_univers-roofGrad)" class="outline" />
+
+  
+  <rect x="1100" y="380" width="400" height="270" fill="url(#set_overseas_univers-stoneGrad)" class="outline" />
+  
+  <polygon points="1080,380 1300,260 1520,380" fill="url(#set_overseas_univers-roofGrad)" class="outline" />
+
+  
+  <rect x="450" y="320" width="700" height="330" fill="url(#set_overseas_univers-stoneGrad)" class="outline" />
+  <polygon points="430,320 800,200 1170,320" fill="url(#set_overseas_univers-roofGrad)" class="outline" />
+
+  
+  <rect x="700" y="150" width="200" height="500" fill="url(#set_overseas_univers-towerGrad)" class="outline" />
+  
+  <polygon points="680,150 800,20 920,150" fill="#C8323A" class="outline" />
+  
+  <rect x="690" y="140" width="220" height="20" fill="#C2603A" class="outline" />
+
+  
+  <circle cx="800" cy="270" r="50" fill="#F1E3C2" class="outline" />
+  <circle cx="800" cy="270" r="45" fill="#1B2340" />
+  
+  <line x1="800" y1="270" x2="800" y2="240" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" />
+  <line x1="800" y1="270" x2="825" y2="280" stroke="#F1E3C2" stroke-width="3" stroke-linecap="round" />
+  
+  <circle cx="800" cy="230" r="3" fill="#F1E3C2" />
+  <circle cx="840" cy="270" r="3" fill="#F1E3C2" />
+  <circle cx="800" cy="310" r="3" fill="#F1E3C2" />
+  <circle cx="760" cy="270" r="3" fill="#F1E3C2" />
+
+  
+  
+  <path d="M 770 360 L 770 420 A 30 30 0 0 0 830 420 L 830 360 Z" fill="#1B2340" class="outline" />
+  <line x1="800" y1="360" x2="800" y2="420" class="thin-outline" />
+
+  
+  
+  <rect x="150" y="420" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+  <rect x="230" y="420" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+  <rect x="310" y="420" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+  <rect x="390" y="420" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+
+  <rect x="150" y="520" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+  <rect x="230" y="520" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+  <rect x="310" y="520" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+  <rect x="390" y="520" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+
+  
+  <rect x="1170" y="420" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+  <rect x="1250" y="420" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+  <rect x="1330" y="420" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+  <rect x="1410" y="420" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+
+  <rect x="1170" y="520" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+  <rect x="1250" y="520" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+  <rect x="1330" y="520" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+  <rect x="1410" y="520" width="40" height="70" rx="20" fill="#1B2340" class="thin-outline" />
+
+  
+  <path d="M 740 650 L 740 570 A 60 60 0 0 1 860 570 L 860 650 Z" fill="#C2603A" class="outline" />
+  <path d="M 760 650 L 760 580 A 40 40 0 0 1 840 580 L 840 650 Z" fill="#1B2340" class="thin-outline" />
+
+  
+  <g fill="#1F6F6B" class="thin-outline">
+    
+    <path d="M 100 380 Q 130 430, 110 480 T 140 550 L 100 580 Z" />
+    <path d="M 200 380 Q 180 440, 220 500 T 190 600 L 170 600 Z" />
+    
+    <path d="M 700 450 Q 720 500, 705 550 T 715 620 L 700 620 Z" />
+    <path d="M 900 480 Q 880 520, 895 570 T 885 630 L 900 630 Z" />
+    
+    <path d="M 1500 380 Q 1470 430, 1490 480 T 1460 550 L 1500 580 Z" />
+  </g>
+  <g fill="#E2A93B" opacity="0.6">
+    
+    <circle cx="115" cy="450" r="8" />
+    <circle cx="130" cy="520" r="10" />
+    <circle cx="210" cy="460" r="9" />
+    <circle cx="1480" cy="460" r="8" />
+    <circle cx="710" cy="530" r="9" />
+  </g>
+
+  
+  
+  <rect x="0" y="650" width="1600" height="250" fill="url(#set_overseas_univers-groundGrad)" class="outline" />
+  
+  <polygon points="650,650 950,650 1100,900 500,900" fill="#D4C3A3" class="outline" />
+  <line x1="720" y1="720" x2="880" y2="720" class="thin-outline" opacity="0.4" />
+  <line x1="660" y1="800" x2="940" y2="800" class="thin-outline" opacity="0.4" />
+
+  
+  <path d="M 0 900 L 0 500 Q 50 480, 80 530 T 120 700 L 0 900 Z" fill="#1B2340" class="outline" />
+  <path d="M -20 900 L -20 400 Q 80 350, 150 450 T 100 700 L 0 900 Z" fill="#1F6F6B" class="outline" />
+  
+  <g data-part="leaf" class="thin-outline" fill="#E2A93B">
+    <path d="M 80 450 Q 110 470, 90 500 Q 60 480, 80 450 Z">
+      <animateTransform attributeName="transform" type="rotate" values="0 80 450; 5 80 450; 0 80 450" dur="4s" repeatCount="indefinite" />
+    </path>
+    <path d="M 120 420 Q 150 440, 130 470 Q 100 450, 120 420 Z">
+      <animateTransform attributeName="transform" type="rotate" values="0 120 420; -4 120 420; 0 120 420" dur="5s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  
+  
+  <g class="outline" fill="#D4C3A3">
+    <rect x="1350" y="750" width="160" height="20" rx="5" />
+    <rect x="1370" y="770" width="20" height="60" />
+    <rect x="1470" y="770" width="20" height="60" />
+  </g>
+  
+  <rect x="1360" y="700" width="140" height="50" rx="5" fill="#D4C3A3" class="outline" />
+  <rect x="1380" y="710" width="30" height="30" fill="#1B2340" rx="3" />
+  <rect x="1430" y="710" width="30" height="30" fill="#1B2340" rx="3" />
+
+  
+  <g class="outline" fill="#1B2340">
+    <rect x="520" y="580" width="16" height="150" />
+    <path d="M 500 580 L 528 550 L 556 580 Z" fill="#C2603A" />
+    
+    <rect x="512" y="530" width="32" height="30" fill="#E2A93B" />
+  </g>
+  
+  <g data-part="light">
+    <circle cx="528" cy="545" r="10" fill="#F1E3C2" opacity="0.8">
+      <animate attributeName="opacity" values="0.8; 0.4; 0.8" dur="3s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  
+  <g data-part="light" fill="#F1E3C2" opacity="0.6">
+    <circle cx="600" cy="500" r="4">
+      <animate attributeName="cy" values="500; 480; 500" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1000" cy="450" r="3">
+      <animate attributeName="cy" values="450; 430; 450" dur="5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="750" cy="550" r="5">
+      <animate attributeName="cy" values="550; 530; 550" dur="6s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

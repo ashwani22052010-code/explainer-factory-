@@ -180,5 +180,222 @@
   "aspect": 1.0,
   "score": 8.0,
   "added": "2026-11-21"
+ },
+ "set_small_town_street_morning": {
+  "file": "set_small_town_street_morning.svg",
+  "describe": "A peaceful small town street in India during a quiet early morning, humble houses, electric poles, and a soft rising sun.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "set_modest_bedroom_desk": {
+  "file": "set_modest_bedroom_desk.svg",
+  "describe": "A simple middle-class room desk with monthly bills, bike EMI slip, and a modest salary envelope.",
+  "aspect": 0.5625,
+  "score": 8.0,
+  "added": "2026-11-22"
+ },
+ "set_modest_living_room": {
+  "file": "set_modest_living_room.svg",
+  "describe": "A small cluttered living room showing prescription medicine bottles on a side table and a college brochure.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "set_home_balcony_morning": {
+  "file": "set_home_balcony_morning.svg",
+  "describe": "A sunny cozy apartment balcony on a Sunday morning with a small tea table.",
+  "aspect": 0.5625,
+  "score": 8.0,
+  "added": "2026-11-22"
+ },
+ "lottery_ticket_in_hand": {
+  "file": "lottery_ticket_in_hand.svg",
+  "describe": "A paper lottery ticket held close to the camera with numbers highlighted.",
+  "aspect": 1.0,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "set_lottery_office_exterior": {
+  "file": "set_lottery_office_exterior.svg",
+  "describe": "Exterior of a grand modern government lottery office building with wide entrance glass doors and formal signboards under bright morning sunlight.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "set_lottery_office_interior": {
+  "file": "set_lottery_office_interior.svg",
+  "describe": "Formal office with a large wooden desk, official certificates on walls, stacks of paperwork, and sleek office chairs.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "newspaper_frontpage": {
+  "file": "newspaper_frontpage.svg",
+  "describe": "A dramatic newspaper front page with a photo of protagonist holding ticket and headline 'LOCAL MAN WINS 60 CRORES!'",
+  "aspect": 1.0,
+  "score": 5.0,
+  "added": "2026-11-22"
+ },
+ "ringing_smartphone": {
+  "file": "ringing_smartphone.svg",
+  "describe": "A smartphone vibrating endlessly on table displaying 400+ missed calls notification",
+  "aspect": 0.8,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "set_crowded_living_room": {
+  "file": "set_crowded_living_room.svg",
+  "describe": "A modest living room packed with overly friendly relatives and neighbors bearing gifts and sweets.",
+  "aspect": 0.5625,
+  "score": 5.0,
+  "added": "2026-11-22"
+ },
+ "set_rooftop_starry_night": {
+  "file": "set_rooftop_starry_night.svg",
+  "describe": "A flat concrete rooftop under a bright night sky filled with twinkling stars.",
+  "aspect": 0.5625,
+  "score": 8.0,
+  "added": "2026-11-22"
+ },
+ "notepad_and_pen": {
+  "file": "notepad_and_pen.svg",
+  "describe": "A small paper notepad showing a handwritten list with a pencil.",
+  "aspect": 1.0,
+  "score": 8.0,
+  "added": "2026-11-22"
+ },
+ "set_dream_wishlist_montage": {
+  "file": "set_dream_wishlist_montage.svg",
+  "describe": "A split background illustration showing a modern hospital room, a wedding stage decorated with flowers, and a beautiful village house.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "set_luxurious_bank_interior": {
+  "file": "set_luxurious_bank_interior.svg",
+  "describe": "A grand, polished bank entrance hall with wooden desks and glass partitions.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "tea_tray_biscuits": {
+  "file": "tea_tray_biscuits.svg",
+  "describe": "A silver tray with hot tea cups and biscuits on a table.",
+  "aspect": 1.0,
+  "score": 5.0,
+  "added": "2026-11-22"
+ },
+ "set_modest_home_exterior_night": {
+  "file": "set_modest_home_exterior_night.svg",
+  "describe": "Exterior of a modest suburban house at night under dim streetlights with shadows looming on the quiet street.",
+  "aspect": 0.5625,
+  "score": 5.0,
+  "added": "2026-11-22"
+ },
+ "set_corporate_office_boss_cabin": {
+  "file": "set_corporate_office_boss_cabin.svg",
+  "describe": "A modern corporate boss cabin with a large executive desk, plush leather chairs, and city view window.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "set_luxury_car_showroom": {
+  "file": "set_luxury_car_showroom.svg",
+  "describe": "A shiny upscale car showroom featuring polished tile floors and spotlights overhead.",
+  "aspect": 0.5625,
+  "score": 5.0,
+  "added": "2026-11-22"
+ },
+ "luxury_red_sports_car": {
+  "file": "luxury_red_sports_car.svg",
+  "describe": "A sleek, polished red high-end sports car with shiny rims",
+  "aspect": 0.7,
+  "score": 5.0,
+  "added": "2026-11-22"
+ },
+ "set_grand_mansion_exterior": {
+  "file": "set_grand_mansion_exterior.svg",
+  "describe": "A massive luxurious multi-story modern mansion with a grand fountain, palm trees, and manicured green lawn.",
+  "aspect": 0.5625,
+  "score": 5.0,
+  "added": "2026-11-22"
+ },
+ "set_luxurious_living_room": {
+  "file": "set_luxurious_living_room.svg",
+  "describe": "An opulent mansion living room with plush sofas, crystal chandelier, and large glass windows.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "gold_bangles_box": {
+  "file": "gold_bangles_box.svg",
+  "describe": "An open velvet jewellery box presenting shiny gold bangles",
+  "aspect": 1.0,
+  "score": 8.0,
+  "added": "2026-11-22"
+ },
+ "modern_laptop_phone": {
+  "file": "modern_laptop_phone.svg",
+  "describe": "A modern sleek laptop and smartphone wrapped with a bow",
+  "aspect": 1.0,
+  "score": 5.0,
+  "added": "2026-11-22"
+ },
+ "set_mansion_pool_party_night": {
+  "file": "set_mansion_pool_party_night.svg",
+  "describe": "A lavish backyard pool party at night illuminated by colorful party lights, decorative balloons, and a DJ setup.",
+  "aspect": 0.5625,
+  "score": 7.0,
+  "added": "2026-11-22"
+ },
+ "set_modern_minimalist_office": {
+  "file": "set_modern_minimalist_office.svg",
+  "describe": "A clean, professional office with a large glass window, a mahogany desk, and bookshelves filled with financial ledgers.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "set_abstract_thought_space": {
+  "file": "set_abstract_thought_space.svg",
+  "describe": "A stylized dark background with floating golden sparks and a single spotlight on the protagonist.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "set_hospital_private_suite": {
+  "file": "set_hospital_private_suite.svg",
+  "describe": "A bright, clean, high-end private hospital room with medical monitors and comfortable furniture.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "set_overseas_university": {
+  "file": "set_overseas_university.svg",
+  "describe": "A grand, historical stone university building with ivy on the walls and a large clock tower under a clear blue sky.",
+  "aspect": 0.5625,
+  "score": 5.0,
+  "added": "2026-11-22"
+ },
+ "set_neighborhood_library": {
+  "file": "set_neighborhood_library.svg",
+  "describe": "A bright, modern but small community library with colorful book shelves and desks for children.",
+  "aspect": 0.5625,
+  "score": 6.0,
+  "added": "2026-11-22"
+ },
+ "tea_cup": {
+  "file": "tea_cup.svg",
+  "describe": "A simple ceramic cup with steam rising from it",
+  "aspect": 1.0,
+  "score": 8.0,
+  "added": "2026-11-22"
+ },
+ "luxury_mansion_icon": {
+  "file": "luxury_mansion_icon.svg",
+  "describe": "A stylized icon of a grand mansion with a pool.",
+  "aspect": 1.0,
+  "score": 7.0,
+  "added": "2026-11-22"
  }
 }

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  
+  <defs>
+    <linearGradient id="newspaper_frontpage-paperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#E2D1A8" />
+    </linearGradient>
+    <linearGradient id="newspaper_frontpage-photoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+  </defs>
+
+  
+  <g transform="rotate(-2 500 500)">
+    
+    <path d="M200 150 L800 130 L820 850 L220 870 Z" fill="url(#newspaper_frontpage-paperGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    
+    <path d="M800 130 L820 850 L835 845 L815 125 Z" fill="#D4C196" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+    
+    
+    <path d="M250 500 Q500 480 750 510" fill="none" stroke="#3A2418" stroke-width="2" stroke-opacity="0.3" />
+    <path d="M230 320 Q510 300 780 330" fill="none" stroke="#3A2418" stroke-width="2" stroke-opacity="0.3" />
+    
+    
+    <rect x="230" y="170" width="540" height="80" fill="#1B2340" rx="4" />
+    <rect x="245" y="185" width="100" height="50" fill="#C8323A" rx="2" />
+    <path d="M360 195 H750 M360 210 H750 M360 225 H600" stroke="#F1E3C2" stroke-width="8" stroke-linecap="round" />
+
+    
+    <g transform="translate(230, 270)">
+      <rect x="0" y="0" width="540" height="45" fill="#3A2418" />
+      <text x="10" y="32" font-family="Arial, sans-serif" font-weight="bold" font-size="32" fill="#F1E3C2">LOCAL MAN WINS 60 CRORES!</text>
+      
+      <rect x="0" y="55" width="540" height="8" fill="#C2603A" />
+    </g>
+
+    
+    <g transform="translate(230, 350)">
+      <rect x="0" y="0" width="300" height="350" fill="#1F6F6B" stroke="#3A2418" stroke-width="5" />
+      
+      <path d="M150 350 Q150 250 80 250 Q50 250 50 350" fill="#1B2340" />
+      <circle cx="150" cy="180" r="45" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+      
+      <g data-part="hand">
+        <rect x="180" y="220" width="80" height="50" fill="#E2A93B" stroke="#3A2418" stroke-width="4" transform="rotate(15 220 245)" />
+        <path d="M190 235 H250 M190 245 H230" stroke="#3A2418" stroke-width="2" transform="rotate(15 220 245)" />
+        <path d="M160 260 Q180 260 190 240" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="3s" repeatCount="indefinite" />
+      </g>
+      
+      <path d="M10 10 L60 10 L10 60 Z" fill="white" fill-opacity="0.2" />
+    </g>
+
+    
+    <g transform="translate(550, 350)">
+      <rect x="0" y="0" width="220" height="20" fill="#3A2418" />
+      <path d="M0 40 H220 M0 55 H220 M0 70 H220 M0 85 H220 M0 100 H150" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+      
+      <rect x="0" y="130" width="220" height="20" fill="#C8323A" />
+      <path d="M0 170 H220 M0 185 H220 M0 200 H220 M0 215 H220 M0 230 H180" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+      
+      <rect x="0" y="260" width="100" height="90" fill="#F08A3C" stroke="#3A2418" stroke-width="4" />
+      <path d="M115 270 H220 M115 285 H220 M115 300 H220 M115 315 H220 M115 330 H220 M115 345 H180" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+    </g>
+
+    
+    <g transform="translate(230, 720)">
+      <path d="M0 10 H540 M0 30 H540 M0 50 H540 M0 70 H540 M0 90 H400" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    </g>
+    
+    
+    <circle cx="780" cy="160" r="25" fill="#C8323A" stroke="#3A2418" stroke-width="4" />
+    <path d="M772 160 H788 M780 152 V168" stroke="white" stroke-width="3" />
+  </g>
+
+  
+  <animateTransform attributeName="transform" type="rotate" from="-1 500 500" to="1 500 500" dur="4s" repeatCount="indefinite" additive="sum" />
+</svg>

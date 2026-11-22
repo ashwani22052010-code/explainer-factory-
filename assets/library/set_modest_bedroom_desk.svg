@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_modest_bedroom_d-bgWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="60%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#121829" />
+    </linearGradient>
+    <linearGradient id="set_modest_bedroom_d-windowSky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="50%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+    <linearGradient id="set_modest_bedroom_d-deskWood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="30%" stop-color="#C2603A" />
+      <stop offset="100%" stop-color="#80341B" />
+    </linearGradient>
+    <linearGradient id="set_modest_bedroom_d-deskTop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F08A3C" />
+      <stop offset="50%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+    <linearGradient id="set_modest_bedroom_d-floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#0E121F" />
+    </linearGradient>
+    <linearGradient id="set_modest_bedroom_d-lampGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#E2A93B" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="set_modest_bedroom_d-vignette" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="60%" stop-color="#000000" stop-opacity="0" />
+      <stop offset="100%" stop-color="#121829" stop-opacity="0.7" />
+    </radialGradient>
+    
+    
+    </defs>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#set_modest_bedroom_d-bgWall)" />
+  
+  
+  <g stroke="#F1E3C2" stroke-opacity="0.04" stroke-width="2">
+    <line x1="0" y1="150" x2="1600" y2="150" />
+    <line x1="0" y1="300" x2="1600" y2="300" />
+    <line x1="0" y1="450" x2="1600" y2="450" />
+    <line x1="0" y1="600" x2="1600" y2="600" />
+  </g>
+
+  
+  <path d="M0 650 L1600 650 L1600 900 L0 900 Z" fill="url(#set_modest_bedroom_d-floorGrad)" stroke="#3A2418" stroke-width="4" />
+  <path d="M0 650 L1600 650" stroke="#3A2418" stroke-width="6" />
+  
+  <path d="M-200 900 L300 650 M300 900 L700 650 M800 900 L1100 650 M1400 900 L1450 650 M1800 900 L1550 650" stroke="#121829" stroke-width="3" opacity="0.5" />
+
+  
+  <g transform="translate(1150, 80)">
+    <rect x="0" y="0" width="320" height="420" rx="16" fill="#1B2340" stroke="#3A2418" stroke-width="6" />
+    <rect x="12" y="12" width="296" height="396" rx="10" fill="url(#set_modest_bedroom_d-windowSky)" />
+    
+    <path d="M12 350 L12 280 L40 280 L40 408 L12 408 Z M50 408 L50 220 L90 220 L90 408 Z M100 408 L100 180 L150 180 L150 408 Z M160 408 L160 250 L210 250 L210 408 Z M220 408 L220 200 L270 200 L270 408 L308 408 L308 320 L308 408 Z" fill="#1B2340" opacity="0.8" />
+    
+    <rect x="145" y="12" width="30" height="396" fill="#3A2418" />
+    <rect x="12" y="195" width="296" height="30" fill="#3A2418" />
+    
+    <path d="M-100 420 L160 420 L420 750 L-300 750 Z" fill="#E2A93B" opacity="0.08" />
+  </g>
+
+  
+  <g transform="translate(150, 180)">
+    
+    <rect x="0" y="30" width="450" height="20" rx="4" fill="#3A2418" />
+    <polygon points="50,50 80,50 50,120" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+    <polygon points="370,50 400,50 400,120" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+    
+    
+    <path d="M40 30 L40 -20 L75 -20 L75 30 Z" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+    <path d="M78 30 L78 -10 L110 -10 L110 30 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+    <path d="M113 30 L113 -30 L150 -30 L150 30 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+    
+    <path d="M380 30 Q360 10 340 40 Q330 60 320 50" fill="none" stroke="#1F6F6B" stroke-width="6" stroke-linecap="round" data-part="leaf">
+      <animateTransform attributeName="transform" type="rotate" values="0 380 30; 3 380 30; 0 380 30" dur="4s" repeatCount="indefinite" />
+    </path>
+    <circle cx="340" cy="40" r="10" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+  </g>
+
+  
+  <g transform="translate(180, 480)" filter="url(#shadow)">
+    
+    <rect x="60" y="100" width="30" height="270" fill="#3A2418" />
+    <rect x="1150" y="100" width="30" height="270" fill="#3A2418" />
+    <rect x="40" y="340" width="1160" height="30" rx="8" fill="#3A2418" />
+
+    
+    <path d="M0 40 L1240 40 L1180 120 L60 120 Z" fill="url(#set_modest_bedroom_d-deskWood)" stroke="#3A2418" stroke-width="4" />
+    <path d="M0 0 L1240 0 L1240 40 L0 40 Z" fill="url(#set_modest_bedroom_d-deskTop)" stroke="#3A2418" stroke-width="4" />
+
+    
+
+    
+    <g transform="translate(120, -120)">
+      <ellipse cx="40" cy="150" rx="45" ry="15" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+      <path d="M35 150 L35 60 Q35 40 50 40 L60 40" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+      
+      <circle cx="50" cy="40" r="8" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+      <path d="M50 40 L90 -20" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+      
+      <g transform="translate(90, -20) rotate(-25)">
+        <polygon points="-20,-15 45,-15 30,25 -5,25" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+        <ellipse cx="12" cy="25" rx="18" ry="6" fill="#F1E3C2" />
+      </g>
+      
+      <polygon points="70,10 -20,320 220,320" fill="url(#set_modest_bedroom_d-lampGlow)" style="mix-blend-mode:screen" />
+    </g>
+
+    
+    <g transform="translate(320, -10)">
+      <rect x="0" y="0" width="45" height="55" rx="6" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+      <path d="M45 15 Q60 15 60 30 Q60 45 45 45" fill="none" stroke="#3A2418" stroke-width="4" />
+      
+      <line x1="12" y1="0" x2="5" y2="-30" stroke="#C8323A" stroke-width="5" stroke-linecap="round" />
+      <line x1="25" y1="0" x2="30" y2="-35" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+      <line x1="32" y1="0" x2="40" y2="-25" stroke="#E2A93B" stroke-width="4" stroke-linecap="round" />
+    </g>
+
+    
+    <g transform="translate(500, -20)">
+      
+      
+      <path d="M-20 20 L280 0 L290 90 L-10 110 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+      <line x1="20" y1="35" x2="250" y2="20" stroke="#C2603A" stroke-width="2" opacity="0.4" />
+      <line x1="10" y1="55" x2="230" y2="40" stroke="#C2603A" stroke-width="2" opacity="0.4" />
+      <line x1="0" y1="75" x2="210" y2="60" stroke="#C2603A" stroke-width="2" opacity="0.4" />
+
+      
+      <g transform="translate(30, -30) rotate(8)" filter="url(#shadow)">
+        <rect x="0" y="0" width="130" height="90" rx="3" fill="#FFFFFF" stroke="#3A2418" stroke-width="3" />
+        <rect x="15" y="15" width="40" height="10" fill="#1F6F6B" />
+        <line x1="15" y1="40" x2="115" y2="40" stroke="#3A2418" stroke-width="2" />
+        <line x1="15" y1="55" x2="90" y2="55" stroke="#3A2418" stroke-width="2" />
+        <line x1="15" y1="70" x2="70" y2="70" stroke="#C8323A" stroke-width="3" />
+      </g>
+
+      
+      <g transform="translate(140, -15) rotate(-12)" filter="url(#shadow)">
+        <rect x="0" y="0" width="110" height="140" rx="3" fill="#FFF3CD" stroke="#3A2418" stroke-width="3" />
+        <path d="M0 0 L110 0 L110 25 L0 25 Z" fill="#C8323A" />
+        <text x="15" y="17" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="10">OVERDUE EMI</text>
+        
+        <rect x="15" y="100" width="80" height="20" fill="#3A2418" />
+        <line x1="20" y1="40" x2="90" y2="40" stroke="#3A2418" stroke-width="3" />
+        <line x1="20" y1="60" x2="70" y2="60" stroke="#3A2418" stroke-width="3" />
+        <line x1="20" y1="80" x2="85" y2="80" stroke="#3A2418" stroke-width="3" />
+      </g>
+
+      
+      <g transform="translate(240, 20) rotate(5)" filter="url(#shadow)">
+        
+        <rect x="0" y="0" width="160" height="100" rx="4" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+        
+        <polygon points="0,0 80,60 160,0" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+        
+        <path d="M30,-20 L130,-20 L130,20 L30,20 Z" fill="#FFFFFF" stroke="#3A2418" stroke-width="3" />
+        <circle cx="80" cy="0" r="8" fill="#1F6F6B" />
+        
+        <rect x="120" y="45" width="25" height="35" fill="#C8323A" opacity="0.8" />
+      </g>
+
+    </g>
+
+    
+    <g transform="translate(950, -40)">
+      <rect x="0" y="0" width="130" height="100" rx="8" fill="#1B2340" stroke="#3A2418" stroke-width="3" />
+      
+      <rect x="15" y="15" width="100" height="25" rx="4" fill="#1F6F6B" stroke="#3A2418" stroke-width="2" />
+      
+      <circle cx="30" cy="60" r="8" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+      <circle cx="65" cy="60" r="8" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+      <circle cx="100" cy="60" r="8" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+      <circle cx="30" cy="85" r="8" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+      <circle cx="65" cy="85" r="8" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+      <circle cx="100" cy="85" r="8" fill="#C8323A" stroke="#3A2418" stroke-width="2" />
+    </g>
+
+  </g>
+
+  
+  
+  <path d="M0 0 L120 0 L80 900 L0 900 Z" fill="#121829" opacity="0.4" />
+  
+  
+  <g transform="translate(1500, 750)">
+    <path d="M0 150 Q-50 80 -20 0 Q40 -60 100 150 Z" fill="#1B2340" stroke="#3A2418" stroke-width="4" />
+    <path d="M40 150 Q10 50 70 -20 Q120 -40 130 150 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" data-part="leaf">
+      <animateTransform attributeName="transform" type="rotate" values="0 40 150; -2 40 150; 0 40 150" dur="5s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#set_modest_bedroom_d-vignette)" pointer-events="none" />
+
+</svg>

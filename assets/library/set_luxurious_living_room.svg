@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_luxurious_living-wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="60%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#111626" />
+    </linearGradient>
+    <linearGradient id="set_luxurious_living-floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7A3B22" />
+      <stop offset="100%" stop-color="#3A1A0C" />
+    </linearGradient>
+    <linearGradient id="set_luxurious_living-windowSky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="50%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+    <linearGradient id="set_luxurious_living-sofaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#123F3D" />
+    </linearGradient>
+    <linearGradient id="set_luxurious_living-rugGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C8323A" />
+      <stop offset="50%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C8323A" />
+    </linearGradient>
+    <linearGradient id="set_luxurious_living-goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="50%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+    <radialGradient id="set_luxurious_living-lampGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F08A3C" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#E2A93B" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#set_luxurious_living-wallGrad)" />
+  
+  
+  <path d="M0 650 L1600 650 L1600 680 L0 680 Z" fill="#251A3A" stroke="#3A2418" stroke-width="2" />
+  <rect x="100" y="80" width="350" height="520" fill="#2A1E4A" stroke="#3A2418" stroke-width="3" />
+  <rect x="1150" y="80" width="350" height="520" fill="#2A1E4A" stroke="#3A2418" stroke-width="3" />
+
+  
+  <g id="set_luxurious_living-leftWindow">
+    <rect x="120" y="100" width="310" height="480" fill="url(#set_luxurious_living-windowSky)" stroke="#3A2418" stroke-width="4" />
+    
+    <line x1="275" y1="100" x2="275" y2="580" stroke="#3A2418" stroke-width="4" />
+    <line x1="120" y1="340" x2="430" y2="340" stroke="#3A2418" stroke-width="4" />
+    <line x1="120" y1="220" x2="430" y2="220" stroke="#3A2418" stroke-width="2" />
+    <line x1="120" y1="460" x2="430" y2="460" stroke="#3A2418" stroke-width="2" />
+    
+    <polygon points="130,580 130,450 160,420 190,480 220,380 250,580" fill="#1B2340" opacity="0.7" />
+    <polygon points="280,580 300,400 330,430 360,350 420,580" fill="#1B2340" opacity="0.7" />
+  </g>
+
+  <g id="set_luxurious_living-rightWindow">
+    <rect x="1170" y="100" width="310" height="480" fill="url(#set_luxurious_living-windowSky)" stroke="#3A2418" stroke-width="4" />
+    <line x1="1325" y1="100" x2="1325" y2="580" stroke="#3A2418" stroke-width="4" />
+    <line x1="1170" y1="340" x2="1480" y2="340" stroke="#3A2418" stroke-width="4" />
+    <line x1="1170" y1="220" x2="1480" y2="220" stroke="#3A2418" stroke-width="2" />
+    <line x1="1170" y1="460" x2="1480" y2="460" stroke="#3A2418" stroke-width="2" />
+    <polygon points="1180,580 1220,410 1250,440 1300,370 1350,580" fill="#1B2340" opacity="0.7" />
+    <polygon points="1380,580 1410,390 1440,430 1470,580" fill="#1B2340" opacity="0.7" />
+  </g>
+
+  
+  <rect x="650" y="120" width="300" height="400" fill="#C2603A" stroke="#E2A93B" stroke-width="8" />
+  <rect x="670" y="140" width="260" height="360" fill="#3A2A66" />
+  <circle cx="800" cy="320" r="80" fill="#E2A93B" opacity="0.3" />
+  <polygon points="800,200 850,320 800,440 750,320" fill="#C8323A" stroke="#E2A93B" stroke-width="4" />
+
+  
+  <path d="M0 680 L1600 680 L1600 900 L0 900 Z" fill="url(#set_luxurious_living-floorGrad)" stroke="#3A2418" stroke-width="4" />
+  
+  
+  <line x1="0" y1="680" x2="0" y2="900" stroke="#3A1A0C" stroke-width="3" />
+  <line x1="1600" y1="680" x2="1600" y2="900" stroke="#3A1A0C" stroke-width="3" />
+  <line x1="800" y1="680" x2="800" y2="900" stroke="#3A1A0C" stroke-width="2" />
+  <line x1="800" y1="680" x2="200" y2="900" stroke="#3A1A0C" stroke-width="2" />
+  <line x1="800" y1="680" x2="1400" y2="900" stroke="#3A1A0C" stroke-width="2" />
+  <line x1="800" y1="680" x2="800" y2="900" stroke="#3A1A0C" stroke-width="2" />
+  <line x1="800" y1="680" x2="500" y2="900" stroke="#3A1A0C" stroke-width="2" />
+  <line x1="800" y1="680" x2="1100" y2="900" stroke="#3A1A0C" stroke-width="2" />
+
+  
+  <ellipse cx="800" cy="790" rx="350" ry="90" fill="url(#set_luxurious_living-rugGrad)" stroke="#3A2418" stroke-width="4" />
+  <ellipse cx="800" cy="790" rx="280" ry="70" fill="#1B2340" opacity="0.4" />
+
+  
+  
+  
+  <g id="set_luxurious_living-chandelier">
+    <line x1="800" y1="0" x2="800" y2="120" stroke="#3A2418" stroke-width="4" />
+    <ellipse cx="800" cy="120" rx="120" ry="30" fill="url(#set_luxurious_living-goldGrad)" stroke="#3A2418" stroke-width="3" />
+    <ellipse cx="800" cy="130" rx="90" ry="20" fill="none" stroke="#E2A93B" stroke-width="2" />
+    
+    <path d="M 680 120 Q 800 220 920 120" fill="none" stroke="#F1E3C2" stroke-width="2" stroke-dasharray="6,6" />
+    <path d="M 710 125 Q 800 250 890 125" fill="none" stroke="#F1E3C2" stroke-width="2" stroke-dasharray="4,4" />
+    <polygon points="800,130 780,240 820,240" fill="#F1E3C2" opacity="0.6" stroke="#3A2418" stroke-width="2" />
+    <circle cx="800" cy="240" r="15" fill="#F08A3C" stroke="#3A2418" stroke-width="2" />
+    <g data-part="light">
+      <circle cx="800" cy="240" r="35" fill="url(#set_luxurious_living-lampGlow)" />
+    </g>
+  </g>
+
+  
+  <g id="set_luxurious_living-leftSofa">
+    
+    <path d="M 80 500 Q 80 430 180 430 L 380 430 Q 480 430 480 500 L 480 680 L 80 680 Z" fill="url(#set_luxurious_living-sofaGrad)" stroke="#3A2418" stroke-width="4" />
+    
+    <circle cx="200" cy="480" r="6" fill="#123F3D" stroke="#3A2418" stroke-width="2" />
+    <circle cx="280" cy="480" r="6" fill="#123F3D" stroke="#3A2418" stroke-width="2" />
+    <circle cx="360" cy="480" r="6" fill="#123F3D" stroke="#3A2418" stroke-width="2" />
+    
+    <path d="M 70 600 Q 280 570 490 600 L 470 690 L 90 690 Z" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+    
+    <path d="M 70 470 Q 70 690 90 690 L 130 690 Q 130 520 100 470 Z" fill="url(#set_luxurious_living-sofaGrad)" stroke="#3A2418" stroke-width="4" />
+    <path d="M 490 470 Q 490 690 470 690 L 430 690 Q 430 520 460 470 Z" fill="url(#set_luxurious_living-sofaGrad)" stroke="#3A2418" stroke-width="4" />
+  </g>
+
+  
+  <g id="set_luxurious_living-fireplace">
+    <path d="M 950 420 L 1250 420 L 1270 680 L 930 680 Z" fill="#251A3A" stroke="#3A2418" stroke-width="4" />
+    
+    <rect x="910" y="390" width="380" height="30" fill="url(#set_luxurious_living-goldGrad)" stroke="#3A2418" stroke-width="4" />
+    
+    <path d="M 1030 520 L 1150 520 L 1150 680 L 1030 680 Z" fill="#111626" stroke="#3A2418" stroke-width="4" />
+    
+    <g data-part="flame">
+      <path d="M 1060 630 Q 1090 550 1090 580 Q 1120 540 1120 630 Z" fill="#F08A3C" stroke="#3A2418" stroke-width="2">
+        <animate attributeName="d" values="M 1060 630 Q 1090 550 1090 580 Q 1120 540 1120 630 Z;                   M 1065 630 Q 1085 530 1095 570 Q 1115 520 1115 630 Z;                   M 1060 630 Q 1090 550 1090 580 Q 1120 540 1120 630 Z" dur="0.8s" repeatCount="indefinite" />
+      </path>
+      <path d="M 1080 630 Q 1095 570 1100 600 Q 1105 570 1110 630 Z" fill="#E2A93B" />
+    </g>
+    
+    <ellipse cx="1100" cy="370" rx="20" ry="25" fill="url(#set_luxurious_living-goldGrad)" stroke="#3A2418" stroke-width="3" />
+  </g>
+
+  
+  <g id="set_luxurious_living-sideTable">
+    <rect x="1270" y="580" width="120" height="100" fill="#7A3B22" stroke="#3A2418" stroke-width="3" />
+    
+    <line x1="1290" y1="680" x2="1280" y2="730" stroke="#3A2418" stroke-width="4" />
+    <line x1="1370" y1="680" x2="1380" y2="730" stroke="#3A2418" stroke-width="4" />
+    
+    <rect x="1310" y="500" width="40" height="80" fill="url(#set_luxurious_living-goldGrad)" stroke="#3A2418" stroke-width="3" />
+    <polygon points="1290,500 1370,500 1350,440 1310,440" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+    <g data-part="light">
+      <circle cx="1330" cy="470" r="60" fill="url(#set_luxurious_living-lampGlow)" />
+    </g>
+  </g>
+
+  
+  
+  
+  <g id="set_luxurious_living-leftPlant">
+    <path d="M 0 900 L 40 700 L 90 700 L 130 900 Z" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+    <ellipse cx="65" cy="700" rx="25" ry="10" fill="#7A3B22" stroke="#3A2418" stroke-width="3" />
+    
+    <path d="M 0 650 Q 80 620 150 700" fill="none" stroke="#1F6F6B" stroke-width="8" stroke-linecap="round" />
+    <path d="M 0 700 Q 60 670 120 780" fill="none" stroke="#1F6F6B" stroke-width="6" stroke-linecap="round" />
+    <path d="M 0 600 Q 100 550 180 630" fill="none" stroke="#1F6F6B" stroke-width="7" stroke-linecap="round" />
+  </g>
+
+  
+  <path d="M0 800 Q 300 900 800 900 Q 1300 900 1600 800 L 1600 900 L 0 900 Z" fill="#111626" opacity="0.3" />
+
+</svg>

@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_hospital_private-bg-wall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#E2A93B" stop-opacity="0.4" />
+    </linearGradient>
+    <linearGradient id="set_hospital_private-floor-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2418" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#3A2418" stop-opacity="0.35" />
+    </linearGradient>
+    <linearGradient id="set_hospital_private-window-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="50%" stop-color="#E2A93B" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#F1E3C2" />
+    </linearGradient>
+    <linearGradient id="set_hospital_private-glass-glare" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.5" />
+      <stop offset="30%" stop-color="#FFFFFF" stop-opacity="0.0" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.1" />
+    </linearGradient>
+    <linearGradient id="set_hospital_private-screen-glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+    <radialGradient id="set_hospital_private-lamp-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="1" />
+      <stop offset="100%" stop-color="#F08A3C" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  
+  
+  <rect x="0" y="0" width="1600" height="700" fill="url(#set_hospital_private-bg-wall)" />
+  
+  
+  <rect x="0" y="650" width="1600" height="50" fill="#1F6F6B" opacity="0.2" />
+  <line x1="0" y1="650" x2="1600" y2="650" stroke="#3A2418" stroke-width="3" />
+  
+  
+  <rect x="150" y="100" width="500" height="500" fill="#1B2340" stroke="#3A2418" stroke-width="4" />
+  <rect x="170" y="120" width="460" height="460" fill="url(#set_hospital_private-window-sky)" />
+  
+  <path d="M170 580 L170 450 L210 450 L210 580 L250 580 L250 380 L310 380 L310 580 L380 580 L380 300 L430 300 L430 580 L520 580 L520 420 L580 420 L580 580 Z" fill="#3A2418" opacity="0.3" />
+  
+  <line x1="400" y1="120" x2="400" y2="580" stroke="#3A2418" stroke-width="4" />
+  <line x1="170" y1="350" x2="630" y2="350" stroke="#3A2418" stroke-width="4" />
+  <rect x="170" y="120" width="460" height="460" fill="url(#set_hospital_private-glass-glare)" />
+
+  
+  <path d="M 130 100 Q 200 130 270 100 Q 340 130 410 100 Q 480 130 550 100 Q 620 130 670 100 L 670 80 L 130 80 Z" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+
+  
+  
+  <polygon points="0,700 1600,700 1600,900 0,900" fill="url(#set_hospital_private-floor-grad)" />
+  
+  <line x1="800" y1="700" x2="0" y2="900" stroke="#3A2418" stroke-width="2" opacity="0.3" />
+  <line x1="800" y1="700" x2="300" y2="900" stroke="#3A2418" stroke-width="2" opacity="0.3" />
+  <line x1="800" y1="700" x2="600" y2="900" stroke="#3A2418" stroke-width="2" opacity="0.3" />
+  <line x1="800" y1="700" x2="1000" y2="900" stroke="#3A2418" stroke-width="2" opacity="0.3" />
+  <line x1="800" y1="700" x2="1300" y2="900" stroke="#3A2418" stroke-width="2" opacity="0.3" />
+  <line x1="800" y1="700" x2="1600" y2="900" stroke="#3A2418" stroke-width="2" opacity="0.3" />
+
+  
+  <rect x="1000" y="250" width="500" height="350" rx="15" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+  <rect x="1040" y="290" width="420" height="80" rx="8" fill="#1B2340" stroke="#3A2418" stroke-width="3" />
+  
+  <circle cx="1090" cy="330" r="20" fill="#C8323A" stroke="#3A2418" stroke-width="2" />
+  <circle cx="1150" cy="330" r="20" fill="#1F6F6B" stroke="#3A2418" stroke-width="2" />
+  <circle cx="1210" cy="330" r="20" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+
+  
+  <g transform="translate(1250, 420)">
+    
+    <line x1="60" y1="180" x2="60" y2="280" stroke="#3A2418" stroke-width="6" />
+    <path d="M 20 280 L 100 280 L 90 260 L 30 260 Z" fill="#3A2418" />
+    
+    <circle cx="35" cy="285" r="8" fill="#3A2418" />
+    <circle cx="85" cy="285" r="8" fill="#3A2418" />
+    
+    <rect x="0" y="0" width="120" height="180" rx="10" fill="#1B2340" stroke="#3A2418" stroke-width="4" />
+    
+    <rect x="15" y="15" width="90" height="110" rx="5" fill="url(#set_hospital_private-screen-glow)" stroke="#3A2418" stroke-width="2" />
+    
+    <path d="M 20 70 L 40 70 L 45 50 L 50 90 L 55 60 L 60 70 L 95 70" fill="none" stroke="#F08A3C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <g data-part="light">
+      <circle cx="30" cy="145" r="5" fill="#C8323A">
+        <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <rect x="45" y="140" width="50" height="10" rx="3" fill="#1F6F6B" />
+  </g>
+
+  
+  <g transform="translate(70, 520)">
+    
+    <ellipse cx="160" cy="190" rx="140" ry="20" fill="#3A2418" opacity="0.3" />
+    
+    <path d="M 40 60 Q 40 10 90 10 L 230 10 Q 280 10 280 60 L 290 150 Q 290 180 260 180 L 60 180 Q 30 180 35 150 Z" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+    
+    <rect x="50" y="70" width="100" height="90" rx="15" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+    <rect x="160" y="70" width="100" height="90" rx="15" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+    
+    <path d="M 20 40 Q 20 120 40 160 L 70 160 Q 50 120 50 60 Z" fill="#3A2418" />
+    <path d="M 260 40 Q 260 120 280 160 L 310 160 Q 290 120 290 60 Z" fill="#3A2418" />
+  </g>
+
+  
+  
+  <g transform="translate(1050, 380)">
+    <line x1="40" y1="320" x2="40" y2="0" stroke="#3A2418" stroke-width="5" />
+    
+    <path d="M 10 310 L 70 310 L 60 330 L 20 330 Z" fill="#3A2418" />
+    <circle cx="20" cy="335" r="6" fill="#3A2418" />
+    <circle cx="60" cy="335" r="6" fill="#3A2418" />
+    
+    <path d="M 40 20 Q 20 20 20 40" fill="none" stroke="#3A2418" stroke-width="4" />
+    <path d="M 40 30 Q 60 30 60 50" fill="none" stroke="#3A2418" stroke-width="4" />
+    
+    <rect x="25" y="40" width="30" height="50" rx="8" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" opacity="0.8" />
+    <path d="M 30 55 L 50 55 L 50 75 L 30 75 Z" fill="#1F6F6B" opacity="0.6" />
+    
+    <path d="M 40 90 Q 40 150 60 200" fill="none" stroke="#1F6F6B" stroke-width="3" />
+  </g>
+
+  
+  <g transform="translate(800, 0)">
+    <line x1="0" y1="0" x2="0" y2="150" stroke="#3A2418" stroke-width="3" />
+    <path d="M -60 150 Q 0 120 60 150 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+    <ellipse cx="0" cy="150" rx="60" ry="15" fill="#3A2418" />
+    
+    <circle cx="0" cy="170" r="100" fill="url(#set_hospital_private-lamp-glow)" opacity="0.6" style="mix-blend-mode:screen" />
+  </g>
+
+  
+  <g transform="translate(1380, 620)">
+    <ellipse cx="60" cy="180" rx="50" ry="15" fill="#3A2418" opacity="0.3" />
+    
+    <path d="M 20 60 L 100 60 L 85 160 L 35 160 Z" fill="#3A2418" />
+    <rect x="15" y="45" width="90" height="20" rx="5" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+    
+    <path d="M 60 50 Q 30 10 10 -20 Q 30 10 60 50 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+    <path d="M 60 50 Q 90 -10 120 -30 Q 90 10 60 50 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+    <path d="M 60 50 Q 120 30 150 10 Q 100 40 60 50 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+    <path d="M 60 50 Q 20 40 -10 20 Q 30 40 60 50 Z" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+    
+    
+    <g data-part="leaf">
+      <path d="M 60 50 Q 60 -30 60 -70 Q 70 -20 60 50 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="3">
+        <animateTransform attributeName="transform" type="rotate" values="0 60 50; 3 60 50; 0 60 50" dur="4s" repeatCount="indefinite" />
+      </path>
+    </g>
+  </g>
+
+  
+  <rect x="0" y="680" width="1600" height="20" fill="#3A2418" />
+</svg>

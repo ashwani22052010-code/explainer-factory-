@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="tea_cup-cupBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="35%" stop-color="#C2603A" />
+      <stop offset="70%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#A54D2B" />
+    </linearGradient>
+    <linearGradient id="tea_cup-cupInside" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="50%" stop-color="#3A2A66" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+    <linearGradient id="tea_cup-liquid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#C8323A" />
+      <stop offset="100%" stop-color="#A02026" />
+    </linearGradient>
+    <linearGradient id="tea_cup-handleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+    <linearGradient id="tea_cup-steamGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#F1E3C2" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  
+  <g data-part="smoke">
+    
+    <path d="M420,380 C390,320 450,260 410,200 C390,170 410,140 400,100" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+    <path d="M420,380 C390,320 450,260 410,200 C390,170 410,140 400,100" fill="none" stroke="url(#tea_cup-steamGrad)" stroke-width="4" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="4s" repeatCount="indefinite" />
+    </path>
+
+    
+    <path d="M500,360 C530,300 470,240 510,180 C530,150 500,120 520,70" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+    <path d="M500,360 C530,300 470,240 510,180 C530,150 500,120 520,70" fill="none" stroke="url(#tea_cup-steamGrad)" stroke-width="4" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" repeatCount="indefinite" />
+    </path>
+
+    
+    <path d="M580,380 C610,320 550,270 590,210 C610,180 580,150 600,110" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+    <path d="M580,380 C610,320 550,270 590,210 C610,180 580,150 600,110" fill="none" stroke="url(#tea_cup-steamGrad)" stroke-width="4" stroke-linecap="round">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-12; 0,0" dur="4.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="4.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  
+  <path d="M 640,460 C 760,460 780,680 640,740" fill="none" stroke="#3A2418" stroke-width="7" stroke-linecap="round" />
+  <path d="M 640,460 C 750,460 770,670 640,740" fill="url(#tea_cup-handleGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+  
+  <path d="M 650,490 C 720,490 740,650 650,710" fill="none" stroke="#A54D2B" stroke-width="6" stroke-linecap="round" />
+  
+  <path d="M 655,510 C 700,510 720,630 655,680" fill="none" stroke="#F1E3C2" stroke-width="3" stroke-linecap="round" opacity="0.6" />
+
+  
+  <ellipse cx="500" cy="800" rx="320" ry="60" fill="#3A2418" />
+  <ellipse cx="500" cy="790" rx="310" ry="50" fill="url(#tea_cup-cupBody)" />
+  <ellipse cx="500" cy="785" rx="270" ry="38" fill="#F1E3C2" />
+  <ellipse cx="500" cy="780" rx="250" ry="32" fill="#1F6F6B" />
+  
+  <path d="M 280,780 C 280,765 380,755 500,755 C 620,755 720,765 720,780" fill="none" stroke="#F1E3C2" stroke-width="3" opacity="0.5" />
+
+  
+  <ellipse cx="500" cy="760" rx="190" ry="35" fill="#3A2418" />
+  <ellipse cx="500" cy="752" rx="180" ry="30" fill="#A54D2B" />
+
+  
+  <path d="M 310,420 L 690,420 C 690,420 660,740 660,750 C 660,765 620,770 500,770 C 380,770 340,765 340,750 C 340,740 310,420 310,420 Z" fill="url(#tea_cup-cupBody)" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+
+  
+  
+  <path d="M 310,420 C 310,420 335,650 345,745 C 360,730 380,600 380,420 Z" fill="#A54D2B" opacity="0.6" />
+  
+  <path d="M 580,420 C 580,550 630,680 650,745 C 660,740 675,600 685,420 Z" fill="#F1E3C2" opacity="0.3" />
+  
+  <path d="M 326,560 C 400,580 600,580 674,560" fill="none" stroke="#1F6F6B" stroke-width="35" stroke-linecap="butt" />
+  <path d="M 323,545 C 400,565 600,565 677,545" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="butt" />
+  <path d="M 328,575 C 400,595 600,595 672,575" fill="none" stroke="#3A2418" stroke-width="6" stroke-linecap="butt" />
+  
+  <circle cx="430" cy="570" r="6" fill="#E2A93B" />
+  <circle cx="500" cy="572" r="6" fill="#E2A93B" />
+  <circle cx="570" cy="570" r="6" fill="#E2A93B" />
+
+  
+  <ellipse cx="500" cy="420" rx="190" ry="45" fill="url(#tea_cup-cupInside)" stroke="#3A2418" stroke-width="7" />
+
+  
+  <ellipse cx="500" cy="430" rx="175" ry="35" fill="url(#tea_cup-liquid)" />
+  
+  <path d="M 400,420 C 440,450 540,450 580,420 C 550,445 430,445 400,420 Z" fill="#F1E3C2" opacity="0.4" />
+  <ellipse cx="460" cy="425" rx="20" ry="8" fill="#F1E3C2" opacity="0.6" transform="rotate(-15 460 425)" />
+
+  
+  <ellipse cx="500" cy="415" rx="190" ry="45" fill="none" stroke="#F1E3C2" stroke-width="4" opacity="0.7" />
+  <path d="M 320,410 C 350,385 450,380 520,385" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.8" />
+
+  
+  
+  <circle cx="390" cy="670" r="3" fill="#3A2418" opacity="0.6" />
+  <circle cx="410" cy="690" r="2" fill="#3A2418" opacity="0.6" />
+  <circle cx="590" cy="660" r="2.5" fill="#3A2418" opacity="0.6" />
+  <circle cx="610" cy="680" r="3" fill="#3A2418" opacity="0.6" />
+  <path d="M 350,470 C 355,475 350,480 345,485" fill="none" stroke="#3A2418" stroke-width="3" stroke-linecap="round" />
+  <path d="M 630,480 C 625,485 630,490 635,495" fill="none" stroke="#3A2418" stroke-width="3" stroke-linecap="round" />
+
+</svg>

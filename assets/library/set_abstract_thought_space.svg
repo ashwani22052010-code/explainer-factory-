@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <radialGradient id="set_abstract_thought-spotlightGlow" cx="50%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#E2A93B" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#1B2340" stop-opacity="0" />
+    </radialGradient>
+    
+    <linearGradient id="set_abstract_thought-bgSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="60%" stop-color="#3A2A66" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+
+    <linearGradient id="set_abstract_thought-floorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#121829" />
+    </linearGradient>
+
+    <radialGradient id="set_abstract_thought-floorSpot" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#E2A93B" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#C2603A" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#1B2340" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="set_abstract_thought-pillarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="70%" stop-color="#3A2A66" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+  </defs>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#set_abstract_thought-bgSky)" />
+
+  
+  <g fill="#1F6F6B" opacity="0.4">
+    <path d="M200 700 L200 300 C200 200, 300 200, 400 200 C500 200, 600 200, 600 300 L600 700 Z" />
+    <path d="M1000 700 L1000 300 C1000 200, 1100 200, 1200 200 C1300 200, 1400 200, 1400 300 L1400 700 Z" />
+  </g>
+  <g fill="#3A2A66" opacity="0.6">
+    <path d="M300 700 L300 350 C300 280, 360 250, 400 250 C440 250, 500 280, 500 350 L500 700 Z" />
+    <path d="M1100 700 L1100 350 C1100 280, 1160 250, 1200 250 C1240 250, 1300 280, 1300 350 L1300 700 Z" />
+  </g>
+
+  
+  <g fill="none" stroke="#C2603A" stroke-width="3" opacity="0.3">
+    <circle cx="400" cy="400" r="80" />
+    <circle cx="400" cy="400" r="120" />
+    <circle cx="1200" cy="400" r="80" />
+    <circle cx="1200" cy="400" r="120" />
+    <line x1="400" y1="200" x2="400" y2="600" />
+    <line x1="200" y1="400" x2="600" y2="400" />
+    <line x1="1200" y1="200" x2="1200" y2="600" />
+    <line x1="1000" y1="400" x2="1400" y2="400" />
+  </g>
+
+  
+  
+  <rect x="0" y="650" width="1600" height="250" fill="url(#set_abstract_thought-floorGrad)" />
+  <ellipse cx="800" cy="700" rx="500" ry="120" fill="url(#set_abstract_thought-floorSpot)" />
+
+  
+  <g stroke="#3A2418" stroke-width="3" opacity="0.4">
+    <line x1="800" y1="650" x2="0" y2="900" />
+    <line x1="800" y1="650" x2="200" y2="900" />
+    <line x1="800" y1="650" x2="400" y2="900" />
+    <line x1="800" y1="650" x2="600" y2="900" />
+    <line x1="800" y1="650" x2="1000" y2="900" />
+    <line x1="800" y1="650" x2="1200" y2="900" />
+    <line x1="800" y1="650" x2="1400" y2="900" />
+    <line x1="800" y1="650" x2="1600" y2="900" />
+    <path d="M 0 700 Q 800 750 1600 700" fill="none" />
+    <path d="M 0 780 Q 800 840 1600 780" fill="none" />
+    <path d="M 0 850 Q 800 920 1600 850" fill="none" />
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="4">
+    
+    <path d="M0 0 L150 0 L150 900 L0 900 Z" fill="url(#set_abstract_thought-pillarGrad)" />
+    <path d="M120 0 L150 0 L150 900 L120 900 Z" fill="#C2603A" />
+    
+    <path d="M1600 0 L1450 0 L1450 900 L1600 900 Z" fill="url(#set_abstract_thought-pillarGrad)" />
+    <path d="M1480 0 L1450 0 L1450 900 L1480 900 Z" fill="#C2603A" />
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="3">
+    
+    <path d="M150 750 C150 700, 180 680, 210 680 C240 680, 270 700, 270 750 L250 850 L170 850 Z" fill="#C8323A" />
+    <path d="M180 680 C180 660, 240 660, 240 680 Z" fill="#E2A93B" />
+    
+    
+    <path d="M1350 720 L1450 740 L1450 860 L1350 840 Z" fill="#1F6F6B" />
+    <path d="M1350 720 L1400 700 L1500 720 L1450 740 Z" fill="#E2A93B" />
+
+    
+    <path d="M350 0 L350 350 L420 320 L490 350 L490 0 Z" fill="#C8323B" />
+    <path d="M370 150 L470 150 L420 220 Z" fill="#F1E3C2" />
+
+    <path d="M1110 0 L1110 350 L1180 320 L1250 350 L1250 0 Z" fill="#1F6F6B" />
+    <path d="M1130 150 L1230 150 L1180 220 Z" fill="#F1E3C2" />
+  </g>
+
+  
+  
+  
+  <polygon points="800,0 300,900 1300,900" fill="url(#set_abstract_thought-spotlightGlow)" style="mix-blend-mode:screen" />
+
+  
+  <g data-part="light">
+    
+    <circle cx="750" cy="400" r="6" fill="#F1E3C2">
+      <animate attributeName="cy" values="400;350;400" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="750;770;750" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;1;0.3" dur="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="850" cy="500" r="4" fill="#E2A93B">
+      <animate attributeName="cy" values="500;430;500" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="850;830;850" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0.9;0.2" dur="4s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="700" cy="600" r="8" fill="#F08A3C">
+      <animate attributeName="cy" values="600;520;600" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="700;720;700" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;1;0.5" dur="5s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="900" cy="300" r="5" fill="#F1E3C2">
+      <animate attributeName="cy" values="300;250;300" dur="3.5s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="900;880;900" dur="4.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;1;0.4" dur="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="650" cy="450" r="3" fill="#E2A93B">
+      <animate attributeName="cy" values="450;390;450" dur="4.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;0.8;0.1" dur="4s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="950" cy="550" r="6" fill="#F08A3C">
+      <animate attributeName="cy" values="550;480;550" dur="5.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.6;1;0.3" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="780" cy="250" r="4" fill="#F1E3C2">
+      <animate attributeName="cy" values="250;200;250" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0.9;0.2" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="820" cy="650" r="5" fill="#E2A93B">
+      <animate attributeName="cy" values="650;580;650" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.4;0.9;0.2" dur="5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  
+  <g fill="#121829" stroke="#3A2418" stroke-width="4">
+    
+    <path d="M0 0 L0 80 L80 50 L160 90 L250 40 L350 70 L450 30 L600 60 L750 30 L900 70 L1050 40 L1200 80 L1350 40 L1450 70 L1600 30 L1600 0 Z" />
+    
+    <path d="M0 900 L0 800 L70 820 L120 900 Z" />
+    
+    <path d="M1600 900 L1600 810 L1530 830 L1480 900 Z" />
+  </g>
+
+  
+  <g fill="#E2A93B" opacity="0.6" data-part="light">
+    <circle cx="500" cy="200" r="2">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1100" cy="150" r="3">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="300" r="2.5">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1300" cy="250" r="2">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

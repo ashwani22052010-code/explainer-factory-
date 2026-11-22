@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_luxury_car_showr-wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#3A2A66" />
+    </linearGradient>
+    
+    <linearGradient id="set_luxury_car_showr-glassSky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="50%" stop-color="#F08A3C" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+
+    
+    <linearGradient id="set_luxury_car_showr-floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="30%" stop-color="#3A2A66" />
+      <stop offset="31%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#0F1528" />
+    </linearGradient>
+
+    <linearGradient id="set_luxury_car_showr-spotCone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#F1E3C2" stop-opacity="0.0" />
+    </linearGradient>
+
+    <radialGradient id="set_luxury_car_showr-spotGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#F1E3C2" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#set_luxury_car_showr-wallGrad)" />
+  
+  
+  <polygon points="250,100 1350,100 1450,500 150,500" fill="url(#set_luxury_car_showr-glassSky)" stroke="#3A2418" stroke-width="4" />
+  
+  
+  <path d="M 200,500 L 200,380 L 230,350 L 260,350 L 280,500             M 400,500 L 400,300 L 440,260 L 480,300 L 480,500             M 700,500 L 700,220 L 750,180 L 800,220 L 800,500            M 1100,500 L 1100,320 L 1150,290 L 1200,320 L 1200,500" fill="#1B2340" opacity="0.6" />
+
+  
+  <line x1="550" y1="100" x2="590" y2="500" stroke="#3A2418" stroke-width="3" />
+  <line x1="850" y1="100" x2="850" y2="500" stroke="#3A2418" stroke-width="3" />
+  <line x1="1150" y1="100" x2="1110" y2="500" stroke="#3A2418" stroke-width="3" />
+  <line x1="200" y1="300" x2="1400" y2="300" stroke="#3A2418" stroke-width="3" />
+
+  
+  
+  <rect x="0" y="80" width="1600" height="30" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+  <path d="M 0,110 L 1600,110 L 1600,130 L 0,130 Z" fill="#3A2418" />
+
+  
+  <rect x="50" y="110" width="80" height="390" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+  <rect x="1470" y="110" width="80" height="390" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+
+  
+  
+  <g stroke="#3A2418" stroke-width="4">
+    <polygon points="150,550 450,550 400,500 200,500" fill="#C2603A" />
+    <polygon points="200,500 400,500 400,490 200,490" fill="#F1E3C2" />
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="4">
+    <polygon points="1150,550 1450,550 1400,500 1200,500" fill="#C2603A" />
+    <polygon points="1200,500 1400,500 1400,490 1200,490" fill="#F1E3C2" />
+  </g>
+
+  
+  <rect x="700" y="150" width="200" height="80" rx="10" fill="#C8323A" stroke="#3A2418" stroke-width="4" />
+  
+  <circle cx="800" cy="190" r="25" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+
+  
+  <g stroke="#3A2418" stroke-width="3">
+    
+    <path d="M 80,500 L 110,420 L 90,420 Z" fill="#3A2A66" />
+    <ellipse cx="100" cy="420" rx="15" ry="5" fill="#1F6F6B" />
+    <path d="M 100,415 Q 120,350 140,330" fill="none" stroke-width="4" />
+    <path d="M 100,415 Q 80,330 60,300" fill="none" stroke-width="4" />
+    <circle cx="140" cy="330" r="12" fill="#1F6F6B" />
+    <circle cx="60" cy="300" r="15" fill="#1F6F6B" />
+
+    
+    <path d="M 1490,500 L 1520,420 L 1500,420 Z" fill="#3A2A66" />
+    <ellipse cx="1510" cy="420" rx="15" ry="5" fill="#1F6F6B" />
+    <path d="M 1510,415 Q 1490,340 1470,310" fill="none" stroke-width="4" />
+    <path d="M 1510,415 Q 1530,350 1550,320" fill="none" stroke-width="4" />
+    <circle cx="1470" cy="310" r="12" fill="#1F6F6B" />
+    <circle cx="1550" cy="320" r="15" fill="#1F6F6B" />
+  </g>
+
+  
+  <polygon points="0,500 1600,500 1600,900 0,900" fill="url(#set_luxury_car_showr-floorGrad)" stroke="#3A2418" stroke-width="4" />
+  
+  
+  <g stroke="#3A2418" stroke-width="2" opacity="0.4">
+    <line x1="800" y1="500" x2="0" y2="900" />
+    <line x1="800" y1="500" x2="200" y2="900" />
+    <line x1="800" y1="500" x2="400" y2="900" />
+    <line x1="800" y1="500" x2="600" y2="900" />
+    <line x1="800" y1="500" x2="1000" y2="900" />
+    <line x1="800" y1="500" x2="1200" y2="900" />
+    <line x1="800" y1="500" x2="1400" y2="900" />
+    <line x1="800" y1="500" x2="1600" y2="900" />
+    
+    
+    <path d="M 0,550 Q 800,530 1600,550" fill="none" />
+    <path d="M 0,610 Q 800,570 1600,610" fill="none" />
+    <path d="M 0,680 Q 800,620 1600,680" fill="none" />
+    <path d="M 0,770 Q 800,680 1600,770" fill="none" />
+    <path d="M 0,880 Q 800,750 1600,880" fill="none" />
+  </g>
+
+  
+  <g data-part="light">
+    
+    <rect x="300" y="110" width="40" height="20" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+    <rect x="800" y="110" width="40" height="20" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+    <rect x="1300" y="110" width="40" height="20" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+
+    
+    <polygon points="310,130 190,520 430,520" fill="url(#set_luxury_car_showr-spotCone)" />
+    <polygon points="820,130 700,520 940,520" fill="url(#set_luxury_car_showr-spotCone)" />
+    <polygon points="1310,130 1190,520 1430,520" fill="url(#set_luxury_car_showr-spotCone)" />
+
+    
+    <ellipse cx="310" cy="520" rx="120" ry="30" fill="url(#set_luxury_car_showr-spotGlow)" />
+    <ellipse cx="820" cy="520" rx="120" ry="30" fill="url(#set_luxury_car_showr-spotGlow)" />
+    <ellipse cx="1310" cy="520" rx="120" ry="30" fill="url(#set_luxury_car_showr-spotGlow)" />
+
+    
+    <animateTransform attributeName="transform" type="scale" values="1 1; 1.02 1.02; 1 1" dur="4s" repeatCount="indefinite" additive="sum" />
+  </g>
+
+  
+  <path d="M 0,0 L 50,0 L 50,900 L 0,900 Z" fill="#1B2340" />
+  <path d="M 1550,0 L 1600,0 L 1600,900 L 1550,900 Z" fill="#1B2340" />
+</svg>

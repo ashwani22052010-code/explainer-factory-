@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_dream_wishlist_m-skyHospital" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+    <linearGradient id="set_dream_wishlist_m-skyWedding" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F08A3C" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    <linearGradient id="set_dream_wishlist_m-skyVillage" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="100%" stop-color="#F1E3C2" />
+    </linearGradient>
+
+    <linearGradient id="set_dream_wishlist_m-wallHospital" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+    <linearGradient id="set_dream_wishlist_m-floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#3A2418" />
+    </linearGradient>
+
+    <linearGradient id="set_dream_wishlist_m-floralGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C8323A" />
+      <stop offset="100%" stop-color="#F08A3C" />
+    </linearGradient>
+
+    
+    <radialGradient id="set_dream_wishlist_m-lightGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#F1E3C2" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  
+  
+  <rect x="0" y="0" width="533" height="900" fill="url(#set_dream_wishlist_m-skyHospital)" />
+  
+  <rect x="533" y="0" width="534" height="900" fill="url(#set_dream_wishlist_m-skyWedding)" />
+  
+  <rect x="1067" y="0" width="533" height="900" fill="url(#set_dream_wishlist_m-skyVillage)" />
+
+  
+  <rect x="0" y="750" width="1600" height="150" fill="url(#set_dream_wishlist_m-floorGrad)" stroke="#3A2418" stroke-width="4" />
+  <line x1="533" y1="0" x2="533" y2="750" stroke="#1B2340" stroke-width="8" />
+  <line x1="1067" y1="0" x2="1067" y2="750" stroke="#3A2418" stroke-width="8" />
+
+  
+  <g id="set_dream_wishlist_m-hospital-room">
+    
+    <rect x="50" y="100" width="433" height="500" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+    <rect x="80" y="130" width="180" height="300" rx="10" fill="#1B2340" stroke="#3A2418" stroke-width="3" />
+    
+    <line x1="170" y1="130" x2="170" y2="430" stroke="#3A2418" stroke-width="2" />
+    <line x1="80" y1="280" x2="260" y2="280" stroke="#3A2418" stroke-width="2" />
+    
+    <path d="M90 430 L90 350 L110 350 L110 430 L130 430 L130 320 L160 320 L160 430 L190 430 L190 290 L220 290 L220 430 Z" fill="#3A2A66" />
+
+    
+    <rect x="310" y="200" width="120" height="150" rx="15" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+    <rect x="330" y="220" width="80" height="60" rx="5" fill="#1B2340" />
+    
+    <polyline points="335,250 355,250 365,225 375,275 385,250 405,250" fill="none" stroke="#C8323A" stroke-width="3" />
+    
+    <line x1="370" y1="350" x2="370" y2="450" stroke="#3A2418" stroke-width="6" />
+    <ellipse cx="370" cy="450" rx="40" ry="10" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+
+    
+    <rect x="80" y="500" width="280" height="180" rx="15" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+    <path d="M80 540 L360 540" stroke="#C2603A" stroke-width="6" />
+    <rect x="100" y="460" width="40" height="80" rx="5" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+    <rect x="150" y="440" width="40" height="100" rx="5" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+
+    
+    <line x1="430" y1="150" x2="430" y2="600" stroke="#3A2418" stroke-width="4" />
+    <path d="M410 150 L430 130 L450 150" fill="none" stroke="#3A2418" stroke-width="3" />
+    <path d="M430 180 Q 440 220 430 260" fill="none" stroke="#1F6F6B" stroke-width="2" stroke-dasharray="4,4" />
+    <ellipse cx="430" cy="600" rx="25" ry="8" fill="#3A2418" />
+  </g>
+
+  
+  <g id="set_dream_wishlist_m-wedding-stage">
+    
+    <path d="M550 700 L1050 700 L1020 750 L580 750 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+    <path d="M580 750 L1020 750 L1020 770 L580 770 Z" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+
+    
+    <path d="M 630 700 L 630 300 Q 800 150 970 300 L 970 700" fill="none" stroke="#C2603A" stroke-width="24" stroke-linecap="round" />
+    <path d="M 630 700 L 630 300 Q 800 150 970 300 L 970 700" fill="none" stroke="#F1E3C2" stroke-width="12" stroke-dasharray="20,10" />
+
+    
+    
+    <circle cx="800" cy="180" r="45" fill="url(#set_dream_wishlist_m-floralGrad)" stroke="#3A2418" stroke-width="3" />
+    <circle cx="760" cy="190" r="35" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+    <circle cx="840" cy="190" r="35" fill="#F08A3C" stroke="#3A2418" stroke-width="3" />
+    <circle cx="800" cy="140" r="30" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+
+    
+    <circle cx="630" cy="350" r="40" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+    <circle cx="620" cy="420" r="35" fill="#F08A3C" stroke="#3A2418" stroke-width="3" />
+    <circle cx="640" cy="500" r="38" fill="url(#set_dream_wishlist_m-floralGrad)" stroke="#3A2418" stroke-width="3" />
+    
+    <circle cx="970" cy="350" r="40" fill="#F08A3C" stroke="#3A2418" stroke-width="3" />
+    <circle cx="980" cy="420" r="35" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+    <circle cx="960" cy="500" r="38" fill="url(#set_dream_wishlist_m-floralGrad)" stroke="#3A2418" stroke-width="3" />
+
+    
+    <path d="M 680 300 Q 800 400 920 300" fill="none" stroke="#3A2418" stroke-width="3" />
+    <circle cx="740" cy="355" r="12" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+    <circle cx="800" cy="375" r="15" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+    <circle cx="860" cy="355" r="12" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+
+    
+    <rect x="760" y="580" width="80" height="120" rx="10" fill="#3A2A66" stroke="#3A2418" stroke-width="4" />
+    <path d="M750 580 Q800 550 850 580" fill="none" stroke="#E2A93B" stroke-width="8" stroke-linecap="round" />
+  </g>
+
+  
+  <g id="set_dream_wishlist_m-village-house">
+    
+    <rect x="1150" y="320" width="350" height="380" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+    
+    
+    <rect x="1150" y="620" width="350" height="80" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+    <line x1="1150" y1="650" x2="1500" y2="650" stroke="#3A2418" stroke-width="2" />
+    <line x1="1230" y1="620" x2="1230" y2="650" stroke="#3A2418" stroke-width="2" />
+    <line x1="1310" y1="650" x2="1310" y2="700" stroke="#3A2418" stroke-width="2" />
+    <line x1="1420" y1="620" x2="1420" y2="650" stroke="#3A2418" stroke-width="2" />
+
+    
+    <path d="M1120 320 L1325 150 L1530 320 Z" fill="#C2603A" stroke="#3A2418" stroke-width="5" />
+    
+    <path d="M1140 320 L1325 170 L1510 320 Z" fill="#3A2418" opacity="0.2" />
+
+    
+    <rect x="1180" y="380" width="80" height="100" rx="10" fill="#1B2340" stroke="#3A2418" stroke-width="3" />
+    <line x1="1220" y1="380" x2="1220" y2="480" stroke="#3A2418" stroke-width="2" />
+    <line x1="1180" y1="430" x2="1260" y2="430" stroke="#3A2418" stroke-width="2" />
+    
+    <rect x="1170" y="470" width="100" height="25" rx="5" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+    <circle cx="1190" cy="465" r="10" fill="#F08A3C" />
+    <circle cx="1220" cy="460" r="12" fill="#F1E3C2" />
+    <circle cx="1250" cy="465" r="10" fill="#C8323A" />
+
+    
+    <rect x="1380" y="480" width="90" height="140" rx="45" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+    <circle cx="1450" cy="560" r="6" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+
+    
+    <rect x="1420" y="180" width="45" height="80" fill="#3A2418" stroke="#3A2418" stroke-width="3" />
+    <g data-part="smoke">
+      <circle cx="1442" cy="150" r="12" fill="#F1E3C2" opacity="0.6">
+        <animate attributeName="cy" values="150;110;80" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="r" values="12;18;24" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.6;0.3;0" dur="4s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="1450" cy="120" r="16" fill="#F1E3C2" opacity="0.4">
+        <animate attributeName="cy" values="120;80;40" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="r" values="16;22;28" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.4;0.2;0" dur="3s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    
+    <path d="M 1150 320 Q 1160 380 1150 440" fill="none" stroke="#1F6F6B" stroke-width="6" stroke-linecap="round" />
+    <circle cx="1155" cy="350" r="8" fill="#1F6F6B" stroke="#3A2418" stroke-width="2" />
+    <circle cx="1145" cy="390" r="9" fill="#1F6F6B" stroke="#3A2418" stroke-width="2" />
+    <circle cx="1152" cy="430" r="7" fill="#1F6F6B" stroke="#3A2418" stroke-width="2" />
+  </g>
+
+  
+  
+  <g id="set_dream_wishlist_m-foreground-props">
+    
+    <path d="M0 800 Q 50 720 120 780 Q 180 720 240 800 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+    <circle cx="60" cy="760" r="25" fill="#1B2340" stroke="#3A2418" stroke-width="3" />
+    <circle cx="150" cy="740" r="35" fill="#3A2A66" stroke="#3A2418" stroke-width="3" />
+
+    
+    <path d="M 520 850 Q 530 820 540 850" fill="none" stroke="#C2603A" stroke-width="4" stroke-linecap="round" />
+    <circle cx="540" cy="815" r="8" fill="#C8323A" stroke="#3A2418" stroke-width="2" />
+    <path d="M 1060 850 Q 1070 820 1080 850" fill="none" stroke="#C2603A" stroke-width="4" stroke-linecap="round" />
+    <circle cx="1060" cy="815" r="8" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+
+    
+    <rect x="1510" y="700" width="20" height="100" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+    <rect x="1550" y="730" width="20" height="70" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+    <line x1="1500" y1="730" x2="1600" y2="730" stroke="#3A2418" stroke-width="4" />
+    <line x1="1500" y1="770" x2="1600" y2="770" stroke="#3A2418" stroke-width="4" />
+  </g>
+
+  
+  <circle cx="800" cy="450" r="500" fill="url(#set_dream_wishlist_m-lightGlow)" opacity="0.15" pointer-events="none" />
+</svg>

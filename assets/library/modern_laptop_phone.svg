@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="modern_laptop_phone-laptopBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#C5B592" />
+    </linearGradient>
+    <linearGradient id="modern_laptop_phone-laptopScreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#3A2A66" />
+    </linearGradient>
+    <linearGradient id="modern_laptop_phone-phoneBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+    <linearGradient id="modern_laptop_phone-bowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C8323A" />
+      <stop offset="50%" stop-color="#F08A3C" />
+      <stop offset="100%" stop-color="#C8323A" />
+    </linearGradient>
+    <linearGradient id="modern_laptop_phone-goldAcc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#C2603A" />
+    </linearGradient>
+  </defs>
+
+  
+  <g transform="translate(50, 50)">
+    
+    
+    <g data-part="laptop_base">
+      
+      <ellipse cx="450" cy="780" rx="380" ry="40" fill="#1B2340" opacity="0.3" />
+      
+      
+      <path d="M 120 720 L 780 720 L 820 760 L 80 760 Z" fill="#9C8E6D" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      
+      <path d="M 100 680 L 800 680 L 820 720 L 80 720 Z" fill="url(#modern_laptop_phone-laptopBody)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      
+      <rect x="375" y="695" width="150" height="18" rx="8" fill="#D4C5A0" stroke="#3A2418" stroke-width="5" />
+      <line x1="410" y1="704" x2="490" y2="704" stroke="#3A2418" stroke-width="3" stroke-linecap="round" />
+      
+      
+      <path d="M 420 680 C 420 690, 480 690, 480 680" fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    </g>
+
+    
+    <g data-part="laptop_screen">
+      
+      
+      <path d="M 130 180 L 770 180 L 800 660 L 100 660 Z" fill="url(#modern_laptop_phone-laptopBody)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      
+      <path d="M 155 205 L 745 205 L 770 635 L 130 635 Z" fill="#1B2340" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      
+      <path d="M 170 220 L 730 220 L 750 620 L 150 620 Z" fill="url(#modern_laptop_phone-laptopScreen)" stroke="#3A2418" stroke-width="5" />
+      
+      
+      <rect x="200" y="260" width="350" height="280" rx="12" fill="#F1E3C2" opacity="0.15" />
+      <circle cx="240" cy="300" r="20" fill="#F08A3C" />
+      <rect x="280" y="285" width="180" height="15" rx="6" fill="#F1E3C2" opacity="0.8" />
+      <rect x="280" y="315" width="120" height="10" rx="5" fill="#1F6F6B" />
+      
+      <rect x="200" y="370" width="350" height="100" rx="8" fill="#1F6F6B" opacity="0.4" />
+      <rect x="200" y="490" width="350" height="100" rx="8" fill="#3A2A66" opacity="0.6" />
+
+      
+      <rect x="580" y="260" width="130" height="330" rx="10" fill="#C2603A" opacity="0.3" />
+      <circle cx="645" cy="320" r="35" fill="none" stroke="#E2A93B" stroke-width="10" />
+      <path d="M 625 400 L 665 400" stroke="#F1E3C2" stroke-width="8" stroke-linecap="round" />
+      <path d="M 610 430 L 680 430" stroke="#F1E3C2" stroke-width="8" stroke-linecap="round" />
+
+      
+      <circle cx="450" cy="192" r="5" fill="#3A2418" />
+      
+      
+      <path d="M 175 225 L 350 615" stroke="#FFFFFF" stroke-width="15" opacity="0.1" stroke-linecap="round" />
+      <path d="M 300 225 L 420 615" stroke="#FFFFFF" stroke-width="8" opacity="0.08" stroke-linecap="round" />
+    </g>
+
+    
+    <g data-part="smartphone" transform="translate(520, 420) rotate(15)">
+      
+      <rect x="-12" y="-12" width="174" height="334" rx="32" fill="#1B2340" opacity="0.2" />
+      
+      
+      <rect x="0" y="0" width="150" height="310" rx="28" fill="url(#modern_laptop_phone-phoneBody)" stroke="#3A2418" stroke-width="6" />
+      
+      
+      <rect x="12" y="12" width="126" height="286" rx="20" fill="#3A2A66" stroke="#3A2418" stroke-width="4" />
+      
+      
+      <circle cx="75" cy="70" r="25" fill="#E2A93B" />
+      <rect x="35" y="110" width="80" height="12" rx="6" fill="#F1E3C2" />
+      <rect x="45" y="130" width="60" height="8" rx="4" fill="#1F6F6B" />
+      
+      
+      <rect x="30" y="170" width="25" height="25" rx="6" fill="#C8323A" />
+      <rect x="62" y="170" width="25" height="25" rx="6" fill="#F08A3C" />
+      <rect x="94" y="170" width="25" height="25" rx="6" fill="#1F6F6B" />
+
+      <rect x="30" y="210" width="25" height="25" rx="6" fill="#E2A93B" />
+      <rect x="62" y="210" width="25" height="25" rx="6" fill="#F1E3C2" />
+      <rect x="94" y="210" width="25" height="25" rx="6" fill="#C2603A" />
+
+      
+      <rect x="55" y="18" width="40" height="12" rx="6" fill="#1B2340" />
+      
+      
+      <path d="M 20 20 L 80 290" stroke="#FFFFFF" stroke-width="10" opacity="0.15" stroke-linecap="round" />
+    </g>
+
+    
+    <g data-part="ribbons_and_bow">
+      
+      
+      <path d="M 420 205 L 420 635" stroke="url(#modern_laptop_phone-bowGrad)" stroke-width="45" stroke-linecap="butt" />
+      <path d="M 420 205 L 420 635" stroke="#3A2418" stroke-width="48" fill="none" stroke-dasharray="1000" opacity="0.3" /> 
+      <path d="M 398 205 L 398 635" stroke="#3A2418" stroke-width="5" fill="none" />
+      <path d="M 442 205 L 442 635" stroke="#3A2418" stroke-width="5" fill="none" />
+
+      
+      <path d="M 100 700 L 800 700" stroke="url(#modern_laptop_phone-bowGrad)" stroke-width="50" />
+      <path d="M 100 677 L 800 677" stroke="#3A2418" stroke-width="5" />
+      <path d="M 100 723 L 800 723" stroke="#3A2418" stroke-width="5" />
+
+      
+      <path d="M 540 440 L 640 570" stroke="url(#modern_laptop_phone-bowGrad)" stroke-width="35" />
+      <path d="M 530 430 L 630 560" stroke="#3A2418" stroke-width="4" fill="none" />
+      <path d="M 555 455 L 655 585" stroke="#3A2418" stroke-width="4" fill="none" />
+
+      
+      <g transform="translate(420, 650)">
+        
+        
+        <path d="M -15 20 Q -50 100 -80 140 Q -30 110 0 40" fill="url(#modern_laptop_phone-bowGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+        <path d="M 15 20 Q 50 110 80 150 Q 40 100 0 40" fill="url(#modern_laptop_phone-bowGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+        
+        
+        <path d="M -80 140 L -65 120 L -50 135" fill="none" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+        <path d="M 80 150 L 65 130 L 50 145" fill="none" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+
+        
+        <path d="M -10 -10 C -120 -80 -160 20 -70 40 C -40 45 -20 20 -10 -10 Z" fill="url(#modern_laptop_phone-bowGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+        
+        <path d="M -40 0 C -90 -20 -100 10 -60 25" fill="none" stroke="#C2603A" stroke-width="8" stroke-linecap="round" />
+
+        
+        <path d="M 10 -10 C 120 -80 160 20 70 40 C 40 45 20 20 10 -10 Z" fill="url(#modern_laptop_phone-bowGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+        
+        <path d="M 40 0 C 90 -20 100 10 60 25" fill="none" stroke="#C2603A" stroke-width="8" stroke-linecap="round" />
+
+        
+        <path d="M -5 -20 C -70 -120 0 -110 -20 -30 Z" fill="url(#modern_laptop_phone-goldAcc)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+        <path d="M 5 -20 C 70 -120 0 -110 20 -30 Z" fill="url(#modern_laptop_phone-goldAcc)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+
+        
+        <ellipse cx="0" cy="0" rx="25" ry="20" fill="url(#modern_laptop_phone-goldAcc)" stroke="#3A2418" stroke-width="6" />
+        
+        <ellipse cx="-5" cy="-5" rx="10" ry="6" fill="#F1E3C2" opacity="0.6" />
+      </g>
+    </g>
+
+    
+    <g data-part="sparkles">
+      <path d="M 80 120 L 95 135 L 80 150 L 65 135 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+      <path d="M 820 250 L 832 262 L 820 274 L 808 262 Z" fill="#F08A3C" stroke="#3A2418" stroke-width="4" />
+      <circle cx="150" cy="500" r="12" fill="#C8323A" stroke="#3A2418" stroke-width="4" />
+      <circle cx="780" cy="580" r="15" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+      <circle cx="750" cy="150" r="8" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+      
+      
+      <path d="M 250 120 Q 250 150 220 150 Q 250 150 250 180 Q 250 150 280 150 Q 250 150 250 120 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+      <path d="M 700 80 Q 700 100 680 100 Q 700 100 700 120 Q 700 100 720 100 Q 700 100 700 80 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+    </g>
+
+  </g>
+</svg>

@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="luxury_red_sports_ca-bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E54B52" />
+      <stop offset="50%" stop-color="#C8323A" />
+      <stop offset="100%" stop-color="#9A2228" />
+    </linearGradient>
+    <linearGradient id="luxury_red_sports_ca-bodyDark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8A1C22" />
+      <stop offset="100%" stop-color="#C8323A" />
+    </linearGradient>
+    <linearGradient id="luxury_red_sports_ca-windshieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B2340" />
+      <stop offset="50%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#3A2A66" />
+    </linearGradient>
+    <linearGradient id="luxury_red_sports_ca-rimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="50%" stop-color="#C2C2C2" />
+      <stop offset="100%" stop-color="#7A7A7A" />
+    </linearGradient>
+    <linearGradient id="luxury_red_sports_ca-tireGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A2418" />
+      <stop offset="50%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#121726" />
+    </linearGradient>
+    <linearGradient id="luxury_red_sports_ca-headlightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#F08A3C" />
+    </linearGradient>
+    <radialGradient id="luxury_red_sports_ca-highlightGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  
+  <ellipse cx="500" cy="590" rx="380" ry="35" fill="#1B2340" opacity="0.4" />
+
+  
+  <g data-part="wheel">
+    
+    <circle cx="270" cy="520" r="85" fill="url(#luxury_red_sports_ca-tireGrad)" stroke="#3A2418" stroke-width="6" />
+    
+    <circle cx="270" cy="520" r="55" fill="url(#luxury_red_sports_ca-rimGrad)" stroke="#3A2418" stroke-width="5" />
+    <circle cx="270" cy="520" r="15" fill="#1B2340" stroke="#3A2418" stroke-width="4" />
+    
+    <line x1="270" y1="465" x2="270" y2="575" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    <line x1="215" y1="520" x2="325" y2="520" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    <line x1="231" y1="481" x2="309" y2="559" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    <line x1="231" y1="559" x2="309" y2="481" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    
+    <circle cx="255" cy="505" r="8" fill="#FFFFFF" opacity="0.7" />
+  </g>
+
+  
+  <g data-part="wheel">
+    
+    <circle cx="730" cy="520" r="85" fill="url(#luxury_red_sports_ca-tireGrad)" stroke="#3A2418" stroke-width="6" />
+    
+    <circle cx="730" cy="520" r="55" fill="url(#luxury_red_sports_ca-rimGrad)" stroke="#3A2418" stroke-width="5" />
+    <circle cx="730" cy="520" r="15" fill="#1B2340" stroke="#3A2418" stroke-width="4" />
+    
+    <line x1="730" y1="465" x2="730" y2="575" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    <line x1="675" y1="520" x2="785" y2="520" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    <line x1="691" y1="481" x2="769" y2="559" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    <line x1="691" y1="559" x2="769" y2="481" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+    
+    <circle cx="715" cy="505" r="8" fill="#FFFFFF" opacity="0.7" />
+  </g>
+
+  
+  <path d="M 180,530 C 250,560 750,560 820,530 Z" fill="#121726" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+
+  
+  <path d="M 120,480             C 140,430 180,420 220,420             L 780,420             C 840,420 880,450 900,490             L 910,520             C 910,540 890,550 870,550             L 130,550             C 110,550 100,530 110,510 Z" fill="url(#luxury_red_sports_ca-bodyGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+
+  
+  <path d="M 280,470 L 400,470 L 370,520 L 260,520 Z" fill="#1B2340" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+  <line x1="300" y1="470" x2="280" y2="520" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" />
+  <line x1="330" y1="470" x2="310" y2="520" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" />
+  <line x1="360" y1="470" x2="340" y2="520" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" />
+
+  
+  <path d="M 450,420 L 440,550" fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+  <path d="M 450,450 L 480,450" fill="none" stroke="#3A2418" stroke-width="4" stroke-linecap="round" />
+
+  
+  <path d="M 320,420             C 350,320 420,270 520,270             C 620,270 690,320 730,420 Z" fill="url(#luxury_red_sports_ca-bodyGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+
+  
+  <path d="M 345,415             C 375,335 435,295 520,295             C 605,295 665,335 695,415 Z" fill="url(#luxury_red_sports_ca-windshieldGrad)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+
+  
+  <path d="M 520,295 L 520,415" fill="none" stroke="#3A2418" stroke-width="6" />
+  
+  
+  <path d="M 470,350 L 500,415 L 430,415 Z" fill="#3A2418" />
+  <path d="M 570,350 L 610,415 L 540,415 Z" fill="#3A2418" />
+
+  
+  <path d="M 370,330 C 440,290 520,290 580,310" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.6" />
+  <path d="M 200,440 L 750,440" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.5" />
+
+  
+  <path d="M 870,455             C 890,460 910,470 915,480             C 910,490 880,495 860,490             Z" fill="url(#luxury_red_sports_ca-headlightGrad)" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+  <circle cx="890" cy="475" r="5" fill="#FFFFFF" />
+
+  
+  <path d="M 880,505 C 895,510 910,515 920,525 L 900,535 C 885,530 870,520 860,515 Z" fill="#1B2340" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+  <path d="M 840,495 L 900,495" fill="none" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+  
+  
+  <path d="M 115,465             C 105,470 95,480 95,490             C 105,495 120,495 130,490             Z" fill="#F08A3C" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+  
+  
+  <ellipse cx="110" cy="530" rx="12" ry="8" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+  <ellipse cx="107" cy="530" rx="6" ry="4" fill="#1B2340" />
+
+  
+  <path d="M 365,395 C 355,390 350,380 360,375 C 370,370 380,385 375,395 Z" fill="url(#luxury_red_sports_ca-bodyDark)" stroke="#3A2418" stroke-width="4" stroke-linejoin="round" />
+
+  
+  <path d="M 820,540 L 915,525 C 920,530 910,545 890,550 L 820,550 Z" fill="#1B2340" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+
+  
+  <path d="M 120,410 L 150,370 L 210,375 L 180,415 Z" fill="url(#luxury_red_sports_ca-bodyDark)" stroke="#3A2418" stroke-width="5" stroke-linejoin="round" />
+  <line x1="140" y1="395" x2="135" y2="425" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+  <line x1="180" y1="395" x2="175" y2="425" stroke="#3A2418" stroke-width="5" stroke-linecap="round" />
+
+  
+  <path d="M 130,520 C 300,550 700,550 870,520 C 870,520 700,580 500,580 C 300,580 130,520 130,520 Z" fill="#1B2340" opacity="0.2" />
+
+  
+  <path d="M 680,350 Q 690,340 700,350 Q 690,360 680,350 Z" fill="#FFFFFF" opacity="0.8" />
+  <path d="M 250,450 Q 257,443 265,450 Q 257,457 250,450 Z" fill="#FFFFFF" opacity="0.8" />
+  <line x1="500" y1="270" x2="510" y2="285" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.7" />
+
+</svg>

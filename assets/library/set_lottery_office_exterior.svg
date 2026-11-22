@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_lottery_office_e-skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F08A3C" />
+      <stop offset="40%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+    <linearGradient id="set_lottery_office_e-glassGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1F6F6B" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#F1E3C2" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#3A2A66" stop-opacity="0.7" />
+    </linearGradient>
+    <linearGradient id="set_lottery_office_e-buildingGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#E2A93B" />
+    </linearGradient>
+    <linearGradient id="set_lottery_office_e-roofGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+    <linearGradient id="set_lottery_office_e-sunbeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#F08A3C" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="set_lottery_office_e-sunGlow" cx="0.8" cy="0.1" r="0.6">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="1" />
+      <stop offset="50%" stop-color="#F08A3C" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#C2603A" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#set_lottery_office_e-skyGrad)" />
+  <circle cx="1300" cy="150" r="120" fill="url(#set_lottery_office_e-sunGlow)" />
+
+  
+  <path d="M0 550 L0 450 L80 450 L120 400 L200 400 L250 550 Z" fill="#3A2A66" opacity="0.5" />
+  <path d="M220 550 L300 350 L400 350 L450 550 Z" fill="#1F6F6B" opacity="0.6" />
+  <path d="M1200 550 L1250 300 L1350 300 L1400 550 Z" fill="#3A2A66" opacity="0.4" />
+
+  
+  
+  <rect x="100" y="300" width="300" height="350" fill="url(#set_lottery_office_e-buildingGrad)" stroke="#3A2418" stroke-width="3" />
+  <rect x="1200" y="300" width="300" height="350" fill="url(#set_lottery_office_e-buildingGrad)" stroke="#3A2418" stroke-width="3" />
+
+  
+  <path d="M350 220 L1250 220 L1250 650 L350 650 Z" fill="url(#set_lottery_office_e-buildingGrad)" stroke="#3A2418" stroke-width="4" />
+  
+  
+  <path d="M320 220 L1280 220 L1250 160 L350 160 Z" fill="url(#set_lottery_office_e-roofGrad)" stroke="#3A2418" stroke-width="4" />
+  <rect x="350" y="200" width="900" height="20" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+
+  
+  <g id="set_lottery_office_e-signboard" stroke="#3A2418" stroke-width="4">
+    <rect x="550" y="100" width="500" height="80" rx="10" fill="#1B2340" />
+    <rect x="565" y="112" width="470" height="56" rx="6" fill="#C8323A" />
+    
+    <circle cx="600" cy="140" r="12" fill="#F1E3C2" />
+    <circle cx="1000" cy="140" r="12" fill="#F1E3C2" />
+    
+    <rect x="630" y="130" width="340" height="8" rx="4" fill="#F1E3C2" />
+    <rect x="680" y="145" width="240" height="6" rx="3" fill="#F1E3C2" />
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="3" fill="#F1E3C2">
+    <rect x="420" y="240" width="45" height="410" />
+    <rect x="510" y="240" width="45" height="410" />
+    <rect x="600" y="240" width="45" height="410" />
+    <rect x="955" y="240" width="45" height="410" />
+    <rect x="1045" y="240" width="45" height="410" />
+    <rect x="1135" y="240" width="45" height="410" />
+  </g>
+
+  
+  <rect x="675" y="320" width="250" height="330" fill="url(#set_lottery_office_e-glassGrad)" stroke="#3A2418" stroke-width="4" />
+  
+  <line x1="800" y1="320" x2="800" y2="650" stroke="#3A2418" stroke-width="3" />
+  <line x1="675" y1="485" x2="925" y2="485" stroke="#3A2418" stroke-width="3" />
+  
+  <rect x="740" y="420" width="120" height="230" fill="none" stroke="#3A2418" stroke-width="4" />
+  <circle cx="755" cy="535" r="6" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+  <circle cx="845" cy="535" r="6" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+
+  
+  <g transform="translate(760, 250)" stroke="#3A2418" stroke-width="3">
+    <rect x="0" y="0" width="80" height="50" rx="5" fill="#F08A3C" />
+    <circle cx="40" cy="25" r="15" fill="#F1E3C2" />
+    <line x1="15" y1="12" x2="25" y2="12" stroke-width="2" />
+    <line x1="55" y1="12" x2="65" y2="12" stroke-width="2" />
+  </g>
+
+  
+  <g stroke="#3A2418" stroke-width="3" fill="#1B2340">
+    <rect x="140" y="350" width="60" height="80" rx="5" />
+    <rect x="230" y="350" width="60" height="80" rx="5" />
+    <rect x="320" y="350" width="60" height="80" rx="5" />
+    <rect x="140" y="480" width="60" height="80" rx="5" />
+    <rect x="230" y="480" width="60" height="80" rx="5" />
+    <rect x="320" y="480" width="60" height="80" rx="5" />
+
+    <rect x="1220" y="350" width="60" height="80" rx="5" />
+    <rect x="1310" y="350" width="60" height="80" rx="5" />
+    <rect x="1400" y="350" width="60" height="80" rx="5" />
+    <rect x="1220" y="480" width="60" height="80" rx="5" />
+    <rect x="1310" y="480" width="60" height="80" rx="5" />
+    <rect x="1400" y="480" width="60" height="80" rx="5" />
+  </g>
+
+  
+  <path d="M0 750 L1600 750 L1600 900 L0 900 Z" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+  
+  <polygon points="0,650 1600,650 1600,680 0,680" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+  <polygon points="0,680 1600,680 1600,715 0,715" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+  <polygon points="0,715 1600,715 1600,750 0,750" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+
+  
+
+  
+  
+  <rect x="250" y="600" width="120" height="80" rx="10" fill="#3A2A66" stroke="#3A2418" stroke-width="3" />
+  
+  <circle cx="280" cy="580" r="30" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <circle cx="330" cy="570" r="35" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <circle cx="310" cy="540" r="25" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+
+  
+  <rect x="1230" y="600" width="120" height="80" rx="10" fill="#3A2A66" stroke="#3A2418" stroke-width="3" />
+  <circle cx="1270" cy="570" r="35" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <circle cx="1320" cy="580" r="30" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <circle cx="1290" cy="540" r="25" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+
+  
+  <g transform="translate(100, 680)" stroke="#3A2418" stroke-width="3">
+    <rect x="40" y="40" width="10" height="60" fill="#3A2418" />
+    <rect x="0" y="0" width="90" height="60" rx="5" fill="#F1E3C2" />
+    <rect x="10" y="10" width="70" height="8" rx="3" fill="#C8323A" />
+    <line x1="10" y1="25" x2="70" y2="25" />
+    <line x1="10" y1="35" x2="80" y2="35" />
+    <line x1="10" y1="45" x2="50" y2="45" />
+  </g>
+
+  
+  <g transform="translate(1420, 660)" stroke="#3A2418" stroke-width="3">
+    <ellipse cx="40" cy="70" rx="50" ry="15" fill="#3A2A66" />
+    <rect x="30" y="30" width="20" height="40" fill="#E2A93B" />
+    <circle cx="40" cy="20" r="25" fill="#F08A3C" />
+    
+    <g data-part="light">
+      <circle cx="40" cy="-10" r="6" fill="#F1E3C2">
+        <animate attributeName="cy" values="-10;-20;-10" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </g>
+
+  
+  <polygon points="400,0 700,0 900,900 600,900" fill="url(#set_lottery_office_e-sunbeam)" style="mix-blend-mode:overlay" />
+  <polygon points="800,0 1100,0 1400,900 1100,900" fill="url(#set_lottery_office_e-sunbeam)" style="mix-blend-mode:overlay" />
+
+</svg>

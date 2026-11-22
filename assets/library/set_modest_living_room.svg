@@ -1,0 +1,240 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="set_modest_living_ro-wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="60%" stop-color="#1B2340" />
+      <stop offset="100%" stop-color="#121829" />
+    </linearGradient>
+    
+    <linearGradient id="set_modest_living_ro-floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8C4A28" />
+      <stop offset="100%" stop-color="#542914" />
+    </linearGradient>
+
+    <linearGradient id="set_modest_living_ro-windowLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#E2A93B" stop-opacity="0.05" />
+    </linearGradient>
+
+    <linearGradient id="set_modest_living_ro-couchGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="100%" stop-color="#A04824" />
+    </linearGradient>
+
+    <linearGradient id="set_modest_living_ro-sideTableGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#B87D20" />
+    </linearGradient>
+    
+    <radialGradient id="set_modest_living_ro-lampGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#F08A3C" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#C8323A" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="url(#set_modest_living_ro-wallGrad)" />
+  
+  
+  <line x1="0" y1="620" x2="1600" y2="620" stroke="#251710" stroke-width="8" />
+  <rect x="0" y="620" width="1600" height="20" fill="#251710" />
+
+  
+  <path d="M-100,0 L0,-100 M100,0 L0,-100 M300,0 L0,-100 M500,0 L0,-100 M700,0 L0,-100 M900,0 L0,-100 M1100,0 L0,-100 M1300,0 L0,-100 M1500,0 L0,-100 M1700,0 L0,-100" stroke="#ffffff" stroke-opacity="0.03" stroke-width="20" transform="translate(0, 0)" />
+
+  
+  <polygon points="0,640 1600,640 1600,900 0,900" fill="url(#set_modest_living_ro-floorGrad)" stroke="#3A2418" stroke-width="4" />
+  
+  
+  <path d="M-100,690 L1700,670 M-100,750 L1700,720 M-100,820 L1700,780 M-100,900 L1700,850" stroke="#3A2418" stroke-width="3" stroke-opacity="0.4" />
+
+  
+  <ellipse cx="750" cy="780" rx="420" ry="90" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+  <ellipse cx="750" cy="780" rx="380" ry="75" fill="#E2A93B" stroke="#3A2418" stroke-width="3" />
+  
+  <path d="M 450,780 Q 750,710 1050,780 Q 750,850 450,780" fill="none" stroke="#C2603A" stroke-width="6" />
+  <path d="M 550,780 Q 750,730 950,780 Q 750,830 550,780" fill="none" stroke="#1B2340" stroke-width="5" />
+
+  
+  <rect x="1150" y="120" width="280" height="420" rx="10" fill="#121829" stroke="#3A2418" stroke-width="6" />
+  <rect x="1170" y="140" width="240" height="380" fill="url(#set_modest_living_ro-windowLight)" />
+  
+  <line x1="1290" y1="140" x2="1290" y2="520" stroke="#3A2418" stroke-width="6" />
+  <line x1="1170" y1="330" x2="1410" y2="330" stroke="#3A2418" stroke-width="6" />
+  
+  <circle cx="1220" cy="200" r="15" fill="#F1E3C2" opacity="0.8" />
+  <path d="M1210,190 Q1230,210 1235,195 Q1220,215 1210,190" fill="#E2A93B" />
+
+  
+  <rect x="150" y="180" width="300" height="440" fill="#542914" stroke="#3A2418" stroke-width="6" />
+  <rect x="170" y="220" width="260" height="20" fill="#3A2418" />
+  <rect x="170" y="340" width="260" height="20" fill="#3A2418" />
+  <rect x="170" y="460" width="260" height="20" fill="#3A2418" />
+  
+  
+  <rect x="190" y="160" width="40" height="60" fill="#C8323A" stroke="#3A2418" stroke-width="3" />
+  <rect x="235" y="170" width="35" height="50" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <rect x="275" y="150" width="50" height="70" fill="#E2A93B" stroke="#3A2418" stroke-width="3" transform="rotate(10 300 200)" />
+  <rect x="350" y="180" width="45" height="40" fill="#3A2A66" stroke="#3A2418" stroke-width="3" />
+  
+  <rect x="180" y="280" width="30" height="60" fill="#F08A3C" stroke="#3A2418" stroke-width="3" />
+  <rect x="215" y="290" width="25" height="50" fill="#C2603A" stroke="#3A2418" stroke-width="3" />
+  
+  <path d="M 360,340 L 340,280 L 390,280 L 370,340 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+  <circle cx="365" cy="270" r="25" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <circle cx="350" cy="260" r="15" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+  <circle cx="380" cy="255" r="18" fill="#C8323A" stroke="#3A2418" stroke-width="2" />
+
+  
+  <path d="M 190,440 L 250,430 L 260,460 L 185,460 Z" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+  <path d="M 210,435 L 230,410 L 245,415 L 235,438 Z" fill="#C8323A" stroke="#3A2418" stroke-width="2" />
+
+  
+  <g id="set_modest_living_ro-couch">
+    
+    <ellipse cx="320" cy="640" rx="220" ry="30" fill="#121829" opacity="0.5" />
+    
+    
+    <path d="M 120,480 Q 120,440 160,440 L 480,440 Q 520,440 520,480 L 520,620 Q 520,640 500,640 L 140,640 Q 120,640 120,620 Z" fill="url(#set_modest_living_ro-couchGrad)" stroke="#3A2418" stroke-width="5" />
+    
+    
+    <rect x="150" y="460" width="165" height="150" rx="20" fill="#D4734B" stroke="#3A2418" stroke-width="4" />
+    <rect x="325" y="460" width="165" height="150" rx="20" fill="#D4734B" stroke="#3A2418" stroke-width="4" />
+    
+    
+    <rect x="135" y="580" width="180" height="60" rx="15" fill="#B8532C" stroke="#3A2418" stroke-width="4" />
+    <rect x="315" y="580" width="180" height="60" rx="15" fill="#B8532C" stroke="#3A2418" stroke-width="4" />
+    
+    
+    <path d="M 100,480 C 100,420 160,420 160,500 L 160,630 C 160,650 140,650 120,650 C 100,650 90,630 90,580 Z" fill="#A04824" stroke="#3A2418" stroke-width="5" />
+    <path d="M 530,480 C 530,420 470,420 470,500 L 470,630 C 470,650 490,650 510,650 C 530,650 540,630 540,580 Z" fill="#A04824" stroke="#3A2418" stroke-width="5" />
+
+    
+    <rect x="400" y="510" width="80" height="80" rx="20" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" transform="rotate(15 440 550)" />
+    <line x1="410" y1="520" x2="470" y2="580" stroke="#F1E3C2" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  
+  <g id="set_modest_living_ro-sideTableAndClutter">
+    
+    <ellipse cx="980" cy="635" rx="110" ry="20" fill="#121829" opacity="0.6" />
+
+    
+    
+    <line x1="900" y1="630" x2="870" y2="480" stroke="#3A2418" stroke-width="8" stroke-linecap="round" />
+    <line x1="1060" y1="630" x2="1090" y2="480" stroke="#3A2418" stroke-width="8" stroke-linecap="round" />
+    <line x1="980" y1="640" x2="980" y2="490" stroke="#251710" stroke-width="8" stroke-linecap="round" />
+
+    
+    <path d="M 870,470 L 1090,470 L 1120,490 L 840,490 Z" fill="url(#set_modest_living_ro-sideTableGrad)" stroke="#3A2418" stroke-width="5" />
+    
+    
+    <path d="M 860,560 L 1100,560 L 1115,575 L 845,575 Z" fill="#B87D20" stroke="#3A2418" stroke-width="4" />
+
+    
+    <rect x="880" y="540" width="120" height="20" fill="#C8323A" stroke="#3A2418" stroke-width="3" transform="rotate(-5 940 550)" />
+    <rect x="875" y="545" width="115" height="18" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" transform="rotate(-2 930 550)" />
+    <path d="M 950,560 Q 1000,580 1050,550" fill="none" stroke="#1B2340" stroke-width="4" stroke-linecap="round" />
+
+    
+    
+    
+    <g id="set_modest_living_ro-collegeBrochure" transform="translate(860, 435) rotate(-10)">
+      
+      <polygon points="0,40 70,20 90,75 20,95" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+      
+      <polygon points="20,30 90,10 110,65 40,85" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+      
+      <circle cx="65" cy="40" r="12" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+      <line x1="50" y1="58" x2="85" y2="48" stroke="#F1E3C2" stroke-width="3" stroke-linecap="round" />
+      <line x1="55" y1="68" x2="80" y2="60" stroke="#F1E3C2" stroke-width="3" stroke-linecap="round" />
+      
+      <text x="35" y="25" font-family="sans-serif" font-weight="bold" font-size="8" fill="#F1E3C2">UNIVERSITY</text>
+    </g>
+
+    
+    <g id="set_modest_living_ro-medBottle1" transform="translate(970, 400)">
+      
+      <ellipse cx="18" cy="80" rx="16" ry="6" fill="#121829" opacity="0.4" />
+      
+      <rect x="5" y="20" width="26" height="60" rx="4" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+      
+      <rect x="3" y="10" width="30" height="12" rx="3" fill="#F1E3C2" stroke="#3A2418" stroke-width="4" />
+      
+      <line x1="9" y1="13" x2="9" y2="19" stroke="#3A2418" stroke-width="2" />
+      <line x1="15" y1="13" x2="15" y2="19" stroke="#3A2418" stroke-width="2" />
+      <line x1="21" y1="13" x2="21" y2="19" stroke="#3A2418" stroke-width="2" />
+      <line x1="27" y1="13" x2="27" y2="19" stroke="#3A2418" stroke-width="2" />
+      
+      <rect x="7" y="32" width="22" height="36" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+      <rect x="7" y="32" width="22" height="8" fill="#C8323A" />
+      <line x1="10" y1="45" x2="26" y2="45" stroke="#3A2418" stroke-width="2" stroke-linecap="round" />
+      <line x1="10" y1="52" x2="22" y2="52" stroke="#3A2418" stroke-width="2" stroke-linecap="round" />
+      <line x1="10" y1="59" x2="24" y2="59" stroke="#3A2418" stroke-width="2" stroke-linecap="round" />
+    </g>
+
+    
+    <g id="set_modest_living_ro-medBottle2" transform="translate(1015, 415) rotate(25)">
+      <rect x="5" y="20" width="22" height="55" rx="4" fill="#C2603A" stroke="#3A2418" stroke-width="4" />
+      <rect x="3" y="12" width="26" height="10" rx="3" fill="#1F6F6B" stroke="#3A2418" stroke-width="4" />
+      <rect x="7" y="32" width="18" height="30" fill="#F1E3C2" stroke="#3A2418" stroke-width="2" />
+      <rect x="7" y="32" width="18" height="6" fill="#1B2340" />
+    </g>
+
+    
+    <g id="set_modest_living_ro-blisterPack" transform="translate(1045, 440) rotate(-15)">
+      <rect x="0" y="0" width="35" height="25" rx="5" fill="#F1E3C2" stroke="#3A2418" stroke-width="3" />
+      
+      <circle cx="10" cy="8" r="5" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+      <circle cx="25" cy="8" r="5" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+      <circle cx="10" cy="18" r="5" fill="#E2A93B" stroke="#3A2418" stroke-width="2" />
+      <circle cx="25" cy="18" r="5" stroke-dasharray="2 1" fill="none" stroke="#C8323A" stroke-width="2" /> 
+    </g>
+    
+    
+    <ellipse cx="1010" cy="470" rx="5" ry="3" fill="#C8323A" stroke="#3A2418" stroke-width="2" />
+  </g>
+
+  
+  <g id="set_modest_living_ro-tableLamp">
+    
+    <path d="M 940,470 L 980,470 L 970,430 L 950,430 Z" fill="#3A2A66" stroke="#3A2418" stroke-width="4" />
+    <line x1="960" y1="430" x2="960" y2="350" stroke="#3A2418" stroke-width="6" stroke-linecap="round" />
+    
+    <path d="M 910,350 L 1010,350 L 1030,280 L 890,280 Z" fill="#E2A93B" stroke="#3A2418" stroke-width="4" />
+    
+    <circle cx="960" cy="380" r="120" fill="url(#set_modest_living_ro-lampGlow)" style="mix-blend-mode:screen" />
+  </g>
+
+  
+  
+  <path d="M 0,900 L 0,700 Q 40,680 70,720 Q 100,760 80,900 Z" fill="#141926" stroke="#3A2418" stroke-width="4" />
+  <path d="M 30,900 Q 50,650 0,600" fill="none" stroke="#141926" stroke-width="12" stroke-linecap="round" />
+  
+  <path d="M 25,660 Q 60,620 50,680 Q 30,700 25,660" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+  <path d="M 10,620 Q -10,580 10,560 Q 20,590 10,620" fill="#1F6F6B" stroke="#3A2418" stroke-width="3" />
+
+  
+  <rect x="1500" y="550" width="60" height="90" rx="10" fill="#3A2A66" stroke="#3A2418" stroke-width="4" /> 
+  <line x1="1500" y1="580" x2="1560" y2="580" stroke="#3A2418" stroke-width="3" />
+  
+  
+  <g data-part="light">
+    <circle cx="1250" cy="280" r="4" fill="#F1E3C2" opacity="0.6">
+      <animate attributeName="cy" values="280;250;280" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1250;1265;1250" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1320" cy="400" r="3" fill="#F1E3C2" opacity="0.4">
+      <animate attributeName="cy" values="400;360;400" dur="7s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="1320;1300;1320" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="980" cy="320" r="5" fill="#F08A3C" opacity="0.7">
+      <animate attributeName="cy" values="320;290;320" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="cx" values="980;995;980" dur="5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  
+  <rect x="0" y="0" width="1600" height="900" fill="none" stroke="#121829" stroke-width="30" opacity="0.3" />
+</svg>

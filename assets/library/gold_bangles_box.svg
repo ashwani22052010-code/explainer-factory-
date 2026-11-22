@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="gold_bangles_box-vDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#261A4D" />
+      <stop offset="100%" stop-color="#150E2B" />
+    </linearGradient>
+    <linearGradient id="gold_bangles_box-vLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4F3A8C" />
+      <stop offset="100%" stop-color="#3A2A66" />
+    </linearGradient>
+    <linearGradient id="gold_bangles_box-vInner" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#1B1236" />
+      <stop offset="100%" stop-color="#2A1D52" />
+    </linearGradient>
+
+    
+    <linearGradient id="gold_bangles_box-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C28929" />
+      <stop offset="30%" stop-color="#E2A93B" />
+      <stop offset="50%" stop-color="#F9D776" />
+      <stop offset="70%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#A5701B" />
+    </linearGradient>
+    <linearGradient id="gold_bangles_box-goldAlt" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D49B2E" />
+      <stop offset="50%" stop-color="#F3C958" />
+      <stop offset="100%" stop-color="#9C6718" />
+    </linearGradient>
+
+    
+    <linearGradient id="gold_bangles_box-tealBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24827D" />
+      <stop offset="100%" stop-color="#154A47" />
+    </linearGradient>
+    <linearGradient id="gold_bangles_box-tealShade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#0E3634" />
+    </linearGradient>
+
+    
+    <linearGradient id="gold_bangles_box-hiWhite" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  
+  <ellipse cx="500" cy="850" rx="360" ry="60" fill="#150E2B" opacity="0.3" />
+
+  
+  <g id="gold_bangles_box-jewellery_box">
+    
+    
+    <g data-part="lid">
+      
+      <path d="M 180,420 C 180,180 320,100 500,100 C 680,100 820,180 820,420 L 810,480 C 810,500 790,510 770,500 C 680,460 590,450 500,450 C 410,450 320,460 230,500 C 210,510 190,500 190,480 Z" fill="url(#gold_bangles_box-tealShade)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      
+      <path d="M 185,420 C 185,190 320,110 500,110 C 680,110 815,190 815,420 C 815,425 810,430 805,430 C 700,390 600,380 500,380 C 400,380 300,390 195,430 C 190,430 185,425 185,420 Z" fill="url(#gold_bangles_box-tealBase)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      
+      
+      <path d="M 215,415 C 215,205 330,135 500,135 C 670,135 785,205 785,415 C 785,420 780,425 775,425 C 675,395 585,390 500,390 C 415,390 325,395 225,425 C 220,425 215,420 215,415 Z" fill="url(#gold_bangles_box-vDark)" stroke="#3A2418" stroke-width="5" />
+      
+      
+      <path d="M 500,165 L 560,240 L 500,315 L 440,240 Z" fill="url(#gold_bangles_box-vLight)" opacity="0.4" stroke="#3A2418" stroke-width="3" />
+      <path d="M 380,180 L 430,250 L 380,320 L 330,250 Z" fill="url(#gold_bangles_box-vLight)" opacity="0.3" stroke="#3A2418" stroke-width="3" />
+      <path d="M 620,180 L 670,250 L 620,320 L 570,250 Z" fill="url(#gold_bangles_box-vLight)" opacity="0.3" stroke="#3A2418" stroke-width="3" />
+      
+      
+      <path d="M 225,410 C 225,210 335,145 500,145 C 665,145 775,210 775,410" fill="none" stroke="url(#gold_bangles_box-gold)" stroke-width="4" stroke-dasharray="8,4" />
+      
+      
+      <path d="M 300,130 C 400,110 500,110 600,120" fill="none" stroke="url(#gold_bangles_box-hiWhite)" stroke-width="8" stroke-linecap="round" />
+    </g>
+
+    
+    <rect x="350" y="445" width="40" height="25" rx="5" fill="url(#gold_bangles_box-gold)" stroke="#3A2418" stroke-width="5" />
+    <rect x="610" y="445" width="40" height="25" rx="5" fill="url(#gold_bangles_box-gold)" stroke="#3A2418" stroke-width="5" />
+
+    
+    <g data-part="base">
+      
+      <path d="M 170,520 C 170,500 190,480 220,480 L 780,480 C 810,480 830,500 830,520 L 800,720 C 800,780 720,830 500,830 C 280,830 200,780 200,720 Z" fill="url(#gold_bangles_box-tealShade)" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+
+      
+      <path d="M 180,530 L 820,530 L 790,710 C 790,765 715,810 500,810 C 285,810 210,765 210,710 Z" fill="url(#gold_bangles_box-tealBase)" stroke="#3A2418" stroke-width="7" stroke-linejoin="round" />
+
+      
+      <path d="M 230,550 L 770,550" fill="none" stroke="url(#gold_bangles_box-hiWhite)" stroke-width="6" stroke-linecap="round" opacity="0.5" />
+
+      
+      <ellipse cx="500" cy="550" rx="290" ry="70" fill="url(#gold_bangles_box-vInner)" stroke="#3A2418" stroke-width="6" />
+      
+      
+      <path d="M 215,550 C 215,610 330,660 500,660 C 670,660 785,610 785,550 C 785,595 670,640 500,640 C 330,640 215,595 215,550 Z" fill="url(#gold_bangles_box-vLight)" stroke="#3A2418" stroke-width="5" />
+      <ellipse cx="500" cy="565" rx="260" ry="50" fill="url(#gold_bangles_box-vDark)" stroke="#3A2418" stroke-width="5" />
+
+      
+      <path d="M 380,530 C 380,570 420,590 480,580" fill="none" stroke="#150E2B" stroke-width="8" stroke-linecap="round" />
+      <path d="M 520,580 C 580,590 620,570 620,530" fill="none" stroke="#150E2B" stroke-width="8" stroke-linecap="round" />
+    </g>
+
+    
+    <g data-part="clasp">
+      <path d="M 470,720 L 530,720 L 540,780 C 540,795 520,805 500,805 C 480,805 460,795 460,780 Z" fill="url(#gold_bangles_box-gold)" stroke="#3A2418" stroke-width="6" stroke-linejoin="round" />
+      <circle cx="500" cy="760" r="10" fill="#C28929" stroke="#3A2418" stroke-width="4" />
+    </g>
+  </g>
+
+  
+  <g data-part="bangles">
+    
+    
+    <g transform="translate(-40, -30) rotate(-15 450 550)">
+      
+      <ellipse cx="450" cy="530" rx="110" ry="45" fill="none" stroke="url(#gold_bangles_box-gold)" stroke-width="24" stroke-linecap="round" />
+      
+      <ellipse cx="450" cy="533" rx="100" ry="38" fill="none" stroke="#3A2418" stroke-width="4" />
+      
+      <path d="M 360,520 C 370,550 420,565 470,555" fill="none" stroke="url(#gold_bangles_box-goldAlt)" stroke-width="8" />
+      
+      <ellipse cx="380" cy="510" rx="25" ry="6" fill="#FFF8E8" transform="rotate(-15 380 510)" />
+      <circle cx="530" cy="545" r="4" fill="#FFF8E8" />
+      <circle cx="410" cy="550" r="3" fill="#FFF8E8" />
+    </g>
+
+    
+    <g transform="translate(15, -60)">
+      <ellipse cx="500" cy="510" rx="115" ry="48" fill="none" stroke="url(#gold_bangles_box-gold)" stroke-width="26" stroke-linecap="round" />
+      <ellipse cx="500" cy="513" rx="104" ry="40" fill="none" stroke="#3A2418" stroke-width="4" />
+      
+      <path d="M 395,500 Q 500,540 605,500" fill="none" stroke="#A5701B" stroke-width="3" stroke-dasharray="12,8" />
+      
+      <ellipse cx="560" cy="485" rx="35" ry="8" fill="#FFF8E8" transform="rotate(5 560 485)" />
+      <circle cx="430" cy="525" r="5" fill="#FFF8E8" />
+      <circle cx="450" cy="528" r="3" fill="#FFF8E8" />
+    </g>
+
+    
+    <g transform="translate(45, 10) rotate(10 520 570)">
+      <ellipse cx="520" cy="550" rx="120" ry="50" fill="none" stroke="url(#gold_bangles_box-gold)" stroke-width="28" stroke-linecap="round" />
+      <ellipse cx="520" cy="554" rx="108" ry="42" fill="none" stroke="#3A2418" stroke-width="4" />
+      
+      
+      <line x1="410" y1="540" x2="420" y2="570" stroke="#A5701B" stroke-width="4" stroke-linecap="round" />
+      <line x1="440" y1="545" x2="450" y2="575" stroke="#A5701B" stroke-width="4" stroke-linecap="round" />
+      <line x1="470" y1="548" x2="480" y2="578" stroke="#A5701B" stroke-width="4" stroke-linecap="round" />
+
+      
+      <ellipse cx="440" cy="530" rx="40" ry="9" fill="#FFF8E8" transform="rotate(-10 440 530)" />
+      <ellipse cx="610" cy="565" rx="15" ry="5" fill="#FFF8E8" transform="rotate(15 610 565)" />
+      <circle cx="580" cy="572" r="4" fill="#FFF8E8" />
+    </g>
+
+    
+    <g>
+      
+      <path d="M 640,430 Q 640,450 660,450 Q 640,450 640,470 Q 640,450 620,450 Q 640,450 640,430 Z" fill="#FFF8E8" stroke="#3A2418" stroke-width="3" stroke-linejoin="round">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+      </path>
+      
+      <path d="M 350,470 Q 350,485 365,485 Q 350,485 350,500 Q 350,485 335,485 Q 350,485 350,470 Z" fill="#FFF8E8" stroke="#3A2418" stroke-width="2.5" stroke-linejoin="round">
+        <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite" />
+      </path>
+      
+      <circle cx="520" cy="435" r="5" fill="#FFF8E8" stroke="#3A2418" stroke-width="3" />
+    </g>
+  </g>
+
+</svg>

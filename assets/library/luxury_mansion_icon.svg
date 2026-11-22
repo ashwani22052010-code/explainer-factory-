@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    
+    <linearGradient id="luxury_mansion_icon-wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1E3C2" />
+      <stop offset="100%" stop-color="#D5C39B" />
+    </linearGradient>
+    <linearGradient id="luxury_mansion_icon-roofGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C2603A" />
+      <stop offset="100%" stop-color="#8F3E1F" />
+    </linearGradient>
+    <linearGradient id="luxury_mansion_icon-poolGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1F6F6B" />
+      <stop offset="100%" stop-color="#113F3D" />
+    </linearGradient>
+    <linearGradient id="luxury_mansion_icon-waterGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4EE2DE" />
+      <stop offset="100%" stop-color="#1F6F6B" />
+    </linearGradient>
+    <linearGradient id="luxury_mansion_icon-goldGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E2A93B" />
+      <stop offset="100%" stop-color="#B88222" />
+    </linearGradient>
+    <linearGradient id="luxury_mansion_icon-glassGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2A66" />
+      <stop offset="100%" stop-color="#1B2340" />
+    </linearGradient>
+  </defs>
+
+  <g stroke="#3A2418" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    
+    
+    <g data-part="water">
+      
+      <path d="M150,820 C150,780 200,760 500,760 C800,760 850,780 850,820 C850,860 800,900 500,900 C200,900 150,860 150,820 Z" fill="url(#luxury_mansion_icon-poolGrad)" />
+      
+      <path d="M180,820 C180,795 220,780 500,780 C780,780 820,795 820,820 C820,845 780,875 500,875 C220,875 180,845 180,820 Z" fill="url(#luxury_mansion_icon-waterGrad)" />
+      
+      <path d="M350,820 Q380,810 420,820" fill="none" stroke="#F1E3C2" stroke-width="3" opacity="0.6">
+        <animate attributeName="d" values="M350,820 Q380,810 420,820; M350,825 Q380,835 420,825; M350,820 Q380,810 420,820" dur="4s" repeatCount="indefinite" />
+      </path>
+      <path d="M580,835 Q610,825 650,835" fill="none" stroke="#F1E3C2" stroke-width="3" opacity="0.6">
+        <animate attributeName="d" values="M580,835 Q610,825 650,835; M580,830 Q610,840 650,830; M580,835 Q610,825 650,835" dur="3.5s" repeatCount="indefinite" />
+      </path>
+    </g>
+
+    
+    <path d="M500,780 L500,740" fill="none" stroke="#E2A93B" stroke-width="6" />
+    <circle cx="500" cy="735" r="8" fill="#E2A93B" />
+
+    
+
+    
+    <rect x="220" y="400" width="560" height="370" fill="url(#luxury_mansion_icon-wallGrad)" rx="10" />
+
+    
+    <rect x="150" y="480" width="100" height="290" fill="url(#luxury_mansion_icon-wallGrad)" rx="8" />
+    <rect x="750" y="480" width="100" height="290" fill="url(#luxury_mansion_icon-wallGrad)" rx="8" />
+
+    
+    <path d="M140,480 L860,480" fill="none" stroke="#E2A93B" stroke-width="8" />
+    <path d="M210,400 L790,400" fill="none" stroke="#E2A93B" stroke-width="8" />
+
+    
+    
+    <path d="M130,480 L200,360 L270,480 Z" fill="url(#luxury_mansion_icon-roofGrad)" />
+    <path d="M730,480 L800,360 L870,480 Z" fill="url(#luxury_mansion_icon-roofGrad)" />
+
+    
+    <path d="M190,400 L500,180 L810,400 Z" fill="url(#luxury_mansion_icon-roofGrad)" />
+    
+    <rect x="475" y="120" width="50" height="70" fill="url(#luxury_mansion_icon-wallGrad)" rx="4" />
+    <path d="M465,120 L535,120" stroke="#C2603A" stroke-width="8" />
+
+    
+    <path d="M410,770 L410,540 L590,540 L590,770 Z" fill="#F1E3C2" />
+    
+    <path d="M380,540 L500,440 L620,540 Z" fill="url(#luxury_mansion_icon-roofGrad)" />
+
+    
+    <rect x="430" y="550" width="20" height="220" fill="url(#luxury_mansion_icon-goldGrad)" rx="3" />
+    <rect x="470" y="550" width="20" height="220" fill="url(#luxury_mansion_icon-goldGrad)" rx="3" />
+    <rect x="510" y="550" width="20" height="220" fill="url(#luxury_mansion_icon-goldGrad)" rx="3" />
+    <rect x="550" y="550" width="20" height="220" fill="url(#luxury_mansion_icon-goldGrad)" rx="3" />
+
+    
+    <path d="M470,770 L470,660 C470,645 530,645 530,660 L530,770 Z" fill="#3A2A66" />
+    <circle cx="515" cy="720" r="4" fill="#E2A93B" />
+
+    
+    
+    <rect x="175" y="520" width="50" height="70" fill="url(#luxury_mansion_icon-glassGrad)" rx="4" />
+    <path d="M200,520 L200,590" stroke="#E2A93B" stroke-width="3" />
+    <path d="M175,555 L225,555" stroke="#E2A93B" stroke-width="3" />
+
+    <rect x="175" y="630" width="50" height="70" fill="url(#luxury_mansion_icon-glassGrad)" rx="4" />
+    <path d="M200,630 L200,700" stroke="#E2A93B" stroke-width="3" />
+    <path d="M175,665 L225,665" stroke="#E2A93B" stroke-width="3" />
+
+    <rect x="775" y="520" width="50" height="70" fill="url(#luxury_mansion_icon-glassGrad)" rx="4" />
+    <path d="M800,520 L800,590" stroke="#E2A93B" stroke-width="3" />
+    <path d="M775,555 L825,555" stroke="#E2A93B" stroke-width="3" />
+
+    <rect x="775" y="630" width="50" height="70" fill="url(#luxury_mansion_icon-glassGrad)" rx="4" />
+    <path d="M800,630 L800,700" stroke="#E2A93B" stroke-width="3" />
+    <path d="M775,665 L825,665" stroke="#E2A93B" stroke-width="3" />
+
+    
+    <rect x="270" y="460" width="60" height="90" fill="url(#luxury_mansion_icon-glassGrad)" rx="6" />
+    <path d="M300,460 L300,550" stroke="#E2A93B" stroke-width="3" />
+    <path d="M270,505 L330,505" stroke="#E2A93B" stroke-width="3" />
+
+    <rect x="370" y="460" width="60" height="90" fill="url(#luxury_mansion_icon-glassGrad)" rx="6" />
+    <path d="M400,460 L400,550" stroke="#E2A93B" stroke-width="3" />
+    <path d="M370,505 L430,505" stroke="#E2A93B" stroke-width="3" />
+
+    <rect x="570" y="460" width="60" height="90" fill="url(#luxury_mansion_icon-glassGrad)" rx="6" />
+    <path d="M600,460 L600,550" stroke="#E2A93B" stroke-width="3" />
+    <path d="M570,505 L630,505" stroke="#E2A93B" stroke-width="3" />
+
+    <rect x="670" y="460" width="60" height="90" fill="url(#luxury_mansion_icon-glassGrad)" rx="6" />
+    <path d="M700,460 L700,550" stroke="#E2A93B" stroke-width="3" />
+    <path d="M670,505 L730,505" stroke="#E2A93B" stroke-width="3" />
+
+    
+    <rect x="270" y="600" width="60" height="110" fill="url(#luxury_mansion_icon-glassGrad)" rx="6" />
+    <path d="M300,600 L300,710" stroke="#E2A93B" stroke-width="3" />
+    <path d="M270,655 L330,655" stroke="#E2A93B" stroke-width="3" />
+
+    <rect x="670" y="600" width="60" height="110" fill="url(#luxury_mansion_icon-glassGrad)" rx="6" />
+    <path d="M700,600 L700,710" stroke="#E2A93B" stroke-width="3" />
+    <path d="M670,655 L730,655" stroke="#E2A93B" stroke-width="3" />
+
+    
+    <circle cx="500" cy="300" r="30" fill="url(#luxury_mansion_icon-glassGrad)" stroke="#E2A93B" stroke-width="5" />
+    <path d="M485,300 L515,300" stroke="#E2A93B" stroke-width="3" />
+    <path d="M500,285 L500,315" stroke="#E2A93B" stroke-width="3" />
+
+    
+    <path d="M420,590 L580,590" fill="none" stroke="#E2A93B" stroke-width="6" />
+    <path d="M430,590 L430,560 M470,590 L470,560 M510,590 L510,560 M550,590 L550,560" stroke="#E2A93B" stroke-width="4" />
+
+    
+    
+    <path d="M220,430 L780,430 M220,460 L780,460" stroke="#D5C39B" stroke-width="2" opacity="0.5" />
+    
+    
+    <path d="M194,400 L500,186 L806,400" fill="none" stroke="#F08A3C" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+
+    
+    <g transform="translate(250, 720)">
+      <rect x="-5" y="-30" width="10" height="30" fill="#1B2340" />
+      <circle cx="0" cy="-35" r="12" fill="#E2A93B" />
+    </g>
+    <g transform="translate(750, 720)">
+      <rect x="-5" y="-30" width="10" height="30" fill="#1B2340" />
+      <circle cx="0" cy="-35" r="12" fill="#E2A93B" />
+    </g>
+
+  </g>
+</svg>
