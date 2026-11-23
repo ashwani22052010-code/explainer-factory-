@@ -76,6 +76,9 @@ def make(script_path, cfg, demo=False):
         if len(script.split()) < 5:
             raise SystemExit(f"{script_path} mein script bahut chhoti hai.")
 
+    if mode == "story" and not demo:
+        return make_story2(script, cfg, gem, work, stem, t_start)
+
     with sync_playwright() as p:
         browser = p.chromium.launch()
         artist = Artist(gem, cfg, browser, mode)
@@ -126,6 +129,32 @@ def make(script_path, cfg, demo=False):
     calls = gem.calls if gem else 0
     log(f"✅ Video ready: {final.relative_to(ROOT)}  ({data['duration']:.0f}s, "
         f"{time.time() - t_start:.0f}s me bani, {calls} Gemini calls)")
+    return final
+
+
+def make_story2(script, cfg, gem, work, stem, t_start):
+    """Story mode v2: AI plans, code draws everything (renderer_story)."""
+    from . import mixer, render, story2, voice
+    plan = story2.plan(gem, script, cfg)
+    write_json(work / "plan.json", plan)
+    log(f"Plan: {len(plan['scenes'])} scenes, {len(plan['characters'])} characters")
+    narration, timings = voice.make_voice(plan["scenes"], cfg, work, stem)
+    env = mixer.envelope(narration, cfg["video"]["fps"])
+    data, events = story2.build_data(plan, timings, cfg, env)
+    write_json(work / "data_story.json", {k: v for k, v in data.items() if k != "env"})
+    mix_wav = mixer.mix(narration, events, data["duration"], {**cfg, "_story": True}, work / "mix.wav")
+    silent = render.render_video(work, data, work / "video_silent.mp4", cfg["video"].get("workers", 3), renderer="renderer_story")
+    final = work / f"{stem}.mp4"
+    subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", str(silent), "-i", str(mix_wav), "-c:v", "copy",
+                    "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(final)], check=True)
+    meta = (f"TITLE:\n{plan.get('title', '')}\n\nDESCRIPTION:\n{plan.get('description', '')}\n\n"
+            f"TAGS:\n{', '.join(plan.get('tags', []))}\n")
+    (work / "metadata.txt").write_text(meta, encoding="utf-8")
+    for junk in ["render", "voice"]:
+        shutil.rmtree(work / junk, ignore_errors=True)
+    for f in list(work.glob("seg*.mp4")) + [silent]:
+        f.unlink(missing_ok=True)
+    log(f"✅ Video ready: {final.relative_to(ROOT)}  ({data['duration']:.0f}s, {time.time() - t_start:.0f}s me bani, {gem.calls} AI calls)")
     return final
 
 

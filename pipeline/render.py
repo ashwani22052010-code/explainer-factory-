@@ -11,11 +11,17 @@ from .util import ROOT, log
 RENDERER = ROOT / "renderer"
 
 
-def prepare(work, data):
+def prepare(work, data, renderer=None):
     rdir = Path(work) / "render"
     if rdir.exists():
         shutil.rmtree(rdir)
-    shutil.copytree(RENDERER, rdir, ignore=shutil.ignore_patterns("*.sh"))
+    src = ROOT / renderer if renderer else RENDERER
+    shutil.copytree(src, rdir, ignore=shutil.ignore_patterns("*.sh"))
+    fonts = RENDERER / "fonts"
+    if src != RENDERER and fonts.exists():
+        (rdir / "fonts").mkdir(exist_ok=True)
+        for f in fonts.glob("*.ttf"):
+            shutil.copy(f, rdir / "fonts" / f.name)
     (rdir / "data.js").write_text("window.DATA=" + json.dumps(data, ensure_ascii=False) + ";", encoding="utf-8")
     return rdir
 
@@ -59,8 +65,8 @@ def worker(rdir, start, end, fps, w, h, out):
     ff.wait()
 
 
-def render_video(work, data, out_mp4, workers=3):
-    rdir = prepare(work, data)
+def render_video(work, data, out_mp4, workers=3, renderer=None):
+    rdir = prepare(work, data, renderer)
     fps, total = data["fps"], int(round(data["duration"] * data["fps"]))
     workers = max(1, min(workers, total // 60 or 1))
     step = -(-total // workers)

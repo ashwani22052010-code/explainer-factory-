@@ -35,7 +35,10 @@ def mix(narration_wav, events, duration, cfg, out_path):
 
     music = a.get("music", "auto")
     if music and music != "off":
-        if music == "auto":
+        if music == "auto" and cfg.get("_story"):
+            from . import ghibli_audio
+            bed = ghibli_audio.music(duration).astype(np.float32) * 1.4
+        elif music == "auto":
             bed = sfx.music_bed(duration)
         else:
             p = ROOT / "music" / music

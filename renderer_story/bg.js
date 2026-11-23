@@ -81,6 +81,35 @@
       <pattern id="plaster" width="220" height="220" patternUnits="userSpaceOnUse"><circle cx="40" cy="60" r="18" fill="#00000008"/><circle cx="160" cy="140" r="26" fill="#00000008"/><circle cx="110" cy="30" r="10" fill="#ffffff10"/><path d="M180 20 l-14 22 l6 14" stroke="#00000014" fill="none" stroke-width="2"/></pattern>`;
   }
 
+
+  function interior(o, kind) {
+    const night = o.tod === 'night', r = rng(o.seed || 41);
+    const wallC = { office: '#dfe3e6', bank: '#e8dcc4', hospital: '#e6f0ee', library: '#c9a77a', party: '#3a2a4a' }[kind];
+    let back = `<rect width="${W}" height="${H}" fill="${wallC}"/><rect width="${W}" height="${H}" fill="url(#plaster)"/><rect x="0" y="0" width="${W}" height="70" fill="${shade(wallC, -.15)}"/>`;
+    for (let x = 160; x < W; x += 520) back += `<rect x="${x - 90}" y="40" width="180" height="16" rx="8" fill="#fffdf2" ${S(2)}/>${night ? '' : `<ellipse cx="${x}" cy="70" rx="200" ry="40" fill="#ffffff" opacity=".25"/>`}`;
+    let floor = `<rect x="0" y="780" width="${W}" height="300" fill="${kind === 'library' ? '#7a5236' : kind === 'party' ? '#2a2034' : '#bfb6a8'}"/><rect x="0" y="780" width="${W}" height="300" fill="url(#${kind === 'library' ? 'planks' : 'tiles'})"/><rect x="0" y="770" width="${W}" height="16" fill="${shade(wallC, -.35)}"/>`;
+    let mid = '';
+    if (kind === 'office') {
+      back += `<g transform="translate(1250 180)"><rect width="520" height="360" fill="#bfe0f2" ${S(3)}/>${indianBuilding(20, 360, 200, 260, '#c9d8de', r, false)}${indianBuilding(250, 360, 230, 300, '#e6c37a', r, false)}${[1, 2, 3].map(i => `<rect x="${i * 130 - 3}" y="0" width="6" height="360" fill="#e8eef2"/>`).join('')}${[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => `<rect x="0" y="${i * 40}" width="520" height="6" fill="#e8eef2" opacity=".8"/>`).join('')}</g>
+        <g transform="translate(300 260)"><rect width="300" height="200" fill="#fff" ${S(2)}/><path d="M30 170 L90 110 L150 140 L230 60 L270 80" fill="none" stroke="#3762a8" stroke-width="8"/><text x="150" y="40" font-family="Anton" font-size="30" fill="#333" text-anchor="middle">TARGET 2026</text></g>`;
+      for (const x of [260, 980]) mid += `<g transform="translate(${x} 640)"><rect width="520" height="30" fill="#9a7a5a" ${S(2)}/><rect x="20" y="30" width="20" height="160" fill="#6a5a4a"/><rect x="480" y="30" width="20" height="160" fill="#6a5a4a"/><rect x="180" y="-150" width="200" height="130" rx="6" fill="#26282e" ${S(2)}/><rect x="190" y="-140" width="180" height="104" fill="#4a7ab0"/><rect x="265" y="-20" width="30" height="22" fill="#26282e"/><rect x="140" y="-8" width="150" height="10" rx="4" fill="#ddd" ${S(1.5)}/><rect x="40" y="-30" width="80" height="30" fill="#e9e2d0" ${S(1.5)}/></g>`;
+    } else if (kind === 'bank') {
+      back += `<rect x="560" y="120" width="800" height="90" rx="8" fill="#1f3a6a" ${S(3)}/><text x="960" y="182" font-family="Anton" font-size="56" fill="#ffd45e" text-anchor="middle" letter-spacing="6">STATE BANK</text>`;
+      mid += `<rect x="0" y="560" width="${W}" height="230" fill="#8a6a4a" ${S(3)}/><rect x="0" y="540" width="${W}" height="30" fill="#a8885e" ${S(2)}/>${[0, 1, 2, 3].map(i => `<g><rect x="${200 + i * 420}" y="300" width="300" height="240" fill="#cfe6f0" opacity=".55" ${S(2)}/><rect x="${300 + i * 420}" y="250" width="100" height="40" rx="4" fill="#fbf6ea" ${S(2)}/><text x="${350 + i * 420}" y="280" font-family="Anton" font-size="24" fill="#333" text-anchor="middle">${['CASH', 'LOANS', 'ENQUIRY', 'MANAGER'][i]}</text></g>`).join('')}`;
+    } else if (kind === 'hospital') {
+      back += `<g transform="translate(1300 200)"><rect width="360" height="280" fill="#bfe0f2" ${S(3)}/><path d="M180 0 V280 M0 140 H360" stroke="#fff" stroke-width="10"/></g><rect x="300" y="260" width="120" height="120" fill="#fff" ${S(2)}/><path d="M360 285 V355 M325 320 H395" stroke="#c8323a" stroke-width="18"/>`;
+      mid += `<g transform="translate(900 600)"><rect width="640" height="60" rx="10" fill="#fbfbfb" ${S(2)}/><rect x="0" y="-30" width="160" height="40" rx="14" fill="#fff" ${S(2)}/><rect x="200" y="-20" width="440" height="40" rx="10" fill="#9ad3e0" ${S(2)}/><rect x="20" y="60" width="16" height="140" fill="#9aa"/><rect x="600" y="60" width="16" height="140" fill="#9aa"/></g><g transform="translate(720 340)"><rect x="-6" width="12" height="460" fill="#aab"/><rect x="-40" y="-10" width="80" height="12" fill="#aab"/><path d="M-30 0 Q-40 70 -20 110 L20 110 Q40 70 30 0 Z" fill="#cfefff" ${S(2)}/><rect x="80" y="40" width="160" height="110" rx="8" fill="#20242a" ${S(2)}/><path d="M95 100 L130 100 L145 70 L160 125 L175 95 L225 95" fill="none" stroke="#4ef07a" stroke-width="4"/></g>`;
+    } else if (kind === 'library') {
+      for (let x = 60; x < W; x += 460) { mid += `<g transform="translate(${x} 220)"><rect width="400" height="560" fill="#6a4428" ${S(3)}/>${[0, 1, 2, 3].map(j => `<rect x="12" y="${20 + j * 136}" width="376" height="12" fill="#4a2e18"/>${Array.from({ length: 11 }, (_, k) => `<rect x="${20 + k * 33}" y="${40 + j * 136 + (k % 3) * 6}" width="${26 + (k % 2) * 4}" height="${92 - (k % 3) * 6}" fill="${['#b8343a', '#3762a8', '#d9ac3a', '#3f7f4c', '#7a2632', '#5e4290'][(k + j) % 6]}" stroke="#2a1c16" stroke-width="1.5"/>`).join('')}`).join('')}</g>`; }
+      mid += `<g transform="translate(560 680)"><rect width="800" height="30" fill="#8a5a36" ${S(2)}/><rect x="30" y="30" width="20" height="110" fill="#6a4428"/><rect x="750" y="30" width="20" height="110" fill="#6a4428"/><rect x="120" y="-20" width="120" height="20" fill="#f3e6c8" ${S(1.5)}/><rect x="560" y="-26" width="90" height="26" fill="#b8343a" ${S(1.5)}/></g>`;
+    } else if (kind === 'party') {
+      back += Array.from({ length: 40 }, (_, i) => `<circle class="twinkle" cx="${i * 49 + 20}" cy="${120 + Math.sin(i * .7) * 40}" r="9" fill="${['#ffd45e', '#ff7ab0', '#7ad8ff', '#9aff7a'][i % 4]}"/>`).join('') + `<path d="M0 110 Q480 190 960 120 Q1440 190 1920 110" fill="none" stroke="#2a2030" stroke-width="3"/>`;
+      for (const [x, c] of [[260, '#ff7ab0'], [380, '#ffd45e'], [1560, '#7ad8ff'], [1680, '#c8323a']]) back += `<g><path d="M${x} 560 Q${x - 10} 460 ${x} 400" stroke="#ddd" stroke-width="2" fill="none"/><ellipse cx="${x}" cy="370" rx="40" ry="50" fill="${c}" ${S(2)}/></g>`;
+      floor += `<ellipse cx="960" cy="900" rx="700" ry="110" fill="#ff7ab0" opacity=".18"/>`;
+    }
+    return { layers: [{ svg: wrap(back + floor, patterns()), depth: .2 }, { svg: wrap(mid), depth: .5 }], floorY: 1000, spots: { center: 960, left: 520, right: 1400, desk: 600, window: 1450 }, night };
+  }
+
   // ---------- sets ----------
   const SETS = {
     // establishing city skyline (Indian small town)
@@ -165,6 +194,27 @@
       let mid = `<g transform="translate(330 640)"><rect width="420" height="110" rx="30" fill="#6a2a3a" ${S()}/><rect y="-90" width="420" height="110" rx="30" fill="#7a3446" ${S()}/><rect x="-30" y="-40" width="70" height="160" rx="26" fill="#6a2a3a" ${S()}/><rect x="380" y="-40" width="70" height="160" rx="26" fill="#6a2a3a" ${S()}/></g>`;
       mid += `<g transform="translate(1450 560)"><path d="M0 220 L30 0 L130 0 L160 220 Z" fill="#c4683e" ${S()}/>${[0, 1, 2, 3, 4].map(i => `<circle cx="${40 + i * 20}" cy="${-30 - (i % 2) * 40}" r="50" fill="${i % 2 ? '#3f7f4c' : '#4f9a5a'}" ${S(2)}/>`).join('')}</g>`;
       return { layers: [{ svg: wrap(back + floor + ch), depth: .2 }, { svg: wrap(mid), depth: .55 }], floorY: 990, spots: { center: 960, left: 560, right: 1380, window: 300 }, night };
+    },
+
+    // generic interior helper used by office / bank / hospital / library / party
+    office(o) { return interior(o, 'office'); },
+    bank(o) { return interior(o, 'bank'); },
+    hospital(o) { return interior(o, 'hospital'); },
+    library(o) { return interior(o, 'library'); },
+    party(o) { return interior({ ...o, tod: 'night' }, 'party'); },
+    rooftop(o) {
+      const c = SETS.city({ ...o, tod: o.tod || 'night' });
+      const par = `<rect x="0" y="830" width="${W}" height="250" fill="${o.tod === 'day' ? '#b9a88c' : '#3e3a48'}"/><rect x="0" y="810" width="${W}" height="40" fill="${o.tod === 'day' ? '#cfbf9f' : '#555064'}" ${S(2)}/>${[0, 1, 2, 3, 4, 5, 6, 7].map(i => `<rect x="${i * 260 + 40}" y="850" width="10" height="230" fill="#00000022"/>`).join('')}`;
+      c.layers.push({ svg: wrap(par), depth: 1 }); c.floorY = 1060; return c;
+    },
+    village(o) {
+      const tod = o.tod || 'day', r = rng(o.seed || 31), sk = sky(tod, 17);
+      let far = `<path d="M0 640 Q300 520 640 600 Q980 500 1320 590 Q1640 520 1920 600 L1920 760 L0 760 Z" fill="${tod === 'night' ? '#2a3a4a' : '#9cc08a'}"/>`;
+      let mid = `<rect x="0" y="700" width="${W}" height="380" fill="${tod === 'night' ? '#3a4030' : '#c9b27a'}"/>`;
+      for (let i = 0; i < 9; i++) mid += `<path d="M0 ${740 + i * 26} Q${W / 2} ${730 + i * 26} ${W} ${744 + i * 26}" stroke="#00000014" stroke-width="3" fill="none"/>`;
+      for (const [x, w] of [[180, 300], [1340, 340]]) mid += `<g><rect x="${x}" y="560" width="${w}" height="190" fill="#d9b88a" ${S(2.5)}/><path d="M${x - 30} 570 L${x + w / 2} 450 L${x + w + 30} 570 Z" fill="#8a6a3a" ${S(2.5)}/>${[0, 1, 2, 3, 4, 5, 6].map(k => `<path d="M${x - 20 + k * (w + 40) / 7} 566 L${x + w / 2} 456" stroke="#6a4a22" stroke-width="2"/>`).join('')}<rect x="${x + w / 2 - 30}" y="640" width="60" height="110" fill="#5a3a22" ${S(2)}/><rect x="${x + 30}" y="610" width="60" height="50" fill="${tod === 'night' ? '#ffd27a' : '#3a2a20'}" ${S(2)}/></g>`;
+      mid += tree(820, 720, 1.4, ['#3f7a3a', '#4f8a44', '#6aa250'], r) + tree(1750, 720, 1.1, ['#3f7a3a', '#4f8a44', '#6aa250'], r);
+      return { layers: [{ svg: wrap(sk.body, sk.defs), depth: 0 }, { svg: wrap(far), depth: .2, blur: 1 }, { svg: wrap(mid), depth: .6 }], floorY: 1010, spots: { center: 960, left: 520, right: 1400 } };
     },
     // dramatic dark spotlight
     spotlight(o) {
