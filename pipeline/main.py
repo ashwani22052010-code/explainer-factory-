@@ -135,10 +135,26 @@ def make(script_path, cfg, demo=False):
 def make_story2(script, cfg, gem, work, stem, t_start):
     """Story mode v2: AI plans, code draws everything (renderer_story)."""
     from . import mixer, render, story2, voice
-    plan = story2.plan(gem, script, cfg)
-    write_json(work / "plan.json", plan)
+    import hashlib
+    key = hashlib.sha1((script + str(cfg.get("language")) + str(cfg.get("voice"))).encode()).hexdigest()
+    cache = read_json(work / "cache.json", {}) or {}
+    if cache.get("key") == key and (work / "plan.json").exists():
+        plan = read_json(work / "plan.json")
+        log("Plan cache se mila (pichle run ka) — dobara AI call nahi")
+    else:
+        plan = story2.plan(gem, script, cfg)
+        write_json(work / "plan.json", plan)
+        cache = {"key": key}
+        write_json(work / "cache.json", cache)
     log(f"Plan: {len(plan['scenes'])} scenes, {len(plan['characters'])} characters")
-    narration, timings = voice.make_voice(plan["scenes"], cfg, work, stem)
+    if cache.get("voice_ok") and (work / "narration.wav").exists() and (work / "timings.json").exists():
+        narration, timings = work / "narration.wav", read_json(work / "timings.json")
+        log("Voice cache se mili — dobara nahi bani")
+    else:
+        narration, timings = voice.make_voice(plan["scenes"], cfg, work, stem)
+        write_json(work / "timings.json", timings)
+        cache["voice_ok"] = True
+        write_json(work / "cache.json", cache)
     env = mixer.envelope(narration, cfg["video"]["fps"])
     data, events = story2.build_data(plan, timings, cfg, env)
     write_json(work / "data_story.json", {k: v for k, v in data.items() if k != "env"})

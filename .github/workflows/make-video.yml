@@ -40,6 +40,17 @@ jobs:
           python -m playwright install --with-deps chromium > /dev/null
           bash renderer/fonts/get-fonts.sh
 
+      - name: Restore plan/voice cache (retries skip AI + voice)
+        uses: actions/cache@v4
+        with:
+          path: |
+            out/*/plan.json
+            out/*/cache.json
+            out/*/timings.json
+            out/*/narration.wav
+          key: work-${{ github.run_id }}
+          restore-keys: work-
+
       - name: Pick script
         run: python -m pipeline.pick "${{ github.event_name }}" "${{ github.event.before }}" "${{ github.sha }}" "${{ inputs.script }}"
 
